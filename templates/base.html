@@ -1,3 +1,4 @@
+<!-- templates/base.html -->
 {% load static %}
 
 <!doctype html>
@@ -13,14 +14,11 @@
 
     {% block extra_meta %}
     <!-- Extra meta tags -->
-
     {% endblock %}
 
     {% block favicon %}
     <!-- Favicon -->
-    
     {% endblock %}
-
 
     {% block css %}
         <!-- Bootstrap CSS -->
@@ -30,7 +28,6 @@
 
     {% block extra_css %}
     <!-- Extra CSS -->
-
     {% endblock %}
 
     {% block js %}
@@ -48,7 +45,6 @@
 
     {% block extra_js %}
     <!-- Extra JS -->
-
     {% endblock %}
 
     <title>Grizk{% block title %}{% endblock %}</title>
@@ -57,7 +53,7 @@
 <body>
     <header class="container-fluid fixed-top"></header>
 
-    {% if messages}
+    {% if messages %}
     <div class="message-container"></div>
     {% endif %}
 
@@ -67,12 +63,8 @@
     {% block content %}
     {% endblock %}
 
-
-    {% postloadjs %}
+    {% block postloadjs %}
     {% endblock %}
-
-
-
 </body>
 
 </html>
