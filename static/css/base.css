@@ -72,7 +72,6 @@ nav button {
     margin-right: 0;
 }
 
-
 .content-container {
     margin-left: 0;
     padding-left: 0;
@@ -97,6 +96,15 @@ nav button {
     height: 5vh;
     margin: 0;
 }
+
+.catalogue-container {
+    background-color: #22223b;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    opacity: 0.9;
+    color: #f2e9e4;
+}
+
 
 .home-page {
     padding: 0.5em;
