@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background-color: #22223b;
+    background-color: #4a4e69;
 }
 
 .header-container {
@@ -12,12 +12,16 @@ body {
 }
 
 #nav-container {
-    background-color: #4a4e69;
+    background-color: #22223b;
     backdrop-filter: blur(10px);
     opacity: 0.9;
     padding: 0.5em;
     border-radius: 10px;
 
+}
+
+nav button {
+    color: #f2e9e4;
 }
 
 #nav-container a {
@@ -39,8 +43,19 @@ body {
     color: #f2e9e4;
 }
 
+.dropdown-item {
+    background-color: #22223b;
+    color: #f2e9e4;
+    font-size: small;
+}
+
+.dropdown-item:hover {
+    background-color: #4a4e69;
+}
+
 .page-content {
     margin-top: 5%;
+    padding: 0 0.5em;
 }
 
 .category-container {
@@ -55,17 +70,17 @@ body {
 
 .category-container {
     padding: 0.5em;
-    background-color: #4a4e69;
+    background-color: #fff;
     backdrop-filter: blur(10px);
     opacity: 0.9;
     border-radius: 10px;
     color: #f2e9e4;
-    height: 90vh;
+    height: 88vh;
 }
 
 .home-page {
     padding: 0.5em;
-    background-color: #4a4e69;
+    background-color: #22223b;
     backdrop-filter: blur(10px);
     opacity: 0.9;
     border-radius: 10px;
