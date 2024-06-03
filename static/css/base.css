@@ -44,6 +44,16 @@ body {
 }
 
 .category-container {
+    margin-right: 0;
+}
+
+
+.content-container {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.category-container {
     padding: 0.5em;
     background-color: #4a4e69;
     backdrop-filter: blur(10px);
