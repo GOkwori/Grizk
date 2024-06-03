@@ -96,7 +96,7 @@
                                     <p class="my-0">Account</p>
                                 </div>
                             </a>
-                            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                            <div class="dropdown-menu border-0" aria-labelledby="user-options" id="account-drop">
                                 {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                 <a href="" class="dropdown-item">Product Management</a>
@@ -110,7 +110,7 @@
                             </div>
                         </li>
                         <li class="nav-item list-inline-item">
-                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-light{% endif %} nav-link"
+                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text{% endif %} nav-link"
                                 href="">
                                 <div class="text-center d-flex">
                                     <i class="fa-solid fa-cart-shopping me-1 mt-1"></i>

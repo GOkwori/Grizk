@@ -6,13 +6,17 @@ body {
     background-color: #4a4e69;
 }
 
+h3 {
+    font-size: 1.4rem;
+}
+
 .header-container {
     padding: 0.5em;
     text-align: center;
 }
 
 #nav-container {
-    background-color: #22223b;
+    background-color: #f2e9e4;
     backdrop-filter: blur(10px);
     opacity: 0.9;
     padding: 0.5em;
@@ -25,7 +29,7 @@ nav button {
 }
 
 #nav-container a {
-   color: #f2e9e4;
+    color: #22223b;
 }
 
 #nav-container img {
@@ -35,22 +39,28 @@ nav button {
 }
 
 #nav-container button {
-    border-color: #f2e9e4;
-    
+    background-color: #22223b;
+    border-color: #22223b;
+
 }
 
 #nav-container button i {
     color: #f2e9e4;
 }
 
-.dropdown-item {
-    background-color: #22223b;
+#nav-container input {
+    border-color: #22223b;
+}
+
+#account-drop .dropdown-item {
+    background-color: #4a4e69;
     color: #f2e9e4;
     font-size: small;
 }
 
-.dropdown-item:hover {
-    background-color: #4a4e69;
+#account-drop .dropdown-item:hover {
+    background-color: #f2e9e4;
+    color: #4a4e69;
 }
 
 .page-content {
@@ -70,7 +80,7 @@ nav button {
 
 .category-container {
     padding: 0.5em;
-    background-color: #fff;
+    background-color: #f2e9e4;
     backdrop-filter: blur(10px);
     opacity: 0.9;
     border-radius: 10px;
@@ -78,15 +88,25 @@ nav button {
     height: 88vh;
 }
 
+.category-header {
+    background-color: #22223b;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    opacity: 0.9;
+    color: #f2e9e4;
+    height: 5vh;
+    margin: 0;
+}
+
 .home-page {
     padding: 0.5em;
-    background-color: #22223b;
+    background-color: #f2e9e4;
     backdrop-filter: blur(10px);
     opacity: 0.9;
     border-radius: 10px;
-    color: #f2e9e4;
+    color: #22223b;
 }
 
 .carousel-container img {
-   height: 500px;
+    height: 500px;
 }
