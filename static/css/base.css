@@ -38,3 +38,30 @@ body {
 #nav-container button i {
     color: #f2e9e4;
 }
+
+.page-content {
+    margin-top: 5%;
+}
+
+.category-container {
+    padding: 0.5em;
+    background-color: #4a4e69;
+    backdrop-filter: blur(10px);
+    opacity: 0.9;
+    border-radius: 10px;
+    color: #f2e9e4;
+    height: 90vh;
+}
+
+.home-page {
+    padding: 0.5em;
+    background-color: #4a4e69;
+    backdrop-filter: blur(10px);
+    opacity: 0.9;
+    border-radius: 10px;
+    color: #f2e9e4;
+}
+
+.carousel-container img {
+   height: 500px;
+}
