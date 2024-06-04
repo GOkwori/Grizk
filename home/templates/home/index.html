@@ -2,24 +2,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}
-- Home
-{% endblock %}
-
-{% block meta %}
-{{ block.super }}
-<meta name="description" content="Grizk Home Page">
-{% endblock %}
-
-{% block css %}
-{{ block.super }}
-<link rel="stylesheet" href="{% static 'css/base.css' %}">
-{% endblock %}
-
-{% block js %}
-{{ block.super }}
-<script src="{% static 'js/home.js' %}"></script>
-{% endblock %}
+{% block title %} - Home {% endblock %}
 
 {% block content %}
 <div class="container-fluid page-content">
@@ -62,11 +45,10 @@
                     </ul>
                 </div>
                 <div class="catalogue-subcontainer py-2 px-2 mt-2">
-                    
-    
+
+
                 </div>
             </div>
-           
         </div>
 
 
@@ -106,7 +88,35 @@
                         </button>
                     </div>
                 </div>
-                <div class="shop-category"></div>
+                <div class="shop-category">
+                    <h3 class="py-2 px-2"> <i class="fa-solid fa-shopping-bag ms-2 me-2"></i>Shop By Category</h3>
+                    <div class="shop-category-container py-2 px-2 mt-2">
+                        <div class="shop-category-item">
+                            <img src="{% static 'images/categories/1.jpg' %}" alt="Category 1">
+                            <p>Category 1</p>
+                        </div>
+                        <div class="shop-category-item">
+                            <img src="{% static 'images/categories/2.jpg' %}" alt="Category 2">
+                            <p>Category 2</p>
+                        </div>
+                        <div class="shop-category-item">
+                            <img src="{% static 'images/categories/3.jpg' %}" alt="Category 3">
+                            <p>Category 3</p>
+                        </div>
+                        <div class="shop-category-item">
+                            <img src="{% static 'images/categories/4.jpg' %}" alt="Category 4">
+                            <p>Category 4</p>
+                        </div>
+                        <div class="shop-category-item">
+                            <img src="{% static 'images/categories/5.jpg' %}" alt="Category 5">
+                            <p>Category 5</p>
+                        </div>
+                        <div class="shop-category-item">
+                            <img src="{% static 'images/categories/6.jpg' %}" alt="Category 6">
+                            <p>Category 6</p>
+                        </div>
+                    </div>
+                </div>
                 <div class="sponsored-products"></div>
             </div>
         </div>
