@@ -52,6 +52,10 @@ nav button {
     border-color: #22223b;
 }
 
+#nav-container input::placeholder {
+    color: #22223b;
+}
+
 #account-drop .dropdown-item {
     background-color: #4a4e69;
     color: #f2e9e4;

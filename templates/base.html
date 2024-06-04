@@ -82,11 +82,16 @@
                         </div>
                     </form>
                 </div>
-                <div class="collapse navbar-collapse col-lg-4 justify-content-end" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse col-lg-4 justify-content-end" id="nav-links">
                     <ul class="navbar-nav mb-lg-0 ms-lg-4">
                         <!-- Home -->
                         <li class="nav-item list-inline-item"><a class="nav-link active" aria-current="page"
                                 href="{% url 'home' %}"> <i class="fa-solid fa-house me-1 mt-1"></i>Home</a></li>
+
+                        <!-- Theme -->
+                        <li class="nav-item list-inline-item"><a class="nav-link active" aria-current="page"
+                            href="{% url 'home' %}"><i class="fa-brands fa-themeisle me-2"></i>Theme</a></li>
+
                         <!-- Account Dropdown -->
                         <li class="nav-item list-inline-item dropdown">
                             <a class="nav-link" href="#" id="user-options" data-bs-toggle="dropdown"
@@ -99,13 +104,13 @@
                             <div class="dropdown-menu border-0" aria-labelledby="user-options" id="account-drop">
                                 {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                <a href="" class="dropdown-item">Admin Console</a>
+                                <a href="" class="dropdown-item"><i class="fa-solid fa-shield-halved me-2"></i>Admin Console</a>
                                 {% endif %}
-                                <a href="" class="dropdown-item">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                <a href="" class="dropdown-item"><i class="fa-solid fa-address-card me-2"></i>My Profile</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item"><i class="fa-solid fa-right-from-bracket me-2"></i>Logout</a>
                                 {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                <a href="{% url 'account_signup' %}" class="dropdown-item"><i class="fa-solid fa-address-card me-2"></i>Register</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item"><i class="fa-solid fa-right-to-bracket me-2"></i>Login</a>
                                 {% endif %}
                             </div>
                         </li>
