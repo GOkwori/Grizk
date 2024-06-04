@@ -25,7 +25,7 @@ h3 {
 }
 
 nav button {
-    color: #f2e9e4;
+    color: #fff;
 }
 
 #nav-container a {
@@ -45,7 +45,7 @@ nav button {
 }
 
 #nav-container button i {
-    color: #f2e9e4;
+    color: #fff;
 }
 
 #nav-container input {
@@ -59,7 +59,7 @@ nav button {
 
 #account-drop .dropdown-item {
     background-color: #4a4e69;
-    color: #f2e9e4;
+    color: #fff;
     font-size: small;
 }
 
@@ -88,7 +88,7 @@ nav button {
     backdrop-filter: blur(10px);
     opacity: 0.9;
     border-radius: 10px;
-    color: #f2e9e4;
+    color: #fff;
     height: 88vh;
 }
 
@@ -97,7 +97,7 @@ nav button {
     backdrop-filter: blur(10px);
     border-radius: 10px;
     opacity: 0.9;
-    color: #f2e9e4;
+    color: #fff;
     height: 5vh;
     margin: 0;
 }
@@ -107,7 +107,7 @@ nav button {
     backdrop-filter: blur(10px);
     border-radius: 10px;
     opacity: 0.9;
-    color: #f2e9e4;
+    color: #fff;
 }
 
 .catalogue-container .nav-link:hover {
@@ -116,6 +116,14 @@ nav button {
     border-radius: 10px;
 }
 
+.catalogue-subcontainer {
+    background-color: #22223b;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    opacity: 0.9;
+    color: #fff;
+    height: 38vh;
+}
 
 .home-page {
     padding: 0.5em;
