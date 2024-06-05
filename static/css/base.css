@@ -14,7 +14,6 @@ h3 {
 
 /* Header container */
 .header-container {
-    padding: 0.5em;
     text-align: center;
 }
 
@@ -22,8 +21,6 @@ h3 {
 #nav-container {
     background-color: #fff;
     backdrop-filter: blur(10px);
-    opacity: 0.9;
-    padding: 0.5em;
     border-radius: 10px;
 
 }
@@ -78,18 +75,12 @@ nav button {
 /* Main content - home page  */
 .page-content {
     margin-top: 5%;
-    padding: 0 0.5em;
+    
 }
 
 /* Category container */
-.category-container {
-    margin-right: 0;
-}
 
-.content-container {
-    margin-left: 0;
-    padding-left: 0;
-}
+
 
 .category-container {
     padding: 0.5em;
@@ -182,7 +173,7 @@ nav button {
 }
 
 .amazing-offers-container {
-    padding: 0.5em;
+        padding: 0.5em;
     background-color: #22223b;
     backdrop-filter: blur(10px);
     border-radius: 10px;
@@ -190,4 +181,78 @@ nav button {
     width: 100%;
     display: inline-flex;
     justify-content: space-evenly;
+}
+
+/* Media queries */
+
+/*---------- Styling for screens with (max-width: 568px) ----------*/
+
+@media (min-width: 320px) and (max-width: 568px) {
+
+    body {
+        font-size: 0.9rem;
+    }
+
+    /* Main content - home page  */
+    .mobile-header {
+        background-color: #fff;
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        padding: auto;
+        display: flex;
+        margin: 0;
+    }
+
+    /* Header */
+    h3 {
+        font-size: 1rem;
+    }
+
+    /* Category container */
+    .category-container {
+        display: none;
+    }
+
+    /* Page container */
+    .home-page {
+        margin-top: 42%;
+        margin-left: 0.5em;
+        padding: 0.5em;
+        background-color: #fff;
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        color: #22223b;
+    }
+
+    .content-container {
+        padding: 0.5em;
+        overflow-x: hidden;
+    }
+
+    /* Carousel container */
+    .carousel-container img {
+        height: 300px;
+    }
+
+    /* Top deals container */
+    .shop-category-container {
+        gap: 0.5em;
+    }
+
+    .shop-category-container img {
+        height: 80px;
+        width: 80px;
+    }
+
+    /* Amazing offers container */
+    .amazing-offers {
+        margin: 0;
+    }
+
+    .amazing-offers-container {
+        margin: 0;
+        font-size: smaller;
+    }
+
+
 }
