@@ -2,19 +2,23 @@ html {
     height: 100%;
 }
 
+/* Body */
 body {
     background-color: #22223b;
 }
 
+/* Header */
 h3 {
     font-size: 1.4rem;
 }
 
+/* Header container */
 .header-container {
     padding: 0.5em;
     text-align: center;
 }
 
+/* Navigation container */
 #nav-container {
     background-color: #fff;
     backdrop-filter: blur(10px);
@@ -22,10 +26,6 @@ h3 {
     padding: 0.5em;
     border-radius: 10px;
 
-}
-
-nav button {
-    color: #fff;
 }
 
 #nav-container a {
@@ -38,6 +38,11 @@ nav button {
     border-radius: 10px;
 }
 
+/* Buttons */
+nav button {
+    color: #fff;
+}
+
 #nav-container button {
     background-color: #22223b;
     border-color: #22223b;
@@ -48,6 +53,8 @@ nav button {
     color: #fff;
 }
 
+
+/* Search bar */
 #nav-container input {
     border-color: #22223b;
 }
@@ -56,7 +63,7 @@ nav button {
     color: #22223b;
 }
 
-
+/* Nav-links dropdown */
 #account-drop .dropdown-item {
     background-color: #22223b;
     color: #fff;
@@ -68,11 +75,13 @@ nav button {
     color: #22223b;
 }
 
+/* Main content - home page  */
 .page-content {
     margin-top: 5%;
     padding: 0 0.5em;
 }
 
+/* Category container */
 .category-container {
     margin-right: 0;
 }
@@ -123,6 +132,7 @@ nav button {
     height: 38vh;
 }
 
+/* Page container */
 .home-page {
     padding: 0.5em;
     background-color: #fff;
@@ -131,10 +141,12 @@ nav button {
     color: #22223b;
 }
 
+/* Carousel container */
 .carousel-container img {
     height: 500px;
 }
 
+/* Top deals container */
 .top-deals {
     padding: 0.5em;
     background-color: #22223b;
@@ -160,6 +172,7 @@ nav button {
     width: 150px;
 }
 
+/* Amazing offers container */
 .amazing-offers {
     padding: 0.5em;
     background-color: #fff;
