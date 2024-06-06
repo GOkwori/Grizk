@@ -201,6 +201,10 @@ nav button {
         margin: 0 0.5em 0.5em 0.5em;
     }
 
+    .content-container {
+        transition: margin-top 0.3s ease-in-out;
+    }
+    
     /* Header */
     h3 {
         font-size: 1rem;

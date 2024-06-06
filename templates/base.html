@@ -44,6 +44,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="{% static 'js/base.js' %}"></script>
     {% endblock %}
 
     {% block extra_js %}
@@ -54,7 +55,7 @@
 </head>
 
 <body>
-    <header class="header-container fixed-top">
+    <header class="header-container fixed-top" id="main-header">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light" id="nav-container">
             <div class="container-fluid px-2 px-lg-3">
@@ -69,8 +70,8 @@
                 <!-- Navbar Toggler -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation"><span
-                        class="navbar-toggler-icon"><i class="fa-solid fa-bars mt-1"></i></span></button>
+                    aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"><i
+                            class="fa-solid fa-bars mt-1"></i></span></button>
 
                 <!-- Search container -->
                 <div class="col-12 col-lg-4">
@@ -92,13 +93,13 @@
                     <ul class="navbar-nav mb-lg-0 ms-lg-4">
                         <!-- Home -->
                         <li class="nav-item list-inline-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}"> 
-                               <div class="text-center d-flex">
-                                <div>
-                                    <i class="fa-solid fa-house me-1 mt-1"></i>
+                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">
+                                <div class="text-center d-flex">
+                                    <div>
+                                        <i class="fa-solid fa-house me-1 mt-1"></i>
+                                    </div>
+                                    <p class="my-0">Home</p>
                                 </div>
-                               <p class="my-0">Home</p> 
-                            </div>
                             </a>
                         </li>
 
@@ -112,12 +113,13 @@
                                 </div>
                             </a>
                             <div class="dropdown-menu border-0" aria-labelledby="user-options" id="account-drop">
-                               <a href="" class="dropdown-item"><i class="fa-solid fa-circle-half-stroke me-1 mt-1"></i>Default</a>
+                                <a href="" class="dropdown-item"><i
+                                        class="fa-solid fa-circle-half-stroke me-1 mt-1"></i>Default</a>
                                 <a href="" class="dropdown-item"><i class="fa-solid fa-moon me-1 mt-1"></i>Hue</a>
                             </div>
 
 
-                        <!-- Account Dropdown -->
+                            <!-- Account Dropdown -->
                         <li class="nav-item list-inline-item dropdown">
                             <a class="nav-link" href="#" id="user-options" data-bs-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
@@ -129,13 +131,18 @@
                             <div class="dropdown-menu border-0" aria-labelledby="user-options" id="account-drop">
                                 {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                <a href="" class="dropdown-item"><i class="fa-solid fa-shield-halved  me-1 mt-1"></i>Admin Console</a>
+                                <a href="" class="dropdown-item"><i
+                                        class="fa-solid fa-shield-halved  me-1 mt-1"></i>Admin Console</a>
                                 {% endif %}
-                                <a href="" class="dropdown-item"><i class="fa-solid fa-address-card me-2"></i>My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item"><i class="fa-solid fa-right-from-bracket  me-1 mt-1"></i>Logout</a>
+                                <a href="" class="dropdown-item"><i class="fa-solid fa-address-card me-2"></i>My
+                                    Profile</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item"><i
+                                        class="fa-solid fa-right-from-bracket  me-1 mt-1"></i>Logout</a>
                                 {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item"><i class="fa-solid fa-address-card  me-1 mt-1"></i>Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item"><i class="fa-solid fa-right-to-bracket  me-1 mt-1"></i>Login</a>
+                                <a href="{% url 'account_signup' %}" class="dropdown-item"><i
+                                        class="fa-solid fa-address-card  me-1 mt-1"></i>Register</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item"><i
+                                        class="fa-solid fa-right-to-bracket  me-1 mt-1"></i>Login</a>
                                 {% endif %}
                             </div>
                         </li>
@@ -162,18 +169,20 @@
         {% include 'includes/mobile-nav.html' %}
     </header>
 
-    {% if messages %}
-    <div class="message-container"></div>
-    {% endif %}
+    <div class="content-container" id="page-content">
+        {% if messages %}
+        <div class="message-container"></div>
+        {% endif %}
 
-    {% block page_header %}
-    {% endblock %}
+        {% block page_header %}
+        {% endblock %}
 
-    {% block content %}
-    {% endblock %}
+        {% block content %}
+        {% endblock %}
 
-    {% block postloadjs %}
-    {% endblock %}
+        {% block postloadjs %}
+        {% endblock %}
+    </div>
 </body>
 
 </html>
