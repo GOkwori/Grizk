@@ -22,6 +22,7 @@ h3 {
     background-color: #fff;
     backdrop-filter: blur(10px);
     border-radius: 10px;
+    margin: 0.5em;
 
 }
 
@@ -79,9 +80,6 @@ nav button {
 }
 
 /* Category container */
-
-
-
 .category-container {
     padding: 0.5em;
     background-color: #fff;
@@ -200,7 +198,7 @@ nav button {
         border-radius: 10px;
         padding: auto;
         display: flex;
-        margin: 0;
+        margin: 0 0.5em 0.5em 0.5em;
     }
 
     /* Header */
@@ -215,8 +213,7 @@ nav button {
 
     /* Page container */
     .home-page {
-        margin-top: 42%;
-        margin-left: 0.5em;
+        margin-top: 45%;
         padding: 0.5em;
         background-color: #fff;
         backdrop-filter: blur(10px);
