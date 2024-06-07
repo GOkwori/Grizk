@@ -73,53 +73,36 @@ nav button {
     color: #22223b;
 }
 
+/* Secondary navigation */
+.sec-nav-container {
+    padding: 0.5em;
+    margin: 0.5em;
+    background-color: #fff;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    color: #fff;
+}
+
+.sec-nav-inner {
+    background-color: #22223b;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    color: #fff;
+}
+
+.sec-nav-inner .nav-link:hover {
+    background-color: #fff;
+    color: #22223b;
+    border-radius: 10px;
+}
+
 /* Main content - home page  */
 .page-content {
     margin-top: 5%;
     
 }
 
-/* Category container */
-.category-container {
-    padding: 0.5em;
-    background-color: #fff;
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    color: #fff;
-    height: 88vh;
-    position: fixed;
-    width: 15.5%;
-}
 
-.category-header {
-    background-color: #22223b;
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    color: #fff;
-    height: 5vh;
-    margin: 0;
-}
-
-.catalogue-container {
-    background-color: #22223b;
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    color: #fff;
-}
-
-.catalogue-container .nav-link:hover {
-    background-color: #fff;
-    color: #22223b;
-    border-radius: 10px;
-}
-
-.catalogue-subcontainer {
-    background-color: #22223b;
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    color: #fff;
-    height: 38vh;
-}
 
 /* Page container */
 .home-page {
