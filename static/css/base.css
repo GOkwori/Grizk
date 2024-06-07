@@ -96,12 +96,24 @@ nav button {
     border-radius: 10px;
 }
 
-/* Main content - home page  */
-.page-content {
-    margin: 8.5% 0 0; 
+/* Site layout */
+
+#page-content {
+    margin: 0.5em;
 }
 
-/* Page container */
+.layout {
+    margin-top: 8.5%;
+    padding: 0.5em;
+    background-color: #fff;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    color: #22223b;
+}
+
+
+/* Home page  */
+
 .home-page {
     padding: 0.5em;
     background-color: #fff;
@@ -160,6 +172,12 @@ nav button {
     display: inline-flex;
     justify-content: space-evenly;
 }
+
+
+/* Product page */
+
+
+
 
 /* Media queries */
 
