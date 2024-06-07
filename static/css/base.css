@@ -98,11 +98,8 @@ nav button {
 
 /* Main content - home page  */
 .page-content {
-    margin-top: 5%;
-    
+    margin: 8.5% 0 0; 
 }
-
-
 
 /* Page container */
 .home-page {
@@ -115,7 +112,7 @@ nav button {
 
 /* Carousel container */
 .carousel-container img {
-    height: 500px;
+    height: 80vh;
 }
 
 /* Top deals container */
@@ -135,7 +132,7 @@ nav button {
     color: #22223b;
     width: 100%;
     display: inline-flex;
-    gap: 4em;
+    justify-content: space-evenly;
     text-align: center;
 }
 
