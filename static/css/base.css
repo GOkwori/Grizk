@@ -12,6 +12,10 @@ h3 {
     font-size: 1.4rem;
 }
 
+.sub-header {
+    font-size: 1.2rem;
+}
+
 /* Header container */
 .header-container {
     text-align: center;
@@ -93,7 +97,7 @@ nav button {
 .sec-nav-inner .nav-link:hover {
     background-color: #fff;
     color: #22223b;
-    border-radius: 10px;
+    text-decoration: underline;
 }
 
 /* Site layout */
@@ -163,7 +167,7 @@ nav button {
 }
 
 .amazing-offers-container {
-        padding: 0.5em;
+    padding: 0.5em;
     background-color: #22223b;
     backdrop-filter: blur(10px);
     border-radius: 10px;
@@ -175,9 +179,34 @@ nav button {
 
 
 /* Product page */
+.product-page {
+    padding: 0.5em;
+    background-color: #22223b;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    color: #fff;
+}
 
+hr {
+    border-color: #fff;
+    font-weight: bold;
+}
 
+.product-container {
+    padding: 0.5em;
+    margin: 0.5em;
+    background-color: #fff;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    color: #22223b;
+    display: inline-flex;
+    justify-content: space-evenly;
+}
 
+.card {
+    width: 18rem;
+    background-color:#22223b;
+}
 
 /* Media queries */
 
@@ -202,7 +231,7 @@ nav button {
     .content-container {
         transition: margin-top 0.3s ease-in-out;
     }
-    
+
     /* Header */
     h3 {
         font-size: 1rem;
