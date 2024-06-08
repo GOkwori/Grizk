@@ -128,7 +128,7 @@ nav button {
 
 /* Carousel container */
 .carousel-container img {
-    height: 80vh;
+    height: 83vh;
 }
 
 /* Top deals container */
@@ -203,10 +203,10 @@ hr {
     justify-content: space-evenly;
 }
 
-.card {
+/*.card {
     width: 18rem;
     background-color:#22223b;
-}
+}*/
 
 /* Media queries */
 
