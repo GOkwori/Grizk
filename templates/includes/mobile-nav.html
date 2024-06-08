@@ -1,5 +1,5 @@
 <!-- Mobile Navigation -->
-<div class="d-md-none mobile-header mt-2">
+<div class="d-sm-none mobile-header mt-2">
     <ul class="list-inline">
         <!-- Navigation Links -->
         <li class="py-1 ms-2 list-inline-item">
@@ -14,7 +14,7 @@
         <!-- Cart -->
         <li class="list-inline-item ms-1" id="cart">
             <a class="{% if grand_total %}text-info font-weight-bold{% else %}text{% endif %} nav-link py-2 px-2"
-                href="">
+                href="{% url 'view_cart' %}">
                 <div class="text-center d-flex">
                     <i class="fa-solid fa-cart-shopping me-1 mt-1"></i>
                     <p class="my-0">
