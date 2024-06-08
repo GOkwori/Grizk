@@ -55,6 +55,17 @@ nav button {
     color: #fff;
 }
 
+#shopping-btn {
+    background-color: #22223b;
+    color: #fff;
+}
+
+#shopping-btn:hover {
+    background-color: #fff;
+    color: #22223b;
+    border-color: #22223b;
+}
+
 
 /* Search bar */
 #nav-container input {
@@ -179,7 +190,8 @@ nav button {
 
 
 /* Product page */
-.product-page {
+.product-page, 
+.cart {
     padding: 0.5em;
     background-color: #22223b;
     backdrop-filter: blur(10px);
@@ -202,6 +214,22 @@ hr {
     display: inline-flex;
     justify-content: space-evenly;
 }
+
+.inner-container,
+.empty-container {
+    padding: 0.5em;
+    margin: 0.5em;
+    background-color: #fff;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    color: #22223b;
+}
+
+.inner-container img {
+    height: 400px;
+    width: 400px;
+}
+
 
 /*.card {
     width: 18rem;
