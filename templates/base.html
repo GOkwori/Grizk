@@ -75,10 +75,10 @@
 
                 <!-- Search container -->
                 <div class="col-12 col-lg-4">
-                    <form method="GET" action="">
+                    <form method="GET" action="{% url 'products' %}">
                         <div class="input-group">
                             <!-- Search Input -->
-                            <input type="text" class="form-control" name="query" placeholder="Search Grizk">
+                            <input type="text" class="form-control" name="q" placeholder="Search Grizk">
 
                             <!-- Search Button -->
                             <button class="btn btn-outline-secondary" title="Search" type="submit">
