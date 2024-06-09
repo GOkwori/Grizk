@@ -230,11 +230,26 @@ hr {
     width: 400px;
 }
 
+#product-item {
+    margin: 0;
+    background-color: #22223b;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    color: #fff;
+}
 
-/*.card {
-    width: 18rem;
-    background-color:#22223b;
-}*/
+#product-item .btn {
+    background-color: #fff;
+    color: #22223b;
+    border-color: #22223b;
+}
+
+#product-item .btn:hover {
+    background-color: #22223b;
+    color: #fff;
+    border-color: #fff;
+}
+
 
 /* Media queries */
 
