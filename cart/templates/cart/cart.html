@@ -18,8 +18,10 @@
             <div class="row mt-1 mb-2"></div>
             <div class="row">
                 <div class="col">
-                    {% if bag_items %}
-                    <div class="table-responsive rounded"></div>
+                    {% if cart_items %}
+                    <div class="table-responsive rounded">
+                        {{ cart_items }}
+                    </div>
                     {% else %}
                     <div class="empty-container text-center">
                         <p class="mb-2">Your basket is empty</p>
