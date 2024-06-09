@@ -4,7 +4,11 @@ html {
 
 /* Body */
 body {
-    background-color: #22223b;
+    background-color: #fff;
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Header */
@@ -27,7 +31,7 @@ h3 {
     backdrop-filter: blur(10px);
     border-radius: 10px;
     margin: 0.5em;
-
+    opacity: 0.9;
 }
 
 #nav-container a {
@@ -96,6 +100,7 @@ nav button {
     backdrop-filter: blur(10px);
     border-radius: 10px;
     color: #fff;
+    opacity: 0.9;
 }
 
 .sec-nav-inner {
@@ -135,6 +140,7 @@ nav button {
     backdrop-filter: blur(10px);
     border-radius: 10px;
     color: #22223b;
+    opacity: 0.9;
 }
 
 /* Carousel container */
@@ -149,6 +155,7 @@ nav button {
     backdrop-filter: blur(10px);
     border-radius: 10px;
     color: #fff;
+    opacity: 0.9;
 }
 
 .shop-category-container {
@@ -161,6 +168,7 @@ nav button {
     display: inline-flex;
     justify-content: space-evenly;
     text-align: center;
+    opacity: 0.9;
 }
 
 .shop-category-container img {
@@ -175,6 +183,7 @@ nav button {
     backdrop-filter: blur(10px);
     border-radius: 10px;
     color: #22223b;
+    opacity: 0.9;
 }
 
 .amazing-offers-container {
@@ -186,17 +195,19 @@ nav button {
     width: 100%;
     display: inline-flex;
     justify-content: space-evenly;
+    opacity: 0.9;
 }
 
 
 /* Product page */
-.product-page, 
+.product-page,
 .cart {
     padding: 0.5em;
     background-color: #22223b;
     backdrop-filter: blur(10px);
     border-radius: 10px;
     color: #fff;
+    opacity: 0.9;
 }
 
 hr {
@@ -213,8 +224,11 @@ hr {
     color: #22223b;
     display: inline-flex;
     justify-content: space-evenly;
+    opacity: 0.9;
 }
 
+
+/* Cart item */
 .inner-container,
 .empty-container {
     padding: 0.5em;
@@ -223,9 +237,11 @@ hr {
     backdrop-filter: blur(10px);
     border-radius: 10px;
     color: #22223b;
+    opacity: 0.9;
 }
 
-.inner-container img {
+
+.empty-container img {
     height: 400px;
     width: 400px;
 }
@@ -236,6 +252,7 @@ hr {
     backdrop-filter: blur(10px);
     border-radius: 10px;
     color: #fff;
+    opacity: 0.9;
 }
 
 #product-item .btn {

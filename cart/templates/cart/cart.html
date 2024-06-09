@@ -6,7 +6,7 @@
 {% block content %}
 
 <!-- Main Content -->
-<div class="container-fluid layout">
+<div class="container layout">
     <div class="cart">
         <div class="row">
             <div class="col text-center mt-1">
@@ -19,24 +19,79 @@
             <div class="row">
                 <div class="col">
                     {% if cart_items %}
-                    <div class="table-responsive rounded">
-                        {{ cart_items }}
+                    <div class="table-responsive">
+                        <table class="table table-sm table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Product Info</th>
+                                    <th scope="col"></th>
+                                    <th scope="col" class="text-center">Price</th>
+                                    <th scope="col" class="text-center">Quantity</th>
+                                    <th scope="col" class="text-end">Sub-total</th>
+                                </tr>
+                            </thead>
+
+                            {% for item in cart_items %}
+                            <tr>
+                                <td class="p-3 w-25">
+                                    <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+                                </td>
+                                <td class="py-3">
+                                    <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                                    <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+                                </td>
+                                <td class="py-3 text-center">
+                                    <p class="my-0">${{ item.product.price }}</p>
+                                </td>
+                                <td class="py-3 text-center">
+                                    <p class="my-0">{{ item.quantity }}</p>
+                                </td>
+                                <td class="py-3 text-end">
+                                    <p class="my-0">${{ item.product.price }}</p>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            <tr>
+                                <td colspan="5" class="pt-2 text-end">
+                                    <h6><strong>Cart Total: ${{ total|floatformat:2 }}</strong></h6>
+                                    <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
+                                    <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                                    {% if free_delivery_delta > 0 %}
+                                    <p class="mb-1 text-danger">
+                                        You could get free delivery by spending just <strong>£{{ free_delivery_delta
+                                            }}</strong> more!
+                                    </p>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" class="text-center">
+                                    <a href="{% url 'products' %}" class="btn" id="shopping-btn">
+                                        <i class="fa-solid fa-cart-shopping"></i> Continue Shopping
+                                    </a>
+                                    <a href="" class="btn" id="shopping-btn">
+                                        <i class="fas fa-lock"></i> Secure Checkout
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
-                    {% else %}
-                    <div class="empty-container text-center">
-                        <p class="mb-2">Your basket is empty</p>
-                        <div>
-                            <img src="{% static 'images/cart.jpg' %}" alt="an empty cart">
-                        </div>
-                        <a href="{% url 'products' %}" id="shopping-btn" class="btn" role="button">
-                            <i class="fa-solid fa-cart-shopping"></i> Continue Shopping
-                        </a>
-                    </div>
-                    {% endif %}
                 </div>
+                {% else %}
+                <div class="empty-container text-center">
+                    <p class="mb-2">Your basket is empty</p>
+                    <div>
+                        <img src="{% static 'images/cart.jpg' %}" alt="an empty cart">
+                    </div>
+                    <a href="{% url 'products' %}" id="shopping-btn" class="btn" role="button">
+                        <i class="fa-solid fa-cart-shopping"></i> Continue Shopping
+                    </a>
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>
+</div>
 </div>
 
 {% endblock %}
