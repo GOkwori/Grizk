@@ -29,16 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   };
 
-  // Handle real-time validation errors on the card element
-  var cardErrors = document.getElementById("card-errors");
-  elements.getElement("card").on("change", function (event) {
-    if (event.error) {
-      cardErrors.textContent = event.error.message;
-    } else {
-      cardErrors.textContent = "";
-    }
-  });
-
   // Create a card element and mount it to the HTML element with id "card-element"
   var card = elements.create("card", { style: style });
   card.mount("#card-element");
