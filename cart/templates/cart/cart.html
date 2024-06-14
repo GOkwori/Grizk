@@ -53,9 +53,9 @@
                             {% endfor %}
                             <tr>
                                 <td colspan="5" class="pt-2 text-end">
-                                    <h6><strong>Cart Total: ${{ total|floatformat:2 }}</strong></h6>
-                                    <h6 class="mt-4">Delivery: ${{ delivery|floatformat:2 }}</h6>
-                                    <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                                    <h6><strong>Cart Total: £{{ total|floatformat:2 }}</strong></h6>
+                                    <h6 class="mt-4">Delivery: £{{ delivery|floatformat:2 }}</h6>
+                                    <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
                                     {% if free_delivery_delta > 0 %}
                                     <p class="mb-1 text-danger">
                                         You could get free delivery by spending just <strong>£{{ free_delivery_delta }}</strong> more!
@@ -68,7 +68,7 @@
                                     <a href="{% url 'products' %}" class="btn" id="shopping-btn">
                                         <i class="fa-solid fa-cart-shopping"></i> Continue Shopping
                                     </a>
-                                    <a href="" class="btn" id="shopping-btn">
+                                    <a href="{% url 'checkout' %}" class="btn" id="shopping-btn">
                                         <i class="fas fa-lock"></i> Secure Checkout
                                     </a>
                                 </td>

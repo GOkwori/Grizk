@@ -16,4 +16,4 @@ def checkout(request):
         'order_form': order_form,
     }
 
-    return render(request, 'checkout/checkout.html')
+    return render(request, template, context)
