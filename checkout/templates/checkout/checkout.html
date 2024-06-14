@@ -9,7 +9,6 @@
 {% endblock %}
 
 {% block content %}
-<!-- Main Content -->
 <div class="container layout">
     <div class="cart">
         <div class="row">
@@ -97,12 +96,7 @@
                         </fieldset>
                         <fieldset class="px-3">
                             <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
-                            <!-- A Stripe card element will go here -->
-                            <div class="mb-3" id="card-element">
-
-                            </div>
-
-                            <!-- Used to display form errors -->
+                            <div class="mb-3" id="card-element"></div>
                             <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
                         </fieldset>
 
@@ -123,7 +117,7 @@
                                 <span class="icon">
                                     <i class="fas fa-exclamation-circle"></i>
                                 </span>
-                                <span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
+                                <span>Your card will be charged <strong>${{ grand_total | floatformat:2 }}</strong></span>
                             </p>
                         </div>
                     </form>
