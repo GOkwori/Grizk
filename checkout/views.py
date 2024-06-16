@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.conf import settings
 
 from .forms import OrderForm
-from .models import OrderLineItem, Order
+from .models import Order, OrderLineItem
 from products.models import Product
 from cart.contexts import cart_contents
 
@@ -19,6 +19,7 @@ def checkout(request):
 
         form_data = {
             'full_name': request.POST['full_name'],
+            'email': request.POST['email'],
             'phone_number': request.POST['phone_number'],
             'country': request.POST['country'],
             'postcode': request.POST['postcode'],
@@ -30,18 +31,28 @@ def checkout(request):
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save(commit=False)
-            order.stripe_pid = intent.id  # Save the Stripe PaymentIntent ID
-            order.original_cart = json.dumps(cart)
+            order.stripe_pid = None  # Placeholder for the stripe payment intent ID
+            order.original_cart = cart
             order.save()
             for item_id, item_data in cart.items():
                 try:
                     product = Product.objects.get(id=item_id)
-                    order_line_item = OrderLineItem(
-                        order=order,
-                        product=product,
-                        quantity=item_data,
-                    )
-                    order_line_item.save()
+                    if isinstance(item_data, int):
+                        order_line_item = OrderLineItem(
+                            order=order,
+                            product=product,
+                            quantity=item_data,
+                        )
+                        order_line_item.save()
+                    else:
+                        for size, quantity in item_data['items_by_size'].items():
+                            order_line_item = OrderLineItem(
+                                order=order,
+                                product=product,
+                                quantity=quantity,
+                                product_size=size,
+                            )
+                            order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
                         "One of the products in your cart wasn't found in our database. "
@@ -59,36 +70,40 @@ def checkout(request):
     else:
         cart = request.session.get('cart', {})
         if not cart:
-            messages.error(request, "Your cart is empty")
+            messages.error(
+                request, "There's nothing in your basket at the moment")
             return redirect(reverse('products'))
 
         current_cart = cart_contents(request)
         total = current_cart['grand_total']
         stripe_total = round(total * 100)
-
-        # Set the API key
         stripe.api_key = stripe_secret_key
 
-        # Create the PaymentIntent
-        intent = stripe.PaymentIntent.create(
-            amount=stripe_total,
-            currency=settings.STRIPE_CURRENCY,
-        )
+        try:
+            intent = stripe.PaymentIntent.create(
+                amount=stripe_total,
+                currency=settings.STRIPE_CURRENCY,  # Ensure currency is GBP
+            )
+            client_secret = intent.client_secret
+        except Exception as e:
+            messages.error(
+                request, 'There was an issue with Stripe. Please try again later.')
+            return redirect(reverse('view_cart'))
 
         order_form = OrderForm()
 
-        if not stripe_public_key:
-            messages.warning(request, 'Stripe public key is missing. \
-                Did you forget to set it in your environment?')
+    if not stripe_public_key:
+        messages.warning(request, 'Stripe public key is missing. \
+            Did you forget to set it in your environment?')
 
-        template = 'checkout/checkout.html'
-        context = {
-            'order_form': order_form,
-            'stripe_public_key': stripe_public_key,
-            'client_secret': intent.client_secret,
-        }
+    template = 'checkout/checkout.html'
+    context = {
+        'order_form': order_form,
+        'stripe_public_key': stripe_public_key,
+        'client_secret': client_secret,
+    }
 
-        return render(request, template, context)
+    return render(request, template, context)
 
 
 def checkout_success(request, order_reference):
@@ -97,9 +112,8 @@ def checkout_success(request, order_reference):
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_reference=order_reference)
-
     messages.success(request, f'Order successfully processed! \
-        Your order number is {order_reference}. A confirmation \
+        Your order reference is {order_reference}. A confirmation \
         email will be sent to {order.email}.')
 
     if 'cart' in request.session:

@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import os
+import dj_database_url
 import environ
 from pathlib import Path
 
@@ -85,7 +86,9 @@ TEMPLATES = [
                 'django.template.context_processors.media',  # new
                 'cart.contexts.cart_contents',  # new
             ],
-            'builtins': ['crispy_forms.templatetags.crispy_forms_tags', 'crispy_forms.templatetags.crispy_forms_field'],
+            'builtins': ['crispy_forms.templatetags.crispy_forms_tags',
+                         'crispy_forms.templatetags.crispy_forms_field'
+                         ],
         },
     },
 ]
