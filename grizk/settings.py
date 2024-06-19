@@ -14,21 +14,23 @@ import os
 import dj_database_url
 from pathlib import Path
 
+# Initialize environment variables
+env = environ.Env()
+environ.Env.read_env()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', '')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'your-default-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['ecommerce-grizk-01c2c622cc4d.herokuapp.com', 'localhost', ]
-
+ALLOWED_HOSTS = ['ecommerce-grizk-01c2c622cc4d.herokuapp.com', 'localhost']
 
 # Application definition
 
@@ -54,14 +56,13 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    "django.middleware.security.SecurityMiddleware",
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-    "django.contrib.sessions.middleware.SessionMiddleware",
-    "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
-    "django.contrib.auth.middleware.AuthenticationMiddleware",
-    "django.contrib.messages.middleware.MessageMiddleware",
-    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
 ]
 
@@ -87,9 +88,10 @@ TEMPLATES = [
                 'django.template.context_processors.media',
                 'cart.contexts.cart_contents',
             ],
-            'builtins': ['crispy_forms.templatetags.crispy_forms_tags',
-                         'crispy_forms.templatetags.crispy_forms_field'
-                         ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field'
+            ],
         },
     },
 ]
@@ -115,7 +117,6 @@ LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = "grizk.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 if 'DATABASE_URL' in os.environ:
@@ -129,7 +130,6 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -149,7 +149,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -161,13 +160,11 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
@@ -204,12 +201,9 @@ FREE_DELIVERY_THRESHOLD = 100
 STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'gbp'
 
-# Initialize environment variables
-env = environ.Env()
-
-STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY')
-STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
-STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+# Stripe Keys
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', 'y')
 DEFAULT_FROM_EMAIL = 'grizk@example.com'
 
 # Default primary key field type
