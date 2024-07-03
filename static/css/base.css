@@ -23,6 +23,7 @@ h3 {
 /* Header container */
 .header-container {
     text-align: center;
+    z-index: 11;
 }
 
 /* Navigation container */
@@ -85,6 +86,7 @@ nav button {
     background-color: #22223b;
     color: #fff;
     font-size: small;
+    z-index: 20;
 }
 
 #account-drop .dropdown-item:hover {
@@ -101,6 +103,7 @@ nav button {
     border-radius: 10px;
     color: #fff;
     opacity: 0.9;
+    z-index: 10;
 }
 
 .sec-nav-inner {
@@ -266,6 +269,14 @@ hr {
     color: #fff;
     border-color: #fff;
 }
+
+.toast-container {
+    position: fixed;
+    top: 70px;
+    right: 15px;
+    z-index: 99999;
+}
+
 
 
 /* Media queries */
