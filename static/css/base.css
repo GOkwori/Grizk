@@ -277,6 +277,12 @@ hr {
     z-index: 99999;
 }
 
+.cart-notification-wrapper {
+  height: 100px;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+}
 
 
 /* Media queries */
