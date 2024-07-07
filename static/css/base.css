@@ -285,6 +285,16 @@ hr {
 }
 
 
+select, 
+select option {
+    color: #000;
+}
+
+select:invalid,
+select option {
+    color: #aab7c4 !important;
+}
+
 /* Media queries */
 
 /*---------- Styling for screens with (max-width: 568px) ----------*/
