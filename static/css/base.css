@@ -295,6 +295,12 @@ select option {
     color: #aab7c4 !important;
 }
 
+/* Allauth Styling */
+
+#allauth-styling {
+    margin-top: 10%;
+}
+
 /* Media queries */
 
 /*---------- Styling for screens with (max-width: 568px) ----------*/
