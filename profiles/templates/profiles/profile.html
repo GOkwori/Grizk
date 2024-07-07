@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %} - Profile {% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container layout">
+    <div class="cart">
+        <div class="row">
+            <div class="col text-center mt-1">
+                <h2 class="sub-heading">My Profile</h2>
+                <hr class="mb-1">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
