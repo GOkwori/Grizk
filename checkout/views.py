@@ -5,6 +5,8 @@ from django.conf import settings
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 from products.models import Product
+from profiles.models import UserProfile
+from profiles.forms import UserProfileForm
 from cart.contexts import cart_contents
 
 import stripe
@@ -112,6 +114,26 @@ def checkout_success(request, order_reference):
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_reference=order_reference)
+
+    profile = UserProfile.objects.get(user=request.user)
+    # Attach the user's profile to the order
+    order.user_profile = profile
+    order.save()
+
+    if save_info:
+        profile_data = {
+            'default_phone_number': order.phone_number,
+            'default_street_address1': order.street_address1,
+            'default_street_address2': order.street_address2,
+            'default_town_or_city': order.town_or_city,
+            'default_county': order.county,
+            'default_postcode': order.postcode,
+            'default_country': order.country,
+        }
+        user_profile_form = UserProfileForm(profile_data, instance=profile)
+        if user_profile_form.is_valid():
+            user_profile_form.save()
+
     messages.success(request, f'Order successfully processed! \
         Your order reference is {order_reference}. A confirmation \
         email will be sent to {order.email}.')
