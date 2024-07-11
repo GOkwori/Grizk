@@ -161,6 +161,7 @@ environ.Env.read_env()
 STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY', default='')
 STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY', default='')
 STRIPE_WH_SECRET = env('STRIPE_WH_SECRET', default='')
+DEFAULT_FROM_EMAIL = 'grizk@example.com'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
