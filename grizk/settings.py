@@ -160,6 +160,7 @@ environ.Env.read_env()
 # Correcting the STRIPE_PUBLIC_KEY error
 STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY', default='')
 STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY', default='')
+STRIPE_WH_SECRET = env('STRIPE_WH_SECRET', default='')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
