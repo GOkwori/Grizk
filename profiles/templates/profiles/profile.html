@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 
-
 {% block title %} - Profile {% endblock %}
 
 {% block extra_css %}
@@ -26,47 +25,46 @@
                 {{ form|crispy }}
                 <button type="submit" class="btn btn-primary">Update Information</button>
             </form>
-
         </div>
         <div class="col-12 col-lg-6">
             <p class="text-muted">Order History</p>
             <div class="order-history table-responsive">
-                <thead>
-                    <tr>
-                        <th>Order Reference</th>
-                        <th>Date</th>
-                        <th>Items</th>
-                        <th>Order Total</th>
-                    </tr>
-                <tbody>
-                    {% for order in orders %}
-                    <tr>
-                        <td>
-                            <a href="{% url 'order_history'  order.order_reference %}"
-                                title="{{ order.order_reference }}">{{ order.order_reference|truncatechars:8}}</a>
-                        </td>
-                        <td>{{ order.date }}</td>
-                        <td>
-                            <ul class="list-unstyled">
-                                {% for item in order.lineitems.all %}
-                                <li>{{ item.product.name }} x {{ item.quantity }}</li>
-                                {% endfor %}
-                            </ul>
-                        </td>
-                        <td>£{{ order.order_total }}</td>
-                </tbody>
-                </thead>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Order Reference</th>
+                            <th>Date</th>
+                            <th>Items</th>
+                            <th>Order Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in orders %}
+                        <tr>
+                            <td>
+                                <a href="{% url 'order_history' order.order_reference %}"
+                                    title="{{ order.order_reference }}">{{ order.order_reference|truncatechars:8 }}</a>
+                            </td>
+                            <td>{{ order.date }}</td>
+                            <td>
+                                <ul class="list-unstyled">
+                                    {% for item in order.lineitems.all %}
+                                    <li>{{ item.product.name }} x {{ item.quantity }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                            <td>£{{ order.order_total }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
         </div>
-
     </div>
-
 </div>
-
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
 <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
-
 {% endblock %}
