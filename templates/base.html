@@ -61,8 +61,8 @@
 <body>
     <header class="header-container fixed-top" id="main-header">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light" id="nav-container">
-            <div class="container-fluid px-2 px-lg-3">
+        <nav class="row navbar navbar-expand-lg navbar-light pb-0" id="nav-container">
+            <div class="col container-fluid px-2 px-lg-3">
                 <a class="navbar-brand col-lg-4 d-flex justify-content-start" href="{% url 'home' %}">
                     <h2>
                         <img src="{% static 'images/grizk_logo.jpg' %}" alt="Logo"
@@ -154,8 +154,42 @@
                 </div>
             </div>
         </nav>
+        <nav class="row p-0 navbar navbar-expand-lg navbar-light" id="nav-container">
+            <div class="col sec-nav-container p-0">
+                <div class="sec-nav-inner">
+                    <ul class="list-inline m-0">
+                        <!-- Navigation Links -->
+                        <li class="list-inline-item ms-2 me-2">
+                            <a class="nav-link p-2" href="{% url 'products' %}"> <i class="fa-solid fa-bag-shopping me-1"></i> Products</a>
+                        </li>
+                        <li class="list-inline-item ms-2 me-2">
+                            <a class="nav-link p-2" href="#"><i class="fa-solid fa-plane-arrival me-1"></i>New
+                                Arrivals</a>
+                        </li>
+                        <li class="list-inline-item ms-2 me-2">
+                            <a class="nav-link p-2" href="#"><i class="fa-solid fa-fire me-1"></i>Best Selling</a>
+                        </li>
+                        <li class="list-inline-item ms-2 me-2">
+                            <a class="nav-link p-2" href="#"><i
+                                    class="fa-solid fa-headphones-simple me-1"></i>Accessories</a>
+                        </li>
+                        <li class="list-inline-item ms-2 me-2">
+                            <a class="nav-link p-2" href="#"><i class="fa-solid fa-laptop me-1"></i>Computing</a>
+                        </li>
+                        <li class="list-inline-item ms-2 me-2">
+                            <a class="nav-link p-2" href="#"><i class="fa-solid fa-tv me-1"></i>Electronics</a>
+                        </li>
+                        <li class="list-inline-item ms-2 me-2">
+                            <a class="nav-link p-2" href="#"><i class="fa-solid fa-gamepad me-1"></i>Gaming</a>
+                        </li>
+                        <li class="list-inline-item ms-2 me-2">
+                            <a class="nav-link p-2" href="#"><i class="fa-solid fa-mobile me-1"></i>Phones</a>
+                        </li>
+                    </ul>
+                </div>
+            </div> 
+        </nav>
         {% include 'includes/mobile-nav.html' %}
-        {% include 'includes/main-nav.html' %}
     </header>
 
     <div class="content-container" id="page-content">
