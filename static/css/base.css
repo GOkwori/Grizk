@@ -55,14 +55,19 @@ nav button {
 }
 
 #nav-container button {
+    background-color: #000;
+    border-color: #ff4500;
+    color: #ff4500;
+
+}
+
+#nav-container button:hover {
     background-color: #ff4500;
     border-color: #ff4500;
+    color: #000;
 
 }
 
-#nav-container button i {
-    color: #fff;
-}
 
 #shopping-btn {
     background-color: #ff4500;
@@ -108,9 +113,15 @@ nav button {
     text-decoration: underline;
 }
 
+#offcanvasWithBothOptions {
+    background-color: #000;
+    color: #ff4500;
+    opacity: 0.9;
+    width: auto;
+}
+
+
 /* Site layout */
-
-
 .layout {
     margin-top: 8.5%;
     padding: 0.5em;

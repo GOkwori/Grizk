@@ -45,7 +45,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="{% static 'js/base.js' %}"></script>
-    
+
     <!-- Stripe -->
     <script src="https://js.stripe.com/v3/"></script>
 
@@ -66,7 +66,7 @@
                 <a class="navbar-brand col-lg-4 d-flex justify-content-start" href="{% url 'home' %}">
                     <h2>
                         <i class="fa-regular fa-chess-knight"> Grizk</i>
-                        
+
                     </h2>
                 </a>
 
@@ -121,7 +121,8 @@
                                 <a href="{% url 'add_product' %}" class="dropdown-item"><i
                                         class="fa-solid fa-shield-halved  me-1 mt-1"></i>Admin Console</a>
                                 {% endif %}
-                                <a href="{% url 'profile' %}" class="dropdown-item"><i class="fa-solid fa-address-card me-2"></i>My
+                                <a href="{% url 'profile' %}" class="dropdown-item"><i
+                                        class="fa-solid fa-address-card me-2"></i>My
                                     Profile</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item"><i
                                         class="fa-solid fa-right-from-bracket  me-1 mt-1"></i>Logout</a>
@@ -153,13 +154,19 @@
                 </div>
             </div>
         </nav>
-        <nav class="row p-0 navbar navbar-expand-lg navbar-light" id="nav-container">
+        <nav class="row p-0 pb-2 navbar navbar-expand-lg navbar-light" id="nav-container">
             <div class="col sec-nav-container p-0">
-                <div class="sec-nav-inner">
+                <div class="sec-nav-inner d-inline">
                     <ul class="list-inline m-0">
                         <!-- Navigation Links -->
+                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i
+                                class="fas fa-bars" id="staticBackdropLabel"></i> Categories</button>
+
+
                         <li class="list-inline-item ms-2 me-2">
-                            <a class="nav-link p-2" href="{% url 'products' %}"> <i class="fa-solid fa-bag-shopping me-1"></i> Products</a>
+                            <a class="nav-link p-2" href="{% url 'products' %}"> <i
+                                    class="fa-solid fa-bag-shopping me-1"></i> Products</a>
                         </li>
                         <li class="list-inline-item ms-2 me-2">
                             <a class="nav-link p-2" href="#"><i class="fa-solid fa-plane-arrival me-1"></i>New
@@ -186,25 +193,43 @@
                         </li>
                     </ul>
                 </div>
-            </div> 
+            </div>
         </nav>
         {% include 'includes/mobile-nav.html' %}
     </header>
+
+    <!-- Offcanvas -->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+        aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header mb-0">
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"><strong>hello</strong></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+                <ul class="navbar-nav">
+                    <!-- Navigation Links -->
+                    <li class="nav-item">
+                        <a class="nav-link" href=#>Account Management</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <div class="content-container" id="page-content">
         {% if messages %}
         <div class="toast-container">
             {% for message in messages %}
             {% with message.level as level %}
-                {% if level == 40 %}
-                    {% include 'includes/toasts/toast_error.html' %}
-                {% elif level == 30 %}
-                    {% include 'includes/toasts/toast_warning.html' %}
-                {% elif level == 25 %}
-                    {% include 'includes/toasts/toast_success.html' %}
-                {% else %}
-                    {% include 'includes/toasts/toast_info.html' %}
-                {% endif %}
+            {% if level == 40 %}
+            {% include 'includes/toasts/toast_error.html' %}
+            {% elif level == 30 %}
+            {% include 'includes/toasts/toast_warning.html' %}
+            {% elif level == 25 %}
+            {% include 'includes/toasts/toast_success.html' %}
+            {% else %}
+            {% include 'includes/toasts/toast_info.html' %}
+            {% endif %}
             {% endwith %}
             {% endfor %}
         </div>
