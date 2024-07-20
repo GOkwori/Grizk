@@ -65,9 +65,8 @@
             <div class="col container-fluid px-2 px-lg-3">
                 <a class="navbar-brand col-lg-4 d-flex justify-content-start" href="{% url 'home' %}">
                     <h2>
-                        <img src="{% static 'images/grizk_logo.jpg' %}" alt="Logo"
-                            class="d-inline-block align-text-bottom">
-                        Grizk
+                        <i class="fa-regular fa-chess-knight"> Grizk</i>
+                        
                     </h2>
                 </a>
 
@@ -136,7 +135,7 @@
                         </li>
                         <!-- Cart -->
                         <li class="nav-item list-inline-item d-none d-md-block" id="cart">
-                            <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text{% endif %} nav-link"
+                            <a class="{% if grand_total %} font-weight-bold{% else %}text{% endif %} nav-link"
                                 href="{% url 'view_cart' %}">
                                 <div class="text-center d-flex">
                                     <i class="fa-solid fa-cart-shopping me-1 mt-1"></i>

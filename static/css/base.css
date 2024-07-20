@@ -4,13 +4,19 @@ html {
 
 /* Body */
 body {
-    background-color: #fff;
+    background-color: #000;
     background-size: cover;
     background-attachment: fixed;
     font-family: 'Roboto', sans-serif;
+    opacity: 0.9;
 }
 
 /* Header */
+
+h2 {
+    font-size: 1.6rem;
+}
+
 h3 {
     font-size: 1.4rem;
 }
@@ -104,16 +110,12 @@ nav button {
 
 /* Site layout */
 
-#page-content {
-    margin: 0.5em;
-}
 
 .layout {
     margin-top: 8.5%;
     padding: 0.5em;
     background-color: #fff;
     backdrop-filter: blur(10px);
-    border-radius: 10px;
     color: #22223b;
 }
 
