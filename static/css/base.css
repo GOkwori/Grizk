@@ -92,14 +92,14 @@ nav button {
 
 /* Nav-links dropdown */
 #account-drop .dropdown-item {
-    background-color: #22223b;
-    color: #fff;
+    background-color: #000;
+    color: #ff4500;
     font-size: small;
 }
 
 #account-drop .dropdown-item:hover {
-    background-color: #fff;
-    color: #22223b;
+    background-color: #ff4500;
+    color: #000;
 }
 
 /* Secondary navigation */
@@ -118,6 +118,15 @@ nav button {
     color: #ff4500;
     opacity: 0.9;
     width: auto;
+}
+
+.offcanvas a {
+    color: #ff4500;
+    text-decoration: none;
+}
+
+.offcanvas a:hover {
+    text-decoration: underline;
 }
 
 
