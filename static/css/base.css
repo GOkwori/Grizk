@@ -21,6 +21,16 @@ h3 {
     font-size: 1.4rem;
 }
 
+h4 {
+    font-size: 1.2rem;
+}
+
+hr {
+    border-color: #ff4500 !important;
+    font-weight: bold;
+}
+
+
 .sub-header {
     font-size: 1.2rem;
 }
@@ -90,6 +100,7 @@ nav button {
     color: #22223b;
 }
 
+
 /* Nav-links dropdown */
 #account-drop .dropdown-item {
     background-color: #000;
@@ -118,6 +129,7 @@ nav button {
     color: #ff4500;
     opacity: 0.9;
     width: auto;
+    font-size: 1rem;
 }
 
 .offcanvas a {
@@ -129,6 +141,25 @@ nav button {
     text-decoration: underline;
 }
 
+
+#cartOffcanvas {
+    background-color: #000;
+    color: #ff4500;
+    font-size: 0.8rem;
+}
+
+#cartOffcanvas .offcanvas-btn {
+    background-color: #ff4500;
+    border-color: #ff4500 !important;
+    color: #000;
+}
+
+#cartOffcanvas .offcanvas-btn:hover {
+    background-color: #000;
+    border-color: #ff4500;
+    color: #ff4500;
+    text-decoration: none;
+}
 
 /* Site layout */
 .layout {

@@ -1,0 +1,141 @@
+<nav class="row p-0 pb-2 navbar navbar-expand-lg navbar-light" id="nav-container">
+    <div class="col sec-nav-container p-0">
+        <div class="sec-nav-inner d-inline">
+            <ul class="list-inline m-0">
+                <!-- Navigation Links -->
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i
+                        class="fas fa-bars" id="staticBackdropLabel"></i> Categories</button>
+
+                <!-- Home -->
+                <li class="nav-item list-inline-item ms-2 me-2">
+                    <a class="nav-link active p-2" aria-current="page" href="{% url 'home' %}">
+                        <div class="text-center d-flex">
+                            <div>
+                                <i class="fa-solid fa-house me-1 mt-1"></i>
+                            </div>
+                            <p class="my-0">Home</p>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Account Dropdown -->
+                <li class="nav-item list-inline-item dropdown ms-2 me-2">
+                    <a class="nav-link p-2" href="#" id="user-options" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <div class="text-center d-flex">
+                            <div><i class="fa-solid fa-user me-1 mt-1"></i></div>
+                            <p class="my-0">Account</p>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu border-0" aria-labelledby="user-options" id="account-drop">
+                        {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                        <a href="{% url 'add_product' %}" class="dropdown-item"><i
+                                class="fa-solid fa-shield-halved  me-1 mt-1"></i>Admin Console</a>
+                        {% endif %}
+                        <a href="{% url 'profile' %}" class="dropdown-item"><i
+                                class="fa-solid fa-address-card me-2"></i>My
+                            Profile</a>
+                        <a href="{% url 'account_logout' %}" class="dropdown-item"><i
+                                class="fa-solid fa-right-from-bracket  me-1 mt-1"></i>Logout</a>
+                        {% else %}
+                        <a href="{% url 'account_signup' %}" class="dropdown-item"><i
+                                class="fa-solid fa-address-card  me-1 mt-1"></i>Register</a>
+                        <a href="{% url 'account_login' %}" class="dropdown-item"><i
+                                class="fa-solid fa-right-to-bracket  me-1 mt-1"></i>Login</a>
+                        {% endif %}
+                    </div>
+                </li>
+                <li class="list-inline-item ms-2 me-2">
+                    <a class="nav-link p-2" href="#"><i
+                            class="fa-solid fa-headphones-simple me-1"></i>Accessories</a>
+                </li>
+                <li class="list-inline-item ms-2 me-2">
+                    <a class="nav-link p-2" href="#"><i class="fa-solid fa-laptop me-1"></i>Computing</a>
+                </li>
+                <li class="list-inline-item ms-2 me-2">
+                    <a class="nav-link p-2" href="#"><i class="fa-solid fa-tv me-1"></i>Electronics</a>
+                </li>
+                <li class="list-inline-item ms-2 me-2">
+                    <a class="nav-link p-2" href="#"><i class="fa-solid fa-gamepad me-1"></i>Gaming</a>
+                </li>
+                <li class="list-inline-item ms-2 me-2">
+                    <a class="nav-link p-2" href="#"><i class="fa-solid fa-mobile me-1"></i>Phones</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Offcanvas for Categories -->
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+aria-labelledby="offcanvasWithBothOptionsLabel">
+<div class="offcanvas-header mb-0">
+    {% if request.user.is_authenticated %}
+        <h5 class="offcanvas-title mt-4" id="offcanvasWithBothOptionsLabel"><strong>Hello, {{ request.user.username|title }}</strong></h5>
+    {% else %}
+        <h5 class="offcanvas-title mt-4" id="offcanvasWithBothOptionsLabel"><strong>Hello, sign in</strong></h5>
+    {% endif %}
+    <button type="button" class="btn-close mt-4" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</div>
+<hr>
+<div class="offcanvas-body">
+    <ul class="navbar-nav">
+        <!-- Navigation Links -->
+        <li class="list-inline-item ms-2 me-2">
+            <a class="nav-link p-2" href="{% url 'products' %}"></a>
+        </li>
+
+       
+
+        <li>
+            <p class="d-inline-flex gap-1">
+                <a data-bs-toggle="collapse" data-bs-target=".multi-collapse" href="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2"><i class="fa-solid fa-bag-shopping me-1"></i>
+                    All Products</a>
+            </p>
+            <div class="row">
+                <div class="col">
+                    <div class="collapse multi-collapse" id="multiCollapseExample1">
+                        <div class="card card-body w-auto">
+                            <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                            <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="collapse multi-collapse" id="multiCollapseExample2">
+                        <div class="card card-body w-auto">
+                            <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
+                            <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <p class="d-inline-flex gap-1">
+                <a data-bs-toggle="collapse" data-bs-target=".multi-collapse" href="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2"><i class="fa-solid fa-bag-shopping me-1"></i>
+                    </a>
+            </p>
+            <div class="row">
+                <div class="col">
+                    <div class="collapse multi-collapse" id="multiCollapseExample3">
+                        <div class="card card-body">
+                            Some placeholder content for the first collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="collapse multi-collapse" id="multiCollapseExample4">
+                        <div class="card card-body">
+                            Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+</div>
