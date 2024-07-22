@@ -1,6 +1,5 @@
 {% load static %}
 
-
 <!doctype html>
 <html lang="en">
 
@@ -117,6 +116,9 @@
                 <p class="mb-0 p-2 bg-info shadow-sm text-black text-center">
                     Spend <strong>£{{ free_delivery_delta }}</strong> more to get free next day delivery!
                 </p>
+                <div class="progress my-2">
+                    <div class="progress-bar" role="progressbar" id="delivery-progress" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
                 {% endif %}
 
                 {% if cart_items %}
@@ -195,6 +197,13 @@
                     return new bootstrap.Toast(toastEl)
                 });
                 toastList.forEach(toast => toast.show());
+
+                // Calculate and update progress bar
+                var total = {{ total }};
+                var freeDeliveryDelta = {{ free_delivery_delta }};
+                var progress = (total / (total + freeDeliveryDelta)) * 100;
+                document.getElementById('delivery-progress').style.width = progress + '%';
+                document.getElementById('delivery-progress').innerText = progress.toFixed(0) + '%';
             });
         </script>
         {% endblock %}
