@@ -103,9 +103,9 @@
         aria-labelledby="cartOffcanvasLabel">
         <div class="offcanvas-header">
             {% if request.user.is_authenticated %}
-            <h5 class="offcanvas-title mt-4" id="cartOffcanvasLabel">{{ request.user.username|title }}'s Cart</h5>
+            <h5 class="offcanvas-title mt-4" id="cartOffcanvasLabel">{{ request.user.username|title }}'s Cart <i class="fa-solid fa-cart-shopping ms-2"></i></h5>
             {% else %}
-            <h5 class="offcanvas-title mt-4" id="cartOffcanvasLabel">Your Cart</h5>
+            <h5 class="offcanvas-title mt-4" id="cartOffcanvasLabel">Your Cart<i class="fa-solid fa-cart-shopping ms-2"></i></h5>
             {% endif %}
             <button type="button" class="btn-close mt-4" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
@@ -113,11 +113,11 @@
         <div class="offcanvas-body">
             <div class="container">
                 {% if free_delivery_delta > 0 %}
-                <p class="mb-0 p-2 bg-info shadow-sm text-black text-center">
+                <p class="mb-0 text-bg-light p-3 shadow-sm text-black text-center">
                     Spend <strong>£{{ free_delivery_delta }}</strong> more to get free next day delivery!
                 </p>
-                <div class="progress my-2">
-                    <div class="progress-bar" role="progressbar" id="delivery-progress" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress my-3">
+                    <div class="progress-bar progress-bar-custom" role="progressbar" id="delivery-progress" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 {% endif %}
 
@@ -203,7 +203,6 @@
                 var freeDeliveryDelta = {{ free_delivery_delta }};
                 var progress = (total / (total + freeDeliveryDelta)) * 100;
                 document.getElementById('delivery-progress').style.width = progress + '%';
-                document.getElementById('delivery-progress').innerText = progress.toFixed(0) + '%';
             });
         </script>
         {% endblock %}
