@@ -99,70 +99,96 @@
     </header>
 
     <!-- Offcanvas for Cart -->
-    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="cartOffcanvas"
-        aria-labelledby="cartOffcanvasLabel">
-        <div class="offcanvas-header">
-            {% if request.user.is_authenticated %}
-            <h5 class="offcanvas-title mt-4" id="cartOffcanvasLabel">{{ request.user.username|title }}'s Cart <i class="fa-solid fa-cart-shopping ms-2"></i></h5>
-            {% else %}
-            <h5 class="offcanvas-title mt-4" id="cartOffcanvasLabel">Your Cart<i class="fa-solid fa-cart-shopping ms-2"></i></h5>
-            {% endif %}
-            <button type="button" class="btn-close mt-4" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <hr>
-        <div class="offcanvas-body">
-            <div class="container">
-                {% if free_delivery_delta > 0 %}
-                <p class="mb-0 text-bg-light p-3 shadow-sm text-black text-center">
-                    Spend <strong>£{{ free_delivery_delta }}</strong> more to get free next day delivery!
-                </p>
-                <div class="progress my-3">
-                    <div class="progress-bar progress-bar-custom" role="progressbar" id="delivery-progress" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                {% endif %}
-
-                {% if cart_items %}
-                {% for item in cart_items %}
-                <div class="row">
-                    <div class="col-3 my-1">
-                        {% if item.product.image %}
-                        <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                        {% else %}
-                        <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
-                        {% endif %}
-                    </div>
-                    <div class="col-9">
-                        <p class="my-0">{{ item.product.name }}</p>
-                        <p class="my-0">£{{ item.product.price|floatformat:2 }}</p>
-                        <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
-                    </div>
-                </div>
-                {% endfor %}
-                <div class="mt-4">
-                    <div class="row">
-                        <div class="col-6">
-                            <p>Estimated total:</p>
-                        </div>
-                        <div class="col-6 text-end">
-                            <strong>£{{ total|floatformat:2 }}</strong>
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="col-6 text-center">
-                            <a href="{% url 'view_cart' %}" class="btn btn-outline-primary offcanvas-btn" role="button"> <i class="fa-solid fa-cart-shopping me-2"></i>View Cart</a>
-                        </div>
-                        <div class="col-6 text-center">
-                            <a href="{% url 'checkout' %}" class="btn btn-outline-primary offcanvas-btn" role="button"><i class="fa-solid fa-lock me-2"></i>Checkout</a>
-                        </div>
-                    </div>
-                    
-                </div>
-                {% else %}
-                <p>Your cart is empty.</p>
-                {% endif %}
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+    <div class="offcanvas-header">
+        {% if request.user.is_authenticated %}
+        <h5 class="offcanvas-title mt-4" id="cartOffcanvasLabel">{{ request.user.username|title }}'s Cart <i class="fa-solid fa-cart-shopping ms-2"></i></h5>
+        {% else %}
+        <h5 class="offcanvas-title mt-4" id="cartOffcanvasLabel">Your Cart<i class="fa-solid fa-cart-shopping ms-2"></i></h5>
+        {% endif %}
+        <button type="button" class="btn-close mt-4" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <hr>
+    <div class="offcanvas-body">
+        <div class="container">
+            {% if free_delivery_delta > 0 %}
+            <p class="mb-0 text-bg-light p-3 shadow-sm text-black text-center">
+                Spend <strong>£{{ free_delivery_delta }}</strong> more to get free next day delivery!
+            </p>
+            <div class="progress my-3">
+                <div class="progress-bar progress-bar-custom" role="progressbar" id="delivery-progress" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
+            {% endif %}
+
+            {% if cart_items %}
+            {% for item in cart_items %}
+            <div class="row">
+                <div class="col-3 my-1">
+                    {% if item.product.image %}
+                    <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                    {% else %}
+                    <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                    {% endif %}
+                </div>
+                <div class="col-9">
+                    <p class="my-0">{{ item.product.name }}</p>
+                    <p class="my-2">£{{ item.product.price|floatformat:2 }}</p>
+            
+                    <div class="row form-group mt-3">
+                        <div class="input-group col-3 ms-2" id="offcanvas-qty">
+                            <div class="input-group-prepend">
+                                <button type="button" class="decrement-qty btn me-2" data-item_id="{{ item.product.id }}"
+                                    id="decrement-qty_{{ item.product.id }}" onclick="updateQuantity(this, 'decrement')">
+                                    <span class="icon">
+                                        <i class="fas fa-minus"></i>
+                                    </span>
+                                </button>
+                            </div>
+                            <input class="form-control qty_input text-center" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99"
+                                data-item_id="{{ item.product.id }}" id="id_qty_{{ item.product.id }}" readonly>
+                            <div class="input-group-append">
+                                <button type="button" class="increment-qty btn ms-2" data-item_id="{{ item.product.id }}"
+                                    id="increment-qty_{{ item.product.id }}" onclick="updateQuantity(this, 'increment')">
+                                    <span class="icon">
+                                        <i class="fas fa-plus"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-3 ms-2 p-0">
+                            <button class="btn text-center" data-item_id="{{ item.product.id }}" onclick="removeFromCart(this)">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </div>                    
+                    </div>  
+                </div>
+            </div>
+            {% endfor %}
+            <div class="mt-4">
+                <div class="row">
+                    <div class="col-6">
+                        <p>Estimated total:</p>
+                    </div>
+                    <div class="col-6 text-end">
+                        <strong>£{{ total|floatformat:2 }}</strong>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-6 text-center">
+                        <a href="{% url 'view_cart' %}" class="btn btn-outline-primary offcanvas-btn" role="button"> <i class="fa-solid fa-cart-shopping me-2"></i>View Cart</a>
+                    </div>
+                    <div class="col-6 text-center">
+                        <a href="{% url 'checkout' %}" class="btn btn-outline-primary offcanvas-btn" role="button"><i class="fa-solid fa-lock me-2"></i>Checkout</a>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <p>Your cart is empty.</p>
+            {% endif %}
         </div>
     </div>
+</div>
+
 
     <div class="content-container" id="page-content">
         {% if messages %}
@@ -187,24 +213,6 @@
         {% endblock %}
 
         {% block content %}
-        {% endblock %}
-
-        {% block postloadjs %}
-        <script type="text/javascript">
-            document.addEventListener('DOMContentLoaded', function () {
-                var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-                var toastList = toastElList.map(function (toastEl) {
-                    return new bootstrap.Toast(toastEl)
-                });
-                toastList.forEach(toast => toast.show());
-
-                // Calculate and update progress bar
-                var total = {{ total }};
-                var freeDeliveryDelta = {{ free_delivery_delta }};
-                var progress = (total / (total + freeDeliveryDelta)) * 100;
-                document.getElementById('delivery-progress').style.width = progress + '%';
-            });
-        </script>
         {% endblock %}
     </div>
 </body>

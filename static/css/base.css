@@ -170,6 +170,34 @@ nav button {
     background-color: #ff4500; 
 }
 
+.input-group {
+    border: solid 1px #ff4500 !important;
+    border-radius: 10px;
+    width: auto;
+}
+
+.qty_input {
+    max-width: 60px;
+}
+
+
+#cartOffcanvas .input-group input {
+    border-color: #ff4500;
+}
+
+#cartOffcanvas .input-group button {
+    color: #ff4500;
+    border-color: #000;
+    margin: 0;
+}
+
+#cartOffcanvas .input-group .bin {
+    align-items: center;
+}
+
+
+
+
 /* Site layout */
 .layout {
     margin-top: 8.5%;
