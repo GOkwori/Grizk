@@ -8,6 +8,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
     font-family: 'Roboto', sans-serif;
+    color: #ff4500;
     opacity: 0.9;
 }
 
@@ -146,6 +147,7 @@ nav button {
     background-color: #000;
     color: #ff4500;
     font-size: 0.8rem;
+    width: 25%;
 }
 
 #cartOffcanvas .offcanvas-btn {
@@ -175,6 +177,9 @@ nav button {
     border-radius: 10px;
     width: auto;
 }
+
+
+
 
 .qty_input {
     max-width: 60px;
