@@ -143,7 +143,7 @@
                         <p class="my-2">£{{ item.product.price|floatformat:2 }}</p>
 
                         <div class="row form-group my-3" id="qty-group">
-                            <div class="input-group col-3" id="offcanvas-qty">
+                            <div class="input-group col-3 ms-2" id="offcanvas-qty">
                                 <div class="input-group-prepend">
                                     <button type="button" class="decrement-qty btn me-2"
                                         data-item_id="{{ item.product.id }}" id="decrement-qty_{{ item.product.id }}"
@@ -166,9 +166,12 @@
                                     </button>
                                 </div>
                             </div>
+                            <div class="col-2">
 
-                            <div class="col-3 p-0 ms-4 text-end">
-                                <button class="btn text-center" data-item_id="{{ item.product.id }}"
+                            </div>
+
+                            <div class="col-3 p-0 ms-1 text-end">
+                                <button class="btn remove-item text-center" data-item_id="{{ item.product.id }}"
                                     onclick="removeFromCart(this)">
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
@@ -203,8 +206,6 @@
             </div>
         </div>
     </div>
-
-
 
     <div class="content-container" id="page-content">
         {% if messages %}
