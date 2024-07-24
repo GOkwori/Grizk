@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.contrib import messages
 from products.models import Product
+import json
 
 
 def view_cart(request):
@@ -15,7 +16,7 @@ def add_to_cart(request, item_id):
     redirect_url = request.POST.get('redirect_url', reverse('view_cart'))
     cart = request.session.get('cart', {})
 
-    if item_id in list(cart.keys()):
+    if item_id in cart:
         cart[item_id] += quantity
         messages.success(
             request, f'Updated {product.name} quantity to {cart[item_id]}.')
@@ -50,12 +51,12 @@ def remove_from_cart(request, item_id):
     try:
         product = get_object_or_404(Product, pk=item_id)
         cart = request.session.get('cart', {})
-        cart.pop(item_id)
+        cart.pop(item_id, None)
 
         request.session['cart'] = cart
         messages.success(request, f'Removed {product.name} from your cart.')
-        return HttpResponse(status=200)
+        return HttpResponse(json.dumps({'success': True}), content_type="application/json")
 
     except Exception as e:
         messages.error(request, f'Error removing item: {e}')
-        return HttpResponse(status=500)
+        return HttpResponse(json.dumps({'success': False, 'error': str(e)}), content_type="application/json")
