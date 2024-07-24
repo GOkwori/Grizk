@@ -1,100 +1,146 @@
 {% extends "base.html" %}
 {% load static %}
+{% load cart_tools %}
 
-{% block title %} - Shopping Cart {% endblock %}
+{% block page_header %}
+    <div class="container layout">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
 
 {% block content %}
-
-<!-- Main Content -->
-<div class="container layout">
-    <div class="cart">
+    <div class="overlay"></div>
+    <div class="container mb-2">
         <div class="row">
-            <div class="col text-center mt-1">
-                <h2 class="sub-heading">Shopping Cart</h2>
-                <hr class="mb-1">
+            <div class="col">
+                <hr>
+                <h2 class="logo-font mb-4">Shopping Cart</h2>
+                <hr>
             </div>
         </div>
-        <div class="row inner-container">
-            <div class="row mt-1 mb-2"></div>
-            <div class="row">
-                <div class="col">
-                    {% if cart_items %}
-                    <div class="table-responsive">
+        {% if free_delivery_delta > 0 %}
+        <p class="mb-0 shadow-sm">
+        Buy <strong>£{{ free_delivery_delta }}</strong> more to get free next day delivery!
+        </p>
+        <div class="progress my-3">
+            <div class="progress-bar progress-bar-custom" role="progressbar" id="delivery-progress" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        {% endif %}
+        
+        <div id="cart-totals" data-total="{{ total|default:0 }}" data-threshold="{{ free_delivery_threshold|default:0 }}"></div>
+        <div class="row">
+            <div class="col">
+                {% if cart_items %}
+                    <div class="d-block d-md-none">
+                        <div class="row">
+                            <div class="col">
+                                {% include "cart/cart-total.html" %}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                {% include "cart/checkout-buttons.html" %}
+                                <p class="text-muted mb-5">A summary of your cart items is below</p>
+                            </div>
+                        </div>
+                        {% for item in cart_items %}
+                            <div class="row">
+                                <div class="col-12 col-sm-6 mb-2">
+                                    {% include "cart/product-image.html" %}
+                                </div>
+                                <div class="col-12 col-sm-6 mb-2">
+                                    {% include "cart/product-info.html" %}
+                                </div>
+                                <div class="col-12 col-sm-6 order-sm-last">
+                                    <p class="my-0">Price Each: ${{ item.product.price }}</p>
+                                    <p><strong>Subtotal: </strong>${{ item.product.price | calc_subtotal:item.quantity }}</p>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    {% include "cart/quantity-form.html" %}
+                                </div>
+                            </div>
+                            <div class="row"><div class="col"><hr></div></div>
+                        {% endfor %}
+                        <div class="btt-button shadow-sm rounded-0 border border-black">
+                            <a class="btt-link d-flex h-100">
+                                <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+                            </a>    
+                        </div>
+                    </div>
+                    <div class="table-responsive rounded d-none d-md-block">
                         <table class="table table-sm table-borderless">
-                            <thead>
+                            <thead class="text-black">
                                 <tr>
                                     <th scope="col">Product Info</th>
                                     <th scope="col"></th>
-                                    <th scope="col" class="text-center">Price</th>
-                                    <th scope="col" class="text-center">Quantity</th>
-                                    <th scope="col" class="text-end">Sub-total</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Qty</th>
+                                    <th scope="col">Subtotal</th>
                                 </tr>
                             </thead>
 
                             {% for item in cart_items %}
-                            <tr>
-                                <td class="p-3 w-25">
-                                    {% if item.product.image %}
-                                    <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                                    {% else %}
-                                    <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
-                                    {% endif %}
-                                </td>
-                                <td class="py-3">
-                                    <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                                    <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
-                                </td>
-                                <td class="py-3 text-center">
-                                    <p class="my-0">£{{ item.product.price }}</p>
-                                </td>
-                                <td class="py-3 text-center">
-                                    <p class="my-0">{{ item.quantity }}</p>
-                                </td>
-                                <td class="py-3 text-end">
-                                    <p class="my-0">£{{ item.product.price }}</p>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="p-3 w-25">
+                                        {% include "cart/product-image.html" %}
+                                    </td>
+                                    <td class="py-3">
+                                        {% include "cart/product-info.html" %}
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0">${{ item.product.price }}</p>
+                                    </td>
+                                    <td class="py-3 w-25">
+                                        {% include "cart/quantity-form.html" %}
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
+                                    </td>
+                                </tr>
                             {% endfor %}
                             <tr>
-                                <td colspan="5" class="pt-2 text-end">
-                                    <h6><strong>Cart Total: £{{ total|floatformat:2 }}</strong></h6>
-                                    <h6 class="mt-4">Delivery: £{{ delivery|floatformat:2 }}</h6>
-                                    <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
-                                    {% if free_delivery_delta > 0 %}
-                                    <p class="mb-1 text-danger">
-                                        You could get free delivery by spending just <strong>£{{ free_delivery_delta }}</strong> more!
-                                    </p>
-                                    {% endif %}
+                                <td colspan="5" class="pt-5 text-right">
+                                    {% include "cart/cart-total.html" %}
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="5" class="text-center">
-                                    <a href="{% url 'products' %}" class="btn" id="shopping-btn">
-                                        <i class="fa-solid fa-cart-shopping"></i> Continue Shopping
-                                    </a>
-                                    <a href="{% url 'checkout' %}" class="btn" id="shopping-btn">
-                                        <i class="fas fa-lock"></i> Secure Checkout
-                                    </a>
+                                <td colspan="5" class="text-right">
+                                    {% include "cart/checkout-buttons.html" %}
                                 </td>
                             </tr>
                         </table>
                     </div>
-                </div>
                 {% else %}
-                <div class="empty-container text-center">
-                    <p class="mb-2">Your basket is empty</p>
-                    <div>
-                        <img src="{% static 'images/cart.jpg' %}" alt="an empty cart">
-                    </div>
-                    <a href="{% url 'products' %}" id="shopping-btn" class="btn" role="button">
-                        <i class="fa-solid fa-cart-shopping"></i> Continue Shopping
+                    <p class="lead mb-5">Your Cart is empty.</p>
+                    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span class="text-uppercase">Keep Shopping</span>
                     </a>
-                </div>
                 {% endif %}
             </div>
         </div>
     </div>
-</div>
-</div>
+{% endblock %}
 
+{% block postloadjs %}
+{{ block.super }}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var totalElement = document.getElementById("cart-totals");
+        var progressElement = document.getElementById("delivery-progress");
+        if (totalElement && progressElement) {
+            var total = parseFloat(totalElement.getAttribute("data-total"));
+            var threshold = parseFloat(totalElement.getAttribute("data-threshold"));
+            if (!isNaN(total) && !isNaN(threshold) && threshold > 0) {
+                var progress = Math.min((total / threshold) * 100, 100);
+                progressElement.style.width = progress + "%";
+                progressElement.setAttribute('aria-valuenow', progress);
+            }
+        }
+    });
+</script>
 {% endblock %}

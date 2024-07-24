@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.contrib import messages
-
 from products.models import Product
 
 
@@ -11,13 +10,9 @@ def view_cart(request):
 
 def add_to_cart(request, item_id):
     """ Add a quantity of the specified product to the cart """
-    product = get_object_or_404(
-        Product, pk=item_id)  # Ensure the product is retrieved
-
-    # Default to 1 if quantity is not provided
+    product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity', 1))
-    redirect_url = request.POST.get('redirect_url', reverse(
-        'view_cart'))  # Default redirect to cart view
+    redirect_url = request.POST.get('redirect_url', reverse('view_cart'))
     cart = request.session.get('cart', {})
 
     if item_id in list(cart.keys()):
@@ -34,10 +29,7 @@ def add_to_cart(request, item_id):
 
 def adjust_cart(request, item_id):
     """Adjust the quantity of the specified product to the specified amount"""
-    product = get_object_or_404(
-        Product, pk=item_id)  # Ensure the product is retrieved
-
-    # Default to 1 if quantity is not provided
+    product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity', 1))
     cart = request.session.get('cart', {})
 
@@ -56,7 +48,6 @@ def adjust_cart(request, item_id):
 def remove_from_cart(request, item_id):
     """Remove the item from the shopping cart"""
     try:
-        # Ensure the product is retrieved
         product = get_object_or_404(Product, pk=item_id)
         cart = request.session.get('cart', {})
         cart.pop(item_id)

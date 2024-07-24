@@ -21,23 +21,48 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   toastList.forEach((toast) => toast.show());
 
-  // Progress Bar Calculation
-  var totalElement = document.getElementById("delivery-progress");
-  if (totalElement) {
+  updateProgressBar();
+});
+
+function updateProgressBar() {
+  var totalElement = document.getElementById("cart-totals");
+  var progressElement = document.getElementById("delivery-progress");
+  if (totalElement && progressElement) {
     var total = parseFloat(totalElement.getAttribute("data-total"));
-    var freeDeliveryDelta = parseFloat(
-      totalElement.getAttribute("data-free-delivery-delta")
-    );
-    if (
-      !isNaN(total) &&
-      !isNaN(freeDeliveryDelta) &&
-      total + freeDeliveryDelta !== 0
-    ) {
-      var progress = (total / (total + freeDeliveryDelta)) * 100;
-      totalElement.style.width = progress + "%";
+    var threshold = parseFloat(totalElement.getAttribute("data-threshold"));
+    if (!isNaN(total) && !isNaN(threshold) && threshold > 0) {
+      var progress = Math.min((total / threshold) * 100, 100);
+      progressElement.style.width = progress + "%";
+      progressElement.setAttribute("aria-valuenow", progress);
     }
   }
-});
+
+  // For the offcanvas cart
+  var offcanvasTotalElement = document.getElementById("offcanvas-cart-totals");
+  var offcanvasProgressElement = document.getElementById(
+    "offcanvas-delivery-progress"
+  );
+  if (offcanvasTotalElement && offcanvasProgressElement) {
+    var offcanvasTotal = parseFloat(
+      offcanvasTotalElement.getAttribute("data-total")
+    );
+    var offcanvasThreshold = parseFloat(
+      offcanvasTotalElement.getAttribute("data-threshold")
+    );
+    if (
+      !isNaN(offcanvasTotal) &&
+      !isNaN(offcanvasThreshold) &&
+      offcanvasThreshold > 0
+    ) {
+      var offcanvasProgress = Math.min(
+        (offcanvasTotal / offcanvasThreshold) * 100,
+        100
+      );
+      offcanvasProgressElement.style.width = offcanvasProgress + "%";
+      offcanvasProgressElement.setAttribute("aria-valuenow", offcanvasProgress);
+    }
+  }
+}
 
 function updateQuantity(button, action) {
   const input = button.closest(".input-group").querySelector(".qty_input");
@@ -72,6 +97,7 @@ function updateCart(itemId, newQuantity) {
     .then((data) => {
       if (data.success) {
         console.log("Cart updated successfully");
+        updateProgressBar(); // Update the progress bar after updating the cart
       }
     })
     .catch((error) => {
@@ -93,6 +119,7 @@ function removeFromCart(button) {
       if (data.success) {
         document.getElementById(`item_${itemId}`).remove();
         console.log("Item removed from cart successfully");
+        updateProgressBar(); // Update the progress bar after removing the item
       }
     })
     .catch((error) => {

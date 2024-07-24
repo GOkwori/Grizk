@@ -5,21 +5,37 @@ from products.models import Product
 
 
 def cart_contents(request):
-
     cart_items = []
     total = 0
     product_count = 0
     cart = request.session.get('cart', {})
 
-    for item_id, quantity in cart.items():
-        product = get_object_or_404(Product, pk=item_id)
-        total += quantity * product.price
-        product_count += quantity
-        cart_items.append({
-            'item_id': item_id,
-            'quantity': quantity,
-            'product': product,
-        })
+    product_ids = [item_id for item_id in cart.keys()]
+    products = Product.objects.filter(pk__in=product_ids)
+    product_map = {product.pk: product for product in products}
+
+    for item_id, item_data in cart.items():
+        product = product_map.get(int(item_id))
+        if not product:
+            continue
+        if isinstance(item_data, int):
+            total += item_data * product.price
+            product_count += item_data
+            cart_items.append({
+                'item_id': item_id,
+                'quantity': item_data,
+                'product': product,
+            })
+        else:
+            for size, quantity in item_data['items_by_size'].items():
+                total += quantity * product.price
+                product_count += quantity
+                cart_items.append({
+                    'item_id': item_id,
+                    'quantity': quantity,
+                    'product': product,
+                    'size': size,
+                })
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
