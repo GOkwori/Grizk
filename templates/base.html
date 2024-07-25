@@ -142,34 +142,45 @@
                         <p class="my-0">{{ item.product.name }}</p>
                         <p class="my-2">£{{ item.product.price|floatformat:2 }}</p>
 
-                        <div class="row form-group-sm my-3" id="qty-group">
-                            <div class="input-group col-3 ms-2" id="offcanvas-qty">
-                                <div class="input-group-prepend">
-                                    <button type="button" class="decrement-qty btn me-2"
-                                        data-item_id="{{ item.product.id }}" id="decrement-qty_{{ item.product.id }}"
-                                        onclick="updateQuantity(this, 'decrement')">
-                                        <span class="icon">
-                                            <i class="fas fa-minus"></i>
-                                        </span>
-                                    </button>
+                        <div class="row">
+                            <form class="form update-form" action="{% url 'adjust_cart' item.item_id %}" method="POST">
+                                {% csrf_token %}
+                                <div class="form-row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <div class="input-group col-3 ms-2" id="offcanvas-qty">
+                                                <div class="input-group-prepend">
+                                                    <button type="button" class="decrement-qty btn me-2"
+                                                        data-item_id="{{ item.item_id }}"
+                                                        id="decrement-qty_{{ item.item_id }}"
+                                                        onclick="updateQuantity(this, 'decrement')">
+                                                        <span class="icon">
+                                                            <i class="fas fa-minus"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                <input class="form-control qty_input" type="number" name="quantity"
+                                                    value="{{ item.quantity }}" min="1" max="99"
+                                                    data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}"
+                                                    readonly>
+                                                <div class="input-group-append">
+                                                    <button type="button" class="increment-qty btn ms-2"
+                                                        data-item_id="{{ item.item_id }}"
+                                                        id="increment-qty_{{ item.item_id }}"
+                                                        onclick="updateQuantity(this, 'increment')">
+                                                        <span class="icon">
+                                                            <i class="fas fa-plus"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <input class="qty_input form-control" type="number" name="quantity"
-                                    value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.product.id }}"
-                                    id="id_qty_{{ item.product.id }}" readonly>
-                                <div class="input-group-append">
-                                    <button type="button" class="increment-qty btn ms-2"
-                                        data-item_id="{{ item.product.id }}" id="increment-qty_{{ item.product.id }}"
-                                        onclick="updateQuantity(this, 'increment')">
-                                        <span class="icon">
-                                            <i class="fas fa-plus"></i>
-                                        </span>
-                                    </button>
-                                </div>
-                            </div>
+                            </form>
                             <div class="col-2"></div>
-
                             <div class="col-3 p-0 ms-1 text-end">
-                                <button class="btn remove-item text-center" data-item_id="{{ item.product.id }}"
+                                <button class="btn remove-item text-center" data-item_id="{{ item.item_id }}"
                                     onclick="removeFromCart(this)">
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
@@ -193,8 +204,8 @@
                                 <i class="fa-solid fa-cart-shopping me-2"></i>View Cart</a>
                         </div>
                         <div class="col-6 text-center">
-                            <a href="{% url 'checkout' %}" class="btn btn-outline-primary offcanvas-btn"
-                                role="button"><i class="fa-solid fa-lock me-2"></i>Checkout</a>
+                            <a href="{% url 'checkout' %}" class="btn btn-outline-primary offcanvas-btn" role="button"><i
+                                    class="fa-solid fa-lock me-2"></i>Checkout</a>
                         </div>
                     </div>
                 </div>
