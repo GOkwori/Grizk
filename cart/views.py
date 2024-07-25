@@ -1,28 +1,50 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.contrib import messages
+
 from products.models import Product
-import json
+
+# Create your views here.
 
 
 def view_cart(request):
-    """ A view to return the cart """
+    """ A view that renders the cart contents page """
+
     return render(request, 'cart/cart.html')
 
 
 def add_to_cart(request, item_id):
-    """ Add a quantity of the specified product to the cart """
+    """ Add a quantity of the specified product to the shopping cart """
+
     product = get_object_or_404(Product, pk=item_id)
-    quantity = int(request.POST.get('quantity', 1))
-    redirect_url = request.POST.get('redirect_url', reverse('view_cart'))
+    quantity = int(request.POST.get('quantity'))
+    redirect_url = request.POST.get('redirect_url')
+    colour = None
+    if 'product_colour' in request.POST:
+        colour = request.POST['product_colour']
     cart = request.session.get('cart', {})
 
-    if item_id in cart:
-        cart[item_id] += quantity
-        messages.success(
-            request, f'Updated {product.name} quantity to {cart[item_id]}.')
+    if colour:
+        if item_id in list(cart.keys()):
+            if colour in cart[item_id]['items_by_colour'].keys():
+                cart[item_id]['items_by_colour'][colour] += quantity
+                messages.success(
+                    request, f'Updated colour {colour.upper()} {product.name} quantity to {cart[item_id]["items_by_colour"][colour]}')
+            else:
+                cart[item_id]['items_by_colour'][colour] = quantity
+                messages.success(
+                    request, f'Added colour {colour.upper()} {product.name} to your cart')
+        else:
+            cart[item_id] = {'items_by_colour': {colour: quantity}}
+            messages.success(
+                request, f'Added colour {colour.upper()} {product.name} to your cart')
     else:
-        cart[item_id] = quantity
-        messages.success(request, f'Added {product.name} to your cart.')
+        if item_id in list(cart.keys()):
+            cart[item_id] += quantity
+            messages.success(
+                request, f'Updated {product.name} quantity to {cart[item_id]}')
+        else:
+            cart[item_id] = quantity
+            messages.success(request, f'Added {product.name} to your cart')
 
     request.session['cart'] = cart
     return redirect(redirect_url)
@@ -30,17 +52,33 @@ def add_to_cart(request, item_id):
 
 def adjust_cart(request, item_id):
     """Adjust the quantity of the specified product to the specified amount"""
+
     product = get_object_or_404(Product, pk=item_id)
-    quantity = int(request.POST.get('quantity', 1))
+    quantity = int(request.POST.get('quantity'))
+    colour = None
+    if 'product_colour' in request.POST:
+        colour = request.POST['product_colour']
     cart = request.session.get('cart', {})
 
-    if quantity > 0:
-        cart[item_id] = quantity
-        messages.success(
-            request, f'Updated {product.name} quantity to {cart[item_id]}.')
+    if colour:
+        if quantity > 0:
+            cart[item_id]['items_by_colour'][colour] = quantity
+            messages.success(
+                request, f'Updated colour {colour.upper()} {product.name} quantity to {cart[item_id]["items_by_colour"][colour]}')
+        else:
+            del cart[item_id]['items_by_colour'][colour]
+            if not cart[item_id]['items_by_colour']:
+                cart.pop(item_id)
+            messages.success(
+                request, f'Removed colour {colour.upper()} {product.name} from your cart')
     else:
-        cart.pop(item_id)
-        messages.success(request, f'Removed {product.name} from your cart.')
+        if quantity > 0:
+            cart[item_id] = quantity
+            messages.success(
+                request, f'Updated {product.name} quantity to {cart[item_id]}')
+        else:
+            cart.pop(item_id)
+            messages.success(request, f'Removed {product.name} from your cart')
 
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))
@@ -48,15 +86,27 @@ def adjust_cart(request, item_id):
 
 def remove_from_cart(request, item_id):
     """Remove the item from the shopping cart"""
+
     try:
         product = get_object_or_404(Product, pk=item_id)
+        colour = None
+        if 'product_colour' in request.POST:
+            colour = request.POST['product_colour']
         cart = request.session.get('cart', {})
-        cart.pop(item_id, None)
+
+        if colour:
+            del cart[item_id]['items_by_colour'][colour]
+            if not cart[item_id]['items_by_colour']:
+                cart.pop(item_id)
+            messages.success(
+                request, f'Removed colour {colour.upper()} {product.name} from your cart')
+        else:
+            cart.pop(item_id)
+            messages.success(request, f'Removed {product.name} from your cart')
 
         request.session['cart'] = cart
-        messages.success(request, f'Removed {product.name} from your cart.')
-        return HttpResponse(json.dumps({'success': True}), content_type="application/json")
+        return HttpResponse(status=200)
 
     except Exception as e:
         messages.error(request, f'Error removing item: {e}')
-        return HttpResponse(json.dumps({'success': False, 'error': str(e)}), content_type="application/json")
+        return HttpResponse(status=500)

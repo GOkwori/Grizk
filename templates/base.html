@@ -145,9 +145,9 @@
                         <div class="row">
                             <form class="form update-form" action="{% url 'adjust_cart' item.item_id %}" method="POST">
                                 {% csrf_token %}
-                                <div class="form-row">
+                                <div class="form-row mb-3 mt-3">
                                     <div class="col-12">
-                                        <div class="form-group">
+                                        <div class="form-group row">
                                             <div class="input-group col-3 ms-2" id="offcanvas-qty">
                                                 <div class="input-group-prepend">
                                                     <button type="button" class="decrement-qty btn me-2"
@@ -174,17 +174,17 @@
                                                     </button>
                                                 </div>
                                             </div>
+                                            <div class="col-2"></div>
+                                            <div class="col-3 text-end">
+                                                <button class="btn remove-item text-center" data-item_id="{{ item.item_id }}"
+                                                    onclick="removeFromCart(this)" type="button" id="bin-btn">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </form>
-                            <div class="col-2"></div>
-                            <div class="col-3 p-0 ms-1 text-end">
-                                <button class="btn remove-item text-center" data-item_id="{{ item.item_id }}"
-                                    onclick="removeFromCart(this)">
-                                    <i class="fa-solid fa-trash"></i>
-                                </button>
-                            </div>
+                            </form>                            
                         </div>
                     </div>
                 </div>
