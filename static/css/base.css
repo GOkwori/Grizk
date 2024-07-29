@@ -204,9 +204,8 @@ nav button {
 .layout {
     margin-top: 8.5%;
     padding: 0.5em;
-    background-color: #fff;
     backdrop-filter: blur(10px);
-    color: #22223b;
+    color: #ff4500;
 }
 
 
@@ -214,21 +213,23 @@ nav button {
 
 .home-page {
     padding: 0.5em;
-    background-color: #fff;
     backdrop-filter: blur(10px);
     border-radius: 10px;
-    color: #22223b;
+    color: #ff4500;
     opacity: 0.9;
 }
 
 /* Carousel container */
 .carousel-container img {
-    height: 83vh;
+    height: 70vh;
+    border-radius: 10px;
 }
 
 /* Top deals container */
 .top-deals {
     padding: 0.5em;
+    background-color: #fff;+
+    color: #000 !important;
     backdrop-filter: blur(10px);
     border-radius: 10px;
     opacity: 0.9;
@@ -238,7 +239,7 @@ nav button {
     padding: 0.5em;
     backdrop-filter: blur(10px);
     border-radius: 10px;
-    color: #22223b;
+    color: #ff4500;
     width: 100%;
     display: inline-flex;
     justify-content: space-evenly;
@@ -263,7 +264,6 @@ nav button {
     padding: 0.5em;
     backdrop-filter: blur(10px);
     border-radius: 10px;
-    color: #fff;
     width: 100%;
     display: inline-flex;
     justify-content: space-evenly;

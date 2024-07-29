@@ -7,45 +7,74 @@
 
 <!-- Main Content -->
 <div class="container-fluid layout">
-    
-    <!-- Carousel -->
-    <div class="carousel-container">
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{% static 'images/carousel/3.jpeg' %}" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="{% static 'images/carousel/2.jpg' %}" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="{% static 'images/carousel/1.jpg' %}" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="{% static 'images/carousel/4.jpg' %}" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="{% static 'images/carousel/5.jpeg' %}" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="{% static 'images/carousel/6.jpg' %}" class="d-block w-100" alt="...">
+    <div class="row">
+        <div class="col-3 px-0">
+            <div class="row">
+                <div class="amazing-offers-container row mt-0 pt-0 container-fluid">
+                    <div class="card col-sm-6 mb-2" style="width: 20rem;">
+                        <img src="{% static 'images/home-section/sonytv.jpg' %}" class="card-img-top" alt="iPhone">
+                        <div class="card-body">
+                            <p class="card-text">Screen saver! <br>
+                                <strong class="text-danger">Get 10% off</strong> all Sony OLED & QLED TVs
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <div class="row">
+                <div class="amazing-offers-container pt-0 row">
+                    <div class="card col-sm-6 mb-2" style="width: 20rem;">
+                        <img src="{% static 'images/home-section/soundsystem.jpg' %}" class="card-img-top" alt="iPhone">
+                        <div class="card-body">
+                            <p class="card-text">Shop iPhone 15 Pro & Pro Max now <br>
+                                <strong class="text-danger">Save up to £100.</strong> Now from £799. Incredible!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Carousel -->
+        <div class="carousel-container col-9">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/carousel/3.jpeg' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/carousel/2.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/carousel/1.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/carousel/4.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/carousel/5.jpeg' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/carousel/6.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
     </div>
 
     <!-- Top Deals -->
-    <div class="top-deals mt-2">
+    <div class="top-deals row mt-2">
         <h3 class="py-2 px-2 text-center"> <i class="fa-solid fa-fire-flame-curved me-1 ms-1"></i>Top Deals
         </h3>
         <div id="topDealsCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -92,6 +121,26 @@
                             <img src="{% static 'images/deals/washing-machine.jpg' %}" alt="Washing Machine">
                             <p>Washing Machines</p>
                         </div>
+                        <div class="shop-category-item me-2">
+                            <img src="{% static 'images/deals/speakers.jpg' %}" alt="Speakers">
+                            <p>Speakers</p>
+                        </div>
+                        <div class="shop-category-item me-2">
+                            <img src="{% static 'images/deals/washing-machine.jpg' %}" alt="Washing Machine">
+                            <p>Washing Machines</p>
+                        </div>
+                        <div class="shop-category-item me-2">
+                            <img src="{% static 'images/deals/speakers.jpg' %}" alt="Speakers">
+                            <p>Speakers</p>
+                        </div>
+                        <div class="shop-category-item me-2">
+                            <img src="{% static 'images/deals/washing-machine.jpg' %}" alt="Washing Machine">
+                            <p>Washing Machines</p>
+                        </div>
+                        <div class="shop-category-item me-2">
+                            <img src="{% static 'images/deals/washing-machine.jpg' %}" alt="Washing Machine">
+                            <p>Washing Machines</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -107,7 +156,7 @@
     </div>
 
     <!-- Amazing Offers -->
-    <div class="amazing-offers mt-2">
+    <div class="amazing-offers row mt-2">
         <h3 class="py-2 px-2 text-center"><i class="fa-solid fa-gifts ms-1 me-1"></i>Amazing Offers</h3>
         <div class="amazing-offers-container row">
             <div class="card col-sm-6 mb-2" style="width: 18rem;">
