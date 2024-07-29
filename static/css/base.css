@@ -228,11 +228,12 @@ nav button {
 /* Top deals container */
 .top-deals {
     padding: 0.5em;
-    background-color: #fff;+
+    background-color: #fff;
     color: #000 !important;
     backdrop-filter: blur(10px);
     border-radius: 10px;
     opacity: 0.9;
+    margin: 2%;
 }
 
 .shop-category-container {
