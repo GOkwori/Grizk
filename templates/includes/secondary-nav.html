@@ -3,42 +3,142 @@
         <div class="sec-nav-inner d-inline">
             <ul class="list-inline m-0">
                 <!-- Navigation Links -->
-                 
+
                 <div class="btn-group dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-trigger="hover" aria-expanded="false">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        data-bs-trigger="hover" aria-expanded="false">
                         <i class="fas fa-bars me-2"></i> All Products
                     </button>
                     <ul class="dropdown-menu" id="account-drop">
-            
-                            {% if request.user.is_authenticated %}
-                            <h5 class="dropdown-title my-0 ms-2"><strong>Hello, {{ request.user.username|title }}</strong></h5>
-                            {% else %}
-                            <h5 class="dropdown-title my-0 ms-2"><strong>Hello, sign in</strong></h5>
-                            {% endif %}
-                            <hr class="my-1">
-                  
+
+                        {% if request.user.is_authenticated %}
+                        <h5 class="dropdown-title my-0 ms-2"><strong>Hello, {{ request.user.username|title }}</strong>
+                        </h5>
+                        {% else %}
+                        <h5 class="dropdown-title my-0 ms-2"><strong>Hello, sign in</strong></h5>
+                        {% endif %}
+                        <hr class="my-1">
+
                         <li><a href="{% url 'products' %}" class="dropdown-item">All Products</a></li>
-                        <li><a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a></li>
-                        <li><a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a></li>
-                        <li><a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a></li>
+                        <li><a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                        </li>
+                        <li><a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By
+                                Rating</a></li>
+                        <li><a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By
+                                Category</a></li>
                     </ul>
                 </div>
-                
-                      
+
+                <li class="list-inline-item dropdown ms-2 me-2">
+                    <div class="btn-group dropdown">
+                        <a class="dropdown-toggle nav-link p-2" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-laptop me-1"></i>Computing
+                        </a>
+                        <ul class="dropdown-menu" id="account-drop">
+                            <li><a href="{% url 'products' %}?category=laptops_tablets"
+                                    class="dropdown-item p-2">Laptops & Tablets</a></li>
+                            <li><a href="{% url 'products' %}?category=desktop_computers"
+                                    class="dropdown-item p-2">Desktop Computers</a></li>
+                            <li><a href="{% url 'products' %}?category=monitors" class="dropdown-item p-2">Monitors</a>
+                            </li>
+                            <li><a href="{% url 'products' %}?category=chargers_adapters"
+                                    class="dropdown-item p-2">Chargers & Adapters</a></li>
+                            <li><a href="{% url 'products' %}?category=batteries"
+                                    class="dropdown-item p-2">Batteries</a></li>
+                            <li><a href="{% url 'products' %}?category=laptops_tablets,desktop_computers,monitors,chargers_adapters,batteries"
+                                    class="dropdown-item p-2">All Computing</a></li>
+                        </ul>
+                    </div>
+                </li>
+
                 <li class="list-inline-item ms-2 me-2">
-                    <a class="nav-link p-2" href="#"><i class="fa-solid fa-headphones-simple me-1"></i>Accessories</a>
+                    <div class="btn-group dropdown">
+                        <a class="dropdown-toggle nav-link p-2" data-bs-toggle="dropdown" data-bs-trigger="hover"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-gamepad me-1"></i>Gaming
+                        </a>
+                        <ul class="dropdown-menu" id="account-drop">
+                            <li><a href="{% url 'products' %}?category=video_games" class="dropdown-item p-2">Video
+                                    Games</a></li>
+                            <li><a href="{% url 'products' %}?category=playstation_5"
+                                    class="dropdown-item p-2">Playstation 5</a></li>
+                            <li><a href="{% url 'products' %}?category=playstation_4"
+                                    class="dropdown-item p-2">Playstation 4</a></li>
+                            <li><a href="{% url 'products' %}?category=xbox_series_x" class="dropdown-item p-2">Xbox
+                                    Series X</a></li>
+                            <li><a href="{% url 'products' %}?category=gaming_pc" class="dropdown-item p-2">Gaming
+                                    PC</a></li>
+                            <li><a href="{% url 'products' %}?category=video_games,playstation_5,playstation_4,xbox_series_x,gaming_pc"
+                                    class="dropdown-item p-2">All Gaming</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="list-inline-item ms-2 me-2">
+                    <div class="btn-group dropdown">
+                        <a class="dropdown-toggle nav-link p-2" data-bs-toggle="dropdown" data-bs-trigger="hover"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-headphones-simple me-1"></i>Headphones
+                        </a>
+                        <ul class="dropdown-menu" id="account-drop">
+                            <li><a href="{% url 'products' %}?category=earbud_headphones"
+                                    class="dropdown-item p-2">Earbud Headphones</a></li>
+                            <li><a href="{% url 'products' %}?category=over_ear_headphones"
+                                    class="dropdown-item p-2">Over-Ear Headphones</a></li>
+                            <li><a href="{% url 'products' %}?category=on_ear_headphones"
+                                    class="dropdown-item p-2">On-Ear Headphones</a></li>
+                            <li><a href="{% url 'products' %}?category=bluetooth_headphones"
+                                    class="dropdown-item p-2">Bluetooth Headphones</a></li>
+                            <li><a href="{% url 'products' %}?category=noise_cancelling_headphones"
+                                    class="dropdown-item p-2">Noise-cancelling Headphones</a></li>
+                            <li><a href="{% url 'products' %}?category=earbud_headphones,over_ear_headphones,on_ear_headphone,bluetooth_headphones,noise_cancelling_headphones"
+                                    class="dropdown-item p-2">All Headphones</a></li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="list-inline-item ms-2 me-2">
-                    <a class="nav-link p-2" href="#"><i class="fa-solid fa-laptop me-1"></i>Computing</a>
+                    <div class="btn-group dropdown">
+                        <a class="dropdown-toggle nav-link p-2" data-bs-toggle="dropdown" data-bs-trigger="hover"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-mobile me-1"></i>Smart Phones & Tablets
+                        </a>
+                        <ul class="dropdown-menu" id="account-drop">
+                            <li><a href="{% url 'products' %}?category=apple_iphone" class="dropdown-item p-2">Apple
+                                    Iphone</a></li>
+                            <li><a href="{% url 'products' %}?category=google_pixel" class="dropdown-item p-2">Google
+                                    Pixel</a></li>
+                            <li><a href="{% url 'products' %}?category=android_smartphone"
+                                    class="dropdown-item p-2">Android Smartphone</a></li>
+                            <li><a href="{% url 'products' %}?category=apple_ipad" class="dropdown-item p-2">Apple
+                                    Ipad</a></li>
+                            <li><a href="{% url 'products' %}?category=android_tablets"
+                                    class="dropdown-item p-2">Android Tablets</a></li>
+                            <li><a href="{% url 'products' %}?category=apple_iphone,google_pixel,android_smartphone,apple_ipad,android_tablets"
+                                    class="dropdown-item p-2">All Smart Phones & Tablets</a></li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="list-inline-item ms-2 me-2">
-                    <a class="nav-link p-2" href="#"><i class="fa-solid fa-tv me-1"></i>TV & Audio</a>
-                </li>
-                <li class="list-inline-item ms-2 me-2">
-                    <a class="nav-link p-2" href="#"><i class="fa-solid fa-gamepad me-1"></i>Gaming</a>
-                </li>
-                <li class="list-inline-item ms-2 me-2">
-                    <a class="nav-link p-2" href="#"><i class="fa-solid fa-mobile me-1"></i>Phones</a>
+                    <div class="btn-group dropdown">
+                        <a class="dropdown-toggle nav-link p-2" data-bs-toggle="dropdown" data-bs-trigger="hover"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-tv me-1"></i>TV & Audio
+                        </a>
+                        <ul class="dropdown-menu" id="account-drop">
+                            <li><a href="{% url 'products' %}?category=televisions"
+                                    class="dropdown-item p-2">Televions</a></li>
+                            <li><a href="{% url 'products' %}?category=home_theater_systems"
+                                    class="dropdown-item p-2">Home Theater Systems</a></li>
+                            <li><a href="{% url 'products' %}?category=sound_systems" class="dropdown-item p-2">Sound
+                                    Systems</a></li>
+                            <li><a href="{% url 'products' %}?category=sub_woofers" class="dropdown-item p-2">Sub
+                                    Woofers</a></li>
+                            <li><a href="{% url 'products' %}?category=sound_boosters" class="dropdown-item p-2">Sound
+                                    Boosters</a></li>
+                            <li><a href="{% url 'products' %}?category=televisions,home_theater_systems,sound_systems,sub_woofers,sound_boosters"
+                                    class="dropdown-item p-2">All TV & Audio</a></li>
+                        </ul>
+                    </div>
                 </li>
                 <!-- Account Dropdown -->
                 <li class="nav-item list-inline-item dropdown ms-2 me-2">
