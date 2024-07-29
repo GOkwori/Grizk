@@ -128,22 +128,6 @@ nav button {
     text-decoration: underline;
 }
 
-#offcanvasWithBothOptions {
-    background-color: #000;
-    color: #ff4500;
-    width: auto;
-    font-size: 1rem;
-}
-
-.offcanvas a {
-    color: #ff4500;
-    text-decoration: none;
-}
-
-.offcanvas a:hover {
-    text-decoration: underline;
-}
-
 
 #cartOffcanvas {
     background-color: #000;

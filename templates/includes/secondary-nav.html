@@ -3,9 +3,30 @@
         <div class="sec-nav-inner d-inline">
             <ul class="list-inline m-0">
                 <!-- Navigation Links -->
-                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-                aria-controls="offcanvasWithBothOptions"><i class="fas fa-bars" id="staticBackdropLabel"></i> Categories</button>
-                                
+                 
+                <div class="btn-group dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-trigger="hover" aria-expanded="false">
+                        <i class="fas fa-bag-shopping me-2"></i> All Products
+                    </button>
+                    <ul class="dropdown-menu" id="account-drop">
+            
+                            {% if request.user.is_authenticated %}
+                            <h5 class="dropdown-title my-0 ms-2"><strong>Hello, {{ request.user.username|title }}</strong></h5>
+                            {% else %}
+                            <h5 class="dropdown-title my-0 ms-2"><strong>Hello, sign in</strong></h5>
+                            {% endif %}
+                            <hr class="my-1">
+                  
+                        <li><a href="{% url 'products' %}" class="dropdown-item">All Products</a></li>
+                        <li><a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a></li>
+                        <li><a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a></li>
+                        <li><a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a></li>
+                    </ul>
+                </div>
+                
+                
+
+
                 <!-- Home -->
                 <li class="nav-item list-inline-item ms-2 me-2">
                     <a class="nav-link active p-2" aria-current="page" href="{% url 'home' %}">
@@ -65,5 +86,3 @@
         </div>
     </div>
 </nav>
-
-{% include 'includes/offcanvas-categories.html' %}
