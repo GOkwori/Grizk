@@ -186,7 +186,6 @@ nav button {
 
 }
 
-
 #bin-btn {
     background-color: #000;
     color: #ff4500;
@@ -208,8 +207,24 @@ nav button {
     color: #ff4500;
 }
 
+section {
+    padding: 0.5em;
+    margin: 0 1%;
+}
+
 
 /* Home page  */
+
+#promo-container {
+    height: 70vh;
+    
+}
+
+#promo-container .card {
+   height: 49%;
+   width: auto;
+    
+}
 
 .home-page {
     padding: 0.5em;
