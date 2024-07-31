@@ -12,9 +12,8 @@
             <div class="col-2" id="promo-container">
                 <div class="card col-sm-6 mb-3">
                     <img src="{% static 'images/home-section/sonytv.jpg' %}" class="card-img-top" alt="television">
-                    <div class="card-body">
-                        <p class="card-text">Screen saver! <br>
-                            <strong class="text-danger">Get 10% off</strong> all Sony OLED & QLED TVs
+                    <div class="card-body text-center">
+                        <p class="card-text">Discover the latest gadgets & tech at unbeatable prices!
                         </p>
                     </div>
                 </div>
@@ -22,9 +21,12 @@
                 <div class="card col-sm-6">
                     <img src="{% static 'images/home-section/soundsystem.jpg' %}" class="card-img-top" alt="sound system">
                     <div class="card-body">
-                        <p class="card-text">Shop electronics <br>
-                            <strong class="text-danger">Save up to £50.</strong> Now from £199. Incredible!
-                        </p>
+                        <div id="explore-panel" class="text-left">
+                            <div class="text-center">
+                                <a href="{% url 'products' %}" class="btn btn-outline-primary offcanvas-btn" role="button">
+                                    <i class="fa-solid fa-cart-shopping me-2"></i>Explore Now!</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -63,7 +65,6 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-            </div>
         </div>
     </section>
 

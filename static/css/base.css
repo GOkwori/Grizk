@@ -223,6 +223,10 @@ section {
 #promo-container .card {
    height: 49%;
    width: auto;
+   background-color: #000;
+   border:solid 2px #ff4500;
+   color: #ff4500;
+   font-size: 1.2rem;
     
 }
 
@@ -240,12 +244,31 @@ section {
     border-radius: 10px;
 }
 
+
+#explore-panel .btn {
+    background-color: #ff4500;
+    color: #000;
+    font-size: 1.4rem;
+    font: bolder;
+    border-color: #ff4500;
+    margin-top: 4%;   
+}
+
+#explore-panel .btn:hover {
+    background-color: #000;
+    color: #ff4500;
+    border-color: #ff4500;
+    transition: ease-in-out 0.3s;
+    
+}
+
+
 /* Top deals container */
 .top-deals {
     color: #ff4500;
     backdrop-filter: blur(10px);
     border-radius: 10px;
-    margin-top: 1%;
+    margin-top: 0.5%;
 }
 
 #topDealsCarousel {
@@ -262,6 +285,7 @@ section {
 .top-deals p {
     font-size: 1rem;
     margin-top: 0.5em;
+    color: #000;
 }
 
 .shop-category-container {
