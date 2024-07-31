@@ -242,13 +242,26 @@ section {
 
 /* Top deals container */
 .top-deals {
-    padding: 0.5em;
+    color: #ff4500;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    margin-top: 1%;
+}
+
+#topDealsCarousel {
     background-color: #fff;
-    color: #000 !important;
     backdrop-filter: blur(10px);
     border-radius: 10px;
     opacity: 0.9;
-    margin: 2%;
+}
+
+.top-deals h2 {
+    font-size: 1.8rem;
+}
+
+.top-deals p {
+    font-size: 1rem;
+    margin-top: 0.5em;
 }
 
 .shop-category-container {
@@ -274,6 +287,10 @@ section {
     backdrop-filter: blur(10px);
     border-radius: 10px;
     opacity: 0.9;
+}
+
+.amazing-offers h2 {
+    font-size: 1.8rem;
 }
 
 .amazing-offers-container {
