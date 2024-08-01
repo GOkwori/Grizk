@@ -135,6 +135,42 @@ nav button {
 }
 
 
+/* Toast */
+
+.toast-container {
+    position: fixed;
+    top: 82px;
+    right: 20px;
+    z-index: 99999;
+    border-radius: 10px;
+}
+
+
+.toast-body #toast-btn {
+    background-color: #000;
+    color: #ff4500;
+    border: #ff4500 solid 1px !important;
+}
+
+.toast-body #toast-btn:hover {
+    background-color: #ff4500;
+    color: #000;
+}
+
+.toast-header {
+    background-color: #ff4500;
+    color: #000;
+    opacity: 0.9;
+}
+
+.toast-body {
+    background-color: #000;
+    color: #ff4500;
+    opacity: 0.9;
+}
+
+
+
 /* Custom styling for dropdown menus */
 .custom-dropdown {
     background-color: #000;
@@ -439,12 +475,6 @@ hr {
     border-color: #fff;
 }
 
-.toast-container {
-    position: fixed;
-    top: 82px;
-    right: 8px;
-    z-index: 99999;
-}
 
 .cart-notification-wrapper {
   height: 100px;
