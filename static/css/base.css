@@ -140,14 +140,14 @@ nav button {
 
 /* Custom styling for dropdown menus */
 .custom-dropdown {
-    background-color: #000; /* Light gray background */
-    border: 1px solid #ff4500; /* Light gray border */
+    background-color: #000;
+    border: 1px solid #ff4500; 
     opacity: 0.9;
     font-size: 1rem;
 }
 
 .custom-dropdown .dropdown-item {
-    color: #212529; /* Dark text color */
+    color: #212529; 
 }
 
 .custom-dropdown .dropdown-item:hover {
@@ -156,8 +156,8 @@ nav button {
 }
 
 .custom-dropdown .dropdown-title {
-    color: #ff4500; /* Dark text color */
-    padding: 1rem; /* Padding for title */
+    color: #ff4500; 
+    padding: 1rem; 
 }
 
 
