@@ -241,6 +241,69 @@
         {% block content %}
         {% endblock %}
     </div>
+
+    <!-- Footer -->
+<footer class="py-4">
+    <div class="container-fluid text-center">
+        <div class="row my-2">
+            <div class="col-4"></div>
+            <div class="col-4 subscribe-panel text-center">
+                <h5 class="sub-text">Subscribe to our Weekly Newsletter for exciting offers...</h5>
+                <hr>
+                <form action="#" method="post">
+                    {% csrf_token %}
+                    <div class="input-group subcribe-bar mb-4">
+                        <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+                        <button class="btn" type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row footer-nav">
+            <div class="col-md-3">
+                <h5>Grizk...</h5>
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'home' %}" class="text-white"><i class="fas fa-home me-2"></i>Home</a></li>
+                    <li><a href="{% url 'products' %}" class="text-white"><i class="fas fa-boxes me-2"></i>Products</a></li>
+                    <li><a href="{% url 'view_cart' %}" class="text-white"><i class="fas fa-shopping-cart me-2"></i>Cart</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5>Customer Service</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white"><i class="fas fa-question-circle me-2"></i>Help & FAQs</a></li>
+                    <li><a href="#" class="text-white"><i class="fas fa-shipping-fast me-2"></i>Shipping</a></li>
+                    <li><a href="#" class="text-white"><i class="fas fa-envelope me-2"></i>Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5>About Us</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white"><i class="fas fa-info-circle me-2"></i>Our Story</a></li>
+                    <li><a href="#" class="text-white"><i class="fas fa-briefcase me-2"></i>Careers</a></li>
+                    <li><a href="#" class="text-white"><i class="fas fa-blog me-2"></i>Blog</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5>Follow Us</h5>
+                <ul class="list-unstyled">
+                    <li><a href="https://www.facebook.com/" class="text-white" target="_blank"><i class="fab fa-facebook-f me-2"></i> Facebook</a></li>
+                    <li><a href="https://twitter.com/Georgeminto" class="text-white" target="_blank"><i class="fab fa-twitter me-2"></i> Twitter</a></li>
+                    <li><a href="https://www.instagram.com/" class="text-white" target="_blank"><i class="fab fa-instagram me-2"></i> Instagram</a></li>
+                    <li><a href="https://github.com/GOkwori" class="text-white" target="_blank"><i class="fa-brands fa-square-github me-2"></i> Github</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 Grizk Electronics. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
 </body>
 
 </html>
