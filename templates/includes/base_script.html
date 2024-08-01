@@ -1,0 +1,12 @@
+<script>
+    $(document).ready(function() {
+        $(".nav-item.dropdown, .list-inline-item.dropdown").on({
+            mouseenter: function () {
+                $(this).find(".dropdown-menu").addClass("show");
+            },
+            mouseleave: function () {
+                $(this).find(".dropdown-menu").removeClass("show");
+            },
+        });
+    });
+</script>
