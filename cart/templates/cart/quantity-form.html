@@ -13,7 +13,7 @@
                                 </span>
                             </button>
                         </div>
-                        <input class="form-control qty_input w-auto text-center" type="number" name="quantity" value="{{ item.quantity }}"
+                        <input class="form-control qty_input text-center small" type="number" name="quantity" value="{{ item.quantity }}"
                             min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}" readonly>
                         <div class="input-group-append">
                             <button type="button" class="increment-qty btn" data-item_id="{{ item.item_id }}"
