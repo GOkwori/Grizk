@@ -1,0 +1,23 @@
+<script>
+    // Update quantity on click
+    $('.update-link').click(function (e) {
+        var form = $(this).closest('.update-form');
+        var qtyInput = form.find('input[name="quantity"]');
+        qtyInput.val(form.closest('tr').find('.qty_input').val());
+        form.submit();
+    });
+
+    // Remove item and reload on click
+    $('.remove-item').click(function (e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var colour = $(this).data('product-colour');
+        var url = `/cart/remove/${itemId}/`;
+        var data = { 'csrfmiddlewaretoken': csrfToken, 'product_colour': colour };
+
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+    });
+</script>

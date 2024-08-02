@@ -109,14 +109,13 @@
                                 <p class="my-0 text-center">£{{ item.product.price|calc_subtotal:item.quantity }}</p>
                             </td>
                             <td class="p-3">
-                                <button class="btn remove-item text-center" data-item_id="{{ item.item_id }}"
-                                    onclick="removeFromCart(this)" type="button" id="bin-btn">
+                                <button class="btn update-link text-center" type="button" id="bin-btn">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </button>
                             </td>
                             <td class="p-3">
-                                <button class="btn remove-item text-center" data-item_id="{{ item.item_id }}"
-                                    onclick="removeFromCart(this)" type="button" id="bin-btn">
+                                <button class="btn remove-item text-center" id="remove_{{ item.item_id }}"
+                                    data-product-colour="{{ item.colour }}" type="button" id="bin-btn">
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
                             </td>
@@ -129,20 +128,26 @@
                 <div class="card bg-black text-orange" style="width: 18rem;" id="cart-card">
                     <img src="{% static 'images/cart-img.jpg' %}" class="card-img-top h-25" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Order summary</h5>
+                        <h5 class="card-title">Order summary</h5>
                     </div>
                     <ul class="list-group list-group-flush text-orange" id="card-body">
-                      <li class="list-group-item bg-black"><h6>Cart Total: <span class="float-end">£{{ total|floatformat:2 }}</span></h6></li>
-                      <li class="list-group-item bg-black"><h6>Delivery: <span class="float-end">£{{ delivery|floatformat:2 }}</span></h6></li>
-                      <li class="list-group-item bg-black"><h4><strong>Estimated Total: <span class="float-end">£{{ grand_total|floatformat:2 }}</span></h4></li>
+                        <li class="list-group-item bg-black">
+                            <h6>Cart Total: <span class="float-end">£{{ total|floatformat:2 }}</span></h6>
+                        </li>
+                        <li class="list-group-item bg-black">
+                            <h6>Delivery: <span class="float-end">£{{ delivery|floatformat:2 }}</span></h6>
+                        </li>
+                        <li class="list-group-item bg-black">
+                            <h4><strong>Estimated Total: <span class="float-end">£{{ grand_total|floatformat:2 }}</span>
+                            </h4>
+                        </li>
                     </ul>
                     <div class="card-body text-center">
                         <a href="{% url 'checkout' %}" class="btn btn-outline-primary" role="button">
                             <i class="fas fa-lock me-2"></i>Secure Checkout
                         </a>
                     </div>
-                  </div>
-
+                </div>
             </div>
             <div class="shopping-link">
                 <a href="{% url 'products' %}" class="btn p-0">
@@ -161,4 +166,9 @@
 </div>
 </section>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'cart/includes/quantity_update.html' %}
 {% endblock %}
