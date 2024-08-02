@@ -3,16 +3,16 @@
 {% load cart_tools %}
 
 {% block page_header %}
-    <div class="container layout">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container layout">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container mb-2">
+<div class="container mb-2">
+    <section>
         <div class="row">
             <div class="col">
                 <hr>
@@ -20,158 +20,145 @@
                 <hr>
             </div>
         </div>
-        {% if free_delivery_delta > 0 %}
-        <p class="mb-0 shadow-sm">
-        Buy <strong>£{{ free_delivery_delta }}</strong> more to get free next day delivery!
-        </p>
-        <div class="progress my-3">
-            <div class="progress-bar progress-bar-custom" role="progressbar" id="delivery-progress" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-        {% endif %}
-        
-        <div id="cart-totals" data-total="{{ total|default:0 }}" data-threshold="{{ free_delivery_threshold|default:0 }}"></div>
+
         <div class="row">
-            <div class="col">
-                {% if cart_items %}
-                    <div class="d-block d-md-none">
-                        <div class="row">
-                            <div class="col">
-                                {% include "cart/cart-total.html" %}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                {% include "cart/checkout-buttons.html" %}
-                                <p class="text-muted mb-5">A summary of your cart items is below</p>
-                            </div>
-                        </div>
-                        {% for item in cart_items %}
-                            <div class="row">
-                                <div class="col-12 col-sm-6 mb-2">
-                                    {% include "cart/product-image.html" %}
-                                </div>
-                                <div class="col-12 col-sm-6 mb-2">
-                                    {% include "cart/product-info.html" %}
-                                </div>
-                                <div class="col-12 col-sm-6 order-sm-last">
-                                    <p class="my-0">Price Each: £{{ item.product.price }}</p>
-                                    <p><strong>Subtotal: </strong>£{{ item.product.price|calc_subtotal:item.quantity }}</p>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    {% include "cart/quantity-form.html" %}
-                                </div>
-                            </div>
-                            <div class="row"><div class="col"><hr></div></div>
-                        {% endfor %}
-                        <div class="btt-button shadow-sm rounded-0 border border-black">
-                            <a class="btt-link d-flex h-100">
-                                <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-                            </a>    
-                        </div>
-                    </div>
-                    <div class="table-responsive rounded d-none d-md-block">
-                        <table class="table table-sm table-borderless">
-                            <thead class="text-black">
-                                <tr>
-                                    <th scope="col">Product Info</th>
-                                    <th scope="col"></th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Qty</th>
-                                    <th scope="col">Subtotal</th>
-                                </tr>
-                            </thead>
-
-                            {% for item in cart_items %}
-                                <tr>
-                                    <td class="p-3 w-25">
-                                        {% include "cart/product-image.html" %}
-                                    </td>
-                                    <td class="py-3">
-                                        {% include "cart/product-info.html" %}
-                                    </td>
-                                    <td class="py-3">
-                                        <p class="my-0">£{{ item.product.price }}</p>
-                                    </td>
-                                    <td class="py-3 w-25">
-                                        {% include "cart/quantity-form.html" %}
-                                    </td>
-                                    <td class="py-3">
-                                        <p class="my-0">£{{ item.product.price|calc_subtotal:item.quantity }}</p>
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                            <tr>
-                                <td colspan="5" class="pt-5 text-right">
-                                    {% include "cart/cart-total.html" %}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="5" class="text-right">
-                                    {% include "cart/checkout-buttons.html" %}
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                {% else %}
-                    <p class="lead mb-5">Your Cart is empty.</p>
-                    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                        <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
-                        </span>
-                        <span class="text-uppercase">Keep Shopping</span>
-                    </a>
+            <div class="col-9">
+                {% if free_delivery_delta > 0 %}
+                <p class="mb-0 shadow-sm">
+                    Buy <strong>£{{ free_delivery_delta }}</strong> more to get free next day delivery!
+                </p>
+                <div class="progress my-3">
+                    <div class="progress-bar progress-bar-custom" role="progressbar" id="delivery-progress"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
                 {% endif %}
-            </div>
-        </div>
-    </div>
-{% endblock %}
+                <div id="cart-totals" data-total="{{ total|default:0 }}"
+                    data-threshold="{{ free_delivery_threshold|default:0 }}">
+                </div>
 
-
-
-
-
-<div class="row">
-    <form class="form update-form" action="{% url 'adjust_cart' item.item_id %}" method="POST">
-        {% csrf_token %}
-        <div class="form-row mb-3 mt-3">
-            <div class="col-12">
-                <div class="form-group row">
-                    <div class="input-group col-3 ms-2" id="offcanvas-qty">
-                        <div class="input-group-prepend">
-                            <button type="button" class="decrement-qty btn me-2"
-                                data-item_id="{{ item.item_id }}"
-                                id="decrement-qty_{{ item.item_id }}"
-                                onclick="updateQuantity(this, 'decrement')">
-                                <span class="icon">
-                                    <i class="fas fa-minus"></i>
-                                </span>
-                            </button>
-                        </div>
-                        <input class="form-control qty_input" type="number" name="quantity"
-                            value="{{ item.quantity }}" min="1" max="99"
-                            data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}"
-                            readonly>
-                        <div class="input-group-append">
-                            <button type="button" class="increment-qty btn ms-2"
-                                data-item_id="{{ item.item_id }}"
-                                id="increment-qty_{{ item.item_id }}"
-                                onclick="updateQuantity(this, 'increment')">
-                                <span class="icon">
-                                    <i class="fas fa-plus"></i>
-                                </span>
-                            </button>
+                {% if cart_items %}
+                <div class="d-block d-md-none">
+                    <div class="row">
+                        <div class="col">
+                            {% include "cart/cart-total.html" %}
                         </div>
                     </div>
-                    <div class="col-2"></div>
-                    <div class="col-3 text-end">
-                        <button class="btn remove-item text-center"
-                            data-item_id="{{ item.item_id }}" onclick="removeFromCart(this)"
-                            type="button" id="bin-btn">
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
+                    <div class="row">
+                        <div class="col">
+                            {% include "cart/checkout-buttons.html" %}
+                            <p class="text-muted mb-5">A summary of your cart items is below</p>
+                        </div>
+                    </div>
+                    {% for item in cart_items %}
+                    <div class="row">
+                        <div class="col-12 col-sm-6 mb-2">
+                            {% include "cart/product-image.html" %}
+                        </div>
+                        <div class="col-12 col-sm-6 mb-2">
+                            {% include "cart/product-info.html" %}
+                        </div>
+                        <div class="col-12 col-sm-6 order-sm-last">
+                            <p class="my-0">Price Each: £{{ item.product.price }}</p>
+                            <p><strong>Subtotal: </strong>£{{ item.product.price|calc_subtotal:item.quantity }}</p>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            {% include "cart/quantity-form.html" %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <hr>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="btt-button shadow-sm rounded-0 border border-black">
+                        <a class="btt-link d-flex h-100">
+                            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+                        </a>
                     </div>
                 </div>
+                <div class="table-responsive rounded d-none d-md-block">
+                    <table class="table table-sm table-borderless table-dark table-striped table align-middle">
+                        <thead class="text-black">
+                            <tr>
+                                <th scope="col" class="p-3">Product</th>
+                                <th scope="col" class="p-3"></th>
+                                <th scope="col" class="p-3 text-center">Price</th>
+                                <th scope="col" class="p-3 text-center">Quantity</th>
+                                <th scope="col" class="p-3 text-center">Sub-total</th>
+                                <th scope="col" class="p-3">Update</th>
+                                <th scope="col" class="p-3">Clear</th>
+                            </tr>
+                        </thead>
+
+                        {% for item in cart_items %}
+                        <tr>
+                            <td class="p-3 w-25">
+                                {% include "cart/product-image.html" %}
+                            </td>
+                            <td class="p-3 w-25">
+                                {% include "cart/product-info.html" %}
+                            </td>
+                            <td class="p-3">
+                                <p class="my-0">£{{ item.product.price }}</p>
+                            </td>
+                            <td class="p-3 w-25">
+                                {% include "cart/quantity-form.html" %}
+                            </td>
+                            <td class="p-3 w-25">
+                                <p class="my-0 text-center">£{{ item.product.price|calc_subtotal:item.quantity }}</p>
+                            </td>
+                            <td class="p-3">
+                                <button class="btn remove-item text-center" data-item_id="{{ item.item_id }}"
+                                    onclick="removeFromCart(this)" type="button" id="bin-btn">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </button>
+                            </td>
+                            <td class="p-3">
+                                <button class="btn remove-item text-center" data-item_id="{{ item.item_id }}"
+                                    onclick="removeFromCart(this)" type="button" id="bin-btn">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
             </div>
+            <div class="col-3">
+                <div class="card bg-black text-orange" style="width: 18rem;" id="cart-card">
+                    <img src="{% static 'images/cart-img.jpg' %}" class="card-img-top h-25" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Order summary</h5>
+                    </div>
+                    <ul class="list-group list-group-flush text-orange" id="card-body">
+                      <li class="list-group-item bg-black"><h6>Cart Total: <span class="float-end">£{{ total|floatformat:2 }}</span></h6></li>
+                      <li class="list-group-item bg-black"><h6>Delivery: <span class="float-end">£{{ delivery|floatformat:2 }}</span></h6></li>
+                      <li class="list-group-item bg-black"><h4><strong>Estimated Total: <span class="float-end">£{{ grand_total|floatformat:2 }}</span></h4></li>
+                    </ul>
+                    <div class="card-body text-center">
+                        <a href="{% url 'checkout' %}" class="btn btn-outline-primary" role="button">
+                            <i class="fas fa-lock me-2"></i>Secure Checkout
+                        </a>
+                    </div>
+                  </div>
+
+            </div>
+            <div class="shopping-link">
+                <a href="{% url 'products' %}" class="btn p-0">
+                    <i class="fas fa-chevron-left"></i> Continue Shopping
+                </a>
+            </div>
+            {% else %}
+            <p class="mb-5">Your Cart is empty.</p>
+            <div class="shopping-link">
+                <a href="{% url 'products' %}" class="btn p-0">
+                    <i class="fas fa-chevron-left"></i> Continue Shopping
+                </a>
+            </div>
+            {% endif %}
         </div>
-    </form>
 </div>
+</section>
+</div>
+{% endblock %}
