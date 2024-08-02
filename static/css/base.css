@@ -275,7 +275,7 @@ nav button {
 
 #bin-btn:hover {
     background-color: #ff4500;
-    color: #000;
+    color: #000 !important;
 }
 
 
@@ -483,18 +483,12 @@ table #offcanvas-qty {
     background-color: #000 !important;
 }
 
-table #offcanvas-qty i:hover {
-    background-color: #ff4500 !important;
-}
 
 
 table button {
     color: #ff4500 !important;
 }
 
-table button:hover {
-    color: #000 !important;
-}
 
 .table-dark th,
     .table-dark td,
