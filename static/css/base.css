@@ -174,13 +174,13 @@ nav button {
 /* Custom styling for dropdown menus */
 .custom-dropdown {
     background-color: #000;
-    border: 1px solid #ff4500; 
+    border: 1px solid #ff4500;
     opacity: 0.9;
     font-size: 1rem;
 }
 
 .custom-dropdown .dropdown-item {
-    color: #212529; 
+    color: #212529;
 }
 
 .custom-dropdown .dropdown-item:hover {
@@ -189,8 +189,8 @@ nav button {
 }
 
 .custom-dropdown .dropdown-title {
-    color: #ff4500; 
-    padding: 1rem; 
+    color: #ff4500;
+    padding: 1rem;
 }
 
 
@@ -206,7 +206,7 @@ nav button {
 }
 
 
-#cart button{
+#cart button {
     border: #ff4500 solid 1px;
 }
 
@@ -236,7 +236,7 @@ nav button {
 }
 
 .progress-bar-custom {
-    background-color: #ff4500; 
+    background-color: #ff4500;
 }
 
 .input-group {
@@ -297,17 +297,17 @@ section {
 
 #promo-container {
     height: 70vh;
-    
+
 }
 
 #promo-container .card {
-   height: 49%;
-   width: auto;
-   background-color: #af0f0f25;
-   border:solid 2px #ff4500;
-   color: #ff4500;
-   font-size: 1rem;
-    
+    height: 49%;
+    width: auto;
+    background-color: #af0f0f25;
+    border: solid 2px #ff4500;
+    color: #ff4500;
+    font-size: 1rem;
+
 }
 
 .home-page {
@@ -331,14 +331,14 @@ section {
     font-size: 1.2rem;
     font: bolder;
     border-color: #ff4500;
-    margin-top: 4%;   
+    margin-top: 4%;
 }
 
 #explore-panel .btn:hover {
     background-color: #ff4500;
     color: #000;
     border-color: #000;
-       
+
 }
 
 
@@ -423,16 +423,17 @@ hr {
     font-weight: bold;
 }
 
-.product-container {
-    padding: 0.5em;
-    margin: 0.5em;
-    background-color: #fff;
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    color: #22223b;
-    display: inline-flex;
-    justify-content: space-evenly;
+/* Product container */
+#product-card {
+    background-color: #000;
+    color: #ff4500;
     opacity: 0.9;
+   
+}
+
+
+#product-btn {
+    color: #ff4500;
 }
 
 
@@ -492,11 +493,11 @@ table button {
 
 
 .table-dark th,
-    .table-dark td,
-    .table-dark thead th {
-        background-color: #000;
-        color: #ff4500; 
-    }
+.table-dark td,
+.table-dark thead th {
+    background-color: #000;
+    color: #ff4500;
+}
 
 
 .empty-container img {
@@ -527,14 +528,14 @@ table button {
 
 
 .cart-notification-wrapper {
-  height: 100px;
-  overflow-x: hidden;
-  overflow-y: auto;
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
 
 }
 
 
-select, 
+select,
 select option {
     color: #000;
 }
