@@ -445,6 +445,17 @@ hr {
     width: auto;
 }
 
+#product-update-btn {
+    background-color: #ff4500;
+    color: #000;
+    border: #ff4500 solid 1px;
+}
+
+#product-update-btn:hover {
+    background-color: #000;
+    color: #ff4500;
+    border: #ff4500 solid 1px;
+}
 
 /* Cart item */
 .inner-container,
