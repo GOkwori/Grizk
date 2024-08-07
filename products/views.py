@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.http import HttpResponseForbidden
 
 from .models import Product, Category
 from .forms import ProductForm
@@ -142,3 +143,16 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+@login_required
+def admin_dashboard(request):
+    """ A view to return the admin dashboard """
+
+    if not request.user.is_superuser:
+        return HttpResponseForbidden(
+            "You do not have permission to "
+            "access this page."
+        )
+
+    return render(request, 'products/admin_dashboard.html')
