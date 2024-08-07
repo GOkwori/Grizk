@@ -1,28 +1,39 @@
 <div class="row">
-    <form class="form update-form" action="{% url 'adjust_cart' item.item_id %}" method="POST">
+    <form class="form update-form" action="{% url 'adjust_cart' item.item_id %}"
+        method="POST">
         {% csrf_token %}
         <div class="form-row mb-3 mt-3">
             <div class="col-12">
                 <div class="form-group row">
                     <div class="input-group col-3 ms-2" id="offcanvas-qty">
                         <div class="input-group-prepend">
-                            <button type="button" class="decrement-qty btn" data-item_id="{{ item.item_id }}"
-                                id="decrement-qty_{{ item.item_id }}" onclick="updateQuantity(this, 'decrement')">
+                            <button type="button" class="decrement-qty btn"
+                                data-item_id="{{ item.item_id }}"
+                                id="decrement-qty_{{ item.item_id }}"
+                                onclick="updateQuantity(this, 'decrement')">
                                 <span class="icon">
                                     <i class="fas fa-minus"></i>
                                 </span>
                             </button>
                         </div>
-                        <input class="form-control qty_input text-center small" type="number" name="quantity" value="{{ item.quantity }}"
-                            min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}" readonly>
+                        <input class="form-control qty_input text-center small"
+                            type="number" name="quantity" value="{{ item.quantity }}"
+                            min="1" max="99" data-item_id="{{ item.item_id }}"
+                            id="id_qty_{{ item.item_id }}" readonly>
                         <div class="input-group-append">
-                            <button type="button" class="increment-qty btn" data-item_id="{{ item.item_id }}"
-                                id="increment-qty_{{ item.item_id }}" onclick="updateQuantity(this, 'increment')">
+                            <button type="button" class="increment-qty btn"
+                                data-item_id="{{ item.item_id }}"
+                                id="increment-qty_{{ item.item_id }}"
+                                onclick="updateQuantity(this, 'increment')">
                                 <span class="icon">
                                     <i class="fas fa-plus"></i>
                                 </span>
                             </button>
                         </div>
+                        {% if item.product.has_colours %}
+                        <input type="hidden" name="product_colour"
+                            value="{{ item.colour }}">
+                        {% endif %}
                     </div>
                 </div>
             </div>

@@ -109,7 +109,7 @@
                                 <p class="my-0 text-center">£{{ item.product.price|calc_subtotal:item.quantity }}</p>
                             </td>
                             <td class="p-3">
-                                <button class="btn update-link text-center" type="button" id="bin-btn">
+                                <button class="btn update-link text-center" type="button" id="update-btn">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </button>
                             </td>
@@ -172,3 +172,4 @@
 {{ block.super }}
 {% include 'cart/includes/quantity_update.html' %}
 {% endblock %}
+
