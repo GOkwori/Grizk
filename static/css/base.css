@@ -456,14 +456,15 @@ hr {
 }
 
 #cart-card .card-body a {
-    background-color: #000;
-    color: #ff4500;
+    background-color: #ff4500;
+    color: #000;
     border: #ff4500 solid 1px;
 }
 
 #cart-card .card-body a:hover {
-    background-color: #ff4500;
-    color: #000;
+    background-color: #000;
+    color: #ff4500;
+    border: #ff4500 solid 1px;
 }
 
 #cart-card h5 {
