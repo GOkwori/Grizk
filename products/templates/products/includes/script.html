@@ -1,0 +1,15 @@
+<script>
+    document.getElementById('sort-selector').addEventListener('change', function() {
+        const selected = this.value;
+        let url = new URL(window.location.href);
+        if (selected === 'reset') {
+            url.searchParams.delete('sort');
+            url.searchParams.delete('direction');
+        } else {
+            const [sort, direction] = selected.split('_');
+            url.searchParams.set('sort', sort);
+            url.searchParams.set('direction', direction);
+        }
+        window.location.href = url.toString();
+    });
+</script>
