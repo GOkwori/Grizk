@@ -38,7 +38,10 @@ strong {
     font-size: 1.2rem;
 }
 
-
+a {
+    text-decoration: none;
+    color: #ff4500;
+}
 
 /* Header container */
 .header-container {
@@ -430,7 +433,6 @@ hr {
     opacity: 0.9;
    
 }
-
 
 #product-btn {
     color: #ff4500;
