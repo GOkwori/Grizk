@@ -436,6 +436,13 @@ hr {
     color: #ff4500;
 }
 
+#sort-selector {
+    color: #000;
+    border-radius: 10px;
+    border: #ff4500 solid 1px !important;
+    width: auto;
+}
+
 
 /* Cart item */
 .inner-container,
