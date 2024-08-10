@@ -126,8 +126,8 @@
                     <div class="dropdown-menu border-0 custom-dropdown" aria-labelledby="account-dropdown">
                         {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
-                        <a href="{% url 'add_product' %}" class="dropdown-item"><i
-                                class="fa-solid fa-shield-halved  me-1 mt-1"></i>Admin Console</a>
+                        <a href="{% url 'admin_dashboard' %}" class="dropdown-item"><i
+                                class="fa-solid fa-shield-halved  me-1 mt-1"></i>Product Dashboard</a>
                         {% endif %}
                         <a href="{% url 'profile' %}" class="dropdown-item"><i class="fa-solid fa-address-card me-2"></i>My Profile</a>
                         <a href="{% url 'account_logout' %}" class="dropdown-item"><i class="fa-solid fa-right-from-bracket  me-1 mt-1"></i>Logout</a>

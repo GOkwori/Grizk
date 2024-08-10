@@ -2,11 +2,8 @@
 
 {% load static %}
 
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'products/css/admin_products.css' %}">
-{% endblock %}
 
-{% block title %} - User Dashboard {% endblock %}
+{% block title %} - Dashboard {% endblock %}
 
 {% block page_header %}
 <div class="container layout">
@@ -40,9 +37,9 @@
         </div>
         <div class="col-4 mb-3">
             <div class="card border-danger-subtle" style="width: 18rem;" id="product-card">
-                <img src="{% static 'images/manage_products.jpg' %}" class="card-img-top" alt="...">
+                <img src="{% static 'images/manage_products.jpg' %}" class="card-img-top" alt="televisions">
                 <div class="card-body">
-                    <a class="btn m-2 p-2 text-center" href="#" id="product-update-btn"><span class="icon mr-2">
+                    <a class="btn m-2 p-2 text-center" href="{% url 'products' %}" id="product-update-btn"><span class="icon mr-2">
                             <i class="fas fa-pen-to-square"></i>
                         </span>Manage Product</a>
                 </div>
@@ -51,7 +48,7 @@
 
         <div class="col-4 mb-3">
             <div class="card border-danger-subtle" style="width: 18rem;" id="product-card">
-                <img src="{% static 'images/admin_panel.jpg' %}" class="card-img-top" alt="...">
+                <img src="{% static 'images/admin_panel.jpg' %}" class="card-img-top" alt="keyboard">
                 <div class="card-body">
                     <a class="m-2 p-2 text-center btn" href="/admin/" id="product-update-btn"> <span class="icon mr-2">
                             <i class="fas fa-gear"></i>
