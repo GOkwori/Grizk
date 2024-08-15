@@ -2,6 +2,7 @@
 {% load allauth %}
 {% load i18n %}
 {% block reauthenticate_content %}
+<div class="container">
     {% element p %}
         {% blocktranslate %}Enter your password:{% endblocktranslate %}
     {% endelement %}
@@ -19,4 +20,5 @@
             {% endelement %}
         {% endslot %}
     {% endelement %}
+</div>
 {% endblock %}

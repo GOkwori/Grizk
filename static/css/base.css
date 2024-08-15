@@ -11,6 +11,12 @@ body {
     color: #ff4500;
 }
 
+#page-content {
+    min-height: 58vh;
+    display: flex;
+    flex-direction: column;
+}
+
 /* Header */
 
 h2 {
