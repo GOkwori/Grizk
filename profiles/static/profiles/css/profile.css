@@ -19,3 +19,15 @@
     max-height: 416px;
     overflow-y: auto;
 }
+
+#profile-update-form button {
+    background-color: #ff4500;
+    color: #000;
+    border-color: #000;
+}
+
+#profile-update-form button:hover {
+    background-color: #000;
+    color: #ff4500;
+    border-color: #ff4500;
+}
