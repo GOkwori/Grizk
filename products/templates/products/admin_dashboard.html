@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title %} - Dashboard {% endblock %}
+
+{% block page_header %}
+<div class="container layout">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <hr>
+            <h2 class="logo-font mb-4">Product Dashboard</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row justify-content-center text-center">
+        <div class="col-4 mb-3">
+            <div class="card border-danger-subtle" style="width: 18rem;" id="product-card">
+                <img src="{% static 'images/add_products.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <a class="m-2 p-2 text-center btn" href="{% url 'add_product' %}" role="button" id="product-update-btn">
+                            <i class="fas fa-plus"></i>
+                        </span>Add Product</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-4 mb-3">
+            <div class="card border-danger-subtle" style="width: 18rem;" id="product-card">
+                <img src="{% static 'images/manage_products.jpg' %}" class="card-img-top" alt="televisions">
+                <div class="card-body">
+                    <a class="btn m-2 p-2 text-center" href="{% url 'products' %}" id="product-update-btn"><span class="icon mr-2">
+                            <i class="fas fa-pen-to-square"></i>
+                        </span>Manage Product</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4 mb-3">
+            <div class="card border-danger-subtle" style="width: 18rem;" id="product-card">
+                <img src="{% static 'images/admin_panel.jpg' %}" class="card-img-top" alt="keyboard">
+                <div class="card-body">
+                    <a class="m-2 p-2 text-center btn" href="/admin/" id="product-update-btn"> <span class="icon mr-2">
+                            <i class="fas fa-gear"></i>
+                        </span>Admin Panel</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
