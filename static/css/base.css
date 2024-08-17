@@ -440,6 +440,10 @@ hr {
    
 }
 
+#product-card .card-body {
+    padding: 0.5em 0 0 0;
+}
+
 #product-btn {
     color: #ff4500;
 }
