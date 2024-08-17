@@ -444,6 +444,10 @@ hr {
     padding: 0.5em 0 0 0;
 }
 
+#product-card .card-footer {
+    padding: 0 0.5em 0 0 ;
+}
+
 #product-btn {
     color: #ff4500;
 }
