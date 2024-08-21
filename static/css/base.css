@@ -134,7 +134,7 @@ nav button {
 
 }
 
-#checkout-btn {
+.submit-button #checkout-btn {
     background-color: #ff4500;
     border-color: #ff4500;
     color: #000;
