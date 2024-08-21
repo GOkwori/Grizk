@@ -134,6 +134,12 @@ nav button {
 
 }
 
+#checkout-btn {
+    background-color: #ff4500;
+    border-color: #ff4500;
+    color: #000;
+}
+
 /* Search bar */
 #nav-container input {
     border-color: #ff4500;
