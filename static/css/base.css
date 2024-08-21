@@ -135,9 +135,9 @@ nav button {
 }
 
 .submit-button #checkout-btn {
-    background-color: #ff4500;
-    border-color: #ff4500;
-    color: #000;
+    background-color: #ff4500 !important;
+    border-color: #ff4500 !important;
+    color: #000 !important;
 }
 
 /* Search bar */
