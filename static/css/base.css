@@ -479,7 +479,7 @@ hr {
 
 #increment-qty_2,
 #decrement-qty_2 {
-    color: #ff4500;
+    color: #ff4500 !important;
 }
 
 /* Cart item */
