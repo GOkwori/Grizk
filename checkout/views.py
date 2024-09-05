@@ -13,32 +13,22 @@ from cart.contexts import cart_contents
 
 import stripe
 import json
-import logging
-
-# Set up logger
-logger = logging.getLogger(__name__)
 
 
 @require_POST
 def cache_checkout_data(request):
     try:
-        client_secret = request.POST.get('client_secret')
-        if client_secret:
-            pid = client_secret.split('_secret')[0]
-            stripe.api_key = settings.STRIPE_SECRET_KEY
-            stripe.PaymentIntent.modify(pid, metadata={
-                'cart': json.dumps(request.session.get('cart', {})),
-                'save_info': request.POST.get('save_info'),
-                'username': request.user,
-            })
-            return HttpResponse(status=200)
-        else:
-            messages.error(request, 'Invalid payment intent')
-            return HttpResponse(status=400)
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.PaymentIntent.modify(pid, metadata={
+            'cart': json.dumps(request.session.get('cart', {})),
+            'save_info': request.POST.get('save_info'),
+            'username': request.user,
+        })
+        return HttpResponse(status=200)
     except Exception as e:
-        messages.error(
-            request, 'Sorry, your payment cannot be processed right now. Please try again later.')
-        logger.error(f"Cache Checkout Data Error: {e}")
+        messages.error(request, 'Sorry, your payment cannot be \
+            processed right now. Please try again later.')
         return HttpResponse(content=e, status=400)
 
 
