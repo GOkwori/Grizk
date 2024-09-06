@@ -623,6 +623,11 @@ select option {
     border-radius: 0;
 }
 
+/* Checkout Success */
+.order-confirmation-wrapper {
+   border: 1px solid #ff4500 !important;
+}
+
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
