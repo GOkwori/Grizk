@@ -626,6 +626,7 @@ select option {
 /* Checkout Success */
 .order-confirmation-wrapper {
    border: 1px solid #ff4500 !important;
+    border-radius: 10px;
 }
 
 
