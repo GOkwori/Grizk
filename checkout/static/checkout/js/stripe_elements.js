@@ -28,7 +28,7 @@ var style = {
 var card = elements.create("card", { style: style });
 card.mount("#card-element");
 
-// Handle realtime validation errors on the card element
+// Handle real-time validation errors on the card element
 card.addEventListener("change", function (event) {
   var errorDiv = document.getElementById("card-errors");
   if (event.error) {
@@ -44,18 +44,21 @@ card.addEventListener("change", function (event) {
   }
 });
 
-// Handle form submit
+// Handle form submission
 var form = document.getElementById("payment-form");
 
 form.addEventListener("submit", function (ev) {
   ev.preventDefault();
+
+  // Disable card element and submit button
   card.update({ disabled: true });
   $("#submit-button").attr("disabled", true);
-  $("#payment-form").fadeToggle(100);
-  $("#loading-overlay").fadeToggle(100);
 
-  var saveInfo = Boolean($("#id-save-info").attr("checked"));
-  // From using {% csrf_token %} in the form
+  // Show loading overlay
+  $("#payment-form").fadeToggle(500); // Hide the form
+  $("#loading-overlay").fadeToggle(500); // Show the overlay
+
+  var saveInfo = Boolean($("#id-save-info").prop("checked"));
   var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
   var postData = {
     csrfmiddlewaretoken: csrfToken,
@@ -105,8 +108,10 @@ form.addEventListener("submit", function (ev) {
                     </span>
                     <span>${result.error.message}</span>`;
             $(errorDiv).html(html);
-            $("#payment-form").fadeToggle(100);
-            $("#loading-overlay").fadeToggle(100);
+
+            // Re-enable the form and hide loading overlay
+            $("#payment-form").fadeToggle(500);
+            $("#loading-overlay").fadeToggle(500);
             card.update({ disabled: false });
             $("#submit-button").attr("disabled", false);
           } else {
@@ -117,7 +122,6 @@ form.addEventListener("submit", function (ev) {
         });
     })
     .fail(function () {
-      // just reload the page, the error will be in django messages
-      location.reload();
+      location.reload(); // Reload the page to handle any errors
     });
 });
