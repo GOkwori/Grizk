@@ -630,6 +630,17 @@ select option {
 }
 
 
+.link-btn {
+    background-color: #000 !important;
+    color: #ff4500 !important;
+}
+
+.link-btn:hover {
+    background-color: #ff4500 !important;
+    color: #000 !important;
+}
+
+
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
