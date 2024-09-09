@@ -22,12 +22,13 @@ def profile(request):
             messages.success(request, 'Profile updated successfully')
 
     form = UserProfileForm(instance=profile)
+    # Retrieves all orders related to this profile
     order_history = profile.orders.all()
 
     template = 'profiles/profile.html'
     context = {
         'form': form,
-        'order_history': order_history,
+        'orders': order_history,  # Changed key to 'orders' to match template
         'on_profile_page': True
     }
 

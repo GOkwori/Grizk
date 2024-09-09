@@ -35,35 +35,34 @@
                     <table class="table table-sm table-borderless table-dark table-striped">
                         <thead>
                             <tr>
-                                <th>Order Reference</th>
-                                <th>Date</th>
-                                <th>Items</th>
-                                <th>Order Total</th>
+                                <th class="small">Reference</th>
+                                <th class="small">Date</th>
+                                <th class="small">Items</th>
+                                <th class="small">Total</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {% for order in orders %}
+                            {% for order in orders %}  <!-- Looping through 'orders' as passed from the context -->
                             <tr>
-                                <td>
+                                <td class="small">
                                     <a href="{% url 'order_history' order.order_reference %}"
-                                        title="{{ order.order_reference }}">{{ order.order_reference|truncatechars:8
-                                        }}</a>
+                                        title="{{ order.order_reference }}">{{ order.order_reference|truncatechars:8}}</a>
                                 </td>
-                                <td>{{ order.date }}</td>
-                                <td>
+                                <td class="small">{{ order.date }}</td>
+                                <td class="small">
                                     <ul class="list-unstyled">
                                         {% for item in order.lineitems.all %}
                                         <li>{{ item.product.name }} x {{ item.quantity }}</li>
                                         {% endfor %}
                                     </ul>
                                 </td>
-                                <td>£{{ order.order_total }}</td>
+                                <td class="small">£{{ order.order_total }}</td>
                             </tr>
                             {% endfor %}
                         </tbody>
                     </table>
                 </div>
-            </div>
+            </div>            
         </div>
     </section>
 </div>
