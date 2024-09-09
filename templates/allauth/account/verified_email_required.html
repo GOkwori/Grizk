@@ -7,7 +7,7 @@
 {% block content %}
 <div class="container">
     {% element h1 %}
-        {% trans "Verify Your Email Address" %}
+        <h2>{% trans "Verify Your Email Address" %}</h2>
     {% endelement %}
     {% url 'account_email' as email_url %}
     {% element p %}
