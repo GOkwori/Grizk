@@ -574,7 +574,6 @@ table button {
 
 /* Back to top button styles */
 
-/* Back to Top button */
 #bttBtn {
     opacity: 0;
     visibility: hidden;
@@ -591,9 +590,7 @@ table button {
     z-index: 9999;
 }
 
-.btt-link,
-.update-link,
-.remove-item {
+.btt-link{
     cursor: pointer;
     background-color: #ff4500;
     border-radius: 10px;
