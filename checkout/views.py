@@ -13,6 +13,10 @@ from cart.contexts import cart_contents
 
 import stripe
 import json
+import logging
+
+# Set up logger
+logger = logging.getLogger(__name__)
 
 
 @require_POST
