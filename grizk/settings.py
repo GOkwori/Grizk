@@ -21,8 +21,13 @@ DEBUG = env.bool('DEBUG', default=True)
 
 ALLOWED_HOSTS = [
     'ecommerce-grizk-2f04b3042fc5.herokuapp.com',
+    '8000-gokwori-grizk-coht80xv4md.ws-eu116.gitpod.io',
     'localhost',
     '127.0.0.1'
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-gokwori-grizk-coht80xv4md.ws-eu116.gitpod.io',
 ]
 
 # Application definition
