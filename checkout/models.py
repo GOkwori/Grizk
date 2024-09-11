@@ -3,16 +3,14 @@ import uuid
 from django.db import models
 from django.db.models import Sum
 from django.conf import settings
-
 from django_countries.fields import CountryField
-
 from products.models import Product
 from profiles.models import UserProfile
 
 
 class Order(models.Model):
     order_reference = models.CharField(
-        max_length=20, blank=False, editable=False)
+        max_length=20, blank=False, editable=False, unique=True)  # Ensure uniqueness at the DB level
     user_profile = models.ForeignKey(
         UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name='orders')
     full_name = models.CharField(max_length=50, blank=False)
@@ -26,17 +24,15 @@ class Order(models.Model):
     county = models.CharField(max_length=40, blank=True)
     date = models.DateField(auto_now_add=True)
     order_total = models.DecimalField(
-        max_digits=10, decimal_places=2, null=False, default=0)
+        max_digits=12, decimal_places=2, null=False, default=0)  # Increased max_digits to handle large amounts
     delivery_cost = models.DecimalField(
         max_digits=6, decimal_places=2, null=False, default=0)
     grand_total = models.DecimalField(
-        max_digits=10, decimal_places=2, null=False, default=0)
+        max_digits=12, decimal_places=2, null=False, default=0)
 
     def _generate_order_reference(self):
-        """
-        Generate a random, unique order reference using UUID
-        """
-        return uuid.uuid4().hex.upper()
+        """ Generate a random, unique order reference using UUID """
+        return uuid.uuid4().hex[:8].upper()  # Shortened for readability
 
     def update_total(self):
         """
@@ -53,6 +49,7 @@ class Order(models.Model):
         self.save()
 
     def save(self, *args, **kwargs):
+        """Override the save method to set the order reference if it hasn't been set already."""
         if not self.order_reference:
             self.order_reference = self._generate_order_reference()
         super().save(*args, **kwargs)
@@ -71,6 +68,7 @@ class OrderLineItem(models.Model):
         max_digits=10, decimal_places=2, null=False, blank=False, editable=False)
 
     def save(self, *args, **kwargs):
+        """Override the save method to calculate the line item total and update the order total."""
         self.lineitem_total = self.product.price * self.quantity
         super().save(*args, **kwargs)
         self.order.update_total()
