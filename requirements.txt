@@ -14,8 +14,13 @@ django-storages==1.14.3
 gunicorn==22.0.0
 idna==3.7
 jmespath==1.0.1
+node==1.2.2
+npm==0.1.1
+odict==1.9.0
+optional-django==0.1.0
 packaging==24.1
 pillow==10.3.0
+plumber==1.7
 psycopg2==2.9.9
 python-dateutil==2.9.0.post0
 requests==2.32.3
@@ -27,3 +32,11 @@ typing_extensions==4.12.2
 tzdata==2024.1
 urllib3==2.2.1
 whitenoise==6.7.0
+zope.component==6.0
+zope.deferredimport==5.0
+zope.deprecation==5.0
+zope.event==5.0
+zope.hookable==6.0
+zope.interface==6.4.post2
+zope.lifecycleevent==5.0
+zope.proxy==5.2
