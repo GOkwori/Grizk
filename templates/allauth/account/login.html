@@ -4,13 +4,15 @@
 {% block head_title %}
     {% trans "Sign In" %}
 {% endblock head_title %}
+
 {% block content %}
 <div class="container">
     {% element h1 %}
     <hr>
-        <h2>{% trans "Sign In" %}</h2>
+    <h2>{% trans "Sign In" %}</h2>
     {% endelement %}
     <hr class="mb-2">
+
     {% if not SOCIALACCOUNT_ONLY %}
         {% setvar link %}
             <a href="{{ signup_url }}">
@@ -21,6 +23,7 @@
         {% element p %}
             {% blocktranslate %}If you have not created an account yet, then please {{ link }}sign up{{ end_link }} first.{% endblocktranslate %}
         {% endelement %}
+
         {% url 'account_login' as login_url %}
         {% element form form=form method="post" action=login_url tags="entrance,login" %}
             {% slot body %}
@@ -29,26 +32,37 @@
                 {% endelement %}
                 {{ redirect_field }}
             {% endslot %}
+            
+            <!-- Container for buttons (Home and Sign In side by side) -->
             {% slot actions %}
-                {% element button type="submit" tags="prominent,login" %}
+            <div class="">
+                <a href="{% url 'home' %}" class="btn btn-home me-4"><i class="fa-solid fa-house me-1"></i>Home</a>
+                <button type="submit" class="btn btn-login"> <i class="fa-solid fa-right-to-bracket me-1"></i>
                     {% trans "Sign In" %}
-                {% endelement %}
+                </button>
+            </div>
             {% endslot %}
         {% endelement %}
     {% endif %}
+    
+    <!-- Forgot password link below the buttons -->
+    <div class="mt-3">
+        <a href="{% url 'account_reset_password' %}" class="forgot-password-link">
+            {% trans "Forgot your password?" %}
+        </a>
+    </div>
+
     {% if LOGIN_BY_CODE_ENABLED %}
-        {% element hr %}
-        {% endelement %}
-        {% element h2 %}
-            {% element button href=request_login_code_url tags="prominent,login,secondary" %}
+        <hr>
+        <div class="mb-3">
+            <a href="{{ request_login_code_url }}" class="btn btn-secondary btn-code">
                 {% trans "Mail me a sign-in code" %}
-            {% endelement %}
-        {% endelement %}
+            </a>
+        </div>
     {% endif %}
+
     {% if SOCIALACCOUNT_ENABLED %}
         {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
     {% endif %}
 </div>
 {% endblock content %}
-
-

@@ -669,6 +669,36 @@ select option {
     color: #000 !important;
 }
 
+/* Accounts styling */
+
+.btn-home, .btn-login {
+    background-color: #ff4500;
+    color: #000;
+    border-color: #000;
+}
+
+.btn-home:hover, .btn-login:hover {
+    background-color: #000;
+    color: #ff4500; 
+    border-color: #ff4500;
+    transition: background-color 0.3s ease;
+}
+
+
+.forgot-password-link {
+    display: block;
+    margin-top: 15px;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.wide-input input {
+    width: 100%; /* Full width relative to the container */
+    max-width: 500px; /* Optional: Limit the max width if needed */
+    padding: 10px; /* Optional: Adjust padding for a more comfortable input field */
+    box-sizing: border-box; /* Ensure padding doesn't affect the total width */
+}
+
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {

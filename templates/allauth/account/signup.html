@@ -3,6 +3,7 @@
 {% block head_title %}
     {% trans "Signup" %}
 {% endblock head_title %}
+
 {% block content %}
 <div class="container">
     {% element h1 %}
@@ -10,6 +11,7 @@
         <h2>{% trans "Sign Up" %}</h2>
     {% endelement %}
     <hr class="mb-2">
+
     {% setvar link %}
         <a href="{{ login_url }}">
         {% endsetvar %}
@@ -19,22 +21,32 @@
     {% element p %}
         {% blocktranslate %}Already have an account? Then please {{ link }}sign in{{ end_link }}.{% endblocktranslate %}
     {% endelement %}
+
     {% if not SOCIALACCOUNT_ONLY %}
         {% url 'account_signup' as action_url %}
         {% element form form=form method="post" action=action_url tags="entrance,signup" %}
             {% slot body %}
                 {% csrf_token %}
-                {% element fields form=form unlabeled=True %}
+                {% element fields form=form unlabeled=True class="wide-input" %}
                 {% endelement %}
                 {{ redirect_field }}
             {% endslot %}
+
+            <!-- Container for buttons (Home and Sign Up side by side) -->
             {% slot actions %}
-                {% element button tags="prominent,signup" type="submit" %}
+            <div class="mb-3">
+                <a href="{% url 'home' %}" class="btn  btn-home me-4">
+                    <i class="fa-solid fa-house me-1"></i>Home
+                </a>
+                <button type="submit" class="btn  btn-home">
+                    <i class="fa-solid fa-user-plus me-1"></i>
                     {% trans "Sign Up" %}
-                {% endelement %}
+                </button>
+            </div>
             {% endslot %}
         {% endelement %}
     {% endif %}
+
     {% if SOCIALACCOUNT_ENABLED %}
         {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
     {% endif %}

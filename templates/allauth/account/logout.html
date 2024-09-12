@@ -3,6 +3,7 @@
 {% block head_title %}
     {% trans "Sign Out" %}
 {% endblock head_title %}
+
 {% block content %}
 <div class="container">
     
@@ -11,20 +12,31 @@
         <h2>{% trans "Sign Out" %}</h2>
     {% endelement %}
     <hr class="mb-2">
+    
     {% element p %}
         {% trans 'Are you sure you want to sign out?' %}
     {% endelement %}
+
     {% url 'account_logout' as action_url %}
     {% element form method="post" action=action_url no_visible_fields=True %}
         {% slot body %}
             {% csrf_token %}
             {{ redirect_field }}
         {% endslot %}
+
+        <!-- Container for buttons (Sign Out and Back) -->
         {% slot actions %}
-            {% element button type="submit" %}
+        <div class="">
+            <button type="submit" class="btn  btn-home me-4">
+                <i class="fa-solid fa-sign-out-alt me-1"></i>
                 {% trans 'Sign Out' %}
-            {% endelement %}
+            </button>
+            <a href="javascript:history.back()" class="btn btn-home">
+                <i class="fa-solid fa-arrow-left me-1"></i>Back
+            </a>
+        </div>
         {% endslot %}
     {% endelement %}
 </div>
 {% endblock content %}
+
