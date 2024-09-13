@@ -1,71 +1,61 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 from products.models import Product
-
-# Create your views here.
-
-
-def view_wishlist(request):
-    """ A view that renders the wishlist contents page """
-
-    return render(request, 'wishlist/wishlist.html')
+from .models import Wishlist
+from profiles.models import UserProfile
 
 
-def add_to_wishlist(request, item_id):
-    """ Add a quantity of the specified product to the shopping wishlist """
-    product = get_object_or_404(Product, pk=item_id)
-    redirect_url = request.POST.get('redirect_url')
-    colour = request.POST.get('product_colour', None)
-    wishlist = request.session.get('wishlist', {})
+@login_required
+def wishlist(request):
+    """ A view to return the wishlist page """
 
-    if colour:
-        if item_id not in wishlist:
-            wishlist[item_id] = {'items_by_colour': {}}
-        if colour in wishlist[item_id]['items_by_colour']:
-            wishlist[item_id]['items_by_colour'][colour] += quantity
-            messages.success(
-                request, f'Updated colour {colour.upper()} {product.name} quantity to {wishlist[item_id]["items_by_colour"][colour]}')
-        else:
-            wishlist[item_id]['items_by_colour'][colour] = quantity
-            messages.success(
-                request, f'Added colour {colour.upper()} {product.name} to your wishlist')
+    user_profile = UserProfile.objects.get(user=request.user)
+    user_wishlist = Wishlist.objects.filter(user_profile=user_profile)
+
+    return render(
+        request, 'wishlist/wishlist.html', {'user_wishlist': user_wishlist}
+    )
+
+
+@login_required
+def add_to_wishlist(request, product_id):
+    """
+    Add a product to the user's wishlist.
+    """
+    product = get_object_or_404(Product, pk=product_id)
+    user_profile = UserProfile.objects.get(user=request.user)
+
+    # Check if the product is already in the users wishlist
+    if Wishlist.objects.filter(
+        user_profile=user_profile,
+        product=product
+    ).exists():
+        messages.warning(
+            request, f'{product.name} is already in your Wishlist.')
     else:
-        if item_id in wishlist:
-            wishlist[item_id] += quantity
-            messages.success(
-                request, f'Updated {product.name} quantity to {wishlist[item_id]}')
-        else:
-            wishlist[item_id] = quantity
-            messages.success(request, f'Added {product.name} to your wishlist')
+        # create a new wishlist item
+        wishlist_item = Wishlist.objects.create(
+            user_profile=user_profile, product=product)
+        messages.success(
+            request,
+            f'{wishlist_item.product.name} added to Wishlist successfully!'
+        )
 
-    request.session['wishlist'] = wishlist
-    return redirect(redirect_url)
+    # Redirect to the product detail page
+    return redirect(reverse('product_detail', args=[product_id]))
 
 
-def remove_from_wishlist(request, item_id):
-    """Remove the item from the shopping wishlist"""
-    try:
-        product = get_object_or_404(Product, pk=item_id)
-        colour = request.POST.get('product_colour', None)
-        wishlist = request.session.get('wishlist', {})
-
-        if colour:
-            if item_id in wishlist and colour in wishlist[item_id]['items_by_colour']:
-                del wishlist[item_id]['items_by_colour'][colour]
-                if not wishlist[item_id]['items_by_colour']:
-                    wishlist.pop(item_id)
-                messages.success(
-                    request, f'Removed colour {colour.upper()} {product.name} from your wishlist')
-        else:
-            if item_id in wishlist:
-                wishlist.pop(item_id)
-                messages.success(
-                    request, f'Removed {product.name} from your wishlist')
-
-        request.session['wishlist'] = wishlist
-        return HttpResponse(status=200)
-
-    except Exception as e:
-        messages.error(request, f'Error removing item: {e}')
-        return HttpResponse(status=500)
+@login_required
+def remove_from_wishlist(request, product_id):
+    """
+    Remove item from Wishlist when remove icon is clicked
+    """
+    product = get_object_or_404(Product, pk=product_id)
+    user_profile = UserProfile.objects.get(user=request.user)
+    wishlist_item = Wishlist.objects.get(user_profile=user_profile,
+                                         product=product)
+    wishlist_item.delete()
+    messages.success(request, f'{product.name} has been successfully removed.')
+    return redirect(reverse('wishlist'))
