@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} - Wishlist{% endblock %}
+
+{% block page_header %}
+<div class="container layout">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container mb-2">
+    <section>
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="mb-4">My Wishlist</h2>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-9">
+                {% if wishlist_items %}
+                <div class="d-block d-md-none">
+                    <div class="row">
+                        <div class="col">
+                            {% include "wishlist/wishlist-buttons.html" %}
+                        </div>
+                    </div>
+                    {% for item in wishlist_items %}
+                    <div class="row">
+                        <div class="col-12 col-sm-6 mb-2">
+                            {% include "cart/product-image.html" %}
+                        </div>
+                        <div class="col-12 col-sm-6 mb-2">
+                            {% include "cart/product-info.html" %}
+                        </div>
+                        <div class="col-12 col-sm-6 order-sm-last">
+                            <p class="my-0">Price Each: £{{ item.product.price }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <hr>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="btt-button shadow-sm rounded-0 border border-black">
+                        <a class="btt-link d-flex h-100">
+                            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="table-responsive rounded d-none d-md-block">
+                    <table class="table table-sm table-borderless table-dark table-striped align-middle">
+                        <thead class="text-black">
+                            <tr>
+                                <th scope="col" class="p-3">Product</th>
+                                <th scope="col" class="p-3"></th>
+                                <th scope="col" class="p-3 text-center">Price</th>
+                                <th scope="col" class="p-3">Remove</th>
+                            </tr>
+                        </thead>
+
+                        {% for item in wishlist_items %}
+                        <tr>
+                            <td class="p-1">
+                                {% include "cart/product-image.html" %}
+                            </td>
+                            <td class="p-3 w-25">
+                                {% include "cart/product-info.html" %}
+                            </td>
+                            <td class="p-3">
+                                <p class="my-0">£{{ item.product.price }}</p>
+                            </td>
+                            <td class="p-3">
+                                <button class="btn remove-item text-center" id="remove_{{ item.item_id }}"
+                                    data-product-colour="{{ item.colour }}" type="button" id="bin-btn">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card bg-black text-orange" style="width: 18rem;" id="cart-card">
+                    <img src="{% static 'images/wishlist-img.jpg' %}" class="card-img-top h-25" alt="wishlist">
+                    <div class="card-body">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="shopping-link">
+                <a href="{% url 'products' %}" class="btn p-0">
+                    <i class="fas fa-chevron-left"></i> Continue Shopping
+                </a>
+            </div>
+            {% else %}
+            <p class="mb-5">Your wishlist is empty.</p>
+            <div class="shopping-link">
+                <a href="{% url 'products' %}" class="btn p-0">
+                    <i class="fas fa-chevron-left"></i> Continue Shopping
+                </a>
+            </div>
+            {% endif %}
+        </div>
+</div>
+</section>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% endblock %}
+
