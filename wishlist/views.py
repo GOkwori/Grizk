@@ -13,8 +13,12 @@ def wishlist(request):
     """ A view to return the wishlist page """
     user_profile = get_object_or_404(UserProfile, user=request.user)
     user_wishlist = Wishlist.objects.filter(user_profile=user_profile)
+    wishlist_count = user_wishlist.count()  # Get the count of wishlist items
 
-    return render(request, 'wishlist/wishlist.html', {'user_wishlist': user_wishlist})
+    return render(request, 'wishlist/wishlist.html', {
+        'user_wishlist': user_wishlist,
+        'wishlist_count': wishlist_count  # Pass the count to the template
+    })
 
 
 @login_required
