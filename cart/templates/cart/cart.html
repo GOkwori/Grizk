@@ -111,13 +111,13 @@
                                 <p class="my-0 text-center">£{{ item.product.price|calc_subtotal:item.quantity }}</p>
                             </td>
                             <td class="p-3">
-                                <button class="btn update-link text-center" type="button" id="update-btn">
+                                <button class="btn update-link text-center" type="button" id="update-btn" title='update item'>
                                     <i class="fa-solid fa-cart-shopping"></i>
                                 </button>
                             </td>
                             <td class="p-3">
                                 <button class="btn remove-item text-center" id="remove_{{ item.item_id }}"
-                                    data-product-colour="{{ item.colour }}" type="button" id="bin-btn">
+                                    data-product-colour="{{ item.colour }}" type="button" id="bin-btn" title='remove item'>
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
                             </td>
