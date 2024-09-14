@@ -10,13 +10,10 @@ from profiles.models import UserProfile
 @login_required
 def wishlist(request):
     """ A view to return the wishlist page """
-
-    user_profile = UserProfile.objects.get(user=request.user)
+    user_profile = get_object_or_404(UserProfile, user=request.user)
     user_wishlist = Wishlist.objects.filter(user_profile=user_profile)
 
-    return render(
-        request, 'wishlist/wishlist.html', {'user_wishlist': user_wishlist}
-    )
+    return render(request, 'wishlist/wishlist.html', {'user_wishlist': user_wishlist})
 
 
 @login_required
@@ -25,26 +22,20 @@ def add_to_wishlist(request, product_id):
     Add a product to the user's wishlist.
     """
     product = get_object_or_404(Product, pk=product_id)
-    user_profile = UserProfile.objects.get(user=request.user)
+    user_profile = get_object_or_404(UserProfile, user=request.user)
 
-    # Check if the product is already in the users wishlist
-    if Wishlist.objects.filter(
-        user_profile=user_profile,
-        product=product
-    ).exists():
-        messages.warning(
-            request, f'{product.name} is already in your Wishlist.')
-    else:
-        # create a new wishlist item
-        wishlist_item = Wishlist.objects.create(
-            user_profile=user_profile, product=product)
+    # Use get_or_create to avoid multiple queries
+    wishlist_item, created = Wishlist.objects.get_or_create(
+        user_profile=user_profile, product=product
+    )
+
+    if created:
         messages.success(
-            request,
-            f'{wishlist_item.product.name} added to Wishlist successfully!'
-        )
+            request, f'{wishlist_item.product.name} added to Wishlist successfully!')
+    else:
+        messages.warning(request, f'{product.name} is already in your Wishlist.')
 
-    # Redirect to the product detail page
-    return redirect(reverse('product_detail', args=[product_id]))
+    return redirect(reverse('products'))
 
 
 @login_required
@@ -53,9 +44,13 @@ def remove_from_wishlist(request, product_id):
     Remove item from Wishlist when remove icon is clicked
     """
     product = get_object_or_404(Product, pk=product_id)
-    user_profile = UserProfile.objects.get(user=request.user)
-    wishlist_item = Wishlist.objects.get(user_profile=user_profile,
-                                         product=product)
-    wishlist_item.delete()
-    messages.success(request, f'{product.name} has been successfully removed.')
+    user_profile = get_object_or_404(UserProfile, user=request.user)
+    
+    try:
+        wishlist_item = Wishlist.objects.get(user_profile=user_profile, product=product)
+        wishlist_item.delete()
+        messages.success(request, f'{product.name} has been successfully removed.')
+    except Wishlist.DoesNotExist:
+        messages.error(request, f'{product.name} was not in your wishlist.')
+
     return redirect(reverse('wishlist'))

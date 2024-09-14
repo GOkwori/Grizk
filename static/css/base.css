@@ -220,11 +220,14 @@ nav button {
     text-decoration: underline;
 }
 
-
+/* Button Styles for Wishlist and Cart */
+#wishlist button,
 #cart button {
     border: #ff4500 solid 1px;
 }
 
+/* Off-Canvas Styles for Wishlist and Cart */
+#wishlistOffcanvas, 
 #cartOffcanvas {
     background-color: #000;
     color: #ff4500;
@@ -232,12 +235,15 @@ nav button {
     width: 25%;
 }
 
+/* Off-Canvas Button Styles */
+#wishlistOffcanvas .offcanvas-btn, 
 #cartOffcanvas .offcanvas-btn {
     background-color: #ff4500;
     border-color: #ff4500 !important;
     color: #000;
 }
 
+#wishlistOffcanvas .offcanvas-btn:hover,
 #cartOffcanvas .offcanvas-btn:hover {
     background-color: #000;
     border-color: #ff4500;

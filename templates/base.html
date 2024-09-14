@@ -75,6 +75,27 @@
                 <div class="collapse navbar-collapse col-lg-4 justify-content-end container"
                     id="navbarSupportedContent">
                     <ul class="navbar-nav mb-lg-0 ms-lg-4">
+
+                        {% if user.is_authenticated %}
+                            <!-- Wishlist -->
+                            <li class="nav-item list-inline-item d-none d-md-block" id="wishlist">
+                                <button
+                                    class="{% if wishlist_items %} font-weight-bold{% else %}text{% endif %} nav-link btn btn-primary"
+                                    type="button" data-bs-toggle="offcanvas" data-bs-target="#wishlistOffcanvas"
+                                    aria-controls="wishlistOffcanvas">
+                                    <div class="text-center">
+                                        <i class="fa-solid fa-heart mt-1"></i>
+                                        <p class="my-0">
+                                            {% if total %}
+                                            {{ total }}
+                                            {% else %}
+                                            0
+                                            {% endif %}
+                                        </p>
+                                    </div>
+                                </button>
+                            </li>
+                        {% endif %}
                         <!-- Cart -->
                         <li class="nav-item list-inline-item d-none d-md-block" id="cart">
                             <button
@@ -100,37 +121,20 @@
         {% include 'includes/secondary-nav.html' %}
         {% include 'includes/mobile-nav.html' %}
     </header>
-    <!-- Offcanvas for Cart -->
-    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="cartOffcanvas"
-        aria-labelledby="cartOffcanvasLabel">
+
+    <!-- Offcanvas for Wishlist -->
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="wishlistOffcanvas"
+        aria-labelledby="wishlistOffcanvasLabel">
         <div class="offcanvas-header">
-            {% if request.user.is_authenticated %}
-            <h5 class="offcanvas-title mt-4" id="cartOffcanvasLabel">{{ request.user.username|title }}'s Cart <i
-                    class="fa-solid fa-cart-shopping ms-2"></i></h5>
-            {% else %}
-            <h5 class="offcanvas-title mt-4" id="cartOffcanvasLabel">Your Cart<i
-                    class="fa-solid fa-cart-shopping ms-2"></i>
-            </h5>
-            {% endif %}
+            <h5 class="offcanvas-title mt-4" id="wishlistOffcanvasLabel">{{ request.user.username|title }}'s wishlist <i class="fa-solid fa-heart ms-2"></i></h5>
             <button type="button" class="btn-close mt-4" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <hr>
         <div class="offcanvas-body">
             <div class="container">
-                {% if free_delivery_delta > 0 %}
-                <p class="mb-0">
-                    Buy <strong>£{{ free_delivery_delta }}</strong> more to get free next day delivery!
-                </p>
-                <div class="progress my-3">
-                    <div class="progress-bar progress-bar-custom" role="progressbar" id="offcanvas-delivery-progress"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <div id="offcanvas-cart-totals" data-total="{{ total|default:0 }}"
-                    data-threshold="{{ free_delivery_threshold|default:0 }}"></div>
-                {% endif %}
 
-                {% if cart_items %}
-                {% for item in cart_items %}
+                {% if wishlist_items %}
+                {% for item in wishlist_items %}
                 <div class="row mb-3">
                     <div class="col-3 my-1">
                         {% if item.product.image %}
@@ -148,27 +152,15 @@
                 </div>
                 {% endfor %}
                 <div class="mt-4">
-                    <div class="row">
-                        <div class="col-6">
-                            <p>Sub-total:</p>
-                        </div>
-                        <div class="col-6 text-end">
-                            <strong>£{{ total|floatformat:2 }}</strong>
-                        </div>
-                    </div>
                     <div class="row mt-4">
                         <div class="col-6 text-center">
-                            <a href="{% url 'view_cart' %}" class="btn btn-outline-primary offcanvas-btn" role="button">
-                                <i class="fa-solid fa-cart-shopping me-2"></i>View Cart</a>
-                        </div>
-                        <div class="col-6 text-center">
-                            <a href="{% url 'checkout' %}" class="btn btn-outline-primary offcanvas-btn"
-                                role="button"><i class="fa-solid fa-lock me-2"></i>Checkout</a>
+                            <a href="{% url 'wishlist' %}" class="btn btn-outline-primary offcanvas-btn" role="button">
+                                <i class="fa-solid fa-heart ms-2"></i>Wishlist</a>
                         </div>
                     </div>
                 </div>
                 {% else %}
-                <p>Your cart is empty.</p>
+                <p>Your wishlist is empty.</p>
                 <div class="shopping-link">
                     <a href="{% url 'products' %}" class="btn p-0">
                         <i class="fas fa-chevron-left"></i> Continue Shopping
@@ -178,6 +170,85 @@
             </div>
         </div>
     </div>
+
+     <!-- Offcanvas for Cart -->
+     <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="cartOffcanvas"
+     aria-labelledby="cartOffcanvasLabel">
+     <div class="offcanvas-header">
+         {% if request.user.is_authenticated %}
+         <h5 class="offcanvas-title mt-4" id="cartOffcanvasLabel">{{ request.user.username|title }}'s Cart <i
+                 class="fa-solid fa-cart-shopping ms-2"></i></h5>
+         {% else %}
+         <h5 class="offcanvas-title mt-4" id="cartOffcanvasLabel">Your Cart<i
+                 class="fa-solid fa-cart-shopping ms-2"></i>
+         </h5>
+         {% endif %}
+         <button type="button" class="btn-close mt-4" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+     </div>
+     <hr>
+     <div class="offcanvas-body">
+         <div class="container">
+             {% if free_delivery_delta > 0 %}
+             <p class="mb-0">
+                 Buy <strong>£{{ free_delivery_delta }}</strong> more to get free next day delivery!
+             </p>
+             <div class="progress my-3">
+                 <div class="progress-bar progress-bar-custom" role="progressbar" id="offcanvas-delivery-progress"
+                     aria-valuemin="0" aria-valuemax="100"></div>
+             </div>
+             <div id="offcanvas-cart-totals" data-total="{{ total|default:0 }}"
+                 data-threshold="{{ free_delivery_threshold|default:0 }}"></div>
+             {% endif %}
+
+             {% if cart_items %}
+             {% for item in cart_items %}
+             <div class="row mb-3">
+                 <div class="col-3 my-1">
+                     {% if item.product.image %}
+                     <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                     {% else %}
+                     <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                     {% endif %}
+                 </div>
+                 <div class="col-9">
+                     <p class="my-0">{{ item.product.name }}</p>
+                     <p class="my-2">£{{ item.product.price|floatformat:2 }}</p>
+                     <p class="my-0 small">Qty: {{ item.quantity }}</p>
+
+                 </div>
+             </div>
+             {% endfor %}
+             <div class="mt-4">
+                 <div class="row">
+                     <div class="col-6">
+                         <p>Sub-total:</p>
+                     </div>
+                     <div class="col-6 text-end">
+                         <strong>£{{ total|floatformat:2 }}</strong>
+                     </div>
+                 </div>
+                 <div class="row mt-4">
+                     <div class="col-6 text-center">
+                         <a href="{% url 'view_cart' %}" class="btn btn-outline-primary offcanvas-btn" role="button">
+                             <i class="fa-solid fa-cart-shopping me-2"></i>View Cart</a>
+                     </div>
+                     <div class="col-6 text-center">
+                         <a href="{% url 'checkout' %}" class="btn btn-outline-primary offcanvas-btn"
+                             role="button"><i class="fa-solid fa-lock me-2"></i>Checkout</a>
+                     </div>
+                 </div>
+             </div>
+             {% else %}
+             <p>Your cart is empty.</p>
+             <div class="shopping-link">
+                 <a href="{% url 'products' %}" class="btn p-0">
+                     <i class="fas fa-chevron-left"></i> Continue Shopping
+                 </a>
+             </div>
+             {% endif %}
+         </div>
+     </div>
+ </div>
 
     <div class="content-container" id="page-content">
         {% if messages %}
