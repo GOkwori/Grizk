@@ -22,6 +22,15 @@ document.addEventListener("DOMContentLoaded", function () {
   toastList.forEach((toast) => toast.show());
 
   updateProgressBar();
+
+  // Add event listeners for wishlist removal buttons
+  document.querySelectorAll(".remove-item").forEach(function (button) {
+    button.addEventListener("click", function () {
+      var productId = button.getAttribute("data-product_id"); // Get product ID from the button attribute
+      var csrfToken = getCookie("csrftoken"); // Get CSRF token for AJAX request
+      removeFromWishlist(productId, csrfToken); // Call the remove function
+    });
+  });
 });
 
 function updateProgressBar() {
@@ -124,6 +133,31 @@ function removeFromCart(button) {
     })
     .catch((error) => {
       console.error("Error removing item from cart:", error);
+    });
+}
+
+function removeFromWishlist(productId, csrfToken) {
+  fetch("/wishlist/remove/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "X-CSRFToken": csrfToken,
+    },
+    body: JSON.stringify({
+      product_id: productId,
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.success) {
+        document.getElementById(`wishlist_item_${productId}`).remove(); // Remove item from DOM
+        console.log(data.message); // Log success message
+      } else {
+        console.error(data.message); // Log error message
+      }
+    })
+    .catch((error) => {
+      console.error("Error removing item from wishlist:", error);
     });
 }
 

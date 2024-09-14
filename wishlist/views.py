@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.http import JsonResponse
 
 from products.models import Product
 from .models import Wishlist
@@ -39,18 +40,20 @@ def add_to_wishlist(request, product_id):
 
 
 @login_required
-def remove_from_wishlist(request, product_id):
+def remove_from_wishlist(request):
     """
     Remove item from Wishlist when remove icon is clicked
     """
-    product = get_object_or_404(Product, pk=product_id)
-    user_profile = get_object_or_404(UserProfile, user=request.user)
+    if request.method == "POST":
+        product_id = request.POST.get('product_id')
+        product = get_object_or_404(Product, pk=product_id)
+        user_profile = get_object_or_404(UserProfile, user=request.user)
+        
+        try:
+            wishlist_item = Wishlist.objects.get(user_profile=user_profile, product=product)
+            wishlist_item.delete()
+            return JsonResponse({'success': True, 'message': f'{product.name} has been successfully removed.'})
+        except Wishlist.DoesNotExist:
+            return JsonResponse({'success': False, 'message': f'{product.name} was not in your wishlist.'})
     
-    try:
-        wishlist_item = Wishlist.objects.get(user_profile=user_profile, product=product)
-        wishlist_item.delete()
-        messages.success(request, f'{product.name} has been successfully removed.')
-    except Wishlist.DoesNotExist:
-        messages.error(request, f'{product.name} was not in your wishlist.')
-
-    return redirect(reverse('wishlist'))
+    return JsonResponse({'success': False, 'message': 'Invalid request method.'})
