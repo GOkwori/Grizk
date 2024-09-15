@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Navbar toggler
   var navbarToggler = document.querySelector(".navbar-toggler");
   var pageContent = document.getElementById("page-content");
-  var header = document.getElementById("main-header");
   var isNavCollapsed = true;
 
   navbarToggler.addEventListener("click", function () {
@@ -12,27 +12,35 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         pageContent.style.marginTop = "";
       }
-    }, 100); // Delay to ensure the collapse animation completes
+    }, 100);
   });
 
+  // Initialize Bootstrap toasts
   var toastElList = [].slice.call(document.querySelectorAll(".toast"));
   var toastList = toastElList.map(function (toastEl) {
     return new bootstrap.Toast(toastEl);
   });
   toastList.forEach((toast) => toast.show());
 
-  updateProgressBar();
+  // Initialize the wishlist removal functionality
+  initializeWishlistRemoval();
 
-  // Add event listeners for wishlist removal buttons
-  document.querySelectorAll(".remove-item").forEach(function (button) {
-    button.addEventListener("click", function () {
-      var productId = button.getAttribute("data-product_id"); // Get product ID from the button attribute
-      var csrfToken = getCookie("csrftoken"); // Get CSRF token for AJAX request
-      removeFromWishlist(productId, csrfToken); // Call the remove function
-    });
-  });
+  // Initialize cart progress bar
+  updateProgressBar();
 });
 
+// Initialize event listeners for wishlist removal buttons
+function initializeWishlistRemoval() {
+  document.querySelectorAll(".remove-item").forEach(function (button) {
+    button.addEventListener("click", function () {
+      var productId = button.getAttribute("data-product_id");
+      var csrfToken = getCookie("csrftoken");
+      removeFromWishlist(productId, csrfToken);
+    });
+  });
+}
+
+// Update the delivery progress bar based on the cart totals
 function updateProgressBar() {
   var totalElement = document.getElementById("cart-totals");
   var progressElement = document.getElementById("delivery-progress");
@@ -46,33 +54,21 @@ function updateProgressBar() {
     }
   }
 
-  // For the offcanvas cart
+  // Offcanvas cart progress
   var offcanvasTotalElement = document.getElementById("offcanvas-cart-totals");
-  var offcanvasProgressElement = document.getElementById(
-    "offcanvas-delivery-progress"
-  );
+  var offcanvasProgressElement = document.getElementById("offcanvas-delivery-progress");
   if (offcanvasTotalElement && offcanvasProgressElement) {
-    var offcanvasTotal = parseFloat(
-      offcanvasTotalElement.getAttribute("data-total")
-    );
-    var offcanvasThreshold = parseFloat(
-      offcanvasTotalElement.getAttribute("data-threshold")
-    );
-    if (
-      !isNaN(offcanvasTotal) &&
-      !isNaN(offcanvasThreshold) &&
-      offcanvasThreshold > 0
-    ) {
-      var offcanvasProgress = Math.min(
-        (offcanvasTotal / offcanvasThreshold) * 100,
-        100
-      );
+    var offcanvasTotal = parseFloat(offcanvasTotalElement.getAttribute("data-total"));
+    var offcanvasThreshold = parseFloat(offcanvasTotalElement.getAttribute("data-threshold"));
+    if (!isNaN(offcanvasTotal) && !isNaN(offcanvasThreshold) && offcanvasThreshold > 0) {
+      var offcanvasProgress = Math.min((offcanvasTotal / offcanvasThreshold) * 100, 100);
       offcanvasProgressElement.style.width = offcanvasProgress + "%";
       offcanvasProgressElement.setAttribute("aria-valuenow", offcanvasProgress);
     }
   }
 }
 
+// Update cart quantity and synchronize it with the server
 function updateQuantity(button, action) {
   const input = button.closest(".input-group").querySelector(".qty_input");
   let currentValue = parseInt(input.value);
@@ -93,6 +89,7 @@ function updateQuantity(button, action) {
   updateCart(itemId, input.value);
 }
 
+// Send the updated quantity to the server
 function updateCart(itemId, newQuantity) {
   fetch(`/update_cart/${itemId}/`, {
     method: "POST",
@@ -114,6 +111,7 @@ function updateCart(itemId, newQuantity) {
     });
 }
 
+// Remove item from cart
 function removeFromCart(button) {
   const itemId = button.getAttribute("data-item_id");
   fetch(`/remove_from_cart/${itemId}/`, {
@@ -128,7 +126,7 @@ function removeFromCart(button) {
       if (data.success) {
         document.getElementById(`item_${itemId}`).remove();
         console.log("Item removed from cart successfully");
-        updateProgressBar(); // Update the progress bar after removing the item
+        updateProgressBar();
       }
     })
     .catch((error) => {
@@ -136,31 +134,7 @@ function removeFromCart(button) {
     });
 }
 
-function removeFromWishlist(productId, csrfToken) {
-  fetch("/wishlist/remove/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "X-CSRFToken": csrfToken,
-    },
-    body: JSON.stringify({
-      product_id: productId,
-    }),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.success) {
-        document.getElementById(`wishlist_item_${productId}`).remove(); // Remove item from DOM
-        console.log(data.message); // Log success message
-      } else {
-        console.error(data.message); // Log error message
-      }
-    })
-    .catch((error) => {
-      console.error("Error removing item from wishlist:", error);
-    });
-}
-
+// Retrieve CSRF token for AJAX requests
 function getCookie(name) {
   let cookieValue = null;
   if (document.cookie && document.cookie !== "") {

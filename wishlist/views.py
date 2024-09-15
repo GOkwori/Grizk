@@ -44,20 +44,14 @@ def add_to_wishlist(request, product_id):
 
 
 @login_required
-def remove_from_wishlist(request):
+def remove_from_wishlist(request, product_id):
     """
     Remove item from Wishlist when remove icon is clicked
     """
-    if request.method == "POST":
-        product_id = request.POST.get('product_id')
-        product = get_object_or_404(Product, pk=product_id)
-        user_profile = get_object_or_404(UserProfile, user=request.user)
-        
-        try:
-            wishlist_item = Wishlist.objects.get(user_profile=user_profile, product=product)
-            wishlist_item.delete()
-            return JsonResponse({'success': True, 'message': f'{product.name} has been successfully removed.'})
-        except Wishlist.DoesNotExist:
-            return JsonResponse({'success': False, 'message': f'{product.name} was not in your wishlist.'})
-    
-    return JsonResponse({'success': False, 'message': 'Invalid request method.'})
+    product = get_object_or_404(Product, pk=product_id)
+    user_profile = UserProfile.objects.get(user=request.user)
+    wishlist_item = Wishlist.objects.get(user_profile=user_profile,
+                                         product=product)
+    wishlist_item.delete()
+    messages.success(request, f'{product.name} has been successfully removed.')
+    return redirect(reverse('products'))

@@ -165,16 +165,16 @@
                                       
                                         <!-- View Button -->
                                         <td class="p-3">
-                                          <a href="{% url 'product_detail' item.product.id %}" role='button'>
+                                          <a href="{% url 'product_detail' item.product.id %}" role='button' title='view item'>
                                             <i class="fa-solid fa-eye"></i>
                                           </a>
                                         </td>
                                       
                                         <!-- Remove Button -->
                                         <td class="p-3">
-                                          <button class="btn remove-item text-center" data-product_id="{{ item.product.id }}" type="button">
+                                          <a href="{% url 'remove_from_wishlist' item.product.id %}" role='button' title='remove item'>
                                             <i class="fa-solid fa-trash"></i>
-                                          </button>
+                                        </a>
                                         </td>
                                       </tr>                                      
                                     {% endfor %}
