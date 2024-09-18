@@ -1,2 +1,1128 @@
 [
+{
+  "model": "products.product",
+  "pk": 175,
+  "fields": {
+    "category": 10,
+    "sku": "SAM-A15-BB-001",
+    "name": "SAMSUNG Galaxy A15 - 128 GB",
+    "description": "Display: 6.4\" Full HD+ AMOLED, 90Hz refresh rate.\r\nProcessor: Octa-core 2.3 GHz.\r\nStorage: 128GB, expandable up to 1TB.\r\nBattery: 5000mAh with fast charging.\r\nCamera: 48MP quad-camera system.\r\nConnectivity: 4G LTE, Wi-Fi 5, Bluetooth 5.0, USB Type-C.\r\nOS: Android 12 with One UI 4.1.\r\nColour: Blue Black.",
+    "price": "249.99",
+    "rating": "4.30",
+    "image_url": null,
+    "image": "SAMSUNG_Galaxy_A15_-_128_GB_Blue_Black.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 176,
+  "fields": {
+    "category": 10,
+    "sku": "SAM-A55-5G-AIB-002",
+    "name": "SAMSUNG Galaxy A55 5G - 256 GB",
+    "description": "Display: 6.5\" Super AMOLED, 120Hz refresh rate.\r\nProcessor: Octa-core 2.4 GHz for fast performance.\r\nStorage: 256GB, expandable to 1TB.\r\nBattery: 5000mAh, 25W fast charging.\r\nCamera: 64MP quad-camera system.\r\nConnectivity: 5G, Wi-Fi 6, Bluetooth 5.1.\r\nOS: Android 13 with One UI 5.\r\nColor: Awesome Iceblue.",
+    "price": "449.99",
+    "rating": "4.60",
+    "image_url": null,
+    "image": "SAMSUNG_Galaxy_A55_5G_-_256_GB_Awesome_Iceblue.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 177,
+  "fields": {
+    "category": 10,
+    "sku": "SAM-A55-5G-ANV-003",
+    "name": "SAMSUNG Galaxy A55 5G - 256 GB",
+    "description": "Display: 6.5\" Super AMOLED, 120Hz refresh rate.\r\nProcessor: Octa-core 2.4 GHz.\r\nStorage: 256GB, expandable up to 1TB.\r\nBattery: 5000mAh, 25W fast charging.\r\nCamera: 64MP quad-camera system.\r\nConnectivity: 5G, Wi-Fi 6, Bluetooth 5.1.\r\nOS: Android 13 with One UI 5.\r\nColour: Awesome Navy.",
+    "price": "449.99",
+    "rating": "4.60",
+    "image_url": null,
+    "image": "SAMSUNG_Galaxy_A55_5G_-_256_GB_Awesome_Navy.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 178,
+  "fields": {
+    "category": 10,
+    "sku": "SAM-S24-OB-004",
+    "name": "SAMSUNG Galaxy S24 - 128 GB",
+    "description": "Display: 6.7\" Dynamic AMOLED, 120Hz refresh rate.\r\nProcessor: Octa-core 3.0 GHz.\r\nStorage: 128GB, expandable up to 512GB.\r\nBattery: 4500mAh, 45W fast charging.\r\nCamera: 50MP triple-camera system.\r\nConnectivity: 5G, Wi-Fi 6E, Bluetooth 5.2.\r\nOS: Android 14 with One UI 6.\r\nColour: Onyx Black.",
+    "price": "799.99",
+    "rating": "4.80",
+    "image_url": null,
+    "image": "SAMSUNG_Galaxy_S24_-_128_GB_Onyx_Black.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 179,
+  "fields": {
+    "category": 10,
+    "sku": "SAM-S24U-TB-005",
+    "name": "SAMSUNG Galaxy S24 Ultra - 256 GB",
+    "description": "Display: 6.8\" Dynamic AMOLED, 120Hz refresh rate.\r\nProcessor: Octa-core 3.2 GHz.\r\nStorage: 256GB, expandable up to 1TB.\r\nBattery: 5000mAh, 45W fast charging.\r\nCamera: 108MP quad-camera system.\r\nConnectivity: 5G, Wi-Fi 6E, Bluetooth 5.2.\r\nOS: Android 14 with One UI 6.\r\nColour: Titanium Black.",
+    "price": "1199.99",
+    "rating": "4.90",
+    "image_url": null,
+    "image": "SAMSUNG_Galaxy_S24_Ultra_-_256_GB_Titanium_Black.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 180,
+  "fields": {
+    "category": 11,
+    "sku": "LEN-TAB-EXT-256-GR-006",
+    "name": "LENOVO Tab Extreme 14.5 Tablet",
+    "description": "Display: 14.5\" OLED, 120Hz refresh rate.\r\nProcessor: Octa-core 3.05 GHz.\r\nStorage: 256GB, expandable via microSD.\r\nBattery: 12300mAh, 68W fast charging.\r\nCamera: 13MP rear, 8MP front camera.\r\nConnectivity: Wi-Fi 6, Bluetooth 5.3, USB Type-C.\r\nOS: Android 13.\r\nAccessories: Includes keyboard and pen.\r\nColour: Grey.",
+    "price": "999.99",
+    "rating": "4.70",
+    "image_url": null,
+    "image": "LENOVO_Tab_Extreme_14.5_Tablet_with_Keyboard__Pen_-_256_GB_Grey.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 181,
+  "fields": {
+    "category": 11,
+    "sku": "LEN-TAB-M10-64-GR-007",
+    "name": "LENOVO Tab M10 10.1 Tablet - 64 GB",
+    "description": "Display: 10.1\" Full HD, IPS display.\r\nProcessor: Quad-core 2.0 GHz.\r\nStorage: 64GB, expandable via microSD.\r\nBattery: 4850mAh, 10-hour battery life.\r\nCamera: 8MP rear, 5MP front camera.\r\nConnectivity: Wi-Fi 5, Bluetooth 5.0, USB Type-C.\r\nOS: Android 11.\r\nColour: Grey.",
+    "price": "179.99",
+    "rating": "4.30",
+    "image_url": null,
+    "image": "LENOVO_Tab_M10_10.1_Tablet_-_64_GB_Grey.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 182,
+  "fields": {
+    "category": 11,
+    "sku": "LEN-TAB-P12-128-SG-008",
+    "name": "LENOVO Tab P12 12.7 Tablet - 128 GB",
+    "description": "Display: 12.7\" 2K OLED, 120Hz refresh rate.\r\nProcessor: Octa-core 2.6 GHz.\r\nStorage: 128GB, expandable up to 1TB via microSD.\r\nBattery: 10200mAh, 30W fast charging.\r\nCamera: 13MP rear, 8MP front camera.\r\nConnectivity: Wi-Fi 6, Bluetooth 5.1, USB Type-C.\r\nOS: Android 13.\r\nColour: Storm Grey.",
+    "price": "349.99",
+    "rating": "4.50",
+    "image_url": null,
+    "image": "LENOVO_Tab_P12_12.7_Tablet_-_128_GB_Storm_Grey.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 183,
+  "fields": {
+    "category": 11,
+    "sku": "LEN-TAB-PL-128-LG-009",
+    "name": "LENOVO Tab Plus 11.5 Tablet with Sleeve - 128 GB",
+    "description": "Display: 11.5\" OLED, 120Hz refresh rate.\r\nProcessor: Octa-core 2.5 GHz.\r\nStorage: 128GB, expandable via microSD.\r\nBattery: 7700mAh, 20W fast charging.\r\nCamera: 13MP rear, 8MP front camera.\r\nConnectivity: Wi-Fi 6, Bluetooth 5.2, USB Type-C.\r\nOS: Android 12.\r\nAccessories: Includes protective sleeve.\r\nColour: Luna Grey.",
+    "price": "299.99",
+    "rating": "4.40",
+    "image_url": null,
+    "image": "LENOVO_Tab_Plus_11.5_Tablet_with_Sleeve_-_128_GB_Luna_Grey.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 184,
+  "fields": {
+    "category": 11,
+    "sku": "SAM-TAB-A9P-64-SL-010",
+    "name": "SAMSUNG Galaxy Tab A9+ 11 Tablet - 64 GB",
+    "description": "Display: 11\" TFT LCD, 90Hz refresh rate.\r\nProcessor: Octa-core 2.4 GHz.\r\nStorage: 64GB, expandable via microSD up to 1TB.\r\nBattery: 7040mAh, fast charging support.\r\nCamera: 8MP rear, 5MP front camera.\r\nConnectivity: Wi-Fi 5, Bluetooth 5.0, USB Type-C.\r\nOS: Android 13.\r\nColour: Silver.",
+    "price": "229.99",
+    "rating": "4.20",
+    "image_url": null,
+    "image": "SAMSUNG_Galaxy_Tab_A9_11_Tablet_-_64_GB_Silver.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 185,
+  "fields": {
+    "category": 11,
+    "sku": "SAM-TAB-S9FE-128-GR-011",
+    "name": "SAMSUNG Galaxy Tab S9 FE 10.9 Tablet - 128 GB",
+    "description": "Display: 10.9\" LCD, 90Hz refresh rate.\r\nProcessor: Octa-core 2.6 GHz.\r\nStorage: 128GB, expandable via microSD up to 1TB.\r\nBattery: 8000mAh, fast charging support.\r\nCamera: 12MP rear, 8MP front camera.\r\nConnectivity: Wi-Fi 6, Bluetooth 5.2, USB Type-C.\r\nOS: Android 13.\r\nColour: Grey.",
+    "price": "499.99",
+    "rating": "4.60",
+    "image_url": null,
+    "image": "SAMSUNG_Galaxy_Tab_S9_FE_10.9_Tablet_-_128_GB_Grey.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 186,
+  "fields": {
+    "category": 12,
+    "sku": "APP-IPAD-102-64-SG-012",
+    "name": "APPLE 10.2 iPad (2021) - 64 GB",
+    "description": "Display: 10.2\" Retina display.\r\nProcessor: A13 Bionic chip.\r\nStorage: 64GB internal storage.\r\nBattery: Up to 10 hours of battery life.\r\nCamera: 8MP rear, 12MP front camera with Center Stage.\r\nConnectivity: Wi-Fi 5, Bluetooth 4.2, Lightning port.\r\nOS: iPadOS 15.\r\nColour: Space Grey.",
+    "price": "319.99",
+    "rating": "4.70",
+    "image_url": null,
+    "image": "APPLE_10.2_iPad_2021_-_64_GB_Space_Grey.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 187,
+  "fields": {
+    "category": 12,
+    "sku": "APP-IPAD-109-64-BL-013",
+    "name": "APPLE 10.9 iPad (2022) - 64 GB",
+    "description": "Display: 10.9\" Liquid Retina display.\r\nProcessor: A14 Bionic chip.\r\nStorage: 64GB internal storage.\r\nBattery: Up to 10 hours of battery life.\r\nCamera: 12MP rear, 12MP ultra-wide front camera.\r\nConnectivity: Wi-Fi 6, Bluetooth 5.0, USB Type-C.\r\nOS: iPadOS 16.\r\nColour: Blue.",
+    "price": "499.99",
+    "rating": "4.80",
+    "image_url": null,
+    "image": "APPLE_10.9_iPad_2022_-_64_GB_Blue.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 188,
+  "fields": {
+    "category": 12,
+    "sku": "APP-IPAD-109-64-PK-014",
+    "name": "APPLE 10.9 iPad (2022) - 64 GB",
+    "description": "Display: 10.9\" Liquid Retina display.\r\nProcessor: A14 Bionic chip.\r\nStorage: 64GB internal storage.\r\nBattery: Up to 10 hours of battery life.\r\nCamera: 12MP rear, 12MP ultra-wide front camera.\r\nConnectivity: Wi-Fi 6, Bluetooth 5.0, USB Type-C.\r\nOS: iPadOS 16.\r\nColour: Pink.",
+    "price": "499.99",
+    "rating": "4.80",
+    "image_url": null,
+    "image": "APPLE_10.9_iPad_2022_-_64_GB_Pink.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 189,
+  "fields": {
+    "category": 12,
+    "sku": "APP-IPAD-AIR-109-64-SG-015",
+    "name": "APPLE 10.9 iPad Air (2022) - 64 GB",
+    "description": "Display: 10.9\" Liquid Retina display.\r\nProcessor: M1 chip for powerful performance.\r\nStorage: 64GB internal storage.\r\nBattery: Up to 10 hours of battery life.\r\nCamera: 12MP rear, 12MP ultra-wide front camera with Center Stage.\r\nConnectivity: Wi-Fi 6, Bluetooth 5.0, USB Type-C.\r\nOS: iPadOS 16.\r\nColour: Space Grey.",
+    "price": "669.99",
+    "rating": "4.90",
+    "image_url": null,
+    "image": "APPLE_10.9_iPad_Air_2022_-_64_GB_Space_Grey.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 190,
+  "fields": {
+    "category": 12,
+    "sku": "APP-IPAD-AIR-11-128-SG-016",
+    "name": "APPLE 11 iPad Air (2024) - 128 GB",
+    "description": "Display: 11\" Liquid Retina display.\r\nProcessor: M2 chip for next-level performance.\r\nStorage: 128GB internal storage.\r\nBattery: Up to 10 hours of battery life.\r\nCamera: 12MP rear, 12MP ultra-wide front camera with Center Stage.\r\nConnectivity: Wi-Fi 6E, Bluetooth 5.3, USB Type-C.\r\nOS: iPadOS 17.\r\nColour: Space Grey.",
+    "price": "749.99",
+    "rating": "4.90",
+    "image_url": null,
+    "image": "APPLE_11_iPad_Air_2024_-_128_GB_Space_Grey.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 191,
+  "fields": {
+    "category": 12,
+    "sku": "APP-IPAD-PRO-11-256-SB-017",
+    "name": "APPLE 11 iPad Pro (2024) - 256 GB",
+    "description": "Display: 11\" Liquid Retina XDR display.\r\nProcessor: M3 chip for ultimate performance.\r\nStorage: 256GB internal storage.\r\nBattery: Up to 10 hours of battery life.\r\nCamera: 12MP dual rear, 12MP ultra-wide front camera with Center Stage.\r\nConnectivity: Wi-Fi 6E, Bluetooth 5.3, USB Type-C with Thunderbolt 4.\r\nOS: iPadOS 17.\r\nColour: Space Black.",
+    "price": "999.99",
+    "rating": "4.90",
+    "image_url": null,
+    "image": "APPLE_11_iPad_Pro_2024_-_256_GB_Space_Black.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 192,
+  "fields": {
+    "category": 13,
+    "sku": "APP-IPH14-128-BL-018",
+    "name": "APPLE iPhone 14 - 128 GB",
+    "description": "Display: 6.1\" Super Retina XDR display.\r\nProcessor: A15 Bionic chip for fast and efficient performance.\r\nStorage: 128GB internal storage.\r\nBattery: Up to 20 hours of video playback.\r\nCamera: 12MP dual-camera system with Night Mode and 4K video.\r\nConnectivity: 5G, Wi-Fi 6, Bluetooth 5.3, MagSafe charging.\r\nOS: iOS 16.\r\nColour: Blue.",
+    "price": "849.99",
+    "rating": "4.80",
+    "image_url": null,
+    "image": "APPLE_iPhone_14_-_128_GB_Blue.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 193,
+  "fields": {
+    "category": 13,
+    "sku": "APP-IPH15-128-BL-019",
+    "name": "APPLE iPhone 15 - 128 GB",
+    "description": "Display: 6.1\" Super Retina XDR display.\r\nProcessor: A16 Bionic chip for top-tier performance.\r\nStorage: 128GB internal storage.\r\nBattery: Up to 22 hours of video playback.\r\nCamera: 48MP main camera with advanced Night Mode and 4K video recording.\r\nConnectivity: 5G, Wi-Fi 6, Bluetooth 5.3, MagSafe wireless charging.\r\nOS: iOS 17.\r\nColour: Blue.",
+    "price": "949.99",
+    "rating": "4.90",
+    "image_url": null,
+    "image": "APPLE_iPhone_15_-_128_GB_Blue.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 194,
+  "fields": {
+    "category": 13,
+    "sku": "APP-IPH15-128-PK-020",
+    "name": "APPLE iPhone 15 - 128 GB",
+    "description": "Display: 6.1\" Super Retina XDR display.\r\nProcessor: A16 Bionic chip for top-tier performance.\r\nStorage: 128GB internal storage.\r\nBattery: Up to 22 hours of video playback.\r\nCamera: 48MP main camera with advanced Night Mode and 4K video recording.\r\nConnectivity: 5G, Wi-Fi 6, Bluetooth 5.3, MagSafe wireless charging.\r\nOS: iOS 17.\r\nColour: Pink.",
+    "price": "949.99",
+    "rating": "4.90",
+    "image_url": null,
+    "image": "APPLE_iPhone_15_-_128_GB_Pink.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 195,
+  "fields": {
+    "category": 13,
+    "sku": "APP-IPH15-256-BK-021",
+    "name": "APPLE iPhone 15 - 256 GB",
+    "description": "Display: 6.1\" Super Retina XDR display.\r\nProcessor: A16 Bionic chip for fast performance.\r\nStorage: 256GB internal storage.\r\nBattery: Up to 22 hours of video playback.\r\nCamera: 48MP main camera with Night Mode and 4K video recording.\r\nConnectivity: 5G, Wi-Fi 6, Bluetooth 5.3, MagSafe wireless charging.\r\nOS: iOS 17.\r\nColour: Black.",
+    "price": "1049.99",
+    "rating": "4.90",
+    "image_url": null,
+    "image": "APPLE_iPhone_15_-_256_GB_Black.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 196,
+  "fields": {
+    "category": 13,
+    "sku": "APP-IPH15P-128-BT-022",
+    "name": "APPLE iPhone 15 Pro - 128 GB",
+    "description": "Display: 6.1\" Super Retina XDR display with ProMotion.\r\nProcessor: A17 Pro chip for unmatched performance.\r\nStorage: 128GB internal storage.\r\nBattery: Up to 23 hours of video playback.\r\nCamera: 48MP pro camera system with advanced Night Mode and ProRAW support.\r\nConnectivity: 5G, Wi-Fi 6E, Bluetooth 5.3, MagSafe wireless charging.\r\nOS: iOS 17.\r\nColour: Blue Titanium.",
+    "price": "1099.99",
+    "rating": "5.00",
+    "image_url": null,
+    "image": "APPLE_iPhone_15_Pro_-_128_GB_Blue_Titanium.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 197,
+  "fields": {
+    "category": 13,
+    "sku": "APP-IPH15P-128-NT-023",
+    "name": "APPLE iPhone 15 Pro - 128 GB",
+    "description": "Display: 6.1\" Super Retina XDR display with ProMotion.\r\nProcessor: A17 Pro chip for ultra-fast performance.\r\nStorage: 128GB internal storage.\r\nBattery: Up to 23 hours of video playback.\r\nCamera: 48MP pro camera system with Night Mode and ProRAW support.\r\nConnectivity: 5G, Wi-Fi 6E, Bluetooth 5.3, MagSafe wireless charging.\r\nOS: iOS 17.\r\nColour: Natural Titanium.",
+    "price": "1099.99",
+    "rating": "5.00",
+    "image_url": null,
+    "image": "APPLE_iPhone_15_Pro_-_128_GB_Natural_Titanium.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 198,
+  "fields": {
+    "category": 13,
+    "sku": "APP-IPH15PM-256-BT-024",
+    "name": "APPLE iPhone 15 Pro Max - 256 GB",
+    "description": "Display: 6.7\" Super Retina XDR display with ProMotion.\r\nProcessor: A17 Pro chip for ultimate performance.\r\nStorage: 256GB internal storage.\r\nBattery: Up to 29 hours of video playback.\r\nCamera: 48MP pro camera system with advanced Night Mode and ProRAW support.\r\nConnectivity: 5G, Wi-Fi 6E, Bluetooth 5.3, MagSafe wireless charging.\r\nOS: iOS 17.\r\nColour: Black Titanium.",
+    "price": "1299.99",
+    "rating": "5.00",
+    "image_url": null,
+    "image": "APPLE_iPhone_15_Pro_Max_-_256_GB_Black_Titanium.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 199,
+  "fields": {
+    "category": 13,
+    "sku": "APP-IPH15PM-256-NT-025",
+    "name": "APPLE iPhone 15 Pro Max - 256 GB",
+    "description": "Display: 6.7\" Super Retina XDR display with ProMotion.\r\nProcessor: A17 Pro chip for top-tier performance.\r\nStorage: 256GB internal storage.\r\nBattery: Up to 29 hours of video playback.\r\nCamera: 48MP pro camera system with advanced Night Mode and ProRAW support.\r\nConnectivity: 5G, Wi-Fi 6E, Bluetooth 5.3, MagSafe wireless charging.\r\nOS: iOS 17.\r\nColour: Natural Titanium.",
+    "price": "1299.99",
+    "rating": "5.00",
+    "image_url": null,
+    "image": "APPLE_iPhone_15_Pro_Max_-_256_GB_Natural_Titanium.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 200,
+  "fields": {
+    "category": 13,
+    "sku": "APP-IPH16-128-UM-026",
+    "name": "APPLE iPhone 16 - 128 GB",
+    "description": "Display: 6.1\" Super Retina XDR display.\r\nProcessor: A17 Bionic chip for smooth performance.\r\nStorage: 128GB internal storage.\r\nBattery: Up to 24 hours of video playback.\r\nCamera: 48MP main camera with Night Mode and 4K video recording.\r\nConnectivity: 5G, Wi-Fi 6E, Bluetooth 5.3, MagSafe wireless charging.\r\nOS: iOS 18.\r\nColour: Ultramarine.",
+    "price": "899.99",
+    "rating": "4.90",
+    "image_url": null,
+    "image": "APPLE_iPhone_16_-_128_GB_Ultramarine.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 201,
+  "fields": {
+    "category": 13,
+    "sku": "APP-IPH16P-128-DT-027",
+    "name": "APPLE iPhone 16 Pro - 128 GB",
+    "description": "Display: 6.1\" Super Retina XDR display with ProMotion.\r\nProcessor: A18 Pro chip for blazing-fast performance.\r\nStorage: 128GB internal storage.\r\nBattery: Up to 23 hours of video playback.\r\nCamera: 48MP pro camera system with Night Mode and ProRAW support.\r\nConnectivity: 5G, Wi-Fi 6E, Bluetooth 5.3, MagSafe wireless charging.\r\nOS: iOS 18.\r\nColour: Desert Titanium.",
+    "price": "1099.99",
+    "rating": "5.00",
+    "image_url": null,
+    "image": "APPLE_iPhone_16_Pro_-_128_GB_Desert_Titanium.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 202,
+  "fields": {
+    "category": 14,
+    "sku": "CAN-BGE21-BG-028",
+    "name": "CANON BG-E21 Battery Grip",
+    "description": "Compatibility: Designed for Canon EOS 6D Mark II.\r\nCapacity: Holds up to two LP-E6/LP-E6N batteries for extended shooting time.\r\nErgonomics: Enhanced grip for comfortable vertical shooting.\r\nFeatures: Additional shutter release, control dial, and autofocus button.\r\nBattery Life: Doubles battery life for long photography sessions.\r\nColour: Black.",
+    "price": "199.99",
+    "rating": "4.70",
+    "image_url": null,
+    "image": "CANON_BG-E21_Battery_Grip.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 203,
+  "fields": {
+    "category": 14,
+    "sku": "DUR-CEF14-CHG-029",
+    "name": "DURACELL CEF14 4-Battery Charger with Batteries",
+    "description": "Compatibility: Charges AA and AAA rechargeable batteries.\r\nIncluded: Comes with 2 AA and 2 AAA Duracell rechargeable batteries.\r\nCharging Time: Fully charges in 1-2 hours depending on battery capacity.\r\nSafety: Auto shut-off to prevent overcharging.\r\nLED Indicator: Displays charging status for each battery.\r\nColour: Black.",
+    "price": "34.99",
+    "rating": "4.60",
+    "image_url": null,
+    "image": "DURACELL_CEF14_4-Battery_Charger_with_Batteries.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 204,
+  "fields": {
+    "category": 14,
+    "sku": "DUR-CEF27-CHG-030",
+    "name": "DURACELL CEF27 4-Battery Charger with Batteries",
+    "description": "Compatibility: Charges both AA and AAA rechargeable batteries.\r\nIncluded: Comes with 4 AA Duracell rechargeable batteries.\r\nCharging Time: Fast charging, fully charges in 1-2 hours depending on battery capacity.\r\nSafety: Overcharge protection with auto shut-off feature.\r\nLED Indicator: Individual indicators for each battery's charging status.\r\nColour: Black.",
+    "price": "39.99",
+    "rating": "4.70",
+    "image_url": null,
+    "image": "DURACELL_CEF27_4-Battery_Charger_with_Batteries.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 205,
+  "fields": {
+    "category": 14,
+    "sku": "DUR-DL2025-LIT-031",
+    "name": "DURACELL DL2025-CR2025-ECR2025 Lithium Batteries",
+    "description": "Type: Lithium coin cell batteries (2025).\r\nCompatibility: Ideal for key fobs, watches, remotes, and other small electronic devices.\r\nVoltage: 3V per battery.\r\nPackaging: Pack of 2 batteries.\r\nLongevity: High energy density for long-lasting power.\r\nSafety: Child-safe packaging with bitter coating to prevent accidental ingestion.",
+    "price": "4.99",
+    "rating": "4.00",
+    "image_url": null,
+    "image": "DURACELL_DL2025-CR2025-ECR2025_Lithium_Batteries.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 206,
+  "fields": {
+    "category": 14,
+    "sku": "DUR-HR9V-1604-NIMH-032",
+    "name": "DURACELL HR9V-DC1604 9V Rechargeable NiMH Battery",
+    "description": "Type: 9V Rechargeable NiMH battery.\r\nCompatibility: Suitable for smoke detectors, toys, and wireless microphones.\r\nCapacity: 170mAh for long-lasting power.\r\nRechargeable: Can be recharged hundreds of times.\r\nVoltage: 9V output.\r\nLongevity: Retains charge for up to one year in storage.",
+    "price": "12.99",
+    "rating": "4.70",
+    "image_url": null,
+    "image": "DURACELL_HR9V-DC1604_9V_Rechargeable_NiMH_Battery.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 207,
+  "fields": {
+    "category": 15,
+    "sku": "BEA-SOLO3-WIRE-BK-033",
+    "name": "BEATS Solo 3 Wireless Bluetooth Headphones",
+    "description": "Connectivity: Bluetooth with Apple W1 chip for seamless pairing.\r\nBattery Life: Up to 40 hours of wireless playback on a single charge.\r\nFast Fuel: 5 minutes of charging provides 3 hours of playback.\r\nSound: Fine-tuned acoustics for maximum clarity, breadth, and balance.\r\nDesign: Adjustable, cushioned ear cups for all-day comfort.\r\nFeatures: Integrated on-ear controls for music, calls, and voice assistant.\r\nColour: Black.",
+    "price": "179.99",
+    "rating": "4.80",
+    "image_url": null,
+    "image": "BEATS_Solo_3_Wireless_Bluetooth_Headphones_-_Black.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 208,
+  "fields": {
+    "category": 15,
+    "sku": "BEA-SOLO4-WIRE-BL-034",
+    "name": "BEATS Solo 4 Wireless Bluetooth Headphones",
+    "description": "Connectivity: Bluetooth with Apple H1 chip for seamless and fast pairing.\r\nBattery Life: Up to 50 hours of wireless playback.\r\nFast Fuel: 5-minute charge provides 3 hours of playback.\r\nSound: Precision-tuned acoustics for clear and dynamic sound.\r\nDesign: Lightweight, adjustable cushioned ear cups for enhanced comfort.\r\nFeatures: On-ear controls for calls, music, and voice assistant.\r\nColour: Blue.",
+    "price": "199.99",
+    "rating": "4.90",
+    "image_url": null,
+    "image": "BEATS_Solo_4_Wireless_Bluetooth_Headphones_-_Blue.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 209,
+  "fields": {
+    "category": 15,
+    "sku": "BEA-SOLO4-WIRE-PK-035",
+    "name": "BEATS Solo 4 Wireless Bluetooth Headphones",
+    "description": "Connectivity: Bluetooth with Apple H1 chip for fast, reliable pairing.\r\nBattery Life: Up to 50 hours of wireless playback.\r\nFast Fuel: 5-minute charge provides 3 hours of playback.\r\nSound: Precision-engineered acoustics for rich, balanced sound.\r\nDesign: Lightweight with adjustable cushioned ear cups for long-term comfort.\r\nFeatures: On-ear controls for music, calls, and voice assistant.\r\nColour: Pink.",
+    "price": "199.99",
+    "rating": "4.90",
+    "image_url": null,
+    "image": "BEATS_Solo_4_Wireless_Bluetooth_Headphones_-_Pink.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 210,
+  "fields": {
+    "category": 15,
+    "sku": "MON-M1012-WIRE-CLR-036",
+    "name": "MONDO by Defunc M1012 Wireless Bluetooth Headphones",
+    "description": "Connectivity: Bluetooth 5.0 for seamless wireless connection.\r\nBattery Life: Up to 35 hours of wireless playback on a single charge.\r\nCharging: USB Type-C fast charging support.\r\nSound: High-definition sound with enhanced bass for a balanced audio experience.\r\nDesign: Sleek and transparent design with soft, cushioned ear cups.\r\nFeatures: Integrated on-ear controls for music and calls.\r\nColour: Clear.",
+    "price": "149.99",
+    "rating": "4.60",
+    "image_url": null,
+    "image": "MONDO_by_Defunc_M1012_Wireless_Bluetooth_Headphones_-_Clear.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 211,
+  "fields": {
+    "category": 15,
+    "sku": "SON-WHCH520B-WIRE-BK-037",
+    "name": "SONY WH-CH520B Wireless Bluetooth Headphones",
+    "description": "Connectivity: Bluetooth 5.0 for wireless connection with multipoint pairing.\r\nBattery Life: Up to 50 hours of wireless playback on a single charge.\r\nCharging: Quick charge support — 3 minutes charge for 1.5 hours playback.\r\nSound: Clear and balanced sound with Sony's Digital Sound Enhancement Engine (DSEE).\r\nDesign: Lightweight with adjustable headband and soft ear cups for comfort.\r\nFeatures: Built-in microphone, on-ear controls for calls, music, and voice assistant.\r\nColour: Black.",
+    "price": "59.99",
+    "rating": "4.70",
+    "image_url": null,
+    "image": "SONY_WH-CH520B_Wireless_Bluetooth_Headphones_-_Black.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 212,
+  "fields": {
+    "category": 15,
+    "sku": "SON-WHCH520C-WIRE-BE-038",
+    "name": "SONY WH-CH520C Wireless Bluetooth Headphones",
+    "description": "Connectivity: Bluetooth 5.0 with multipoint pairing for seamless wireless connection.\r\nBattery Life: Up to 50 hours of wireless playback.\r\nCharging: Quick charge — 3 minutes charge for 1.5 hours playback.\r\nSound: Enhanced sound with Sony's Digital Sound Enhancement Engine (DSEE).\r\nDesign: Lightweight design with adjustable headband and cushioned ear cups for comfort.\r\nFeatures: Built-in microphone and on-ear controls for calls, music, and voice assistant.\r\nColour: Beige.",
+    "price": "59.99",
+    "rating": "4.70",
+    "image_url": null,
+    "image": "SONY_WH-CH520C_Wireless_Bluetooth_Headphones_-_Beige.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 213,
+  "fields": {
+    "category": 15,
+    "sku": "SON-WHCH520W-WIRE-WH-039",
+    "name": "SONY WH-CH520W Wireless Bluetooth Headphones",
+    "description": "Connectivity: Bluetooth 5.0 with multipoint pairing for seamless wireless connection.\r\nBattery Life: Up to 50 hours of wireless playback.\r\nCharging: Quick charge — 3 minutes of charging for 1.5 hours playback.\r\nSound: Enhanced sound with Sony's Digital Sound Enhancement Engine (DSEE).\r\nDesign: Lightweight, adjustable headband with cushioned ear cups for long-lasting comfort.\r\nFeatures: Built-in microphone and on-ear controls for calls, music, and voice assistant.\r\nColour: White.",
+    "price": "59.99",
+    "rating": "4.70",
+    "image_url": null,
+    "image": "SONY_WH-CH520W_Wireless_Bluetooth_Headphones_-_White.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 214,
+  "fields": {
+    "category": 16,
+    "sku": "APP-20W-USBC-040",
+    "name": "APPLE 20 W USB Type-C Power Adapter",
+    "description": "Power Output: 20 W fast charging via USB Type-C.\r\nCompatibility: Works with iPhone, iPad, and other USB Type-C enabled devices.\r\nDesign: Compact and lightweight for easy portability.\r\nCharging: Supports fast charging for iPhone 8 and later models.\r\nSafety: Built-in protection against overcharging and overheating.\r\nColour: White.",
+    "price": "19.99",
+    "rating": "4.90",
+    "image_url": null,
+    "image": "APPLE_20_W_USB_Type-C_Power_Adapter.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 215,
+  "fields": {
+    "category": 16,
+    "sku": "APP-LIGHT-USB-041",
+    "name": "APPLE Lightning to USB Adapter",
+    "description": "Compatibility: Connects iPhone, iPad, or iPod with Lightning connector to USB devices.\r\nUse: Supports syncing and charging with USB-enabled devices.\r\nDesign: Compact, lightweight, and portable.\r\nFeatures: Ideal for transferring photos, videos, and files between Apple devices and USB storage.\r\nDurability: Built for long-lasting use with high-quality materials.\r\nColour: White.",
+    "price": "29.99",
+    "rating": "4.80",
+    "image_url": null,
+    "image": "APPLE_Lightning_to_USB_Adapter.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 216,
+  "fields": {
+    "category": 16,
+    "sku": "BEL-DUAL24W-CAR-042",
+    "name": "BELKIN Dual 24 W USB Car Charger",
+    "description": "Power Output: 24 W total (12 W per USB port), fast charging for two devices simultaneously.\r\nCompatibility: Works with smartphones, tablets, and other USB-powered devices.\r\nDesign: Compact and durable, perfect for in-car charging.\r\nSafety: Built-in protection against overcharging and overheating.\r\nFeatures: Dual USB ports for charging multiple devices at once.\r\nColour: Black.",
+    "price": "24.99",
+    "rating": "4.70",
+    "image_url": null,
+    "image": "BELKIN_Dual_24_W_USB_Car_Charger.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 217,
+  "fields": {
+    "category": 16,
+    "sku": "BEL-F7U080BT-USB-C-043",
+    "name": "BELKIN F7U080btBLK Dual USB-C Aux and Charge Adapter",
+    "description": "Compatibility: Designed for devices with USB-C ports, perfect for smartphones and tablets.\r\nDual Functionality: Supports simultaneous audio playback and fast charging via two USB-C ports.\r\nPower Output: Up to 60 W Power Delivery for rapid charging.\r\nDesign: Slim, portable, and durable design for easy use on the go.\r\nAudio: High-quality digital audio pass-through for lossless sound.\r\nColour: Black.",
+    "price": "34.99",
+    "rating": "4.60",
+    "image_url": null,
+    "image": "BELKIN_F7U080btBLK_Dual_USB-C_Aux_and_Charge_Adapter.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 218,
+  "fields": {
+    "category": 17,
+    "sku": "APP-IMAC24-M3-512-SLV-044",
+    "name": "APPLE iMac 4.5K 24 (2023) - M3, 512 GB SSD",
+    "description": "Display: 24\" Retina 4.5K display with P3 wide color gamut and True Tone technology.\r\nProcessor: Apple M3 chip for powerful and efficient performance.\r\nStorage: 512 GB SSD for fast load times and ample storage.\r\nMemory: 8 GB unified memory, expandable options available.\r\nGraphics: Integrated GPU for smooth graphics rendering and video editing.\r\nConnectivity: 2 Thunderbolt/USB 4 ports, 2 USB 3 ports, and Gigabit Ethernet.\r\nDesign: Sleek, ultra-thin profile in Silver.\r\nOS: macOS Ventura for a seamless, intuitive user experience.\r\nColour: Silver.",
+    "price": "1699.99",
+    "rating": "5.00",
+    "image_url": null,
+    "image": "APPLE_iMac_4.5K_24_2023_-_M3_512_GB_SSD_Silver.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 219,
+  "fields": {
+    "category": 17,
+    "sku": "ASUS-A3402WVAK-I5-1TB-WH-045",
+    "name": "ASUS A3402WVAK-WPC127W 23.8 All-in-One PC - Intel® Core™ 5, 1 TB SSD",
+    "description": "Display: 23.8\" Full HD display with wide viewing angles and vibrant colours.\r\nProcessor: Intel® Core™ i5 for smooth multitasking and performance.\r\nStorage: 1 TB SSD for fast storage and quick boot times.\r\nMemory: 8 GB RAM, ideal for daily computing and light gaming.\r\nGraphics: Integrated Intel® UHD Graphics for crisp visuals.\r\nConnectivity: Multiple USB ports, HDMI, and Bluetooth 5.0.\r\nDesign: Sleek all-in-one design in white, with a slim bezel.\r\nOperating System: Windows 11 Home pre-installed for an optimized experience.\r\nColour: White",
+    "price": "899.99",
+    "rating": "4.80",
+    "image_url": null,
+    "image": "ASUS_A3402WVAK-WPC127W_23.8_All-in-One_PC_-_Intel_Core_5_1_TB_SSD_White.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 220,
+  "fields": {
+    "category": 17,
+    "sku": "HP-24CB1002NA-I5-512SSD-WH-046",
+    "name": "HP 24-cb1002na 23.8 All-in-One PC - Intel® Core™ i5, 512 GB SSD",
+    "description": "Display: 23.8\" Full HD display with anti-glare technology for vibrant visuals.\r\nProcessor: Intel® Core™ i5 for powerful performance and smooth multitasking.\r\nStorage: 512 GB SSD for fast boot times and quick data access.\r\nMemory: 8 GB RAM, perfect for everyday computing tasks.\r\nGraphics: Integrated Intel® UHD Graphics for smooth video playback and casual gaming.\r\nConnectivity: USB 3.1, HDMI, and Bluetooth 5.0 for versatile connectivity.\r\nDesign: Stylish all-in-one design with a slim profile and clean white finish.\r\nOperating System: Windows 11 Home pre-installed.\r\nColour: White.",
+    "price": "849.99",
+    "rating": "4.70",
+    "image_url": null,
+    "image": "HP_24-cb1002na_23.8_All-in-One_PC_-_Intel_Core_i5_512_GB_SSD_White.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 221,
+  "fields": {
+    "category": 18,
+    "sku": "BEA-SOLO-BUDS-STG-047",
+    "name": "BEATS Solo Buds Wireless Bluetooth Earbuds",
+    "description": "Connectivity: Bluetooth 5.0 for seamless wireless pairing.\r\nBattery Life: Up to 8 hours of listening time on a single charge, with 24 hours using the charging case.\r\nFast Fuel: 5-minute charge provides 1 hour of playback.\r\nSound: Rich, high-quality sound with balanced bass and treble.\r\nDesign: Lightweight, ergonomic fit for all-day comfort.\r\nFeatures: Integrated controls for music, calls, and voice assistant.\r\nWater Resistance: Sweat and water-resistant (IPX4 rating) for active use.\r\nColour: Storm Grey.",
+    "price": "149.99",
+    "rating": "4.70",
+    "image_url": null,
+    "image": "BEATS_Solo_Buds_Wireless_Bluetooth_Earbuds_-_Storm_Grey.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 222,
+  "fields": {
+    "category": 18,
+    "sku": "JLAB-GOPOP-LIL-048",
+    "name": "JLAB GO Air POP Wireless Bluetooth Earbuds",
+    "description": "Connectivity: Bluetooth 5.1 for easy, stable wireless connection.\r\nBattery Life: Up to 8 hours of listening time, with 32 hours using the charging case.\r\nCharging: Integrated charging cable for convenience.\r\nSound: Custom EQ3 sound settings for balanced audio quality.\r\nDesign: Lightweight and compact with a comfortable in-ear fit.\r\nFeatures: Touch controls for music, calls, and voice assistant.\r\nWater Resistance: IPX4 rating for sweat and water resistance.\r\nColour: Lilac.",
+    "price": "19.99",
+    "rating": "4.60",
+    "image_url": null,
+    "image": "JLAB_GO_Air_POP_Wireless_Bluetooth_Earbuds_-_Lilac.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 223,
+  "fields": {
+    "category": 18,
+    "sku": "JLAB-GOPOP-SLT-049",
+    "name": "JLAB GO Air POP Wireless Bluetooth Earbuds",
+    "description": "Connectivity: Bluetooth 5.1 for a stable wireless connection.\r\nBattery Life: Up to 8 hours of listening time, with a total of 32 hours using the charging case.\r\nCharging: Built-in charging cable for added convenience.\r\nSound: Custom EQ3 sound settings for balanced audio performance.\r\nDesign: Lightweight, compact design with a snug in-ear fit.\r\nFeatures: Touch controls for music, calls, and voice assistant.\r\nWater Resistance: IPX4 rated for sweat and water resistance.\r\nColour: Slate.",
+    "price": "19.99",
+    "rating": "4.60",
+    "image_url": null,
+    "image": "JLAB_GO_Air_POP_Wireless_Bluetooth_Earbuds_-_Slate.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 224,
+  "fields": {
+    "category": 18,
+    "sku": "JLAB-GOPOP-TEAL-050",
+    "name": "JLAB GO Air POP Wireless Bluetooth Earbuds",
+    "description": "Connectivity: Bluetooth 5.1 for a stable wireless connection.\r\nBattery Life: Up to 8 hours of listening time, with a total of 32 hours using the charging case.\r\nCharging: Integrated charging cable for added convenience.\r\nSound: Custom EQ3 sound settings for optimized audio quality.\r\nDesign: Lightweight, compact, and ergonomic in-ear fit.\r\nFeatures: Touch controls for music, calls, and voice assistant.\r\nWater Resistance: IPX4 rated for sweat and water resistance.\r\nColour: Teal.",
+    "price": "19.99",
+    "rating": "4.80",
+    "image_url": null,
+    "image": "JLAB_GO_Air_POP_Wireless_Bluetooth_Earbuds_-_Teal.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 225,
+  "fields": {
+    "category": 19,
+    "sku": "ACER-N50-650-I5-RTX4060-051",
+    "name": "ACER Nitro N50-650 Gaming PC - Intel® Core™ i5, RTX 4060, 1 TB SSD",
+    "description": "Processor: Intel® Core™ i5-12400F for fast and efficient gaming performance.\r\nGraphics: NVIDIA GeForce RTX 4060 with ray tracing and AI-enhanced graphics.\r\nStorage: 1 TB SSD for lightning-fast load times and ample storage space.\r\nMemory: 16 GB DDR4 RAM, ideal for multitasking and heavy gaming.\r\nCooling: Advanced cooling system for optimal performance during intense gameplay.\r\nConnectivity: Multiple USB 3.1 ports, HDMI, DisplayPort, and Gigabit Ethernet.\r\nDesign: Sleek and aggressive design with RGB lighting for a true gaming aesthetic.\r\nOperating System: Windows 11 Home pre-installed.\r\nColour: Black.",
+    "price": "1199.99",
+    "rating": "4.80",
+    "image_url": null,
+    "image": "ACER_Nitro_N50-650_Gaming_PC_-_Intel_Core_i5_RTX_4060_1_TB_SSD.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 226,
+  "fields": {
+    "category": 19,
+    "sku": "HP-OMEN-25L-I5-4060TI-052",
+    "name": "HP OMEN 25L Gaming Desktop PC, RTX 4060 Ti 8GB, Intel® Core™ i5, 16GB DDR5 RAM, 1TB SSD",
+    "description": "Processor: Intel® Core™ i5-13400F for smooth, high-performance gaming.\r\nGraphics: NVIDIA GeForce RTX 4060 Ti 8GB for ultra-realistic visuals and ray tracing support.\r\nStorage: 1 TB SSD for fast boot-up and plenty of storage for games and media.\r\nMemory: 16 GB DDR5 RAM, perfect for multitasking and demanding games.\r\nCooling: Enhanced cooling system to maintain performance during intensive gaming sessions.\r\nConnectivity: Multiple USB ports, HDMI, DisplayPort, and Gigabit Ethernet for versatile connectivity.\r\nDesign: Sleek, compact case with RGB lighting and a transparent side panel for a premium look.\r\nOperating System: Windows 11 Home pre-installed for a modern gaming experience.\r\nColour: Black.",
+    "price": "1499.99",
+    "rating": "4.90",
+    "image_url": null,
+    "image": "HP_OMEN_25L_Gaming_Desktop_PC_RTX_4060_Ti_8GB_Intel_Core_i5_16GB_DDR5_RAM_1TB_SSD.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 227,
+  "fields": {
+    "category": 19,
+    "sku": "HP-VICTUS-15L-R5-3050-053",
+    "name": "HP Victus 15L Gaming Desktop PC, AMD Ryzen 5, RTX 3050 8GB",
+    "description": "Processor: AMD Ryzen 5 5600G for solid performance and multitasking capabilities.\r\nGraphics: NVIDIA GeForce RTX 3050 8GB for smooth gameplay with real-time ray tracing.\r\nStorage: 512GB SSD for fast load times and reliable storage.\r\nMemory: 8GB DDR4 RAM, great for gaming and general use.\r\nCooling: Optimized thermal design to maintain performance during extended gaming sessions.\r\nConnectivity: Multiple USB ports, HDMI, DisplayPort, and Gigabit Ethernet.\r\nDesign: Compact case with a clean, modern look, perfect for any setup.\r\nOperating System: Windows 11 Home pre-installed for an up-to-date gaming experience.\r\nColour: Black.",
+    "price": "999.99",
+    "rating": "4.60",
+    "image_url": null,
+    "image": "HP_Victus_15L_Gaming_Desktop_PC_AMD_Ryzen_5_RTX_3050_8GB_512GB_SSD.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 228,
+  "fields": {
+    "category": 20,
+    "sku": "GOO-PIX7PRO-128-HZL-054",
+    "name": "GOOGLE Pixel 7 Pro - 128 GB, Hazel",
+    "description": "Display: 6.7\" QHD+ OLED with 120Hz refresh rate for ultra-smooth scrolling.\r\nProcessor: Google Tensor G2 chip for enhanced performance and AI capabilities.\r\nStorage: 128 GB internal storage, ample space for apps, media, and files.\r\nCamera: Triple rear camera system with 50MP wide, 48MP telephoto, and 12MP ultra-wide lenses for stunning photography.\r\nBattery: 5000mAh with fast charging and wireless charging support.\r\nOperating System: Android 13 with exclusive Pixel features.\r\nConnectivity: 5G, Wi-Fi 6E, Bluetooth 5.2, and USB Type-C.\r\nDesign: Sleek, premium build in Hazel colour.",
+    "price": "849.99",
+    "rating": "4.80",
+    "image_url": null,
+    "image": "GOOGLE_Pixel_7_Pro_-_128_GB_Hazel.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 229,
+  "fields": {
+    "category": 20,
+    "sku": "GOO-PIX8-128-OBS-055",
+    "name": "GOOGLE Pixel 8 - 128 GB, Obsidian",
+    "description": "Display: 6.2\" OLED with a 120Hz refresh rate for smooth and vibrant visuals.\r\nProcessor: Google Tensor G3 chip for lightning-fast performance and advanced AI.\r\nStorage: 128 GB internal storage for apps, photos, and files.\r\nCamera: Dual rear camera setup with 50MP wide and 12MP ultra-wide lenses for sharp, detailed photos.\r\nBattery: 4500mAh with fast charging and wireless charging support.\r\nOperating System: Android 14 with the latest Google Pixel features and updates.\r\nConnectivity: 5G, Wi-Fi 6E, Bluetooth 5.3, and USB Type-C.\r\nDesign: Premium build with a sleek Obsidian finish.",
+    "price": "699.99",
+    "rating": "4.90",
+    "image_url": null,
+    "image": "GOOGLE_Pixel_8_-_128_GB_Obsidian.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 230,
+  "fields": {
+    "category": 20,
+    "sku": "GOO-PIX8-256-HZL-056",
+    "name": "GOOGLE Pixel 8 - 256 GB, Hazel",
+    "description": "Display: 6.2\" OLED with a 120Hz refresh rate for smooth scrolling and sharp visuals.\r\nProcessor: Google Tensor G3 chip for fast performance and AI-powered features.\r\nStorage: 256 GB internal storage for apps, media, and files.\r\nCamera: Dual rear camera system featuring 50MP wide and 12MP ultra-wide lenses for stunning photos.\r\nBattery: 4500mAh with fast charging and wireless charging support.\r\nOperating System: Android 14 with exclusive Google Pixel software features.\r\nConnectivity: 5G, Wi-Fi 6E, Bluetooth 5.3, and USB Type-C.\r\nDesign: Premium build in Hazel finish, combining style and durability.",
+    "price": "749.99",
+    "rating": "4.90",
+    "image_url": null,
+    "image": "GOOGLE_Pixel_8_-_256_GB_Hazel.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 231,
+  "fields": {
+    "category": 20,
+    "sku": "GOO-PIX8-256-OBS-057",
+    "name": "GOOGLE Pixel 8 - 256 GB, Obsidian",
+    "description": "Display: 6.2\" OLED with 120Hz refresh rate for smooth and sharp visuals.\r\nProcessor: Google Tensor G3 chip for high-speed performance and advanced AI capabilities.\r\nStorage: 256 GB internal storage for all your apps, photos, and media.\r\nCamera: Dual rear camera system with 50MP wide and 12MP ultra-wide lenses for stunning, detailed shots.\r\nBattery: 4500mAh battery with fast charging and wireless charging support.\r\nOperating System: Android 14 with exclusive Pixel features and latest updates.\r\nConnectivity: 5G, Wi-Fi 6E, Bluetooth 5.3, and USB Type-C.\r\nDesign: Sleek, durable design in a premium Obsidian finish.",
+    "price": "749.99",
+    "rating": "4.90",
+    "image_url": null,
+    "image": "GOOGLE_Pixel_8_-_256_GB_Obsidian.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 232,
+  "fields": {
+    "category": 20,
+    "sku": "GOO-PIX8-256-ROSE-058",
+    "name": "GOOGLE Pixel 8 - 256 GB, Rose",
+    "description": "Display: 6.2\" OLED with 120Hz refresh rate for fluid visuals and vibrant colors.\r\nProcessor: Google Tensor G3 chip for fast, efficient performance and advanced AI capabilities.\r\nStorage: 256 GB internal storage for apps, photos, and media.\r\nCamera: Dual rear camera setup with 50MP wide and 12MP ultra-wide lenses for stunning photography.\r\nBattery: 4500mAh with fast charging and wireless charging support.\r\nOperating System: Android 14 with the latest Pixel-exclusive features.\r\nConnectivity: 5G, Wi-Fi 6E, Bluetooth 5.3, and USB Type-C.\r\nDesign: Premium design in Rose finish, combining elegance with durability.",
+    "price": "749.99",
+    "rating": "4.90",
+    "image_url": null,
+    "image": "GOOGLE_Pixel_8_-_256_GB_Rose.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 233,
+  "fields": {
+    "category": 20,
+    "sku": "GOO-PIX9-256-PORC-059",
+    "name": "GOOGLE Pixel 9 - 256 GB, Porcelain",
+    "description": "Display: 6.4\" OLED with a 120Hz refresh rate for ultra-smooth scrolling and vivid visuals.\r\nProcessor: Google Tensor G4 chip for powerful performance and enhanced AI features.\r\nStorage: 256 GB internal storage, perfect for storing apps, media, and files.\r\nCamera: Dual rear camera system with 50MP wide and 12MP ultra-wide lenses for superior photography.\r\nBattery: 4700mAh with fast charging and wireless charging capabilities.\r\nOperating System: Android 15 with the latest Google Pixel features and updates.\r\nConnectivity: 5G, Wi-Fi 7, Bluetooth 5.4, and USB Type-C.\r\nDesign: Sleek and premium build in a stylish Porcelain finish.",
+    "price": "799.99",
+    "rating": "4.90",
+    "image_url": null,
+    "image": "GOOGLE_Pixel_9_-_256_GB_Porcelain.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 234,
+  "fields": {
+    "category": 21,
+    "sku": "SONY-HTA8000-11.0-060",
+    "name": "SONY BRAVIA Theatre Bar 8 (HT-A8000) 11.0 Sound Bar with Dolby Atmos",
+    "description": "Audio: 11.0 channel surround sound for immersive audio experience.\r\nDolby Atmos: 3D surround sound with precise spatial audio positioning.\r\nCompatibility: Works seamlessly with BRAVIA TVs for integrated sound and picture experience.\r\nSound Features: Built-in subwoofers and up-firing speakers for deep bass and expansive soundscapes.\r\nConnectivity: HDMI eARC, Bluetooth, Wi-Fi, USB, and optical input.\r\nSmart Features: Voice control compatibility with Google Assistant and Alexa.\r\nDesign: Sleek, minimalist design that complements any living room setup.\r\nColour: Black.",
+    "price": "1199.99",
+    "rating": "4.90",
+    "image_url": null,
+    "image": "SONY_BRAVIA_Theatre_Bar_8_HT-A8000_11.0_Sound_Bar_with_Dolby_Atmos.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 235,
+  "fields": {
+    "category": 21,
+    "sku": "SONY-HTA9000-13.0-061",
+    "name": "SONY BRAVIA Theatre Bar 9 (HT-A9000) 13.0 Sound Bar with Dolby Atmos",
+    "description": "Audio: 13.0 channel surround sound for an exceptional, immersive home theatre experience.\r\nDolby Atmos: Advanced 3D sound with precise spatial audio for cinematic soundscapes.\r\nCompatibility: Perfectly integrates with SONY BRAVIA TVs for synchronized audio-visual performance.\r\nSound Features: Dual subwoofers and up-firing speakers, delivering rich bass and dynamic sound.\r\nConnectivity: HDMI eARC, Bluetooth, Wi-Fi, USB, and optical input for versatile connectivity.\r\nSmart Features: Voice control support with Google Assistant and Amazon Alexa for hands-free operation.\r\nDesign: Sleek, modern design with a premium finish that enhances any living space.\r\nColour: Black.",
+    "price": "1499.99",
+    "rating": "5.00",
+    "image_url": null,
+    "image": "SONY_BRAVIA_Theatre_Bar_9_HT-A9000_13.0_Sound_Bar_with_Dolby_Atmos.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 236,
+  "fields": {
+    "category": 21,
+    "sku": "SONY-HTA9M2-4.0.4-GRY-062",
+    "name": "SONY BRAVIA Theatre Quad (HTA9M2) 4.0.4 Home Cinema System",
+    "description": "Audio: 4.0.4 channel surround sound for a powerful and immersive cinematic experience.\r\nDolby Atmos: Advanced 3D surround sound with upward-firing speakers for lifelike spatial audio.\r\nSound Features: Four independent speakers with dual subwoofers for deep bass and balanced sound.\r\nCompatibility: Works seamlessly with BRAVIA TVs for a synchronized sound and visual experience.\r\nConnectivity: HDMI eARC, Bluetooth, Wi-Fi, and optical inputs for versatile device connections.\r\nSmart Features: Voice assistant compatibility with Google Assistant and Amazon Alexa for hands-free control.\r\nDesign: Elegant and minimalist design in a sleek grey finish, ideal for modern home setups.\r\nColour: Grey.",
+    "price": "1799.99",
+    "rating": "5.00",
+    "image_url": null,
+    "image": "SONY_BRAVIA_Theatre_Quad_HTA9M2_4.0.4_Home_Cinema_System_with_Dolby_Atmos_-_Grey.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 237,
+  "fields": {
+    "category": 21,
+    "sku": "SONY-HTAN7-NECKBAND-BLK-063",
+    "name": "SONY BRAVIA Theatre U (HTAN7) Neckband with Dolby Atmos - Black",
+    "description": "Audio: Dolby Atmos technology for immersive surround sound experience directly from a neckband.\r\nComfort: Ergonomically designed for long-lasting comfort with a lightweight build.\r\nSound Features: Upward-firing speakers for precise spatial audio, simulating 3D soundscapes.\r\nConnectivity: Bluetooth 5.2 for seamless wireless audio streaming and low-latency listening.\r\nBattery Life: Up to 12 hours of playback on a single charge with fast charging support.\r\nVoice Assistant: Compatible with Google Assistant and Amazon Alexa for hands-free control.\r\nDesign: Sleek and modern design in black, perfect for personal audio without disturbing others.\r\nColour: Black.",
+    "price": "249.99",
+    "rating": "4.80",
+    "image_url": null,
+    "image": "SONY_BRAVIA_Theatre_U_HTAN7_Neckband_with_Dolby_Atmos_-_Black.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 238,
+  "fields": {
+    "category": 21,
+    "sku": "SONY-HTAX7-2.1-LGRY-064",
+    "name": "SONY HT-AX7 2.1 Portable Theatre System",
+    "description": "Audio: 2.1 channel portable theatre system for rich, cinematic sound.\r\nSound Features: Built-in subwoofer for deep bass and immersive audio.\r\nPortability: Compact and portable design, perfect for on-the-go entertainment.\r\nConnectivity: Bluetooth 5.1 for easy wireless connection with low latency.\r\nBattery Life: Up to 30 hours of playback on a full charge, ideal for extended use.\r\nDolby Atmos: Supports spatial sound for an enhanced home theatre experience.\r\nDesign: Lightweight, minimalist design in a sleek light grey finish.\r\nColour: Light Grey.",
+    "price": "399.99",
+    "rating": "4.70",
+    "image_url": null,
+    "image": "SONY_HT-AX7_2.1_Portable_Theatre_System_-_Light_Grey.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 239,
+  "fields": {
+    "category": 22,
+    "sku": "APP-IPAD-10.2-2021-64-SGRY-065",
+    "name": "APPLE 10.2 iPad (2021) - 64 GB",
+    "description": "Display: 10.2\" Retina Display for vibrant and sharp visuals.\r\nProcessor: A13 Bionic chip for smooth performance and multitasking.\r\nStorage: 64 GB internal storage, ideal for apps, photos, and media.\r\nCamera: 8MP rear camera and 12MP ultra-wide front camera with Center Stage for better video calls.\r\nBattery: All-day battery life with up to 10 hours of usage on a single charge.\r\nOperating System: iPadOS 15 with powerful features for creativity and productivity.\r\nConnectivity: Wi-Fi, Bluetooth 4.2, and Lightning connector.\r\nDesign: Sleek and lightweight, with a durable aluminum body in Space Grey.",
+    "price": "319.99",
+    "rating": "4.80",
+    "image_url": null,
+    "image": "APPLE_10.2_iPad_2021_-_64_GB_Space_Grey_DLy6TkN.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 240,
+  "fields": {
+    "category": 22,
+    "sku": "APP-IPAD-10.9-2022-256-BLU-066",
+    "name": "APPLE 10.9 iPad (2022) - 256 GB",
+    "description": "Display: 10.9\" Liquid Retina display with True Tone for vibrant and clear visuals.\r\nProcessor: A14 Bionic chip for fast performance and efficient multitasking.\r\nStorage: 256 GB internal storage, perfect for apps, games, photos, and media.\r\nCamera: 12MP ultra-wide front and rear cameras for sharp photos and video calls.\r\nBattery: All-day battery life with up to 10 hours of usage on a single charge.\r\nOperating System: iPadOS 16 with advanced features for productivity and creativity.\r\nConnectivity: Wi-Fi 6, Bluetooth 5.0, and USB-C for fast data transfers.\r\nDesign: Sleek, lightweight design with a durable aluminum body in a vibrant Blue finish.",
+    "price": "549.99",
+    "rating": "4.90",
+    "image_url": null,
+    "image": "APPLE_10.9_iPad_2022_-_256_GB_Silver.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 241,
+  "fields": {
+    "category": 22,
+    "sku": "APP-IPAD-AIR-10.9-2022-64-SGRY-067",
+    "name": "APPLE 10.9 iPad Air (2022) - 64 GB",
+    "description": "Display: 10.9\" Liquid Retina display with True Tone and P3 wide color for stunning visuals.\r\nProcessor: M1 chip for exceptional performance and graphics.\r\nStorage: 64 GB internal storage, ideal for apps, media, and files.\r\nCamera: 12MP rear camera and 12MP ultra-wide front camera with Center Stage for video calls.\r\nBattery: Up to 10 hours of battery life, perfect for all-day usage.\r\nOperating System: iPadOS 16 with powerful productivity features.\r\nConnectivity: Wi-Fi 6, Bluetooth 5.0, and USB-C for fast charging and data transfer.\r\nDesign: Lightweight, sleek, and durable aluminum body in Space Grey.",
+    "price": "569.99",
+    "rating": "4.80",
+    "image_url": null,
+    "image": "APPLE_10.9_iPad_Air_2022_-_64_GB_Space_Grey_SUTnd90.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 242,
+  "fields": {
+    "category": 22,
+    "sku": "APP-MAC-AIR-13.6-2022-M2-256-MID-068",
+    "name": "APPLE MacBook Air 13.6 2022 - M2 256 GB SSD Midnight",
+    "description": "Display: 13.6\" Liquid Retina display with True Tone for vibrant and detailed visuals.\r\nProcessor: Apple M2 chip for powerful performance and energy efficiency.\r\nStorage: 256 GB SSD for fast storage and quick boot times.\r\nMemory: 8 GB unified memory for smooth multitasking and app performance.\r\nBattery: Up to 18 hours of battery life on a single charge.\r\nCamera: 1080p FaceTime HD camera for high-quality video calls.\r\nOperating System: macOS Monterey, optimized for the M2 chip.\r\nConnectivity: MagSafe 3 charging, 2x Thunderbolt/USB 4 ports, and a headphone jack.\r\nDesign: Ultra-slim and lightweight design with a durable aluminum body in Midnight finish.",
+    "price": "1149.99",
+    "rating": "4.90",
+    "image_url": null,
+    "image": "APPLE_MacBook_Air_13.6_2022_-_M2_256_GB_SSD_Midnight.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 243,
+  "fields": {
+    "category": 22,
+    "sku": "ASUS-VIVO-S5506MA-15.6-U9-1TB-BLU-069",
+    "name": "ASUS Vivobook S 15 S5506MA 15.6 Laptop - Intel® Core™ Ultra 9, 1 TB SSD",
+    "description": "Display: 15.6\" Full HD display for clear and crisp visuals.\r\nProcessor: Intel® Core™ Ultra 9 for fast and powerful performance.\r\nStorage: 1 TB SSD for lightning-fast boot times and ample storage.\r\nMemory: 16 GB DDR5 RAM for seamless multitasking and smooth performance.\r\nGraphics: Intel® Iris® Xe graphics for everyday gaming and graphic tasks.\r\nBattery: Up to 12 hours of battery life on a single charge.\r\nOperating System: Windows 11 Home for enhanced productivity and performance.\r\nConnectivity: Wi-Fi 6, Bluetooth 5.2, USB-C, USB-A, HDMI, and headphone jack.\r\nDesign: Stylish and slim design with a durable aluminum chassis in a striking Blue finish.",
+    "price": "1299.99",
+    "rating": "4.70",
+    "image_url": null,
+    "image": "ASUS_Vivobook_S_15_S5506MA_15.6_Laptop_-_Intel_Core_Ultra_9_1_TB_SSD_Blue.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 244,
+  "fields": {
+    "category": 22,
+    "sku": "ASUS-ZEN-S14-14-U9-1TB-WHT-070",
+    "name": "ASUS Zenbook S 14 14 Laptop – Intel® Core™ Ultra 9, 1 TB SSD",
+    "description": "Display: 14\" OLED display with stunning 2.8K resolution for vibrant visuals.\r\nProcessor: Intel® Core™ Ultra 9 for exceptional speed and performance.\r\nStorage: 1 TB SSD for quick boot times and ample storage capacity.\r\nMemory: 16 GB DDR5 RAM for smooth multitasking and efficient workflows.\r\nGraphics: Intel® Iris® Xe graphics for sharp images and enhanced productivity.\r\nBattery: Long-lasting battery with up to 15 hours of usage on a single charge.\r\nOperating System: Windows 11 Home for a seamless and productive user experience.\r\nConnectivity: Wi-Fi 6E, Bluetooth 5.3, USB-C, USB-A, and HDMI ports.\r\nDesign: Ultra-slim and lightweight design in a sleek White finish, with an eco-friendly build.",
+    "price": "1499.99",
+    "rating": "4.80",
+    "image_url": null,
+    "image": "ASUS_Zenbook_S_14_14_Laptop__Intel_Core_Ultra_9_1_TB_SSD_White.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 245,
+  "fields": {
+    "category": 22,
+    "sku": "HP-15A-NB0502SA-15-CHRM-I3-128-SLV-071",
+    "name": "HP 15a-nb0502sa 15. Chromebook Plus - Intel® Core™ i3, 128 GB SSD,",
+    "description": "Display: 15.6\" Full HD touchscreen display for crisp visuals and intuitive navigation.\r\nProcessor: Intel® Core™ i3 for reliable everyday performance.\r\nStorage: 128 GB SSD for fast boot times and quick access to files.\r\nMemory: 8 GB RAM for smooth multitasking and efficient operations.\r\nBattery: Up to 10 hours of battery life, perfect for all-day use.\r\nOperating System: Chrome OS with access to Android apps and Google services.\r\nConnectivity: Wi-Fi 6, Bluetooth 5.0, USB-C, USB-A, and HDMI ports.\r\nDesign: Lightweight and slim design with a sleek Silver finish, ideal for on-the-go productivity.",
+    "price": "499.99",
+    "rating": "4.60",
+    "image_url": null,
+    "image": "HP_15a-nb0502sa_15._Chromebook_Plus_-_Intel_Core_i3_128_GB_SSD_Silver.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 246,
+  "fields": {
+    "category": 22,
+    "sku": "HP-ENVY-X360-14-RYZ5-512-SLV-072",
+    "name": "HP ENVY x360 14 2 in 1 Laptop - AMD Ryzen 5, 512 GB SSD",
+    "description": "Display: 14\" Full HD touchscreen with 360° hinge, perfect for use in laptop, tablet, or tent modes.\r\nProcessor: AMD Ryzen 5 for fast and smooth performance.\r\nStorage: 512 GB SSD for quick boot times and ample storage for files and apps.\r\nMemory: 8 GB RAM for seamless multitasking and productivity.\r\nGraphics: Integrated AMD Radeon™ Graphics for sharp visuals.\r\nBattery: Up to 13 hours of battery life, ideal for on-the-go use.\r\nOperating System: Windows 11 Home for a modern and efficient user experience.\r\nConnectivity: Wi-Fi 6, Bluetooth 5.0, USB-C, USB-A, HDMI ports, and fingerprint reader.\r\nDesign: Sleek, lightweight, and versatile design in a stylish Silver finish.",
+    "price": "849.99",
+    "rating": "4.70",
+    "image_url": null,
+    "image": "HP_ENVY_x360_14_2_in_1_Laptop_-_AMD_Ryzen_5_512_GB_SSD_Silver.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 247,
+  "fields": {
+    "category": 22,
+    "sku": "HP-PAV-16-AG0508SA-RYZ5-512-SBLU-073",
+    "name": "HP Pavilion 16-ag0508sa 16 Laptop - AMD Ryzen 5, 512 GB SSD",
+    "description": "Display: 16.1\" Full HD display for immersive and sharp visuals.\r\nProcessor: AMD Ryzen 5 for efficient performance in everyday tasks and multitasking.\r\nStorage: 512 GB SSD for fast boot times and ample storage for apps, files, and media.\r\nMemory: 8 GB RAM for smooth multitasking and enhanced productivity.\r\nGraphics: Integrated AMD Radeon™ Graphics for great visual performance.\r\nBattery: Up to 9 hours of battery life, perfect for all-day use.\r\nOperating System: Windows 11 Home for a user-friendly and modern experience.\r\nConnectivity: Wi-Fi 6, Bluetooth 5.0, USB-C, USB-A, and HDMI ports for versatile connectivity.\r\nDesign: Slim and stylish design in a unique Sky Blue finish.",
+    "price": "799.99",
+    "rating": "4.60",
+    "image_url": null,
+    "image": "HP_Pavilion_16-ag0508sa_16_Laptop_-_AMD_Ryzen_5_512_GB_SSD_Sky_Blue.webp"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 10,
+  "fields": {
+    "name": "Android Smartphone",
+    "friendly_name": "Android Smartphone"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 11,
+  "fields": {
+    "name": "Android Tablets",
+    "friendly_name": "Android Tablets"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 12,
+  "fields": {
+    "name": "Apple Ipad",
+    "friendly_name": "Apple Ipad"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 13,
+  "fields": {
+    "name": "Apple Iphone",
+    "friendly_name": "Apple Iphone"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 14,
+  "fields": {
+    "name": "Batteries",
+    "friendly_name": "Batteries"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 15,
+  "fields": {
+    "name": "Bluetooth Headphones",
+    "friendly_name": "Bluetooth Headphones"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 16,
+  "fields": {
+    "name": "Chargers",
+    "friendly_name": "Chargers"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 17,
+  "fields": {
+    "name": "Desktop Computers",
+    "friendly_name": "Desktop Computers"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 18,
+  "fields": {
+    "name": "Earbud Headphones",
+    "friendly_name": "Earbud Headphones"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 19,
+  "fields": {
+    "name": "Gaming PC",
+    "friendly_name": "Gaming PC"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 20,
+  "fields": {
+    "name": "Google Pixel",
+    "friendly_name": "Google Pixel"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 21,
+  "fields": {
+    "name": "Home Theater System",
+    "friendly_name": "Home Theater System"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 22,
+  "fields": {
+    "name": "Laptops",
+    "friendly_name": "Laptops"
+  }
+}
 ]
