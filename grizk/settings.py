@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'profiles',
     'wishlist',
 
-
     # Third party apps
     'crispy_forms',
     'crispy_bootstrap5',
@@ -118,8 +117,6 @@ LOGIN_REDIRECT_URL = '/'
 WSGI_APPLICATION = "grizk.wsgi.application"
 
 # Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
@@ -133,7 +130,6 @@ else:
     }
     
 # Password validation
-# https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
@@ -150,20 +146,19 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Internationalization
-# https://docs.djangoproject.com/en/5.0/topics/i18n/
 LANGUAGE_CODE = "en-us"
 TIME_ZONE = "UTC"
 USE_I18N = True
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.0/howto/static-files/
+# Static files and Media configurations
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# AWS S3 Configurations for Static and Media Files
 if 'USE_AWS' in os.environ:
     # Cache Control
     AWS_S3_OBJECT_PARAMETERS = {
@@ -171,25 +166,25 @@ if 'USE_AWS' in os.environ:
         'CacheControl': 'max-age=94608000',
     }
 
-    # Bucket Config
+    # S3 Bucket Configuration
     AWS_STORAGE_BUCKET_NAME = 'grizk'
     AWS_S3_REGION_NAME = 'eu-west-2'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
-    # Static and Media files
+    # Static and Media files storage
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
     STATICFILES_LOCATION = 'static'
+
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
     MEDIAFILES_LOCATION = 'media'
 
-    # Override static and media URLs in production
+    # URLs for Static and Media files
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
-
-# Stripe
+# Stripe Configuration
 FREE_DELIVERY_THRESHOLD = 250
 STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'gbp'
@@ -197,6 +192,7 @@ STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY', default='')
 STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY', default='')
 STRIPE_WH_SECRET = env('STRIPE_WH_SECRET', default='')
 
+# Email Backend
 if env('DEVELOPMENT', default=False):
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'grizk@example.com'
@@ -209,6 +205,8 @@ else:
     EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASS', default='')
     DEFAULT_FROM_EMAIL = env('EMAIL_HOST_USER', default='')
 
-#
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+# Default primary key field type
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Static files root directory
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
