@@ -65,6 +65,11 @@ footer {
     justify-content: space-evenly;
 }
 
+.footer-right {
+   color: #ff4500;
+   font-size: 0.6em;
+}
+
 .subcribe-bar {
     width: 25%;
 }
@@ -707,6 +712,190 @@ select option {
 }
 
 
+/* Footer */
+footer {
+    overflow: hidden;
+}
+
+.footer-address {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-address i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.footer-address p {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.address-link {
+    text-decoration: none; 
+    display: flex; 
+    align-items: center;
+    transition: color 0.3s; 
+}
+
+.footer-address i:hover,
+.footer-p:hover {
+    color: var(--yellow); 
+    cursor: pointer;
+}
+
+
+.social {
+    display: flex;
+    flex-direction: row;
+}
+
+.social-icon {
+    height: 1.5rem;
+    margin-left: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.social-icon:hover {
+    transform: scale(1.15);
+}
+
+.social-icon:active {
+    transform: scale(0.95);
+}
+
+.footer-info {
+    font-family: var(--main-font);
+    padding-bottom: 5px;
+}
+
+.footer-links {
+    color: var(--white);
+    font-family: var(--main-font);
+    text-align: right;
+    font-size: 14px;
+}
+
+.footer-links:hover {
+    color: #ff4500;
+    text-decoration: underline;
+}
+
+.copyright {
+    font-family: var(--main-font);
+}
+
+/* Contact Us Form */
+.contact {
+    bottom: 0px;
+}
+
+.contact-form {
+    border-style: none;
+    border-radius: 30px;
+    font-size: 1.25rem;
+    font-family: var(--main-font);
+}
+
+.contact-form:focus {
+    background-color: #194f4929;
+}
+
+/* Newsletter template and SVG from Bootsnipp credit -> https: //bootsnipp.com/snippets/6XVAB */
+.newsletter {
+    position: relative;
+    padding-left: 15px;
+    flex-grow: 1;
+}
+
+.newsletter svg {
+    position: absolute;
+    z-index: 0;
+    top: -135px;
+    left: -70px;
+    fill: var(--purple);
+}
+
+.newsletter .newsletter-title {
+    margin-bottom: 15px;
+    font-size: 40px;
+    color: #ff4500;
+    letter-spacing: -.02em;
+    line-height: 1;
+    position: relative;
+    z-index: 999;
+}
+
+.newsletter .newsletter-text {
+    color: #fff;
+    position: relative;
+    z-index: 999;
+    max-width: 450px;
+    font-size: 18px;
+    font-family: var(--main-font);
+}
+
+.newsletter .newsletter-form {
+    position: relative;
+    max-width: 355px;
+    margin-top: 23px;
+    z-index: 999;
+}
+
+.newsletter .newsletter-form input {
+    height: 55px;
+    width: 100%;
+    padding: 18px 135px 17px 30px;
+    border: 0 none;
+    border-radius: 20px;
+    outline: none;
+    background-color: #fff;
+    color: #000000;
+    font-size: 1.125rem;
+    line-height: 1;
+    font-family: var(--main-font)
+}
+
+.newsletter .newsletter-form button {
+    width: 116px;
+    height: 36px;
+    transition: .3s cubic-bezier(.165, .84, .44, 1);
+    border-radius: 15px;
+    background: linear-gradient(to bottom, #c96541, #cc4818);
+    color: #fff;
+    font-size: .875rem;
+    line-height: 1;
+    position: absolute;
+    right: 9px;
+    bottom: 9px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border: 0px;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.newsletter-button {
+    transition: transform 0.3s ease;
+    transform-origin: center;
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
+}
+
+.newsletter-button:hover {
+    transform: scale(1.05);
+    background-color: #cc5428;
+}
+
+.newsletter-button:active {
+    transform: scale(0.95);
+}
+
+
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
@@ -718,6 +907,7 @@ select option {
     }
 
 }
+
 
 
 /* Media queries */
