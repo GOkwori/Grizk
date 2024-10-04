@@ -1,71 +1,86 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseForbidden
 
 from .models import Product, Category
 from .forms import ProductForm
 
-# Create your views here.
-
 
 def my_products(request):
     """ A view to show all products, including sorting and search queries """
 
+    # Retrieve all products by default
     products = Product.objects.all()
     query = None
     categories = None
     sort = None
     direction = None
 
+    # Handle query parameters for sorting, filtering, and search
     if request.GET:
+
+        # Sorting products
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
+
+            # Sorting by name
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
-            if sortkey == 'category':
+
+            # Sorting by category
+            elif sortkey == 'category':
                 sortkey = 'category__name'
+
+            # Handle sorting direction (ascending or descending)
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
+            
+            # Apply sorting to the products
             products = products.order_by(sortkey)
 
+        # Filtering by category
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
+        # Searching by name or description
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(
-                    request, "You didn't enter any search criteria!")
+                messages.error(request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(
-                description__icontains=query)
+            # Search in product name and description
+            queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
+    # Store the current sorting state
     current_sorting = f'{sort}_{direction}'
 
+    # Context to be sent to the template
     context = {
         'products': products,
-        'search_term': query,
+        'search_term': query,  # Display the search term if present
         'current_categories': categories,
         'current_sorting': current_sorting,
     }
 
+    # Render the products page with context
     return render(request, 'products/products.html', context)
 
 
 def product_detail(request, product_id):
     """ A view to show individual product details """
 
+    # Get the product based on the product ID or return a 404 error if not found
     product = get_object_or_404(Product, pk=product_id)
 
     context = {
@@ -89,8 +104,7 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(
-                request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
     else:
         form = ProductForm()
 
@@ -117,8 +131,7 @@ def edit_product(request, product_id):
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. \
-                Please ensure the form is valid.')
+            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
@@ -150,9 +163,6 @@ def admin_dashboard(request):
     """ A view to return the admin dashboard """
 
     if not request.user.is_superuser:
-        return HttpResponseForbidden(
-            "You do not have permission to "
-            "access this page."
-        )
+        return HttpResponseForbidden("You do not have permission to access this page.")
 
     return render(request, 'products/admin_dashboard.html')
