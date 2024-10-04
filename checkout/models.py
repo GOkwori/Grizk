@@ -9,7 +9,7 @@ from profiles.models import UserProfile
 
 class Order(models.Model):
     """ Order model for customer orders """
-    order_reference = models.CharField(max_length=32, null=False, editable=False)
+    order_reference = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)  # Changed to UUIDField
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
                                      null=True, blank=True,
                                      related_name='orders')
@@ -33,10 +33,6 @@ class Order(models.Model):
     stripe_pid = models.CharField(
         max_length=254, null=False, blank=False, default='')
 
-    def _generate_order_reference(self):
-        """ Generate a random, unique order number using UUID """
-        return uuid.uuid4().hex.upper()
-
     def update_total(self):
         """
         Update grand total each time a line item is added,
@@ -52,17 +48,8 @@ class Order(models.Model):
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
 
-    def save(self, *args, **kwargs):
-        """
-        Override the original save method to set the order
-        reference if it hasn't been set already
-        """
-        if not self.order_reference:
-            self.order_reference = self._generate_order_reference()
-        super().save(*args, **kwargs)
-
     def __str__(self):
-        return self.order_reference
+        return str(self.order_reference)
 
 
 class OrderLineItem(models.Model):
