@@ -498,6 +498,15 @@ hr {
     color: #ff4500 !important;
 }
 
+.card-img-top {
+    transition: transform 0.3s ease-in-out; /* Controls the timing and speed of the transition */
+}
+
+.card-img-top:hover {
+    transform: scale(1.05); /* Slightly enlarges the image on hover */
+}
+
+
 /* Cart item */
 .inner-container,
 .empty-container {
