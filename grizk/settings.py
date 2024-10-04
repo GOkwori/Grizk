@@ -117,17 +117,10 @@ LOGIN_REDIRECT_URL = '/'
 WSGI_APPLICATION = "grizk.wsgi.application"
 
 # Database
-if 'DATABASE_URL' in os.environ:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
+DATABASES = {
+     'default': dj_database_url.parse('postgres://zpjqnssj:7ZZ_3XCDGAgE9RMIwWyJqxBoXykUdBVI@flora.db.elephantsql.com/zpjqnssj')
+ }
+    
     
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [

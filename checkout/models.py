@@ -1,12 +1,8 @@
 import uuid
-
 from django.db import models
 from django.db.models import Sum
 from django.conf import settings
-
-
 from django_countries.fields import CountryField
-
 from products.models import Product
 from profiles.models import UserProfile
 
@@ -70,7 +66,7 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
-    """ Model to reflect an individual item relating to s specific order """
+    """ Model to reflect an individual item relating to a specific order """
     order = models.ForeignKey(Order, null=False, blank=False,
                               on_delete=models.CASCADE,
                               related_name='lineitems')
@@ -78,7 +74,7 @@ class OrderLineItem(models.Model):
         Product, null=False, blank=False,
         on_delete=models.CASCADE)
     product_colour = models.CharField(
-        max_length=2, null=True, blank=True)
+        max_length=20, null=True, blank=True)  # Adjusted length for flexibility
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(
         max_digits=6, decimal_places=2, null=False,
@@ -94,3 +90,4 @@ class OrderLineItem(models.Model):
 
     def __str__(self):
         return f'SKU {self.product.sku} on order {self.order.order_reference}'
+    
