@@ -55,7 +55,7 @@ class Order(models.Model):
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the order
-        number if it hasn't been set already
+        reference if it hasn't been set already
         """
         if not self.order_reference:
             self.order_reference = self._generate_order_reference()
@@ -74,7 +74,7 @@ class OrderLineItem(models.Model):
         Product, null=False, blank=False,
         on_delete=models.CASCADE)
     product_colour = models.CharField(
-        max_length=20, null=True, blank=True)  # Adjusted length for flexibility
+        max_length=20, null=True, blank=True)  # Adjust the max_length as needed
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(
         max_digits=6, decimal_places=2, null=False,
@@ -87,7 +87,7 @@ class OrderLineItem(models.Model):
         """
         self.lineitem_total = self.product.price * self.quantity
         super().save(*args, **kwargs)
+        self.order.update_total()  # Ensure the order total is updated
 
     def __str__(self):
         return f'SKU {self.product.sku} on order {self.order.order_reference}'
-    
