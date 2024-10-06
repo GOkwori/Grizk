@@ -432,6 +432,21 @@ section {
     opacity: 0.9;
 }
 
+button {
+    background-color: #ff4500;
+    color: #000;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #000;
+    color: #ff4500;
+    border-color: #ff4500;
+}
+
+#id_password_helptext {
+    display: none;
+}
 
 /* Product page */
 .product-page,
@@ -504,6 +519,19 @@ hr {
 
 .card-img-top:hover {
     transform: scale(1.05); /* Slightly enlarges the image on hover */
+}
+
+input#id_password,
+input#id_login,
+input#id_email,
+input#id_email2,
+input#id_username,
+input#id_password1,
+input#id_password2 {
+    margin-left: 2%;
+    width: 20%;
+    border-radius: 5px;
+    border-color: #ff4500;
 }
 
 
