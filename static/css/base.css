@@ -959,6 +959,12 @@ input#new-image {
     background-color: #ff4500;
 }
 
+.col-4.col-md-3.container {
+    display: flex;
+    justify-content: end;
+    margin-right: 10px;
+}
+
 
 /*----Media Query----*/
 

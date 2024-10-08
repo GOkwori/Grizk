@@ -48,13 +48,19 @@
 <body>
     <header class="header-container fixed-top" id="main-header">
         <nav class="row navbar navbar-expand-lg navbar-light pb-0" id="nav-container">
-            <div class="container-fluid px-2 px-lg-3">
-                <a class="navbar-brand col-4 col-md-3 d-flex justify-content-start" href="{% url 'home' %}">
+            <div class="col container-fluid px-2 px-lg-3">
+                <a class="navbar-brand col-lg-4 d-flex justify-content-start" href="{% url 'home' %}">
                     <h2><i class="fa-regular fa-chess-knight"> Grizk</i></h2>
                 </a>
 
+                <!-- Navbar Toggler -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"><i
+                            class="fa-solid fa-bars mt-1"></i></span></button>
+
                 <!-- Search container -->
-                <div class="col-4 col-md-5">
+                <div class="col-12 col-lg-4">
                     <form method="GET" action="{% url 'products' %}">
                         <div class="input-group">
                             <input type="text" class="form-control" name="q" placeholder="Search Grizk">
@@ -66,12 +72,13 @@
                 </div>
 
                 <!-- Navbar collapse -->
-                <div class="col-4 col-md-3 justify-content-end container">
+                <div class="collapse navbar-collapse col-lg-4 justify-content-end container"
+                    id="navbarSupportedContent">
                     <ul class="navbar-nav mb-lg-0 ms-lg-4">
 
                         {% if user.is_authenticated %}
                             <!-- Wishlist -->
-                            <li class="nav-item list-inline-item" id="wishlist">
+                            <li class="nav-item list-inline-item d-none d-md-block" id="wishlist">
                                 <button
                                     class="{% if user_wishlist %} font-weight-bold{% else %}text{% endif %} nav-link btn btn-primary"
                                     type="button" data-bs-toggle="offcanvas" data-bs-target="#wishlistOffcanvas"
@@ -90,7 +97,7 @@
                             </li>
                         {% endif %}
                         <!-- Cart -->
-                        <li class="nav-item list-inline-item" id="cart">
+                        <li class="nav-item list-inline-item d-none d-md-block" id="cart">
                             <button
                                 class="{% if cart_items %} font-weight-bold{% else %}text{% endif %} nav-link btn btn-primary"
                                 type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas"
@@ -115,156 +122,154 @@
         {% include 'includes/mobile-nav.html' %}
     </header>
 
-        <!-- Offcanvas for Wishlist -->
-        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="wishlistOffcanvas"
+    <!-- Offcanvas for Wishlist -->
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="wishlistOffcanvas"
         aria-labelledby="wishlistOffcanvasLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title mt-4" id="wishlistOffcanvasLabel">
-                    {{ request.user.username|title }}'s Wishlist
-                    <i class="fa-solid fa-heart ms-2"></i>
-                </h5>
-                <button type="button" class="btn-close mt-4" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <hr>
-            <div class="offcanvas-body">
-                <div class="container">
-                    {% if user_wishlist %}
-                        <div class="table-responsive">
-                            <table class="table table-sm table-borderless table-dark table-striped align-middle">
-                                <thead>
-                                    <tr>
-                                        <th scope="col" class="p-3"></th>
-                                        <th scope="col" class="p-3"></th>
-                                        <th scope="col" class="p-1"></th>
-                                        <th scope="col" class="p-1 text-center"></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for item in user_wishlist %}
-                                    <tr id="wishlist_item_{{ item.product.id }}">
-                                        <!-- Product Image -->
-                                        <td class="p-1">
-                                          {% if item.product.image %}
-                                          <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                                          {% else %}
-                                          <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
-                                          {% endif %}
-                                        </td>
-                                      
-                                        <!-- Product Info -->
-                                        <td class="p-3 w-100">
-                                          <p class="my-0">{{ item.product.name }}</p>
-                                        </td>
-                                      
-                                        <!-- View Button -->
-                                        <td class="p-3">
-                                          <a href="{% url 'product_detail' item.product.id %}" role='button' title='view item'>
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title mt-4" id="wishlistOffcanvasLabel">
+                {{ request.user.username|title }}'s Wishlist
+                <i class="fa-solid fa-heart ms-2"></i>
+            </h5>
+            <button type="button" class="btn-close mt-4" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <hr>
+        <div class="offcanvas-body">
+            <div class="container">
+                {% if user_wishlist %}
+                    <div class="table-responsive">
+                        <table class="table table-sm table-borderless table-dark table-striped align-middle">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="p-3"></th>
+                                    <th scope="col" class="p-3"></th>
+                                    <th scope="col" class="p-1"></th>
+                                    <th scope="col" class="p-1 text-center"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in user_wishlist %}
+                                <tr id="wishlist_item_{{ item.product.id }}">
+                                    <!-- Product Image -->
+                                    <td class="p-1">
+                                        {% if item.product.image %}
+                                        <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                        {% else %}
+                                        <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                        {% endif %}
+                                    </td>
+
+                                    <!-- Product Info -->
+                                    <td class="p-3 w-100">
+                                        <p class="my-0">{{ item.product.name }}</p>
+                                    </td>
+
+                                    <!-- View Button -->
+                                    <td class="p-3">
+                                        <a href="{% url 'product_detail' item.product.id %}" role='button' title='view item'>
                                             <i class="fa-solid fa-eye"></i>
-                                          </a>
-                                        </td>
-                                      
-                                        <!-- Remove Button -->
-                                        <td class="p-3">
-                                          <a href="{% url 'remove_from_wishlist' item.product.id %}" role='button' title='remove item'>
+                                        </a>
+                                    </td>
+
+                                    <!-- Remove Button -->
+                                    <td class="p-3">
+                                        <a href="{% url 'remove_from_wishlist' item.product.id %}" role='button' title='remove item'>
                                             <i class="fa-solid fa-trash"></i>
                                         </a>
-                                        </td>
-                                      </tr>                                      
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                    {% else %}
-                    <p>Your wishlist is empty.</p>
-                    <div class="shopping-link">
-                        <a href="{% url 'products' %}" class="btn p-0">
-                            <i class="fas fa-chevron-left"></i> Continue Shopping
-                        </a>
+                                    </td>
+                                </tr>                                      
+                                {% endfor %}
+                            </tbody>
+                        </table>
                     </div>
-                    {% endif %}
+                {% else %}
+                <p>Your wishlist is empty.</p>
+                <div class="shopping-link">
+                    <a href="{% url 'products' %}" class="btn p-0">
+                        <i class="fas fa-chevron-left"></i> Continue Shopping
+                    </a>
                 </div>
+                {% endif %}
             </div>
         </div>
+    </div>
 
+    <!-- Offcanvas for Cart -->
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="cartOffcanvas"
+        aria-labelledby="cartOffcanvasLabel">
+        <div class="offcanvas-header">
+            {% if request.user.is_authenticated %}
+            <h5 class="offcanvas-title mt-4" id="cartOffcanvasLabel">{{ request.user.username|title }}'s Cart <i
+                    class="fa-solid fa-cart-shopping ms-2"></i></h5>
+            {% else %}
+            <h5 class="offcanvas-title mt-4" id="cartOffcanvasLabel">Your Cart<i
+                    class="fa-solid fa-cart-shopping ms-2"></i></h5>
+            {% endif %}
+            <button type="button" class="btn-close mt-4" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <hr>
+        <div class="offcanvas-body">
+            <div class="container">
+                {% if free_delivery_delta > 0 %}
+                <p class="mb-0">
+                    Buy <strong>£{{ free_delivery_delta }}</strong> more to get free next day delivery!
+                </p>
+                <div class="progress my-3">
+                    <div class="progress-bar progress-bar-custom" role="progressbar" id="offcanvas-delivery-progress"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div id="offcanvas-cart-totals" data-total="{{ total|default:0 }}"
+                    data-threshold="{{ free_delivery_threshold|default:0 }}"></div>
+                {% endif %}
 
-     <!-- Offcanvas for Cart -->
-     <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="cartOffcanvas"
-     aria-labelledby="cartOffcanvasLabel">
-     <div class="offcanvas-header">
-         {% if request.user.is_authenticated %}
-         <h5 class="offcanvas-title mt-4" id="cartOffcanvasLabel">{{ request.user.username|title }}'s Cart <i
-                 class="fa-solid fa-cart-shopping ms-2"></i></h5>
-         {% else %}
-         <h5 class="offcanvas-title mt-4" id="cartOffcanvasLabel">Your Cart<i
-                 class="fa-solid fa-cart-shopping ms-2"></i>
-         </h5>
-         {% endif %}
-         <button type="button" class="btn-close mt-4" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-     </div>
-     <hr>
-     <div class="offcanvas-body">
-         <div class="container">
-             {% if free_delivery_delta > 0 %}
-             <p class="mb-0">
-                 Buy <strong>£{{ free_delivery_delta }}</strong> more to get free next day delivery!
-             </p>
-             <div class="progress my-3">
-                 <div class="progress-bar progress-bar-custom" role="progressbar" id="offcanvas-delivery-progress"
-                     aria-valuemin="0" aria-valuemax="100"></div>
-             </div>
-             <div id="offcanvas-cart-totals" data-total="{{ total|default:0 }}"
-                 data-threshold="{{ free_delivery_threshold|default:0 }}"></div>
-             {% endif %}
+                {% if cart_items %}
+                {% for item in cart_items %}
+                <div class="row mb-3">
+                    <div class="col-3 my-1">
+                        {% if item.product.image %}
+                        <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                        {% else %}
+                        <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                        {% endif %}
+                    </div>
+                    <div class="col-9">
+                        <p class="my-0">{{ item.product.name }}</p>
+                        <p class="my-2">£{{ item.product.price|floatformat:2 }}</p>
+                        <p class="my-0 small">Qty: {{ item.quantity }}</p>
 
-             {% if cart_items %}
-             {% for item in cart_items %}
-             <div class="row mb-3">
-                 <div class="col-3 my-1">
-                     {% if item.product.image %}
-                     <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                     {% else %}
-                     <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
-                     {% endif %}
-                 </div>
-                 <div class="col-9">
-                     <p class="my-0">{{ item.product.name }}</p>
-                     <p class="my-2">£{{ item.product.price|floatformat:2 }}</p>
-                     <p class="my-0 small">Qty: {{ item.quantity }}</p>
-
-                 </div>
-             </div>
-             {% endfor %}
-             <div class="mt-4">
-                 <div class="row">
-                     <div class="col-6">
-                         <p>Sub-total:</p>
-                     </div>
-                     <div class="col-6 text-end">
-                         <strong>£{{ total|floatformat:2 }}</strong>
-                     </div>
-                 </div>
-                 <div class="row mt-4">
-                     <div class="col-6 text-center">
-                         <a href="{% url 'view_cart' %}" class="btn btn-outline-primary offcanvas-btn" role="button">
-                             <i class="fa-solid fa-cart-shopping me-2"></i>View Cart</a>
-                     </div>
-                     <div class="col-6 text-center">
-                         <a href="{% url 'checkout' %}" class="btn btn-outline-primary offcanvas-btn"
-                             role="button"><i class="fa-solid fa-lock me-2"></i>Checkout</a>
-                     </div>
-                 </div>
-             </div>
-             {% else %}
-             <p>Your cart is empty.</p>
-             <div class="shopping-link">
-                 <a href="{% url 'products' %}" class="btn p-0">
-                     <i class="fas fa-chevron-left"></i> Continue Shopping
-                 </a>
-             </div>
-             {% endif %}
-         </div>
-     </div>
- </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="mt-4">
+                    <div class="row">
+                        <div class="col-6">
+                            <p>Sub-total:</p>
+                        </div>
+                        <div class="col-6 text-end">
+                            <strong>£{{ total|floatformat:2 }}</strong>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-6 text-center">
+                            <a href="{% url 'view_cart' %}" class="btn btn-outline-primary offcanvas-btn" role="button">
+                                <i class="fa-solid fa-cart-shopping me-2"></i>View Cart</a>
+                        </div>
+                        <div class="col-6 text-center">
+                            <a href="{% url 'checkout' %}" class="btn btn-outline-primary offcanvas-btn"
+                                role="button"><i class="fa-solid fa-lock me-2"></i>Checkout</a>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <p>Your cart is empty.</p>
+                <div class="shopping-link">
+                    <a href="{% url 'products' %}" class="btn p-0">
+                        <i class="fas fa-chevron-left"></i> Continue Shopping
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
 
     <div class="content-container" id="page-content">
         {% if messages %}
@@ -298,8 +303,6 @@
     {{ block.super }}
     {% include 'includes/base_script.html' %}
     {% endblock %}
-
-
 </body>
 
 </html>
