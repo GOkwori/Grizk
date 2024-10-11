@@ -1,20 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Navbar toggler
-  var navbarToggler = document.querySelector(".navbar-toggler");
-  var pageContent = document.getElementById("page-content");
-  var isNavCollapsed = true;
-
-  navbarToggler.addEventListener("click", function () {
-    setTimeout(function () {
-      isNavCollapsed = !isNavCollapsed;
-      if (!isNavCollapsed) {
-        pageContent.style.marginTop = "30%";
-      } else {
-        pageContent.style.marginTop = "";
-      }
-    }, 100);
-  });
-
+  
   // Initialize Bootstrap toasts
   var toastElList = [].slice.call(document.querySelectorAll(".toast"));
   var toastList = toastElList.map(function (toastEl) {
