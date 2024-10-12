@@ -1,0 +1,117 @@
+<!-- Mobile view-->
+<div class='row d-md-none container mb-2'>
+    <div class="col-8">
+        <form method="GET" action="{% url 'products' %}">
+            <div class="input-group">
+                <input type="text" class="form-control" name="q" placeholder="Search Grizk">
+                <button class="btn btn-outline-secondary" title="Search" type="submit">
+                    <i class="fa-solid fa-search"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="col-4 justify-content-end">
+    <ul class="navbar-nav mb-lg-0 ms-lg-4">
+
+        {% if user.is_authenticated %}
+            <!-- Wishlist -->
+            <li class="nav-item list-inline-item" id="wishlist">
+                <button
+                    class="{% if user_wishlist %} font-weight-bold{% else %}text{% endif %} nav-link btn btn-primary"
+                    type="button" data-bs-toggle="offcanvas" data-bs-target="#wishlistOffcanvas"
+                    aria-controls="wishlistOffcanvas">
+                    <div class="text-center">
+                        <i class="fa-solid fa-heart mt-1"></i>
+                        <p class="my-0">
+                            {% if wishlist_count %}
+                                {{ wishlist_count }}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p>
+                    </div>
+                </button>
+            </li>
+        {% endif %}
+        <!-- Cart -->
+        <li class="nav-item list-inline-item" id="cart">
+            <button
+                class="{% if cart_items %} font-weight-bold{% else %}text{% endif %} nav-link btn btn-primary"
+                type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas"
+                aria-controls="cartOffcanvas">
+                <div class="text-center">
+                    <i class="fa-solid fa-cart-shopping me-1 mt-1"></i>
+                    <p class="my-0">
+                        {% if total %}
+                        £{{ total|floatformat:2 }}
+                        {% else %}
+                        £0.00
+                        {% endif %}
+                    </p>
+                </div>
+            </button>
+        </li>
+    </ul>
+ </div>
+
+ <!-- Mobile Offcanvas Menu -->
+ <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas-header">
+        {% if request.user.is_authenticated %}
+        <h5 class="dropdown-title my-0 ms-2" id="offcanvasNavbarLabel">
+            <strong>Hello, {{ request.user.username|title }}</strong>
+        </h5>
+        {% else %}
+        <h5 class="dropdown-title my-0 ms-2"><strong>Hello, sign in</strong></h5>
+        {% endif %}
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <hr>
+    <div class="offcanvas-body">
+        <!-- Offcanvas Navigation Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'products' %}"><i class="fas fa-bars me-1"></i> All Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'products' %}?category=Laptops,Desktop Computers,Chargers,Batteries"><i class="fa-solid fa-laptop me-1"></i> Computing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'products' %}?category=Gaming PC"><i class="fa-solid fa-gamepad me-1"></i> Gaming</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'products' %}?category=Apple Iphone,Google Pixel,Android Smartphone,Apple Ipad,Android Tablets"><i class="fa-solid fa-mobile-alt me-1"></i> Smartphones</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'products' %}?category=Earbud Headphones,Bluetooth Headphones"><i class="fa-solid fa-headphones me-1"></i> Headphones</a>
+            </li>
+            <br>    
+            <h5 class="dropdown-title my-0 ms-2" id="offcanvasNavbarLabel">
+                <strong> <i class="fa-solid fa-user me-1"></i> Account</strong>
+            </h5>
+            <hr>
+            <div class="" aria-labelledby="">
+                {% if request.user.is_authenticated %}
+                {% if request.user.is_superuser %}
+                <li class="nav-item">
+                <a href="{% url 'admin_dashboard' %}" class="nav-link"><i class="fa-solid fa-shield-halved  me-1 mt-1"></i> Dashboard</a>
+            </li>
+                {% endif %}
+                <li class="nav-item">
+                <a href="{% url 'profile' %}" class="nav-link"><i class="fa-solid fa-address-card me-1"></i> My Profile</a>
+            </li>
+                <li class="nav-item">
+                <a href="{% url 'account_logout' %}" class="nav-link"><i class="fa-solid fa-right-from-bracket me-1 mt-1"></i> Logout</a>
+            </li>
+                {% else %}
+                <li class="nav-item">
+                <a href="{% url 'account_signup' %}" class="nav-link"><i class="fa-solid fa-address-card me-1 mt-1"></i> Register</a>
+            </li>
+                <li class="nav-item">
+                <a href="{% url 'account_login' %}" class="nav-link"><i class="fa-solid fa-right-to-bracket me-1 mt-1"></i> Login</a>
+                </li>
+                {% endif %}
+            </div>
+        </ul>
+    </div>
+</div>

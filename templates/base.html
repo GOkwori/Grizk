@@ -54,13 +54,13 @@
                 </a>
 
                 <!-- Navbar Toggler -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"><i
-                            class="fa-solid fa-bars mt-1"></i></span></button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                    aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <!-- Search container -->
-                <div class="col-12 col-lg-4">
+                <div class="d-none d-sm-block col-lg-4">
                     <form method="GET" action="{% url 'products' %}">
                         <div class="input-group">
                             <input type="text" class="form-control" name="q" placeholder="Search Grizk">
@@ -251,7 +251,7 @@
                     <div class="row mt-4">
                         <div class="col-6 text-center">
                             <a href="{% url 'view_cart' %}" class="btn btn-outline-primary offcanvas-btn" role="button">
-                                <i class="fa-solid fa-cart-shopping me-2"></i>View Cart</a>
+                                <i class="fa-solid fa-cart-shopping me-2"></i>Cart</a>
                         </div>
                         <div class="col-6 text-center">
                             <a href="{% url 'checkout' %}" class="btn btn-outline-primary offcanvas-btn"

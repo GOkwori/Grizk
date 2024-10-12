@@ -232,6 +232,7 @@ nav button {
 }
 
 /* Off-Canvas Styles for Wishlist and Cart */
+#offcanvasNavbar,
 #wishlistOffcanvas,
 #cartOffcanvas {
     background-color: #000;
@@ -970,15 +971,48 @@ input#new-image {
 
 /*---------- Styling for screens with (max-width: 320px) ----------*/
 
-@media (max-width: 320px) {}
+@media (max-width: 320px) {
+
+    #offcanvasNavbar,
+    #wishlistOffcanvas,
+    #cartOffcanvas {
+        width: 70% !important;
+    }
+
+    .layout {
+        margin-top: 35% !important;
+    }
+
+}
 
 /*---------- Styling for screens with (max-width: 375px) ----------*/
 
-@media (max-width: 375px) {}
+@media (max-width: 375px) {
+    #offcanvasNavbar,
+    #wishlistOffcanvas,
+    #cartOffcanvas {
+        width: 70% !important;
+    }
+
+    .layout {
+        margin-top: 35% !important;
+    }
+}
 
 /*---------- Styling for screens with (max-width: 576px)----------*/
 
-@media (max-width: 576px) {}
+@media (max-width: 576px) {
+
+    #offcanvasNavbar,
+    #wishlistOffcanvas,
+    #cartOffcanvas {
+        width: 70% !important;
+    }
+
+    .layout {
+        margin-top: 35% !important;
+    }
+}
 
 /*---------- Styling for screens with (max-width: 896px)----------*/
 
@@ -1016,7 +1050,7 @@ input#new-image {
     div#product-card {
         width: 18rem !important;
     }
-   
+
     #promo-container {
         display: none;
     }
@@ -1034,7 +1068,8 @@ input#new-image {
         margin-right: 20px;
     }
 
-    #wishlist button, #cart button {
+    #wishlist button,
+    #cart button {
         width: 150%;
     }
 
@@ -1045,13 +1080,13 @@ input#new-image {
     .row.cart-summary {
         display: block;
     }
-  
+
 
 
 }
 
 /*---------- Styling for screens with (max-width: 1024px)----------*/
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
     .layout {
         margin-top: 12.5%;
     }
@@ -1065,7 +1100,7 @@ input#new-image {
         height: 40vh;
     }
 
-     .footer-address p {
+    .footer-address p {
         margin-top: 20px;
     }
 
