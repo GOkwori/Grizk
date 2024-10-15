@@ -9,7 +9,7 @@ from profiles.models import UserProfile
 
 class Order(models.Model):
     """ Order model for customer orders """
-    order_reference = models.CharField(max_length=32, null=False, editable=False)
+    order_reference = models.CharField(max_length=38, null=False, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
                                      null=True, blank=True,
                                      related_name='orders')
@@ -31,7 +31,7 @@ class Order(models.Model):
 
     def _generate_order_reference(self):
         """ Generate a random, unique order number using UUID """
-        return uuid.uuid4().hex.upper()
+        return uuid.uuid4().hex[:16].upper()
 
     def update_total(self):
         """
