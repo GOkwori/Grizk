@@ -125,6 +125,10 @@ span.btn.btn-black.rounded-0.btn-file {
     border-radius: 10px;
 }
 
+div#navbarSupportedContent {
+    display: grid;
+}
+
 /* Buttons */
 nav button {
     color: #fff;
@@ -995,6 +999,19 @@ input#new-image {
         width: 80% !important;
     }
 
+    .carousel-container img {
+        height: 40vh;
+    }
+
+
+    .amazing-offers.row.mt-2 {
+        display: none;
+    }
+
+    #promo-container {
+        display: none;
+    }
+
     .layout {
         margin-top: 35% !important;
     }
@@ -1013,6 +1030,11 @@ input#new-image {
     .list-unstyled {
         display: none;
     }
+
+    div#navbarSupportedContent {
+        display: none;
+    }
+
 
     .social-icons.mt-4 {
         text-align: center;
@@ -1037,9 +1059,22 @@ input#new-image {
         width: 50%;
     }
 
+    .carousel-container img {
+        height: 40vh;
+    }
+
+
     #wishlistOffcanvas,
     #cartOffcanvas {
         width: 80% !important;
+    }
+
+    .amazing-offers.row.mt-2 {
+        display: none;
+    }
+
+    #promo-container {
+        display: none;
     }
 
     .layout {
@@ -1055,6 +1090,11 @@ input#new-image {
     .footer-right {
         margin-top: 30% !important;
     }
+
+    div#navbarSupportedContent {
+        display: none;
+    }
+
 
     .footer-info,
     .list-unstyled {
@@ -1084,10 +1124,27 @@ input#new-image {
         width: 50%;
     }
 
+    .carousel-container img {
+        height: 40vh;
+    }
+
+
 
     #wishlistOffcanvas,
     #cartOffcanvas {
         width: 80% !important;
+    }
+
+    .amazing-offers.row.mt-2 {
+        display: none;
+    }
+
+    #promo-container {
+        display: none;
+    }
+
+    div#navbarSupportedContent {
+        display: none;
     }
 
     .layout {
@@ -1133,14 +1190,40 @@ input#new-image {
         display: block;
         margin-left: 8%;
     }
+
+    .carousel-container.col-10 {
+        width: 100%;
+    }
+
+    ul.navbar-nav.mb-lg-0.ms-lg-4 {
+        flex-direction: row;
+        justify-content: end;
+    }
+
+    .col-4.col-md-3.justify-content-end.container {
+        margin-right: 20px;
+    }
+
+    #wishlist button,
+    #cart button {
+        width: 130%;
+    }
+
+    li#wishlist {
+        margin-right: 20px;
+    }
+
+    .row.cart-summary {
+        display: block;
+    }
 }
 
 /*---------- Styling for screens with (max-width: 896px)----------*/
 
-@media (max-width: 896px) {
+@media (min-width:577px) and (max-width: 896px) {
 
     .layout {
-        margin-top: 25%;
+        margin-top: 22%;
     }
 
     #wishlistOffcanvas,
@@ -1150,6 +1233,10 @@ input#new-image {
 
     .carousel-container img {
         height: 40vh;
+    }
+
+    button.navbar-toggler {
+        display: none;
     }
 
     .amazing-offers.row.mt-2 {
@@ -1162,6 +1249,15 @@ input#new-image {
 
     .row.justify-content-between {
         margin-bottom: 12%;
+    }
+
+    #navigation-section {
+        display: flex;
+        align-items: center;
+    }
+
+    #search-bar {
+        margin-left: 5%;
     }
 
     #product-card {

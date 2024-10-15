@@ -48,8 +48,8 @@
 <body>
     <header class="header-container fixed-top" id="main-header">
         <nav class="row navbar navbar-expand-lg navbar-light pb-0" id="nav-container">
-            <div class="col container-fluid px-2 px-lg-3">
-                <a class="navbar-brand col-lg-4 d-flex justify-content-start" href="{% url 'home' %}">
+            <div class="container-fluid px-2 px-lg-3" id='navigation-section'>
+                <a class="navbar-brand col-md-3 col-lg-4 d-flex justify-content-start" href="{% url 'home' %}">
                     <h2><i class="fa-regular fa-chess-knight"> Grizk</i></h2>
                 </a>
 
@@ -60,7 +60,7 @@
                 </button>
 
                 <!-- Search container -->
-                <div class="d-none d-sm-block col-lg-4">
+                <div class="d-none d-sm-block col-md-4 col-lg-4" id='search-bar'>
                     <form method="GET" action="{% url 'products' %}">
                         <div class="input-group">
                             <input type="text" class="form-control" name="q" placeholder="Search Grizk">
@@ -72,13 +72,13 @@
                 </div>
 
                 <!-- Navbar collapse -->
-                <div class="collapse navbar-collapse col-lg-4 justify-content-end container"
+                <div class="col-md-4 col-lg-4 justify-content-end container"
                     id="navbarSupportedContent">
                     <ul class="navbar-nav mb-lg-0 ms-lg-4">
 
                         {% if user.is_authenticated %}
                             <!-- Wishlist -->
-                            <li class="nav-item list-inline-item d-none d-md-block" id="wishlist">
+                            <li class="nav-item list-inline-item" id="wishlist">
                                 <button
                                     class="{% if user_wishlist %} font-weight-bold{% else %}text{% endif %} nav-link btn btn-primary"
                                     type="button" data-bs-toggle="offcanvas" data-bs-target="#wishlistOffcanvas"
@@ -97,7 +97,7 @@
                             </li>
                         {% endif %}
                         <!-- Cart -->
-                        <li class="nav-item list-inline-item d-none d-md-block" id="cart">
+                        <li class="nav-item list-inline-item" id="cart">
                             <button
                                 class="{% if cart_items %} font-weight-bold{% else %}text{% endif %} nav-link btn btn-primary"
                                 type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas"
