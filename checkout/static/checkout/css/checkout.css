@@ -22,7 +22,7 @@
 }
 
 .stripe-style-input::placeholder {
-    color: #aab7c4;
+  color: #aab7c4;
 }
 
 #loading-overlay {
@@ -31,8 +31,10 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent background */
-  z-index: 9999;  /* Ensure it stays above all other content */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent background */
+  z-index: 9999;
+  /* Ensure it stays above all other content */
   display: flex;
   justify-content: center;
   align-items: center;
