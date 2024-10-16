@@ -1439,7 +1439,7 @@ input#new-image {
 
 /*---------- Styling for screens with (max-width: 1800px)----------*/
 
-/*@media (max-width: 1800px) {
+@media (max-width: 1800px) {
     .layout {
         margin-top: 8.5%;
     }
@@ -1448,10 +1448,21 @@ input#new-image {
         display:none;
     }
 
+    div#update-control {
+        margin-left: 25%;
+    }
+
   }
+
+/*---------- Styling for screens with (min-width: 1801px)----------*/
 
 @media (min-width:1801px) {
     .qty-btn {
         display:none;
     }
+
+    div#update-control {
+        margin-left: 25%;
+    }
+
 }
