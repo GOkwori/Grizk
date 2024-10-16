@@ -62,7 +62,7 @@
                         <!-- Loop through each item in the cart and display it in the table -->
                         {% for item in cart_items %}
                         <tr>
-                             <!-- Display product image -->
+                            <!-- Display product image -->
                             <td class="p-1">
                                 {% include "cart/product-image.html" %}
                             </td>
@@ -78,8 +78,8 @@
                             <td class="p-3 w-25 qty-table">
                                 {% include "cart/quantity-form.html" %}
                                 <div class='qty-btn text-center'>
-                                {% include "cart/update-button.html" %}
-                                {% include "cart/remove-button.html" %}
+                                    {% include "cart/update-button.html" %}
+                                    {% include "cart/remove-button.html" %}
                                 </div>
                             </td>
                             <!-- Calculate and display the subtotal for each item -->
@@ -132,7 +132,7 @@
                 </a>
             </div>
             {% else %}
-             <!-- Message if the cart is empty -->
+            <!-- Message if the cart is empty -->
             <p class="mb-5">Your Cart is empty.</p>
             <div class="shopping-link">
                 <a href="{% url 'products' %}" class="btn p-0">
@@ -150,4 +150,3 @@
 {{ block.super }}
 {% include 'cart/includes/quantity_update.html' %}
 {% endblock %}
-

@@ -4,12 +4,15 @@ from django.shortcuts import get_object_or_404
 from products.models import Product
 
 # Function to retrieve and calculate the contents of the shopping cart
+
+
 def cart_contents(request):
     # Initialize variables for storing cart details
     cart_items = []  # List to hold individual cart item details
     total = 0  # Total price of all items in the cart
     product_count = 0  # Total quantity of all products in the cart
-    cart = request.session.get('cart', {})  # Retrieve cart data from the session
+    # Retrieve cart data from the session
+    cart = request.session.get('cart', {})
 
     # Extract product IDs from the cart and fetch related Product objects from the database
     product_ids = [item_id for item_id in cart.keys()]
@@ -18,7 +21,8 @@ def cart_contents(request):
 
     # Iterate through items in the cart to calculate totals and prepare cart item details
     for item_id, item_data in cart.items():
-        product = product_map.get(int(item_id))  # Get the product object using its ID
+        # Get the product object using its ID
+        product = product_map.get(int(item_id))
         if not product:
             continue  # Skip if the product does not exist
 

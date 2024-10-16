@@ -5,6 +5,8 @@ from django.utils.html import format_html
 register = template.Library()
 
 # Custom template filter to calculate the subtotal
+
+
 @register.filter(name='calc_subtotal')
 def calc_subtotal(price, quantity):
     try:
