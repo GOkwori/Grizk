@@ -1375,7 +1375,7 @@ input#new-image {
 }
 
 /*---------- Styling for screens with (max-width: 1024px)----------*/
-@media (max-width: 1024px) {
+@media (min-width: 897px) and (max-width: 1024px) {
     .layout {
         margin-top: 18%;
     }
@@ -1439,7 +1439,7 @@ input#new-image {
 
 /*---------- Styling for screens with (max-width: 1800px)----------*/
 
-@media (max-width: 1800px) {
+@media (min-width: 1025px) and (max-width: 1800px) {
     .layout {
         margin-top: 8.5%;
     }
