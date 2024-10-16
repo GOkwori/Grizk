@@ -3,8 +3,8 @@
 }
 
 #profile-update-form input:placeholder {
-    color: #aab7c4;
-  }
+  color: #aab7c4;
+}
 
 #id_default_country,
 #id_default_country option:not(:first-child) {
@@ -12,22 +12,22 @@
 }
 
 #id_default_country option:first-child {
-    color: #aab7c4;
-  }
-  
+  color: #aab7c4;
+}
+
 .order-history {
-    max-height: 416px;
-    overflow-y: auto;
+  max-height: 416px;
+  overflow-y: auto;
 }
 
 #profile-update-form button {
-    background-color: #ff4500;
-    color: #000;
-    border-color: #000;
+  background-color: #ff4500;
+  color: #000;
+  border-color: #000;
 }
 
 #profile-update-form button:hover {
-    background-color: #000;
-    color: #ff4500;
-    border-color: #ff4500;
+  background-color: #000;
+  color: #ff4500;
+  border-color: #ff4500;
 }
