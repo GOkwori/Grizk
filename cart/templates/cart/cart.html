@@ -24,7 +24,7 @@
         </div>
 
         <div class="row cart-summary">
-            <div class="col-9">
+            <div>
                 {% if free_delivery_delta > 0 %}
                 <p class="mb-0 shadow-sm">
                     Buy <strong>£{{ free_delivery_delta }}</strong> more to get free next day delivery!
@@ -40,8 +40,8 @@
 
                 {% if cart_items %}
                 {% include "cart/mobile-cart.html" %}
-                <div class="table-sm-responsive rounded d-none d-md-block">
-                    <table class="table table-sm table-borderless table-dark table-striped align-middle">
+                <div class=" rounded d-none d-md-block">
+                    <table class="table table-borderless table-dark table-striped align-middle">
                         <thead class="text-black">
                             <tr>
                                 <th scope="col" class="p-3">Product</th>
@@ -86,9 +86,8 @@
                     </table>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="d-flex justify-content-end">
                 <div class="card bg-black text-orange" style="width: 18rem;" id="cart-card">
-                    <img src="{% static 'images/cart-img.jpg' %}" class="card-img-top h-25" alt="point of sale terminal">
                     <div class="card-body">
                         <h5 class="card-title">Order summary</h5>
                     </div>
