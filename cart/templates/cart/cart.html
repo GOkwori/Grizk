@@ -49,8 +49,8 @@
                                 <th scope="col" class="p-3 text-center">Price</th>
                                 <th scope="col" class="p-3 text-center">Quantity</th>
                                 <th scope="col" class="p-3 text-center">Sub-total</th>
-                                <th scope="col" class="p-3">Update</th>
-                                <th scope="col" class="p-3">Remove</th>
+                                <th scope="col" class="p-3 cart-update">Update</th>
+                                <th scope="col" class="p-3 cart-delete">Remove</th>
                             </tr>
                         </thead>
 
@@ -67,14 +67,18 @@
                             </td>
                             <td class="p-3 w-25 qty-table">
                                 {% include "cart/quantity-form.html" %}
+                                <div class='qty-btn text-center'>
+                                {% include "cart/update-button.html" %}
+                                {% include "cart/remove-button.html" %}
+                                </div>
                             </td>
                             <td class="p-3 w-25">
                                 <p class="my-0 text-center">£{{ item.product.price|calc_subtotal:item.quantity }}</p>
                             </td>
-                            <td class="p-3">
+                            <td class="p-3 cart-update">
                                 {% include "cart/update-button.html" %}
                             </td>
-                            <td class="p-3">
+                            <td class="p-3 cart-delete">
                                 {% include "cart/remove-button.html" %}
                             </td>
                         </tr>
