@@ -18,93 +18,119 @@
                         {% endif %}
                         <hr class="my-1">
                         <li><a href="{% url 'products' %}" class="dropdown-item">All Products</a></li>
-                        <li><a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a></li>
-                        <li><a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item">By Rating</a></li>
-                        <li><a href="{% url 'products' %}?sort=category&direction=desc" class="dropdown-item">By Category</a></li>
+                        <li><a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                        </li>
+                        <li><a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item">By
+                                Rating</a></li>
+                        <li><a href="{% url 'products' %}?sort=category&direction=desc" class="dropdown-item">By
+                                Category</a></li>
                     </ul>
                 </li>
 
                 <!-- Computing Dropdown -->
                 <li class="list-inline-item dropdown ms-2 me-2">
-                    <a class="nav-link p-2" href="#" id="computing-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link p-2" href="#" id="computing-dropdown" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         <div class="text-center d-flex">
                             <div><i class="fa-solid fa-laptop me-1"></i></div>
                             <p class="my-0">Computing</p>
                         </div>
                     </a>
                     <ul class="dropdown-menu custom-dropdown" aria-labelledby="computing-dropdown">
-                        <li><a href="{% url 'products' %}?category=Laptops" class="dropdown-item p-2">Laptops & Tablets</a></li>
-                        <li><a href="{% url 'products' %}?category=Desktop Computers" class="dropdown-item p-2">Desktop Computers</a></li>
+                        <li><a href="{% url 'products' %}?category=Laptops" class="dropdown-item p-2">Laptops &
+                                Tablets</a></li>
+                        <li><a href="{% url 'products' %}?category=Desktop Computers" class="dropdown-item p-2">Desktop
+                                Computers</a></li>
                         <li><a href="{% url 'products' %}?category=Chargers" class="dropdown-item p-2">Chargers</a></li>
-                        <li><a href="{% url 'products' %}?category=Batteries" class="dropdown-item p-2">Batteries</a></li>
-                        <li><a href="{% url 'products' %}?category=Laptops,Desktop Computers,Chargers,Batteries" class="dropdown-item p-2">All Computing</a></li>
+                        <li><a href="{% url 'products' %}?category=Batteries" class="dropdown-item p-2">Batteries</a>
+                        </li>
+                        <li><a href="{% url 'products' %}?category=Laptops,Desktop Computers,Chargers,Batteries"
+                                class="dropdown-item p-2">All Computing</a></li>
                     </ul>
                 </li>
 
                 <!-- Gaming Dropdown -->
                 <li class="list-inline-item dropdown ms-2 me-2">
-                    <a class="nav-link p-2" href="#" id="gaming-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link p-2" href="#" id="gaming-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
                         <div class="text-center d-flex">
                             <div><i class="fa-solid fa-gamepad me-1"></i></div>
                             <p class="my-0">Gaming</p>
                         </div>
                     </a>
                     <ul class="dropdown-menu custom-dropdown" aria-labelledby="gaming-dropdown">
-                        <li><a href="{% url 'products' %}?category=Gaming PC" class="dropdown-item p-2">Gaming PC</a></li>
-                        <li><a href="{% url 'products' %}?category=Gaming PC" class="dropdown-item p-2">All Gaming</a></li>
+                        <li><a href="{% url 'products' %}?category=Gaming PC" class="dropdown-item p-2">Gaming PC</a>
+                        </li>
+                        <li><a href="{% url 'products' %}?category=Gaming PC" class="dropdown-item p-2">All Gaming</a>
+                        </li>
                     </ul>
                 </li>
 
                 <!-- Headphones Dropdown -->
                 <li class="list-inline-item dropdown ms-2 me-2">
-                    <a class="nav-link p-2" href="#" id="headphones-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link p-2" href="#" id="headphones-dropdown" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         <div class="text-center d-flex">
                             <div><i class="fa-solid fa-headphones me-1"></i></div>
                             <p class="my-0">Headphones</p>
                         </div>
                     </a>
                     <ul class="dropdown-menu custom-dropdown" aria-labelledby="headphones-dropdown">
-                        <li><a href="{% url 'products' %}?category=Earbud Headphones" class="dropdown-item p-2">Earbud Headphones</a></li>
-                        <li><a href="{% url 'products' %}?category=Bluetooth Headphones" class="dropdown-item p-2">Bluetooth Headphones</a></li>
-                        <li><a href="{% url 'products' %}?category=Earbud Headphones,Bluetooth Headphones" class="dropdown-item p-2">All Headphones</a></li>
+                        <li><a href="{% url 'products' %}?category=Earbud Headphones" class="dropdown-item p-2">Earbud
+                                Headphones</a></li>
+                        <li><a href="{% url 'products' %}?category=Bluetooth Headphones"
+                                class="dropdown-item p-2">Bluetooth Headphones</a></li>
+                        <li><a href="{% url 'products' %}?category=Earbud Headphones,Bluetooth Headphones"
+                                class="dropdown-item p-2">All Headphones</a></li>
                     </ul>
                 </li>
 
                 <!-- Phones & Tablets Dropdown -->
                 <li class="list-inline-item dropdown ms-2 me-2">
-                    <a class="nav-link p-2" href="#" id="phones-tablets-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link p-2" href="#" id="phones-tablets-dropdown" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         <div class="text-center d-flex">
                             <div><i class="fa-solid fa-mobile-alt me-1"></i></div>
                             <p class="my-0">Smart Phones & Tablets</p>
                         </div>
                     </a>
                     <ul class="dropdown-menu custom-dropdown" aria-labelledby="phones-tablets-dropdown">
-                        <li><a href="{% url 'products' %}?category=Apple Iphone" class="dropdown-item p-2">Apple Iphone</a></li>
-                        <li><a href="{% url 'products' %}?category=Google Pixel" class="dropdown-item p-2">Google Pixel</a></li>
-                        <li><a href="{% url 'products' %}?category=Android Smartphone" class="dropdown-item p-2">Android Smartphones</a></li>
-                        <li><a href="{% url 'products' %}?category=Apple Ipad" class="dropdown-item p-2">Apple Ipad</a></li>
-                        <li><a href="{% url 'products' %}?category=Android Tablets" class="dropdown-item p-2">Android Tablets</a></li>
-                        <li><a href="{% url 'products' %}?category=Apple Iphone,Google Pixel,Android Smartphone,Apple Ipad,Android Tablets" class="dropdown-item p-2">All Smart Phones & Tablets</a></li>
+                        <li><a href="{% url 'products' %}?category=Apple Iphone" class="dropdown-item p-2">Apple
+                                Iphone</a></li>
+                        <li><a href="{% url 'products' %}?category=Google Pixel" class="dropdown-item p-2">Google
+                                Pixel</a></li>
+                        <li><a href="{% url 'products' %}?category=Android Smartphone" class="dropdown-item p-2">Android
+                                Smartphones</a></li>
+                        <li><a href="{% url 'products' %}?category=Apple Ipad" class="dropdown-item p-2">Apple Ipad</a>
+                        </li>
+                        <li><a href="{% url 'products' %}?category=Android Tablets" class="dropdown-item p-2">Android
+                                Tablets</a></li>
+                        <li><a href="{% url 'products' %}?category=Apple Iphone,Google Pixel,Android Smartphone,Apple Ipad,Android Tablets"
+                                class="dropdown-item p-2">All Smart Phones & Tablets</a></li>
                     </ul>
                 </li>
 
                 <!-- Audio Dropdown -->
                 <li class="list-inline-item dropdown ms-2 me-2">
-                    <a class="nav-link p-2" href="#" id="tv-audio-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link p-2" href="#" id="tv-audio-dropdown" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         <div class="text-center d-flex">
                             <div><i class="fa-solid fa-tv me-1"></i></div>
                             <p class="my-0">Audio</p>
                         </div>
                     </a>
                     <ul class="dropdown-menu custom-dropdown" aria-labelledby="tv-audio-dropdown">
-                        <li><a href="{% url 'products' %}?category=Home Theater System" class="dropdown-item p-2">Home Theater Systems</a></li>
-                        <li><a href="{% url 'products' %}?category=Home Theater System" class="dropdown-item p-2">All Audio</a></li>
+                        <li><a href="{% url 'products' %}?category=Home Theater System" class="dropdown-item p-2">Home
+                                Theater Systems</a></li>
+                        <li><a href="{% url 'products' %}?category=Home Theater System" class="dropdown-item p-2">All
+                                Audio</a></li>
                     </ul>
                 </li>
 
                 <!-- Account Dropdown -->
                 <li class="nav-item list-inline-item dropdown ms-2 me-2">
-                    <a class="nav-link p-2" href="#" id="account-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link p-2" href="#" id="account-dropdown" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         <div class="text-center d-flex">
                             <div><i class="fa-solid fa-user me-1 mt-1"></i></div>
                             <p class="my-0">Account</p>
@@ -113,13 +139,18 @@
                     <div class="dropdown-menu border-0 custom-dropdown" aria-labelledby="account-dropdown">
                         {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
-                        <a href="{% url 'admin_dashboard' %}" class="dropdown-item"><i class="fa-solid fa-shield-halved  me-1 mt-1"></i> Product Dashboard</a>
+                        <a href="{% url 'admin_dashboard' %}" class="dropdown-item"><i
+                                class="fa-solid fa-shield-halved  me-1 mt-1"></i> Product Dashboard</a>
                         {% endif %}
-                        <a href="{% url 'profile' %}" class="dropdown-item"><i class="fa-solid fa-address-card me-2"></i> My Profile</a>
-                        <a href="{% url 'account_logout' %}" class="dropdown-item"><i class="fa-solid fa-right-from-bracket me-1 mt-1"></i> Logout</a>
+                        <a href="{% url 'profile' %}" class="dropdown-item"><i
+                                class="fa-solid fa-address-card me-2"></i> My Profile</a>
+                        <a href="{% url 'account_logout' %}" class="dropdown-item"><i
+                                class="fa-solid fa-right-from-bracket me-1 mt-1"></i> Logout</a>
                         {% else %}
-                        <a href="{% url 'account_signup' %}" class="dropdown-item"><i class="fa-solid fa-address-card me-1 mt-1"></i> Register</a>
-                        <a href="{% url 'account_login' %}" class="dropdown-item"><i class="fa-solid fa-right-to-bracket me-1 mt-1"></i> Login</a>
+                        <a href="{% url 'account_signup' %}" class="dropdown-item"><i
+                                class="fa-solid fa-address-card me-1 mt-1"></i> Register</a>
+                        <a href="{% url 'account_login' %}" class="dropdown-item"><i
+                                class="fa-solid fa-right-to-bracket me-1 mt-1"></i> Login</a>
                         {% endif %}
                     </div>
                 </li>
