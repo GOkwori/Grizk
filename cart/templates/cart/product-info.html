@@ -1,3 +1,14 @@
+<!-- Display the product name -->
 <p class="my-0 small">{{ item.product.name }}</p>
-<p class="my-0 small">Colour: {% if item.product.has_colours %}{{ item.colour|upper }}{% else %}N/A{% endif %}</p>
+
+<!-- Display the color of the product if it has colors available; otherwise, show 'N/A' -->
+<p class="my-0 small">
+  Colour: {% if item.product.has_colours %} {{ item.colour|upper }}
+  <!-- Convert the color name to uppercase for consistency -->
+  {% else %} N/A
+  <!-- Display 'N/A' if the product does not have a color attribute -->
+  {% endif %}
+</p>
+
+<!-- Display the SKU (Stock Keeping Unit) of the product, converted to uppercase -->
 <p class="my-0 small">SKU: {{ item.product.sku|upper }}</p>

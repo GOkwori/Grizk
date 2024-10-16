@@ -1,12 +1,19 @@
+<!-- Button to continue shopping, redirects to the products page -->
 <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
-    <span class="icon">
-        <i class="fas fa-chevron-left"></i>
-    </span>
-    <span>Continue Shopping</span>
+  <span class="icon">
+    <i class="fas fa-chevron-left"></i>
+    <!-- Left arrow icon for visual indication -->
+  </span>
+  <span>Continue Shopping</span>
+  <!-- Text encouraging the user to return to browsing products -->
 </a>
+
+<!-- Button to proceed to the secure checkout, redirects to the checkout page -->
 <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
-    <span class="text-uppercase">Secure Checkout</span>
-    <span class="icon">
-        <i class="fas fa-lock"></i>
-    </span>
+  <span class="text-uppercase">Secure Checkout</span>
+  <!-- Text indicating a secure payment process, displayed in uppercase -->
+  <span class="icon">
+    <i class="fas fa-lock"></i>
+    <!-- Lock icon to symbolize security and encryption -->
+  </span>
 </a>

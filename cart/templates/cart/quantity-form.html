@@ -1,42 +1,76 @@
+<!-- Wrapper for the form to update the quantity of a cart item -->
 <div class="row">
-    <form class="form update-form" action="{% url 'adjust_cart' item.item_id %}"
-        method="POST">
-        {% csrf_token %}
-        <div class="form-row mb-3 mt-3" id='update-control'>
-            <div class="col-12">
-                <div class="form-group row">
-                    <div class="input-group col-3 ms-2" id="offcanvas-qty">
-                        <div class="input-group-prepend">
-                            <button type="button" class="decrement-qty btn"
-                                data-item_id="{{ item.item_id }}"
-                                id="decrement-qty_{{ item.item_id }}"
-                                onclick="updateQuantity(this, 'decrement')">
-                                <span class="icon">
-                                    <i class="fas fa-minus"></i>
-                                </span>
-                            </button>
-                        </div>
-                        <input class="form-control qty_input text-center small"
-                            type="number" name="quantity" value="{{ item.quantity }}"
-                            min="1" max="99" data-item_id="{{ item.item_id }}"
-                            id="id_qty_{{ item.item_id }}" readonly>
-                        <div class="input-group-append">
-                            <button type="button" class="increment-qty btn"
-                                data-item_id="{{ item.item_id }}"
-                                id="increment-qty_{{ item.item_id }}"
-                                onclick="updateQuantity(this, 'increment')">
-                                <span class="icon">
-                                    <i class="fas fa-plus"></i>
-                                </span>
-                            </button>
-                        </div>
-                        {% if item.product.has_colours %}
-                        <input type="hidden" name="product_colour"
-                            value="{{ item.colour }}">
-                        {% endif %}
-                    </div>
-                </div>
+  <!-- Form to adjust the cart item quantity, submits to the 'adjust_cart' URL with the item's ID -->
+  <form
+    class="form update-form"
+    action="{% url 'adjust_cart' item.item_id %}"
+    method="POST"
+  >
+    {% csrf_token %}
+    <!-- CSRF token for security to prevent cross-site request forgery attacks -->
+
+    <!-- Controls for quantity adjustment -->
+    <div class="form-row mb-3 mt-3" id="update-control">
+      <div class="col-12">
+        <div class="form-group row">
+          <!-- Input group for decrement button, quantity display, and increment button -->
+          <div class="input-group col-3 ms-2" id="offcanvas-qty">
+            <!-- Decrement button, reduces the quantity by 1 -->
+            <div class="input-group-prepend">
+              <button
+                type="button"
+                class="decrement-qty btn"
+                data-item_id="{{ item.item_id }}"
+                id="decrement-qty_{{ item.item_id }}"
+                onclick="updateQuantity(this, 'decrement')"
+              >
+                <span class="icon">
+                  <i class="fas fa-minus"></i>
+                  <!-- Minus icon indicating decrease -->
+                </span>
+              </button>
             </div>
+
+            <!-- Input field showing the current quantity, readonly to prevent manual input -->
+            <input
+              class="form-control qty_input text-center small"
+              type="number"
+              name="quantity"
+              value="{{ item.quantity }}"
+              min="1"
+              max="99"
+              data-item_id="{{ item.item_id }}"
+              id="id_qty_{{ item.item_id }}"
+              readonly
+            />
+
+            <!-- Increment button, increases the quantity by 1 -->
+            <div class="input-group-append">
+              <button
+                type="button"
+                class="increment-qty btn"
+                data-item_id="{{ item.item_id }}"
+                id="increment-qty_{{ item.item_id }}"
+                onclick="updateQuantity(this, 'increment')"
+              >
+                <span class="icon">
+                  <i class="fas fa-plus"></i>
+                  <!-- Plus icon indicating increase -->
+                </span>
+              </button>
+            </div>
+
+            <!-- Hidden input for products with multiple colors, retains color information when updating -->
+            {% if item.product.has_colours %}
+            <input
+              type="hidden"
+              name="product_colour"
+              value="{{ item.colour }}"
+            />
+            {% endif %}
+          </div>
         </div>
-    </form>
+      </div>
+    </div>
+  </form>
 </div>

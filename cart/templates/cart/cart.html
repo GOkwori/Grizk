@@ -5,6 +5,7 @@
 {% block title %} - Shopping cart{% endblock %}
 
 {% block page_header %}
+<!-- Page header section, can be used for styling and layout purposes -->
 <div class="container layout">
     <div class="row">
         <div class="col"></div>
@@ -22,24 +23,29 @@
                 <hr>
             </div>
         </div>
-
+        <!-- Main cart summary section -->
         <div class="row cart-summary">
             <div>
+                <!-- Display message if more items are needed to reach free delivery -->
                 {% if free_delivery_delta > 0 %}
                 <p class="mb-0 shadow-sm">
                     Buy <strong>£{{ free_delivery_delta }}</strong> more to get free next day delivery!
                 </p>
                 <div class="progress my-3">
+                    <!-- Progress bar showing how close the user is to getting free delivery -->
                     <div class="progress-bar progress-bar-custom" role="progressbar" id="delivery-progress"
                         aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 {% endif %}
+                <!-- Data attributes for total and delivery threshold (used for JavaScript calculations) -->
                 <div id="cart-totals" data-total="{{ total|default:0 }}"
                     data-threshold="{{ free_delivery_threshold|default:0 }}">
                 </div>
-
+                <!-- Check if there are items in the cart -->
                 {% if cart_items %}
+                <!-- Include a mobile-friendly version of the cart -->
                 {% include "cart/mobile-cart.html" %}
+                <!-- Desktop version of the cart -->
                 <div class=" rounded d-none d-md-block">
                     <table class="table table-borderless table-dark table-striped align-middle">
                         <thead class="text-black">
@@ -53,18 +59,22 @@
                                 <th scope="col" class="p-3 cart-delete">Remove</th>
                             </tr>
                         </thead>
-
+                        <!-- Loop through each item in the cart and display it in the table -->
                         {% for item in cart_items %}
                         <tr>
+                             <!-- Display product image -->
                             <td class="p-1">
                                 {% include "cart/product-image.html" %}
                             </td>
+                            <!-- Display product information (name, description, etc.) -->
                             <td class="p-3 w-25">
                                 {% include "cart/product-info.html" %}
                             </td>
+                            <!-- Display the price of the product -->
                             <td class="p-3">
                                 <p class="my-0">£{{ item.product.price }}</p>
                             </td>
+                            <!-- Quantity form with update and remove buttons -->
                             <td class="p-3 w-25 qty-table">
                                 {% include "cart/quantity-form.html" %}
                                 <div class='qty-btn text-center'>
@@ -72,12 +82,15 @@
                                 {% include "cart/remove-button.html" %}
                                 </div>
                             </td>
+                            <!-- Calculate and display the subtotal for each item -->
                             <td class="p-3 w-25">
                                 <p class="my-0 text-center">£{{ item.product.price|calc_subtotal:item.quantity }}</p>
                             </td>
+                            <!-- Include update button for cart item -->
                             <td class="p-3 cart-update">
                                 {% include "cart/update-button.html" %}
                             </td>
+                            <!-- Include remove button for cart item -->
                             <td class="p-3 cart-delete">
                                 {% include "cart/remove-button.html" %}
                             </td>
@@ -86,6 +99,7 @@
                     </table>
                 </div>
             </div>
+            <!-- Order summary card on the right side -->
             <div class="d-flex justify-content-end">
                 <div class="card bg-black text-orange" style="width: 18rem;" id="cart-card">
                     <div class="card-body">
@@ -103,6 +117,7 @@
                             </h4>
                         </li>
                     </ul>
+                    <!-- Checkout button -->
                     <div class="card-body text-center">
                         <a href="{% url 'checkout' %}" class="btn btn-outline-primary" role="button">
                             <i class="fas fa-lock me-2"></i>Secure Checkout
@@ -110,12 +125,14 @@
                     </div>
                 </div>
             </div>
+            <!-- Link to continue shopping -->
             <div class="shopping-link">
                 <a href="{% url 'products' %}" class="btn p-0">
                     <i class="fas fa-chevron-left"></i> Continue Shopping
                 </a>
             </div>
             {% else %}
+             <!-- Message if the cart is empty -->
             <p class="mb-5">Your Cart is empty.</p>
             <div class="shopping-link">
                 <a href="{% url 'products' %}" class="btn p-0">

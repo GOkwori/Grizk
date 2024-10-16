@@ -1,38 +1,46 @@
+<!-- Mobile-friendly cart view, only visible on smaller screens (less than md breakpoint) -->
 <div class="d-block d-md-none">
-    {% for item in cart_items %}
-    <div class="row">
-        <div class="col-12 col-sm-6 mb-2">
-            {% include "cart/product-image.html" %}
-        </div>
-        <div class="col-12 col-sm-6 mb-2">
-            {% include "cart/product-info.html" %}
-        </div>
-        <div class="col-12 col-sm-6 order-sm-last">
-            <p class="my-0">Price Each: £{{ item.product.price }}</p>
-        </div>
-        <div class="col-12 col-sm-6">
-            <div class='row'>
-                <div class='col-6'>
-            {% include "cart/quantity-form.html" %}
-        </div>
-            <div class="col-3 ms-2 mt-3">
-                {% include "cart/update-button.html" %}
-            </div>
-            <div class="col-2 mt-3">
-                {% include "cart/remove-button.html" %}
-            </div>
-            </div>
-        </div>
+  {% for item in cart_items %}
+  <!-- Container for each cart item -->
+  <div class="row">
+    <!-- Display the product image -->
+    <div class="col-12 col-sm-6 mb-2">
+      {% include "cart/product-image.html" %}
     </div>
-    <div class="row">
-        <div class="col">
-            <hr>
+    <!-- Display the product information (name, description, etc.) -->
+    <div class="col-12 col-sm-6 mb-2">
+      {% include "cart/product-info.html" %}
+    </div>
+    <!-- Display the price per item -->
+    <div class="col-12 col-sm-6 order-sm-last">
+      <p class="my-0">Price Each: £{{ item.product.price }}</p>
+    </div>
+    <!-- Container for quantity controls, update, and remove buttons -->
+    <div class="col-12 col-sm-6">
+      <div class="row">
+        <!-- Include form to adjust the quantity of the item -->
+        <div class="col-6">{% include "cart/quantity-form.html" %}</div>
+        <!-- Update button for submitting quantity changes -->
+        <div class="col-3 ms-2 mt-3">
+          {% include "cart/update-button.html" %}
         </div>
+        <!-- Remove button to delete the item from the cart -->
+        <div class="col-2 mt-3">{% include "cart/remove-button.html" %}</div>
+      </div>
     </div>
-    {% endfor %}
-    <div class="btt-button shadow-sm rounded-0 border border-black">
-        <a class="btt-link d-flex h-100">
-            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-        </a>
+  </div>
+  <!-- Horizontal rule to separate each cart item visually -->
+  <div class="row">
+    <div class="col">
+      <hr />
     </div>
+  </div>
+  {% endfor %}
+
+  <!-- Back to Top button, allows users to quickly scroll back to the top of the cart -->
+  <div class="btt-button shadow-sm rounded-0 border border-black">
+    <a class="btt-link d-flex h-100">
+      <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+    </a>
+  </div>
 </div>

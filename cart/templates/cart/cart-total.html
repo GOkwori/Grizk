@@ -1,3 +1,10 @@
+<!-- Display the total cost of all items in the cart -->
 <h6><strong>Cart Total: £{{ total|floatformat:2 }}</strong></h6>
+
+<!-- Display the delivery/shipping cost -->
 <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
-<h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
+
+<!-- Display the final total combining cart total and delivery cost -->
+<h4 class="mt-4">
+  <strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong>
+</h4>

@@ -1,21 +1,34 @@
 <script>
-    // Update quantity on click
-    $('.update-link').click(function (e) {
-        var form = $(this).closest('tr').find('.update-form');
-        form.submit();
-    });
+  // Update quantity on click
+  $(".update-link").click(function (e) {
+    // Find the closest form element with the class 'update-form' inside the same table row
+    // and submit it. This is triggered when the user clicks on an element with the 'update-link' class.
+    var form = $(this).closest("tr").find(".update-form");
+    form.submit();
+  });
 
-    // Remove item and reload on click
-    $('.remove-item').click(function (e) {
-        var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove_')[1];
-        var colour = $(this).data('product-colour');
-        var url = `/cart/remove/${itemId}/`;
-        var data = { 'csrfmiddlewaretoken': csrfToken, 'product_colour': colour };
+  // Remove item and reload on click
+  $(".remove-item").click(function (e) {
+    // Retrieve the CSRF token from Django's template context to ensure secure form submission.
+    var csrfToken = "{{ csrf_token }}";
 
-        $.post(url, data)
-            .done(function () {
-                location.reload();
-            });
+    // Extract the product ID from the element's ID.
+    // Assumes the ID is in the format 'remove_<itemId>'.
+    var itemId = $(this).attr("id").split("remove_")[1];
+
+    // Retrieve custom data attribute 'product-colour' for the selected item.
+    var colour = $(this).data("product-colour");
+
+    // Construct the URL for the backend endpoint that handles item removal from the cart.
+    var url = `/cart/remove/${itemId}/`;
+
+    // Prepare data to be sent with the POST request, including the CSRF token and product colour.
+    var data = { csrfmiddlewaretoken: csrfToken, product_colour: colour };
+
+    // Make an asynchronous POST request to remove the item from the cart.
+    // On success, the page will reload to reflect the updated cart status.
+    $.post(url, data).done(function () {
+      location.reload(); // Refresh the page to show the updated cart.
     });
+  });
 </script>
