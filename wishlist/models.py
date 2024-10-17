@@ -3,7 +3,7 @@ from profiles.models import UserProfile
 from products.models import Product
 
 
-class Wishlist(models.Model): 
+class Wishlist(models.Model):
     """
     A Wishlist model for users to keep track of their favourite products
     """

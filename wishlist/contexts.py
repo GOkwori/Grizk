@@ -1,6 +1,7 @@
 from .models import Wishlist
 from profiles.models import UserProfile
 
+
 def wishlist_context(request):
     """Context processor to pass wishlist items and their count to all templates."""
     if request.user.is_authenticated:
