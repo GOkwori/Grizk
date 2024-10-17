@@ -52,11 +52,12 @@ a {
 /* Header container */
 .header-container {
     text-align: center;
-    background-color: #af0f0f25;
+    background: radial-gradient(circle, #220202, #000000);
 }
 
+/* Footer */
 footer {
-    background-color: #af0f0f25;
+    background: radial-gradient(circle, #220202, #000000);
     opacity: 0.9;
 }
 
@@ -110,7 +111,6 @@ span.btn.btn-black.rounded-0.btn-file {
 
 /* Navigation container */
 #nav-container {
-    backdrop-filter: blur(10px);
     margin: 0 0.5em 0 0.5em;
 }
 
@@ -226,7 +226,6 @@ nav button {
 /* Secondary navigation */
 .sec-nav-container {
     padding: 0.5em;
-    backdrop-filter: blur(10px);
 }
 
 .sec-nav-inner .nav-link:hover {
@@ -331,7 +330,6 @@ button.update-link-1:hover {
 /* Site layout */
 .layout {
     margin-top: 7%;
-    backdrop-filter: blur(10px);
     color: #ff4500;
 }
 
@@ -360,10 +358,8 @@ section {
 
 .home-page {
     padding: 0.5em;
-    backdrop-filter: blur(10px);
     border-radius: 10px;
     color: #ff4500;
-    opacity: 0.9;
 }
 
 /* Carousel container */
@@ -386,23 +382,18 @@ section {
     background-color: #ff4500;
     color: #000;
     border-color: #000;
-
 }
 
 
 /* Top deals container */
 .top-deals {
-    color: #ff4500;
-    backdrop-filter: blur(10px);
     border-radius: 10px;
     margin-top: 0.5%;
 }
 
 #topDealsCarousel {
     background-color: #fff;
-    backdrop-filter: blur(10px);
     border-radius: 10px;
-    opacity: 0.9;
 }
 
 .top-deals h2 {
@@ -417,14 +408,12 @@ section {
 
 .shop-category-container {
     padding: 0.5em;
-    backdrop-filter: blur(10px);
     border-radius: 10px;
     color: #ff4500;
     width: 100%;
     display: inline-flex;
     justify-content: space-evenly;
     text-align: center;
-    opacity: 0.9;
 }
 
 .shop-category-container img {
@@ -435,9 +424,7 @@ section {
 /* Amazing offers container */
 .amazing-offers {
     padding: 0.5em;
-    backdrop-filter: blur(10px);
     border-radius: 10px;
-    opacity: 0.9;
 }
 
 .amazing-offers h2 {
@@ -446,12 +433,10 @@ section {
 
 .amazing-offers-container {
     padding: 0.5em;
-    backdrop-filter: blur(10px);
     border-radius: 10px;
     width: 100%;
     display: inline-flex;
     justify-content: space-evenly;
-    opacity: 0.9;
 }
 
 button {
@@ -470,10 +455,8 @@ button {
 .cart {
     padding: 0.5em;
     background-color: #22223b;
-    backdrop-filter: blur(10px);
     border-radius: 10px;
     color: #fff;
-    opacity: 0.9;
 }
 
 hr {
@@ -485,7 +468,6 @@ hr {
 #product-card {
     background-color: #000;
     color: #ff4500;
-    opacity: 0.9;
 
 }
 
@@ -566,16 +548,13 @@ input#id_password2 {
     padding: 0.5em;
     margin: 0.5em;
     background-color: #fff;
-    backdrop-filter: blur(10px);
     border-radius: 10px;
     color: #22223b;
-    opacity: 0.9;
 }
 
 #cart-card {
     background-color: #000;
     color: #ff4500;
-    opacity: 0.9;
     border: #ff4500 solid 1px;
 }
 
@@ -600,7 +579,6 @@ input#id_password2 {
     background-color: #000;
     color: #ff4500;
     border: none;
-    opacity: 0.9;
 }
 
 
@@ -631,10 +609,8 @@ table button {
 #product-item {
     margin: 0;
     background-color: #22223b;
-    backdrop-filter: blur(10px);
     border-radius: 10px;
     color: #fff;
-    opacity: 0.9;
 }
 
 #product-item .btn {
@@ -968,7 +944,6 @@ footer {
     min-width: 100%;
     min-height: 100%;
     cursor: pointer;
-    opacity: 0.9;
 }
 
 input#new-image {
