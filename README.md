@@ -12,20 +12,18 @@ Grizk combines state-of-the-art technology with a seamless user experience, offe
 
 With technology evolving rapidly, there is an increasing demand for reliable and user-friendly platforms where consumers can purchase the latest electronics confidently. Grizk aims to address this need by providing a trusted, convenient, and efficient shopping experience for tech-savvy users. The platform highlights the newest releases, trending gadgets, and exclusive deals, making it a go-to destination for anyone looking to stay at the forefront of the tech world.
 
-**View the live site:** [Grizk](https://grizk-electronics.herokuapp.com/)
-
 For testing purchases, you can use the following [Stripe Dummy Card](https://stripe.com/docs/testing) details:
 
-- **Success Card Number:** 4242424242424242
+- **Success Card Number:** 4242-4242-4242-4242
 - **Expiry Date:** Any future date in MM/YY format
 - **CVN:** Any 3-digit number
 - **Postcode:** Any 5 numerals  
 
 **Note:** Any payments made using a valid debit/credit card will not be processed, and no charges will be applied. Orders placed for testing purposes will not be fulfilled.
 
-For full Admin access to the Django Admin panel, you can use the following link: [Grizk Admin](https://grizk-electronics.herokuapp.com/admin)
+For full Admin access to the Django Admin panel, you can use the following link: [Grizk Admin](https://ecommerce-grizk-2f04b3042fc5.herokuapp.com/admin/)
 
-To access the Admin Dashboard frontend view with relevant credentials, visit: [Grizk Admin Dashboard](https://grizk-electronics.herokuapp.com/products/admin_dashboard/)
+To access the Admin Dashboard frontend view with relevant credentials, visit: [Grizk Admin Dashboard](https://ecommerce-grizk-2f04b3042fc5.herokuapp.com/products/admin_dashboard/)
 
 AccountSphere empowers you to manage your financial workflows seamlessly in one integrated platform. Embrace smarter financial management today!
 
