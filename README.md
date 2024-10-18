@@ -98,7 +98,6 @@ AccountSphere empowers you to manage your financial workflows seamlessly in one 
   - [Acknowledgements](#acknowledgements)
 
 
----
 ## Overview
 
 Grizk is a cutting-edge electronics store that specializes in providing the latest tech gadgets and sophisticated devices to meet the needs of modern consumers. With a focus on quality and innovation, Grizk brings together a curated selection of electronics from top brands, ranging from smart home devices and mobile accessories to the latest laptops and wearables. Users on Grizk are invited to:
@@ -126,9 +125,9 @@ Grizk provides robust and user-friendly administrative functionality for the bus
 Grizk's goal is to establish a solid base of repeat customers who seek reliable, cutting-edge technology from trusted brands. The platform is designed to scale with the business, supporting ongoing growth and new feature development. Marketing efforts, such as targeted social media campaigns, email newsletters, and blog content, help to raise brand awareness and attract new users, driving continued engagement and sales. With a focus on innovation, quality, and customer satisfaction, Grizk aims to be a leader in the competitive world of electronics e-commerce.
 
 
-# UX/UI - User Experience/User Interface
+## UX/UI - User Experience/User Interface
 
-## Design Inspiration
+### Design Inspiration
 
 Grizk’s design captures the essence of modern tech elegance, leveraging a sleek, dark-themed aesthetic that echoes sophistication and innovation. The primary colour scheme revolves around jet black (`#000`) as the background, paired with striking orange-red (`#ff4500`) accents, symbolizing energy and cutting-edge technology. This colour combination is not only visually appealing but also enhances the readability and focus of the content across all devices.
 
@@ -139,13 +138,13 @@ A minimalist logo, designed using [LogoAI](https://www.logoai.com), is prominent
 ![Grizk logo](documentation/features/logo.PNG)  
 *Grizk logo*
 
-## Dark Theme with Electric Accents
+### Dark Theme with Electric Accents
 
 The dark-themed design, with a solid black background, was chosen not only for its sleek, high-tech appearance but also to provide a comfortable, strain-free experience for users browsing for extended periods. Orange-red highlights are strategically used to emphasize calls to action, such as "Add to Cart" and "Checkout," ensuring these elements are easily noticeable.
 
 Buttons across the site feature a smooth hover effect where the colours invert — from black with red accents to a red background with black text. This visual feedback enhances user interactions and draws attention to clickable elements.
 
-## Header & Navigation
+### Header & Navigation
 
 The header employs a radial gradient (`#220202` to `#000000`), giving a subtle, polished look that matches the dark theme. Navigation elements are styled with bold, orange-red text that is easy to read and aligns with the overall visual consistency. 
 
@@ -154,28 +153,28 @@ The navigation bar remains sticky across all screens, ensuring users can access 
 ![Header Navigation](documentation/features/navigation.PNG)  
 *Intuitive header and navigation for streamlined browsing*
 
-## Footer Design
+### Footer Design
 
 The footer continues the radial gradient design, providing a cohesive finish to each page. It features social media icons that subtly increase in size when hovered over, inviting users to connect without overwhelming the screen. Subscription forms are embedded within bordered panels, elegantly styled with orange-red outlines that stand out against the dark background, encouraging users to engage with newsletters and updates.
 
 ![Footer Design](documentation/features/footer.PNG)  
 *Footer with gradient design and intuitive social icons*
 
-## Product Showcase & Visual Feedback
+### Product Showcase & Visual Feedback
 
 Product images are displayed in a clean, distraction-free layout to ensure the gadgets are the center of attention. Each product card is designed to hover slightly when interacted with, giving a sense of depth and enhancing the overall user experience. The site employs a flexbox grid system to arrange products dynamically, ensuring consistency across varying screen sizes.
 
 Visual feedback is implemented throughout the interface, including subtle animations and hover effects. For example, toasts pop up on the right side of the screen to confirm actions like adding items to the cart or removing products from the wishlist, ensuring users are always informed.
 
-## Dual Carousel Implementation
+### Dual Carousel Implementation
 
-### Home Page Carousel (Landing)
+#### Home Page Carousel (Landing)
 
 Upon entering the Grizk site, users are greeted by a captivating carousel on the homepage. This landing carousel showcases the latest promotions, featured products, and exclusive offers. Each slide features high-resolution product images, a brief description, and a prominent call-to-action button ("Explore Now), styled with the site's signature colours. 
 
 The carousel uses smooth slide transitions (`transform 0.3s ease-in-out`) to create an engaging browsing experience. Users can navigate through slides using intuitive swipe gestures on mobile devices or click through arrows on desktops. The design ensures a seamless, immersive first impression, setting the tone for a sophisticated shopping journey.
 
-### Top Deals Carousel
+#### Top Deals Carousel
 
 Further down on the homepage, a secondary carousel highlights top deals, seasonal promotions, and special offers. This section follows a similar design but emphasizes discounts and limited-time offers. Each product card within the carousel is designed to slightly enlarge on hover (`scale(1.05)`), giving a sense of interactivity and depth. The hover effect draws users' attention to these key deals, encouraging exploration.
 
@@ -187,15 +186,15 @@ Both carousels adapt seamlessly across devices, ensuring consistent viewing expe
 ![Top Deals Carousel](./documentation/features/carousel_deals.PNG)  
 *Visually engaging carousel showcasing top deals*
 
-## Cart & Wishlist Off-Canvas Design
+### Cart & Wishlist Off-Canvas Design
 
-### Off-Canvas Cart
+#### Off-Canvas Cart
 
 Grizk introduces an off-canvas cart feature that slides in from the side of the screen when activated. This allows users to quickly view and manage their cart items without leaving the current page. 
 
 The cart's design follows the dark theme, with the bright accent colours ensuring important details like item names, quantities, and prices stand out. Buttons to "Checkout" and "Continue Shopping" invert colours on hover, providing immediate feedback to user actions. Each product listed has quantity adjustment controls and a "Remove" button, giving users full control over their purchases.
 
-### Off-Canvas Wishlist
+#### Off-Canvas Wishlist
 
 The off-canvas wishlist functions similarly to the cart, enabling users to save products for later. This panel slides in smoothly, showing all saved products with options to add them to the cart or remove them from the wishlist. The same dark colour scheme and accent colours maintain consistency, ensuring users know they are still within the Grizk environment.
 
@@ -205,7 +204,7 @@ Both off-canvas panels are designed to be responsive, adjusting seamlessly to sm
 *Seamlessly integrated off-canvas panels for cart and wishlist*
 
 
-## Responsive Design & Media Queries
+### Responsive Design & Media Queries
 
 Grizk’s design is fully responsive, utilizing media queries to adapt layouts for different devices. For instance, elements adjust seamlessly between mobile views (`max-width: 320px`) and larger desktops (`min-width: 1801px`), ensuring a smooth and consistent experience. Features like dropdowns, carousels, and off-canvas components scale appropriately, providing intuitive navigation and user interaction across all platforms.
 
@@ -217,7 +216,7 @@ Grizk’s design is fully responsive, utilizing media queries to adapt layouts f
 
 *Consistent, responsive design for all screen sizes*
 
-## Animations & Transitions
+### Animations & Transitions
 
 Animations are carefully integrated to enhance user interaction without detracting from the browsing experience. For instance, product images gently enlarge on hover (`scale(1.05)`) to draw focus, while buttons smoothly change colour on hover, indicating interactivity. This provides a polished, fluid user experience that aligns with Grizk’s futuristic aesthetic.
 
@@ -284,11 +283,10 @@ For Grizk, typography was chosen to convey a sense of modernity, precision, and 
 
 Grizk's iconography complements its clean, modern aesthetic, using simple, clear icons from the **Font Awesome** library. Icons are employed strategically to guide users through their journey on the site—whether it’s adding products to the cart, favoriting items, or navigating different categories. For example, the shopping cart, wishlist heart, and user account icons are immediately recognizable and provide visual cues to users, enhancing their navigation experience.
 
----
 
-## Project Planning
+# Project Planning
 
-### Strategy Plane
+## Strategy Plane
 
 The primary objective for **Grizk** was to develop a sophisticated e-commerce platform specializing in cutting-edge tech gadgets. The goal was to ensure a seamless, intuitive, and enjoyable shopping experience, reflecting Grizk's identity as a modern, user-centric electronics store. The platform needed to be fully responsive, offering a consistent experience across all devices, while integrating advanced features such as secure payment systems, intuitive navigation, and personalization options.
 
@@ -305,13 +303,13 @@ Grizk was built to meet the following core goals:
 - **Engaging UI/UX Design:** Design a visually appealing and easy-to-navigate site, with consistent branding elements, to build trust and make the shopping experience enjoyable.
 - **Enhanced Security & User Privacy:** Secure user data through encryption and adhere to the best practices in cybersecurity, ensuring that customers can shop with confidence.
 
-### Development Approach
+## Development Approach
 
 The design and visual assets of the website were curated and created to convey a sleek, modern feel, emphasizing Grizk's commitment to delivering high-quality tech gadgets. **Figma** was utilized to design the initial wireframes and prototypes, ensuring a cohesive design language across all pages and features. The hero images, promotional banners, and product showcases were designed to be visually striking, grabbing the user's attention while maintaining brand consistency.
 
 During the development phase, **Bootstrap** was employed to streamline the responsive design process, while custom **CSS** was used to enhance the visual appeal and interactivity of elements such as buttons, modals, and toast notifications. To maintain uniformity, CSS variables were defined for colors, fonts, and component properties, enabling rapid updates and scaling.
 
-### Key Features Implemented
+## Key Features Implemented
 
 1. **User-Centric Feedback & Toast Notifications**
    - Users receive immediate feedback during interactions, such as adding items to the cart, completing a purchase, or updating account information. This was achieved using visually distinct toast notifications that match Grizk's color scheme, ensuring clarity and consistency across the site.
@@ -320,12 +318,12 @@ During the development phase, **Bootstrap** was employed to streamline the respo
    - Stripe's robust and reliable payment processing was integrated to ensure secure, efficient transactions. Clear visual indicators and confirmations guide the user through the checkout, minimizing friction and improving trust.
 
 3. **Visual Appeal Through Cohesive Branding**
-   - Grizk's brand identity is consistently reflected throughout the site using carefully chosen fonts, color schemes, and iconography. This approach fosters brand recognition and enhances user engagement, as customers can easily associate the visual style with quality and reliability.
+   - Grizk's brand identity is consistently reflected throughout the site using carefully chosen font, color schemes, and iconography. This approach fosters brand recognition and enhances user engagement, as customers can easily associate the visual style with quality and reliability.
 
 4. **Dynamic Off-Canvas Panels for Cart & Wishlist**
    - The off-canvas panels allow users to easily manage their cart and wishlist items without disrupting their browsing experience. These panels slide in smoothly, offering quick access to item details, quantity controls, and direct links to proceed to checkout.
 
-### Future Development & Expansion
+## Future Development & Expansion
 - **AI-Powered Product Recommendations:** Plans to integrate machine learning algorithms to provide tailored product suggestions based on user behavior and preferences.
 - **Interactive 3D Product Views:** Enable customers to view products in a more engaging, interactive format, offering 360-degree visualizations.
 - **Enhanced Marketing Integration:** Further development of marketing tools, including dynamic newsletters, limited-time offers, and seasonal promotions, to drive engagement and sales.
@@ -334,13 +332,114 @@ During the development phase, **Bootstrap** was employed to streamline the respo
 Grizk was developed with scalability and flexibility in mind, ensuring that future enhancements and features can be seamlessly integrated. With a solid foundation in place, Grizk aims to set the standard for tech e-commerce, providing an unmatched user experience that caters to both tech enthusiasts and casual shoppers alike.
 
 
+## Agile Methodologies
+
+Grizk was developed using Agile planning methodologies, ensuring a structured, iterative approach to building the platform. Leveraging tools like **[GitHub Projects](https://github.com/)**, the development process was organized around Epics, Milestones, and Sprints, allowing for efficient tracking of tasks and priorities. Using GitHub’s issue boards, each task was clearly defined, labeled, and assigned to specific sprints. This setup streamlined the workflow, enabling focused development phases and reducing potential errors.
+
+### MoSCoW Prioritization
+
+To effectively manage feature development and prioritize tasks, the MoSCoW Prioritization method was adopted for Grizk, which helped categorize the project components as follows:
+
+- **Must Haves**: Essential and critical elements that were non-negotiable. These formed the core functionalities of the project and were vital for achieving the MVP (Minimum Viable Product). For Grizk, this included secure authentication, seamless checkout, and responsive product browsing.
+- **Should Haves**: Important features that added value to the overall platform but were not critical for the MVP launch. These were addressed after the 'Must Haves' were implemented, such as the Wishlist and enhanced search filtering.
+- **Could Haves**: Desirable enhancements that would improve the user experience or functionality but were not essential. These were considered bonuses and were planned only if time permitted after core features were completed. Examples included custom animations, advanced filters, and social sharing options.
+- **Won't Haves**: Features that were deemed unnecessary for the current project scope or release. These were either postponed for future iterations or discarded entirely to maintain focus on core functionalities.
+
+### Sprints
+
+The development process was divided into well-defined **Sprints**, each focusing on specific areas of the Grizk platform. This helped maintain momentum and allowed for incremental progress with clear milestones. The flexibility of Agile allowed for adjustments in the scope and tasks as the project evolved, ensuring that key features were prioritized and integrated effectively.
+
+| Sprint No. | Sprint Content                               | Start/Finish Dates      |
+|------------|---------------------------------------------|-------------------------|
+| #1         | **Project Setup**: Initial setup, repo configuration, base framework installations, and environment preparation. | 01/07/24 - 10/07/24     |
+| #2         | **User Authentication & Navigation**: Implemented secure user login, registration, and navigation structure. | 11/07/24 - 20/07/24     |
+| #3         | **Product Management & CRUD Operations**: Developed product listing, adding, updating, and deletion capabilities. | 21/07/24 - 30/07/24     |
+| #4         | **Shopping Cart Functionality**: Added cart system with item additions, removals, and quantity management. Styling for responsive design. | 31/07/24 - 10/08/24     |
+| #5         | **Wishlist Feature**: Integrated wishlist with off-canvas display for easy management of saved items. | 11/08/24 - 15/08/24     |
+| #6         | **Product Details & Carousel Implementation**: Enhanced product detail views and added carousel elements on the homepage. | 16/08/24 - 20/08/24     |
+| #7         | **Admin Dashboard & Inventory Management**: Designed and implemented an intuitive admin interface for inventory control. | 21/08/24 - 25/08/24     |
+| #8         | **User Notifications & Correspondence**: Integrated email notifications, toasts, and order confirmations for enhanced user engagement. | 26/08/24 - 05/09/24     |
+| #9         | **Documentation, Testing & Final Touches**: Comprehensive testing, bug fixing, and documentation preparation for final delivery. | 06/09/24 - 23/10/24     |
+
+### Agile Advantages
+
+Using Agile methodology ensured that development was **iterative** and **adaptive**, allowing for frequent feedback loops and early problem detection. Each sprint concluded with a review phase, where the functionalities were tested, refined, and polished. This approach ensured a robust, user-focused platform at the end of the development cycle, meeting the high standards set for Grizk.
+
+- **Efficient Collaboration**: Regular updates, stand-ups, and meetings enabled smooth communication between team members, making sure everyone was aligned on goals and priorities.
+- **Quick Adaptation to Changes**: If a new feature or adjustment was deemed necessary during the development phase, the Agile framework allowed for rapid incorporation, ensuring Grizk remained up-to-date with user needs and market trends.
+- **Scalability**: The modular approach adopted in Agile sprints made it easier to scale and build upon Grizk’s initial features, paving the way for future enhancements without disrupting the core structure.
+
+This methodical approach ensured that Grizk was built to be not just a store, but a scalable, user-friendly, and technically sound e-commerce platform that could evolve with future trends and customer demands.
 
 
+## User Stories
 
+User stories and features were documented and managed on [GitHub Projects](https://github.com).
 
+### Visitor User Stories
 
+| User Story | Priority |
+|------------|----------|
+| As a **customer**, I can **view the site's home page** so that I can **understand Grizk's mission and explore the tech gadgets it offers.** | **MUST HAVE** |
+| As a **customer**, I can **see and use the navigation bar** so that I can **easily navigate through different categories and features of the site.** | **MUST HAVE** |
+| As a **customer**, I can **enter keywords into the search bar** so that I can **quickly find a specific gadget or product.** | **MUST HAVE** |
 
+### Epic - Home View & User Account
 
+| User Story | Priority |
+|------------|----------|
+| As a **customer**, I can **create and manage an account with Grizk** so that I can **store my personal details, order history, and streamline my checkout experience.** | **MUST HAVE** |
+| As a **customer**, I can **edit my account details** so that I can **ensure my information is always accurate and up-to-date.** | **MUST HAVE** |
+| As a **user**, I can **enter my login details** so that I can **access my account and saved preferences on Grizk.** | **MUST HAVE** |
+| As a **user**, I can **click on visible links in the footer** so that I can **easily access important information like FAQs, Contact, and Policies.** | **MUST HAVE** |
+| As a **user**, I can **register my email and receive a verification link** so that I can **create a secure account on Grizk.** | **SHOULD HAVE** |
+| As a **customer**, I can **use the Contact Us form** so that I can **get in touch with Grizk's support for inquiries or assistance.** | **SHOULD HAVE** |
+
+### Epic - Products
+
+| User Story | Priority |
+|------------|----------|
+| As a **user**, I can **filter and sort products on the 'All Products' page** so that I can **refine my search and shop more efficiently.** | **MUST HAVE** |
+| As a **user**, I can **click on a specific category in the navbar** so that I can **view products grouped by their type, brand, or features.** | **MUST HAVE** |
+| As a **customer**, I can **click on an individual product** so that I can **view detailed information such as specs, price, and available options.** | **MUST HAVE** |
+| As a **site admin**, I can **add new products via a frontend form** so that I can **expand Grizk's product range without complex backend operations.** | **MUST HAVE** |
+| As a **site admin**, I can **edit existing product information** so that I can **keep product details current and accurate.** | **MUST HAVE** |
+| As a **site admin**, I can **delete products from the inventory** so that I can **remove discontinued or outdated products from the store.** | **MUST HAVE** |
+
+### Epic - Cart Management & Checkout
+
+| User Story | Priority |
+|------------|----------|
+| As a **customer**, I can **easily add items to my cart from the product page** so that I can **prepare for checkout without navigating away.** | **MUST HAVE** |
+| As a **customer**, I can **adjust the quantity or remove items directly from the cart** so that I can **have full control over what I'm purchasing.** | **MUST HAVE** |
+| As a **customer**, I can **view my cart total and itemized list from any page** so that I can **track my spending at all times.** | **MUST HAVE** |
+| As a **customer**, I can **securely checkout and complete my purchase** so that I can **have a seamless payment experience.** | **MUST HAVE** |
+| As a **customer**, I can **receive a confirmation email with my order details** so that I can **keep a record of my purchase.** | **MUST HAVE** |
+| As a **site user**, I can **view customized error pages with 'Home' links** so that I can **easily navigate back if a page is not available or requires login.** | **MUST HAVE** |
+
+### Epic - Wishlist
+
+| User Story | Priority |
+|------------|----------|
+| As a **logged-in user**, I can **add products to a wishlist** so that I can **save items I'm interested in for future purchase.** | **COULD HAVE** |
+| As a **logged-in user**, I can **remove items from my wishlist** so that I can **keep my list relevant and organized.** | **COULD HAVE** |
+
+### Epic - Promotions & Deals
+
+| User Story | Priority |
+|------------|----------|
+| As a **customer**, I can **see promotional banners and deals on the homepage carousel** so that I can **take advantage of special offers and discounts.** | **MUST HAVE** |
+| As a **site admin**, I can **update deals and promotional content** so that I can **manage campaigns and highlight specific products.** | **SHOULD HAVE** |
+
+### Epic - Newsletter & Community
+
+| User Story | Priority |
+|------------|----------|
+| As a **customer**, I can **subscribe to Grizk's newsletter** so that I can **receive updates on the latest tech gadgets, sales, and exclusive offers.** | **SHOULD HAVE** |
+| As a **customer**, I can **enter my email into the newsletter form** so I can **stay informed on the latest tech trends and innovations.** | **SHOULD HAVE** |
+| As a **site admin**, I can **manage newsletter subscriptions** so that I can **engage with users and promote Grizk's community.** | **SHOULD HAVE** |
+
+These user stories helped shape the structure of Grizk, ensuring that core functionalities aligned with user needs, enhancing both the customer shopping experience and the store management process.
 
 
 
