@@ -52,7 +52,6 @@ AccountSphere empowers you to manage your financial workflows seamlessly in one 
     - [Typography \& Iconography](#typography--iconography)
 - [Project Planning](#project-planning)
   - [Strategy Plane](#strategy-plane)
-    - [Carbon Footprint Planning](#carbon-footprint-planning)
     - [Site Goals](#site-goals)
   - [Agile Methodologies](#agile-methodologies)
     - [MoSCoW Prioritization](#moscow-prioritization)
@@ -273,6 +272,64 @@ Buttons were rigorously tested to ensure that they are easy to see and interact 
 ### Final Thoughts
 
 Grizk’s colour scheme contributes to a sleek, cohesive design that resonates with tech-savvy users. The high-contrast, minimalist aesthetic emphasizes usability, drawing attention to key actions and features. Consistency across the site ensures a seamless experience, whether users are browsing on desktop or mobile. The combination of `electric-orange` accents with deep, muted backgrounds fosters an inviting yet sophisticated feel, enhancing the overall brand identity of Grizk.
+
+### Typography & Iconography
+
+![Grizk Font Pairing](docs/readme_images/grizk_fontpair.png)  
+*Grizk Font Pairing*
+
+For Grizk, typography was chosen to convey a sense of modernity, precision, and clarity, essential for an electronics e-commerce platform where users need to quickly grasp product information. The primary typeface used is **Roboto**. 
+
+**Roboto** serves as the main sans-serif font, providing a sleek, modern, and easily readable style that aligns with the brand's high-tech image. It is used extensively for titles, headings, and important labels across the platform, ensuring content is presented clearly and prominently. On the other hand, **Fira Code**, a monospaced font, was chosen for product details and specifications, emphasizing the technical aspects of the electronics listed on the site. This combination provides a robust contrast that enhances the readability and structure of the content, improving the overall user experience.
+
+### Iconography
+
+Grizk's iconography complements its clean, modern aesthetic, using simple, clear icons from the **Font Awesome** library. Icons are employed strategically to guide users through their journey on the site—whether it’s adding products to the cart, favoriting items, or navigating different categories. For example, the shopping cart, wishlist heart, and user account icons are immediately recognizable and provide visual cues to users, enhancing their navigation experience.
+
+---
+
+### Project Planning
+
+## Strategy Plane
+
+The key objective for Grizk was to create a robust and intuitive e-commerce platform for sophisticated tech gadgets, ensuring seamless UX and efficient navigation. The site was developed to align with modern standards, offering all expected features of a high-performance e-commerce store while focusing on user engagement and a straightforward shopping experience. 
+
+**Core Features Include:**
+- **Responsive Design:** Accessible on all devices, from desktops to mobiles, ensuring the user can shop comfortably anywhere.
+- **Guest and User Accounts:** Visitors can freely browse as guests or register to unlock additional features like wishlists and order tracking.
+- **Integrated Payment System:** Secure checkout provided via **Stripe**, simplifying the purchase process and building customer trust.
+- **Wishlist & Notifications:** Allow users to keep track of products they are interested in, with easy access via off-canvas panels.
+
+The design process incorporated tools like **Figma** for wireframing and prototyping, and custom CSS ensured a coherent and attractive visual presentation across all devices. Grizk also integrates SEO best practices, ensuring optimal search engine visibility and improved traffic.
+
+### Development Approach
+
+Grizk was built using a combination of **HTML**, **CSS**, and **JavaScript**, enhanced by frameworks like **Bootstrap** to facilitate responsive design, and **jQuery** to streamline interactive elements. To maintain consistency and speed up the process, **CSS variables** were used extensively. For example, colors and fonts are declared at the beginning of the stylesheet, enabling rapid adjustments and scaling.
+
+![Grizk Main Development Tools](docs/readme_images/grizk_tools.png)  
+*Grizk Development Stack*
+
+### Cart & Wishlist Off-Canvas Design
+
+The **off-canvas panels** for the cart and wishlist provide a user-friendly, modern way to manage selected items without leaving the current page. These panels slide in from the side, offering easy access to products added to the cart or wishlist. Users can remove items, adjust quantities, and view total costs directly within these panels.
+
+![Grizk Cart Off-Canvas](docs/readme_images/grizk_cart_offcanvas.png)  
+*Cart Off-Canvas Design*  
+![Grizk Wishlist Off-Canvas](docs/readme_images/grizk_wishlist_offcanvas.png)  
+*Wishlist Off-Canvas Design*
+
+### Interactive Feedback with Toasts & Notifications
+
+Toasts and notifications play a critical role in enhancing the user experience. Whenever users add items to their cart, remove products, or complete a purchase, Grizk provides instant feedback using toast notifications. These toasts are styled with the site's core color scheme, ensuring they fit seamlessly into the overall design. 
+
+### Planning for Future Integration
+
+Grizk's future development roadmap includes features such as:
+- **Real-Time Inventory Tracking:** Allowing users to see live stock updates as they shop.
+- **Product Recommendations Engine:** Using machine learning algorithms to suggest related products based on user behavior.
+- **Enhanced Search Functionality:** Implementing advanced filtering and sorting options to help users find exactly what they're looking for quickly.
+
+The project’s planning phase involved detailed wireframes and prototypes created in Figma, ensuring every feature was thoughtfully laid out and tested before implementation. The cohesive design language, from typography to iconography, ensures that the site delivers a premium shopping experience from start to finish.
 
 
 
