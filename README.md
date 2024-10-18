@@ -48,7 +48,7 @@ AccountSphere empowers you to manage your financial workflows seamlessly in one 
   - [Business Goals](#business-goals)
 - [UX/UI - User Experience/User Interface](#uxui---user-experienceuser-interface)
   - [Design Inspiration](#design-inspiration)
-    - [Color Scheme](#color-scheme)
+    - [colour Scheme](#colour-scheme)
     - [Typography \& Iconography](#typography--iconography)
 - [Project Planning](#project-planning)
   - [Strategy Plane](#strategy-plane)
@@ -131,11 +131,11 @@ Grizk's goal is to establish a solid base of repeat customers who seek reliable,
 
 ## Design Inspiration
 
-Grizk’s design captures the essence of modern tech elegance, leveraging a sleek, dark-themed aesthetic that echoes sophistication and innovation. The primary color scheme revolves around jet black (`#000`) as the background, paired with striking orange-red (`#ff4500`) accents, symbolizing energy and cutting-edge technology. This color combination is not only visually appealing but also enhances the readability and focus of the content across all devices.
+Grizk’s design captures the essence of modern tech elegance, leveraging a sleek, dark-themed aesthetic that echoes sophistication and innovation. The primary colour scheme revolves around jet black (`#000`) as the background, paired with striking orange-red (`#ff4500`) accents, symbolizing energy and cutting-edge technology. This colour combination is not only visually appealing but also enhances the readability and focus of the content across all devices.
 
 The site maintains a responsive design, ensuring that users on mobile, tablet, and desktop can seamlessly navigate through Grizk’s interface. Key visual elements such as buttons, icons, and product cards are intuitively designed to stand out against the dark background, ensuring that users can quickly identify interactive components.
 
-A minimalist logo, designed using [LogoAI](https://www.logoai.com), is prominently displayed as the favicon and brand signature across the site. The logo’s clean lines and bold colors reinforce the store’s identity as a go-to destination for high-tech enthusiasts.
+A minimalist logo, designed using [LogoAI](https://www.logoai.com), is prominently displayed as the favicon and brand signature across the site. The logo’s clean lines and bold colours reinforce the store’s identity as a go-to destination for high-tech enthusiasts.
 
 ![Grizk logo](documentation/features/logo.PNG)  
 *Grizk logo*
@@ -144,13 +144,13 @@ A minimalist logo, designed using [LogoAI](https://www.logoai.com), is prominent
 
 The dark-themed design, with a solid black background, was chosen not only for its sleek, high-tech appearance but also to provide a comfortable, strain-free experience for users browsing for extended periods. Orange-red highlights are strategically used to emphasize calls to action, such as "Add to Cart" and "Checkout," ensuring these elements are easily noticeable.
 
-Buttons across the site feature a smooth hover effect where the colors invert — from black with red accents to a red background with black text. This visual feedback enhances user interactions and draws attention to clickable elements.
+Buttons across the site feature a smooth hover effect where the colours invert — from black with red accents to a red background with black text. This visual feedback enhances user interactions and draws attention to clickable elements.
 
 ## Header & Navigation
 
 The header employs a radial gradient (`#220202` to `#000000`), giving a subtle, polished look that matches the dark theme. Navigation elements are styled with bold, orange-red text that is easy to read and aligns with the overall visual consistency. 
 
-The navigation bar remains sticky across all screens, ensuring users can access essential sections such as the cart, profile, and categories without scrolling back up. For a seamless experience, dropdown menus and off-canvas sections (for wishlist and cart) match the site’s dark theme and accent colors, providing a unified visual presentation.
+The navigation bar remains sticky across all screens, ensuring users can access essential sections such as the cart, profile, and categories without scrolling back up. For a seamless experience, dropdown menus and off-canvas sections (for wishlist and cart) match the site’s dark theme and accent colours, providing a unified visual presentation.
 
 ![Header Navigation](documentation/features/navigation.PNG)  
 *Intuitive header and navigation for streamlined browsing*
@@ -172,7 +172,7 @@ Visual feedback is implemented throughout the interface, including subtle animat
 
 ### Home Page Carousel (Landing)
 
-Upon entering the Grizk site, users are greeted by a captivating carousel on the homepage. This landing carousel showcases the latest promotions, featured products, and exclusive offers. Each slide features high-resolution product images, a brief description, and a prominent call-to-action button ("Explore Now), styled with the site's signature colors. 
+Upon entering the Grizk site, users are greeted by a captivating carousel on the homepage. This landing carousel showcases the latest promotions, featured products, and exclusive offers. Each slide features high-resolution product images, a brief description, and a prominent call-to-action button ("Explore Now), styled with the site's signature colours. 
 
 The carousel uses smooth slide transitions (`transform 0.3s ease-in-out`) to create an engaging browsing experience. Users can navigate through slides using intuitive swipe gestures on mobile devices or click through arrows on desktops. The design ensures a seamless, immersive first impression, setting the tone for a sophisticated shopping journey.
 
@@ -194,11 +194,11 @@ Both carousels adapt seamlessly across devices, ensuring consistent viewing expe
 
 Grizk introduces an off-canvas cart feature that slides in from the side of the screen when activated. This allows users to quickly view and manage their cart items without leaving the current page. 
 
-The cart's design follows the dark theme, with the bright accent colors ensuring important details like item names, quantities, and prices stand out. Buttons to "Checkout" and "Continue Shopping" invert colors on hover, providing immediate feedback to user actions. Each product listed has quantity adjustment controls and a "Remove" button, giving users full control over their purchases.
+The cart's design follows the dark theme, with the bright accent colours ensuring important details like item names, quantities, and prices stand out. Buttons to "Checkout" and "Continue Shopping" invert colours on hover, providing immediate feedback to user actions. Each product listed has quantity adjustment controls and a "Remove" button, giving users full control over their purchases.
 
 ### Off-Canvas Wishlist
 
-The off-canvas wishlist functions similarly to the cart, enabling users to save products for later. This panel slides in smoothly, showing all saved products with options to add them to the cart or remove them from the wishlist. The same dark color scheme and accent colors maintain consistency, ensuring users know they are still within the Grizk environment.
+The off-canvas wishlist functions similarly to the cart, enabling users to save products for later. This panel slides in smoothly, showing all saved products with options to add them to the cart or remove them from the wishlist. The same dark colour scheme and accent colours maintain consistency, ensuring users know they are still within the Grizk environment.
 
 Both off-canvas panels are designed to be responsive, adjusting seamlessly to smaller screens. Controls are adequately spaced, and scrollbars appear as needed, ensuring smooth navigation and usability.
 
@@ -208,7 +208,7 @@ Both off-canvas panels are designed to be responsive, adjusting seamlessly to sm
 
 ## Responsive Design & Media Queries
 
-Grizk’s design is fully responsive, utilizing media queries to adapt layouts for different devices. For instance, elements adjust seamlessly between mobile views (`max-width: 576px`) and larger desktops (`min-width: 1801px`), ensuring a smooth and consistent experience. Features like dropdowns, carousels, and off-canvas components scale appropriately, providing intuitive navigation and user interaction across all platforms.
+Grizk’s design is fully responsive, utilizing media queries to adapt layouts for different devices. For instance, elements adjust seamlessly between mobile views (`max-width: 320px`) and larger desktops (`min-width: 1801px`), ensuring a smooth and consistent experience. Features like dropdowns, carousels, and off-canvas components scale appropriately, providing intuitive navigation and user interaction across all platforms.
 
 
 |  |  | | | 
@@ -220,9 +220,61 @@ Grizk’s design is fully responsive, utilizing media queries to adapt layouts f
 
 ## Animations & Transitions
 
-Animations are carefully integrated to enhance user interaction without detracting from the browsing experience. For instance, product images gently enlarge on hover (`scale(1.05)`) to draw focus, while buttons smoothly change color on hover, indicating interactivity. This provides a polished, fluid user experience that aligns with Grizk’s futuristic aesthetic.
+Animations are carefully integrated to enhance user interaction without detracting from the browsing experience. For instance, product images gently enlarge on hover (`scale(1.05)`) to draw focus, while buttons smoothly change colour on hover, indicating interactivity. This provides a polished, fluid user experience that aligns with Grizk’s futuristic aesthetic.
 
 Grizk is designed not just as an e-commerce platform but as a digital shopping experience that embodies the sophistication of the tech products it offers. Through thoughtful design, intuitive navigation, and responsive elements, Grizk ensures users are fully engaged from browsing to checkout, no matter their device.
+
+### Colour Scheme
+
+![Grizk colour Scheme](./documentation/colour-palette/colour_palette.PNG)  
+*Grizk colour Scheme*
+
+Grizk employs a bold, modern colour palette that emphasizes contrast and clarity, essential for an electronics e-commerce platform. The CSS uses well-defined variables to ensure consistency across the site:
+
+- `--electric-orange`: #ff4500;
+- `--deep-black`: #000;
+- `--midnight-maroon`: #220202;
+- `--soft-gray`: #22223b;
+- `--vivid-white`: #fff;
+- `--steel-gray`: #aab7c4;
+- `--bright-yellow`: #ffc824;
+
+These colours were chosen to provide a sleek, high-tech aesthetic that appeals to tech enthusiasts. The primary colour, `electric-orange` (#ff4500), serves as a bright accent used throughout the site, from call-to-action buttons to hyperlinks and notifications. It ensures that essential elements stand out against the dark, muted backgrounds, guiding users' attention seamlessly. 
+
+### Primary and Accent colours
+
+The `deep-black` (#000) background delivers a sophisticated, minimalist canvas, allowing the `electric-orange` to shine as the main accent colour. This vibrant hue is featured prominently on buttons, interactive elements, and hover effects, ensuring that users can intuitively navigate the site. A touch of `midnight-maroon` (#220202) adds depth and warmth, subtly incorporated in background gradients and header elements to break up the dark theme without overwhelming the user.
+
+### Button and Interactive Elements
+
+Interactive elements on Grizk, such as buttons and clickable links, employ a striking colour contrast. The standard button style features a `black` background with `electric-orange` borders and text, creating a dynamic, eye-catching appearance. On hover, the colours invert—buttons light up in `electric-orange` while the text turns `black`. This creates a clear, responsive visual cue, enhancing the user’s experience and interaction with the site.
+
+![Grizk Main Button](./documentation/features/button.PNG)  
+*Grizk Main Button Design*
+
+### Consistency and Feedback Mechanisms
+
+Grizk utilizes `soft-gray` (#22223b) for secondary backgrounds, borders, and certain text elements to maintain visual balance. When users interact with fields or buttons, a `bright-yellow` (#ffc824) or `electric-orange` appears to provide immediate feedback, confirming the action is available or complete. This approach simplifies navigation, making it easy for users to understand where they are on the site and how they can interact with it.
+
+### Accessibility and Contrast Testing
+
+Colour accessibility is a priority for Grizk. Using [Adobe colour](https://colour.adobe.com/create/colour-accessibility), we ensured that all primary text and essential visual elements meet or exceed WCAG 2.1 guidelines for contrast. This makes the site accessible to users with visual impairments. Below are examples of how these tests were conducted to guarantee clarity and usability:
+
+![Grizk colour Accessibility Check](./documentation/colour-palette/color-accessibility.PNG)  
+*Grizk colour Accessibility Check*
+
+### Button Contrast
+
+Buttons were rigorously tested to ensure that they are easy to see and interact with on both desktop and mobile devices. colour contrasts between the `electric-orange` and background hues ensure that buttons remain legible under various lighting conditions. This helps prevent misclicks and guides users smoothly through their shopping experience.
+
+![Grizk colour Contrast Check - Button](docs/readme_images/grizk_button_contrast.png)  
+*Grizk Button Contrast Check*
+
+### Final Thoughts
+
+Grizk’s colour scheme contributes to a sleek, cohesive design that resonates with tech-savvy users. The high-contrast, minimalist aesthetic emphasizes usability, drawing attention to key actions and features. Consistency across the site ensures a seamless experience, whether users are browsing on desktop or mobile. The combination of `electric-orange` accents with deep, muted backgrounds fosters an inviting yet sophisticated feel, enhancing the overall brand identity of Grizk.
+
+
 
 
 
@@ -347,13 +399,13 @@ The business strategy includes continuous improvement based on user feedback, le
 
 ### Colour Scheme
 
-The colour scheme of AccountSphere has been deliberately selected to establish a professional, clear, and appealing interface that enhances usability and visual aesthetics. The primary colours used throughout the platform include shades of grey and vibrant highlights, which not only create a modern look but also aid in distinguishing between different UI elements effectively. Here’s a detailed breakdown of the colour palette:
+The colour scheme of AccountSphere has been deliberately selected to establish a professional, clear, and appealing interface that enhances usability and visual aesthetics. The primary colour used throughout the platform include shades of grey and vibrant highlights, which not only create a modern look but also aid in distinguishing between different UI elements effectively. Here’s a detailed breakdown of the colour palette:
 
 - `#3a405a (Slate Blue)`: Serving as the dominant background and accent colour, this shade defines the overall visual identity of the platform. It appears prominently in the navbar, buttons, and cards, providing a professional look that conveys sophistication and confidence.
 
 - `#ffffff (White)`: White is primarily used for the text and main background of forms, dashboards, and other elements, ensuring high contrast and readability. This universal and clean shade gives a fresh and uncluttered feel to the user interface.
 
-- `#fff (White) and #3a405a (Slate Blue)`: The combination of these colours makes interactive buttons prominent, enhancing the navigation and actions across the interface. These colours also highlight key UI elements and cards to create an intuitive and user-friendly experience.
+- `#fff (White) and #3a405a (Slate Blue)`: The combination of these colour makes interactive buttons prominent, enhancing the navigation and actions across the interface. These colour also highlight key UI elements and cards to create an intuitive and user-friendly experience.
 
 - `#fff (White) and Black for Buttons`: For the buttons, a classic white-on-black and black-on-white contrast is employed, creating visual appeal and drawing attention to call-to-action areas.
 
@@ -782,7 +834,7 @@ AccountSphere is committed to continuous improvement and user-centric enhancemen
 
 #### `Customisable User Interface`
 - **Goal**: To allow users to customise the interface according to their preferences and organisational branding.
-- **Features**: Theme options, layout configurations, and the ability to add custom logos and color schemes.
+- **Features**: Theme options, layout configurations, and the ability to add custom logos and colour schemes.
 
 #### `Enhanced Security Features`
 - **Goal**: To further enhance the security of the platform to protect sensitive financial data.
@@ -804,9 +856,9 @@ AccountSphere prioritises accessibility to ensure an inclusive and user-friendly
 - **Goal**: Enable navigation and control of all interactive elements via keyboard for users with mobility impairments.
 - **Features**: Logical tab order, focus indicators, and keyboard shortcuts ensure a seamless user experience without a mouse.
 
-#### `Contrast and Color Choices`
-- **Goal**: Enhance readability and visibility for users with color blindness or low vision.
-- **Features**: High-contrast color schemes and color-blind-friendly designs.
+#### `Contrast and colour Choices`
+- **Goal**: Enhance readability and visibility for users with colour blindness or low vision.
+- **Features**: High-contrast colour schemes and colour-blind-friendly designs.
 
 #### `Form Accessibility`
 - **Goal**: Make form inputs and labels usable and understandable by all users.
@@ -830,10 +882,10 @@ The development of AccountSphere involves a range of modern web technologies and
 
 |  |  |
 | -- | --|
-| ![HTML](https://img.shields.io/badge/HTML%20-%23e34f26.svg?&style=for-the-badge&logo=html5&logoColor=white) | The structural foundation of our application, used to build the framework and content layout of the web pages. |
-| ![CSS](https://img.shields.io/badge/CSS%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white) | Enhances the presentation of our web application, controlling the layout, colors, and fonts to ensure an engaging and adaptive user interface. |
-| ![JavaScript](https://img.shields.io/badge/JavaScript%20-%23F7DF1E.svg?&style=for-the-badge&logo=javascript&logoColor=black) | Powers the dynamic aspects of AccountSphere, enabling interactive elements and real-time functionality without the need for page reloads. |
-| ![Python](https://img.shields.io/badge/Python%20-%2314354C.svg?&style=for-the-badge&logo=python&logoColor=white) | Utilized for server-side logic, including request handling, data manipulation, and interacting with the database. |
+| ![HTML](https://img.shields.io/badge/HTML%20-%23e34f26.svg?&style=for-the-badge&logo=html5&logocolour=white) | The structural foundation of our application, used to build the framework and content layout of the web pages. |
+| ![CSS](https://img.shields.io/badge/CSS%20-%231572B6.svg?&style=for-the-badge&logo=css3&logocolour=white) | Enhances the presentation of our web application, controlling the layout, colours, and fonts to ensure an engaging and adaptive user interface. |
+| ![JavaScript](https://img.shields.io/badge/JavaScript%20-%23F7DF1E.svg?&style=for-the-badge&logo=javascript&logocolour=black) | Powers the dynamic aspects of AccountSphere, enabling interactive elements and real-time functionality without the need for page reloads. |
+| ![Python](https://img.shields.io/badge/Python%20-%2314354C.svg?&style=for-the-badge&logo=python&logocolour=white) | Utilized for server-side logic, including request handling, data manipulation, and interacting with the database. |
 | | |
 
 ### Frameworks, Libraries & Programs Used
