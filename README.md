@@ -211,6 +211,7 @@ Both off-canvas panels are designed to be responsive, adjusting seamlessly to sm
 Grizk’s design is fully responsive, utilizing media queries to adapt layouts for different devices. For instance, elements adjust seamlessly between mobile views (`max-width: 576px`) and larger desktops (`min-width: 1801px`), ensuring a smooth and consistent experience. Features like dropdowns, carousels, and off-canvas components scale appropriately, providing intuitive navigation and user interaction across all platforms.
 
 
+|  |  | | | 
 | --- | --- | --- | --- | 
 | ![Home Page](./documentation/responsiveness/home_page.PNG)| ![Product Page](./documentation/responsiveness/product_page.PNG) | ![Product Detail](./documentation/responsiveness/product_detail_page.PNG) | ![Cart](./documentation/responsiveness/cart_page.PNG) |
 | ![Checkout Success](./documentation/responsiveness/checkout_success_page.PNG)| ![Login Page](./documentation/responsiveness/login_page.PNG) | ![Registration](./documentation/responsiveness/registration_page.PNG) | ![Password Reset](./documentation/responsiveness/reset_password_page.PNG) |
