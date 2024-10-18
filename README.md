@@ -441,6 +441,46 @@ User stories and features were documented and managed on [GitHub Projects](https
 
 These user stories helped shape the structure of Grizk, ensuring that core functionalities aligned with user needs, enhancing both the customer shopping experience and the store management process.
 
+## Scope Plane
+
+The development of **Grizk** was centered around creating a smooth and engaging shopping experience for tech enthusiasts, while also building on advanced e-commerce functionalities, such as integrating with payment systems and providing enhanced user management features. The scope was carefully defined to focus on essential elements of a functional online electronics store, while also allowing room for innovative features that set Grizk apart.
+
+The primary goal was to deliver a fully operational e-commerce platform that could handle user accounts, secure payments, product management, and smooth checkout processes. Through the strategic planning process, the project scope expanded to include additional features aimed at enhancing user engagement and supporting the overall shopping experience.
+
+### Core Focus: Streamlined User Experience & Stripe Integration
+
+While maintaining the core functionality of a working e-commerce platform, the Grizk project was also an opportunity to learn and master the **Stripe API** and **webhook handlers** to manage payments seamlessly. The integration of Stripe was a focal point, ensuring that transactions were smooth, secure, and reliable. The project’s scope was managed to prioritize essential functionality, guaranteeing the successful delivery of the MVP (Minimum Viable Product).
+
+### Feature Expansion: Pushing Boundaries Beyond the Basics
+
+While planning, it became clear that Grizk could further innovate by adopting themes and features not typically seen in standard e-commerce projects. For instance, introducing a **Wishlist** feature allowed customers to save higher-priced items and come back to them later, understanding that premium tech gadgets often have a higher price point.
+
+With a clean and efficient **Django MVT (Model-View-Template)** architecture, it was possible to develop these features quickly. The addition of an **Admin frontend panel** ensured that product and article management could be done efficiently, enabling the business to start accepting orders immediately.
+
+### Essential Features Implemented
+
+- **User Account Management:** 
+  - Seamless account creation and management using **Django AllAuth** to simplify authentication, secure login, and user profile management.
+  
+- **Payment Integration:**
+  - Integration of a **secure and reliable payment system via Stripe**, including payment processing, invoice generation, and refund handling, with webhook integration for real-time updates.
+
+- **Product Inventory Management:**
+  - Full **CRUD (Create, Read, Update, Delete)** operations for product management, enabling admins to manage inventory efficiently.
+
+- **Wishlist Feature:**
+  - Users can **save products to a Wishlist**, allowing them to bookmark items for future purchases. This feature is especially beneficial for high-value tech gadgets that may require consideration before purchase.
+
+- **Shopping Experience with Cart and Checkout:**
+  - Users can easily **add items to their cart, view a summary of their order, and proceed through a streamlined checkout process**. Ensuring that the purchase experience is intuitive and seamless was a key aspect of Grizk’s scope.
+
+- **Responsive Design:**
+  - The site was built to be **fully responsive**, offering an optimal browsing experience across all device types, from desktops to mobile phones.
+
+- **Detailed Business Information:**
+  - Inclusion of comprehensive **business details and policies**, helping customers make informed purchases and understand terms and conditions.
+
+The deliberate expansion beyond the MVP allowed Grizk to stand out as a sophisticated, user-friendly e-commerce platform that not only facilitated purchases but also engaged customers through informative content and innovative features. These additions made Grizk a more dynamic platform that could quickly adapt to future requirements.
 
 
 
