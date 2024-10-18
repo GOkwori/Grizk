@@ -4,7 +4,7 @@
 
 Visit the deployed site: [Grizk](https://ecommerce-grizk-2f04b3042fc5.herokuapp.com/)
 
-## Introduction
+## `Introduction`
 
 Grizk is an e-commerce platform specializing in sophisticated, cutting-edge electronic gadgets designed for tech enthusiasts. Developed as a showcase of a modern and dynamic online store, Grizk offers a wide range of the latest tech products including smart devices, high-end electronics, and accessories, all curated to meet the needs of a digitally connected lifestyle. This project was built using Django, HTML, CSS, JavaScript, and Python as part of my Full Stack Software Development journey.
 
@@ -38,59 +38,66 @@ AccountSphere empowers you to manage your financial workflows seamlessly in one 
 
 - - -
 
-## `CONTENTS`
+## `Table of Contents`
 
-- **[User Experience](#user-experience-ux)**
-
-  - [Project Overview](#project-goal)
-  - [Target Audience](#target-audience)
-  - [User Goals](#user-goals)
-  - [Business Objectives](#business-goal)
+- [everneed](#everneed)
+  - [Introduction](#introduction)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Customer Goals](#customer-goals)
+  - [Business Goals](#business-goals)
+- [UX/UI - User Experience/User Interface](#uxui---user-experienceuser-interface)
+  - [Design Inspiration](#design-inspiration)
+    - [Color Scheme](#color-scheme)
+    - [Typography \& Iconography](#typography--iconography)
+- [Project Planning](#project-planning)
+  - [Strategy Plane](#strategy-plane)
+    - [Carbon Footprint Planning](#carbon-footprint-planning)
+    - [Site Goals](#site-goals)
+  - [Agile Methodologies](#agile-methodologies)
+    - [MoSCoW Prioritization](#moscow-prioritization)
+    - [Sprints](#sprints)
+  - [Marketing](#marketing)
   - [User Stories](#user-stories)
+    - [Visitor User Stories](#visitor-user-stories)
+    - [Epic - Home View \& User Account](#epic---home-view--user-account)
+    - [Epic - Products](#epic---products)
+    - [Epic - Basket Management \& Purchasing](#epic---basket-management--purchasing)
+    - [Epic - Wishlist](#epic---wishlist)
+    - [Epic - Newsletter](#epic---newsletter)
+  - [Scope Plane](#scope-plane)
+  - [Structural Plane](#structural-plane)
+  - [Skeleton \& Surface Planes](#skeleton--surface-planes)
+    - [Wireframes](#wireframes)
+    - [Database Schema](#database-schema)
+    - [Defensive Design](#defensive-design)
+- [Features](#features)
+  - [User View - Guests/Account Holders](#user-view---guestsaccount-holders)
+  - [CRUD Functionality](#crud-functionality)
+  - [Features Showcase](#features-showcase)
+  - [Future Features](#future-features)
+- [Technologies \& Languages Used](#technologies--languages-used)
+  - [Libraries \& Frameworks](#libraries--frameworks)
+  - [Tools \& Programs](#tools--programs)
+- [Testing](#testing)
+- [Deployment](#deployment)
+  - [Connecting to GitHub](#connecting-to-github)
+  - [Django Project SetUp](#django-project-setup)
+    - [Elephant SQL](#elephant-sql)
+  - [Heroku Deployment](#heroku-deployment)
+  - [Google Mail Setup](#google-mail-setup)
+  - [AWS Config](#aws-config)
+    - [Media Folder Setup](#media-folder-setup)
+    - [Django AWS Connect](#django-aws-connect)
+  - [Stripe Config](#stripe-config)
+  - [Clone Project](#clone-project)
+  - [Fork Project](#fork-project)
+- [Credits](#credits)
+  - [Code](#code)
+  - [Media](#media)
+    - [Additional reading/tutorials/books/blogs](#additional-readingtutorialsbooksblogs)
+  - [Acknowledgements](#acknowledgements)
 
-- **[Design Choices](#design-choices)**
-
-  - [Colour Scheme](#colour-scheme)
-  - [Typography](#typography)
-  - [Imagery](#imagery)
-  - [Wireframes](#wireframes)
-  - [FlowChart](#flowchart)
-  - [Entity-Relationship Diagram](#entity-relationship-diagram)
-  - [Role-Based Access Control](#role-based-access-control)
-  - [Features](#features)
-    - [Landing Page](#landing-page)
-    - [Login Page](#login-page)
-    - [Registration Page](#registration-page)
-    - [Profile Page](#profile-page)
-    - [Account Management](#account-management)
-    - [Active Directory Groups](#active-directory-groups)
-    - [News Board](#news-board)
-    - [Product Management](#product-management)
-    - [User Role Management](#user-role-management)
-    - [Log out Functionality](#log-out-functionality)
-    - [404 Page](#404-page)
-    - [Future Implementations](#future-implementations)
-  - [Accessibility](#accessibility)
-
-- **[Technologies Used](#technologies-used)**
-
-  - [Languages](#languages)
-  - [Frameworks and Libraries](#frameworks-and-libraries)
-
-- **[Deployment & Local Development](#deployment--local-development)**
-
-  - [Deployment](#deployment)
-  - [Local Development](#local-development)
-    - [How to Fork](#how-to-fork)
-    - [How to Clone](#how-to-clone)
-
-- **[Testing](#testing)**
-
-  - [Solved Bugs](#solved-bugs)
-
-- **[Credits](#credits)**
-  - [Code References](#code-references)
-  - [Acknowledgments](#acknowledgments)
 
 ---
 
