@@ -152,14 +152,14 @@ The header employs a radial gradient (`#220202` to `#000000`), giving a subtle, 
 
 The navigation bar remains sticky across all screens, ensuring users can access essential sections such as the cart, profile, and categories without scrolling back up. For a seamless experience, dropdown menus and off-canvas sections (for wishlist and cart) match the site’s dark theme and accent colors, providing a unified visual presentation.
 
-![Header Navigation](docs/readme_images/grizk_header_feedback.png)  
+![Header Navigation](documentation/features/navigation.PNG)  
 *Intuitive header and navigation for streamlined browsing*
 
 ## Footer Design
 
 The footer continues the radial gradient design, providing a cohesive finish to each page. It features social media icons that subtly increase in size when hovered over, inviting users to connect without overwhelming the screen. Subscription forms are embedded within bordered panels, elegantly styled with orange-red outlines that stand out against the dark background, encouraging users to engage with newsletters and updates.
 
-![Footer Design](docs/readme_images/grizk_footer.png)  
+![Footer Design](documentation/features/footer.PNG)  
 *Footer with gradient design and intuitive social icons*
 
 ## Product Showcase & Visual Feedback
@@ -168,20 +168,54 @@ Product images are displayed in a clean, distraction-free layout to ensure the g
 
 Visual feedback is implemented throughout the interface, including subtle animations and hover effects. For example, toasts pop up on the right side of the screen to confirm actions like adding items to the cart or removing products from the wishlist, ensuring users are always informed.
 
-## Featured Carousel for Top Deals
+## Dual Carousel Implementation
 
-Grizk incorporates a dynamic carousel on the homepage to highlight the latest top deals, promotions, and featured products. The carousel is designed to be visually engaging, with smooth transitions (`transform 0.3s ease-in-out`) and a slight hover effect that scales images (`scale(1.05)`). Each slide displays a prominent product image, a brief description, and a call-to-action button styled with Grizk’s signature colors. 
+### Home Page Carousel (Landing)
 
-The carousel adapts seamlessly to various screen sizes, ensuring a consistent viewing experience across devices. On mobile, the images resize while maintaining visual clarity, and swipe gestures allow users to effortlessly navigate through featured deals.
+Upon entering the Grizk site, users are greeted by a captivating carousel on the homepage. This landing carousel showcases the latest promotions, featured products, and exclusive offers. Each slide features high-resolution product images, a brief description, and a prominent call-to-action button ("Explore Now), styled with the site's signature colors. 
 
-![Carousel Design](docs/readme_images/grizk_carousel.png)  
+The carousel uses smooth slide transitions (`transform 0.3s ease-in-out`) to create an engaging browsing experience. Users can navigate through slides using intuitive swipe gestures on mobile devices or click through arrows on desktops. The design ensures a seamless, immersive first impression, setting the tone for a sophisticated shopping journey.
+
+### Top Deals Carousel
+
+Further down on the homepage, a secondary carousel highlights top deals, seasonal promotions, and special offers. This section follows a similar design but emphasizes discounts and limited-time offers. Each product card within the carousel is designed to slightly enlarge on hover (`scale(1.05)`), giving a sense of interactivity and depth. The hover effect draws users' attention to these key deals, encouraging exploration.
+
+Both carousels adapt seamlessly across devices, ensuring consistent viewing experiences whether on mobile or desktop. Image resizing and responsive text adjustments allow for clear, legible content presentation without compromising aesthetics.
+
+![Home Page](./documentation/features/carousel_main.PNG)  
+*Dynamic carousels engaging users with key offers*
+
+![Top Deals Carousel](./documentation/features/carousel_deals.PNG)  
 *Visually engaging carousel showcasing top deals*
+
+## Cart & Wishlist Off-Canvas Design
+
+### Off-Canvas Cart
+
+Grizk introduces an off-canvas cart feature that slides in from the side of the screen when activated. This allows users to quickly view and manage their cart items without leaving the current page. 
+
+The cart's design follows the dark theme, with the bright accent colors ensuring important details like item names, quantities, and prices stand out. Buttons to "Checkout" and "Continue Shopping" invert colors on hover, providing immediate feedback to user actions. Each product listed has quantity adjustment controls and a "Remove" button, giving users full control over their purchases.
+
+### Off-Canvas Wishlist
+
+The off-canvas wishlist functions similarly to the cart, enabling users to save products for later. This panel slides in smoothly, showing all saved products with options to add them to the cart or remove them from the wishlist. The same dark color scheme and accent colors maintain consistency, ensuring users know they are still within the Grizk environment.
+
+Both off-canvas panels are designed to be responsive, adjusting seamlessly to smaller screens. Controls are adequately spaced, and scrollbars appear as needed, ensuring smooth navigation and usability.
+
+![Cart & Wishlist Off-Canvas](./documentation/features/offcanvas.PNG)  
+*Seamlessly integrated off-canvas panels for cart and wishlist*
+
 
 ## Responsive Design & Media Queries
 
 Grizk’s design is fully responsive, utilizing media queries to adapt layouts for different devices. For instance, elements adjust seamlessly between mobile views (`max-width: 576px`) and larger desktops (`min-width: 1801px`), ensuring a smooth and consistent experience. Features like dropdowns, carousels, and off-canvas components scale appropriately, providing intuitive navigation and user interaction across all platforms.
 
-![Responsive Design](docs/readme_images/grizk_responsive.png)  
+![Responsive Design](docs/readme_images/grizk_responsive.png) 
+
+|  |  | | | 
+| --- | --- | --- | --- | 
+| ![Home Page](./documentation/responsiveness/home_page.PNG)| ![Product Page](./documentation/responsiveness/product_page.PNG) | ![Product Detail](./documentation/responsiveness/product_detail_page.PNG) | ![Cart](./documentation/responsiveness/cart_page.PNG) |
+| ![Checkout Success](./documentation/responsiveness/checkout_success_page.PNG)| ![Login Page](./documentation/responsiveness/login_page.PNG) | ![Registration](./documentation/responsiveness/registration_page.PNG) | ![Password Reset](./documentation/responsiveness/reset_password_page.PNG) |
 *Consistent, responsive design for all screen sizes*
 
 ## Animations & Transitions
@@ -189,6 +223,14 @@ Grizk’s design is fully responsive, utilizing media queries to adapt layouts f
 Animations are carefully integrated to enhance user interaction without detracting from the browsing experience. For instance, product images gently enlarge on hover (`scale(1.05)`) to draw focus, while buttons smoothly change color on hover, indicating interactivity. This provides a polished, fluid user experience that aligns with Grizk’s futuristic aesthetic.
 
 Grizk is designed not just as an e-commerce platform but as a digital shopping experience that embodies the sophistication of the tech products it offers. Through thoughtful design, intuitive navigation, and responsive elements, Grizk ensures users are fully engaged from browsing to checkout, no matter their device.
+
+
+
+
+
+
+
+
 
 
 
