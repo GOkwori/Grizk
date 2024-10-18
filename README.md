@@ -2,18 +2,30 @@
 
 ![Grizk shown on a variety of screen sizes](./documentation/responsiveness/intro_screen.PNG)
 
-Visit the deployed site: [AccountSphere](https://flask-accountsphere-d734c062c293.herokuapp.com/)
+Visit the deployed site: [Grizk](https://ecommerce-grizk-2f04b3042fc5.herokuapp.com/)
 
-Welcome to AccountSphere! A financial workflow management platform designed to streamline and simplify your organisation's accounting, product management, user administration, and more.
+## Introduction
 
-In today's complex financial landscape, AccountSphere offers a comprehensive solution that provides effortless control over your financial workflows. Whether you're managing accounts, overseeing products, or maintaining user roles and permissions, our platform is tailored to meet your specific needs.
+Grizk is an e-commerce platform specializing in sophisticated, cutting-edge electronic gadgets designed for tech enthusiasts. Developed as a showcase of a modern and dynamic online store, Grizk offers a wide range of the latest tech products including smart devices, high-end electronics, and accessories, all curated to meet the needs of a digitally connected lifestyle. This project was built using Django, HTML, CSS, JavaScript, and Python as part of my Full Stack Software Development journey.
 
-Explore a feature-rich environment where you can:
+Grizk combines state-of-the-art technology with a seamless user experience, offering customers the ability to discover, explore, and purchase gadgets from leading brands. The platform integrates a variety of functionalities to enhance the shopping experience, including advanced product search, smooth navigation, and secure payment processing.
 
-- `Manage Accounts Efficiently`: Gain insights and control over accounts, ensuring accurate and secure financial records.
-- `Oversee Product Management`: Monitor and optimise your product lifecycle from introduction to phase-out, keeping everything organised.
-- `Handle Active Directory Groups`: Securely manage user access controls, ensuring the right permissions for each team member.
-- `Stay Informed with the News Board`: Keep up-to-date with industry news, internal updates, and essential announcements.
+With technology evolving rapidly, there is an increasing demand for reliable and user-friendly platforms where consumers can purchase the latest electronics confidently. Grizk aims to address this need by providing a trusted, convenient, and efficient shopping experience for tech-savvy users. The platform highlights the newest releases, trending gadgets, and exclusive deals, making it a go-to destination for anyone looking to stay at the forefront of the tech world.
+
+**View the live site:** [Grizk](https://grizk-electronics.herokuapp.com/)
+
+For testing purchases, you can use the following [Stripe Dummy Card](https://stripe.com/docs/testing) details:
+
+- **Success Card Number:** 4242424242424242
+- **Expiry Date:** Any future date in MM/YY format
+- **CVN:** Any 3-digit number
+- **Postcode:** Any 5 numerals  
+
+**Note:** Any payments made using a valid debit/credit card will not be processed, and no charges will be applied. Orders placed for testing purposes will not be fulfilled.
+
+For full Admin access to the Django Admin panel, you can use the following link: [Grizk Admin](https://grizk-electronics.herokuapp.com/admin)
+
+To access the Admin Dashboard frontend view with relevant credentials, visit: [Grizk Admin Dashboard](https://grizk-electronics.herokuapp.com/products/admin_dashboard/)
 
 AccountSphere empowers you to manage your financial workflows seamlessly in one integrated platform. Embrace smarter financial management today!
 
