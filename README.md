@@ -1,6 +1,6 @@
 # Grizk
 
-![Grizk shown on a variety of screen sizes](./accountsphere/static/documentation/web_pages/landing_page.png)
+![Grizk shown on a variety of screen sizes](./documentation/responsiveness/intro_screen.PNG)
 
 Visit the deployed site: [AccountSphere](https://flask-accountsphere-d734c062c293.herokuapp.com/)
 
