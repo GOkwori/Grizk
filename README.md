@@ -27,7 +27,7 @@ To access the Admin Dashboard frontend view with relevant credentials, visit: [G
 
 AccountSphere empowers you to manage your financial workflows seamlessly in one integrated platform. Embrace smarter financial management today!
 
-![GitHub Last Commit](https://img.shields.io/badge/Last%20Commit%20-%October%202024%20-%20blue)
+![GitHub Last Commit](https://img.shields.io/badge/Last%20Commit%20-%20October%202024%20-%20blue)
 ![GitHub Languages](https://img.shields.io/badge/Languages%20-%204%20-%20teal)
 ![HTML](https://img.shields.io/badge/1%20-%20HTML%20-%20orange)
 ![CSS](https://img.shields.io/badge/2%20-%20CSS%20-%20blueviolet)
