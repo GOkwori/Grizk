@@ -533,10 +533,9 @@ Leveraging **Code Institute’s Boutique Ado project** as a starting point provi
 
 With Uizard's extensive plugin ecosystem, it was easy to incorporate icons and other design elements that match Grizk's sleek, modern aesthetic. Below are some of the wireframes that guided the development process, showcasing the layout and structure of key pages on different devices:
 
-| Page | Wireframe | Mock-up | Page | Wireframe | Mock-up |
-| -- | -- | -- | -- | -- | -- | 
-| Home Page| ![ Home Page ](./documentation/wireframe/home_page_wire.PNG) | ![ Home Page ](./documentation/wireframe/home_page_mock.PNG) | Product Page |![ Product Page ](./documentation/wireframe/product_wire.PNG) | ![ Product Page ](./documentation/wireframe/product_mock.PNG) |
-| Home Page| ![ Home Page ](./documentation/wireframe/home_page_wire.PNG) | ![ Home Page ](./documentation/wireframe/home_page_mock.PNG) | Product Page |![ Product Page ](./documentation/wireframe/product_wire.PNG) | ![ Product Page ](./documentation/wireframe/product_mock.PNG) |
-
+| Page | Wireframe | Mock-up | 
+| -- | -- | -- | 
+| Home Page| ![ Home Page ](./documentation/wireframe/home_page_wire.PNG) | ![ Home Page ](./documentation/wireframe/home_page_mock.PNG) | 
+| Product Page |![ Product Page ](./documentation/wireframe/product_wire.PNG) | ![ Product Page ](./documentation/wireframe/product_mock.PNG) |
 
 These wireframes provided a blueprint for Grizk’s development, ensuring the design remained user-centric and intuitive. By visualizing the layout, interactions, and content early in the process, we could make necessary adjustments that contributed to a smooth and visually appealing final product.
