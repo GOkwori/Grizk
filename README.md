@@ -537,5 +537,10 @@ With Uizard's extensive plugin ecosystem, it was easy to incorporate icons and o
 | -- | -- | -- | 
 | Home Page| ![ Home Page ](./documentation/wireframe/home_page_wire.PNG) | ![ Home Page ](./documentation/wireframe/home_page_mock.PNG) | 
 | Product Page |![ Product Page ](./documentation/wireframe/product_wire.PNG) | ![ Product Page ](./documentation/wireframe/product_mock.PNG) |
+| Product Detail Page |![ Product Detail Page ](./documentation/wireframe/product_detail_wire.PNG) | ![ Product Page ](./documentation/wireframe/product_detail_-mock.PNG) |
+| Product Page |![ Product Page ](./documentation/wireframe/product_wire.PNG) | ![ Product Page ](./documentation/wireframe/product_mock.PNG) |
+| Cart Page |![ Cart Page ](./documentation/wireframe/cart-wire.PNG) | ![ Cart Page ](./documentation/wireframe/cart-mock.PNG) |
+| Checkout Page |![ Checkout Page ](./documentation/wireframe/checkout-wire.PNG) | ![ Checkout Page ](./documentation/wireframe/checkout-mock.PNG) |
+| Checkout Success Page |![ Checkout Success Page ](./documentation/wireframe/checkout_success_wire.PNG) | ![ Checkout Success Page ](./documentation/wireframe/checkout-mock.PNG) |
 
 These wireframes provided a blueprint for Grizk’s development, ensuring the design remained user-centric and intuitive. By visualizing the layout, interactions, and content early in the process, we could make necessary adjustments that contributed to a smooth and visually appealing final product.
