@@ -579,5 +579,172 @@ The database schema for Grizk was designed using [DrawSQL](https://drawsql.app/)
     - **Reactions**: A future enhancement for user engagement, where customers can react to blog articles, enhancing interactivity on the platform.
     - **Notification System**: Designed for future versions, enabling automated notifications about sales, restocks, or personalized recommendations.
 
+### Defensive Design
+
+Grizk has been carefully crafted to ensure a smooth and secure user experience, minimizing frustration and encouraging users to return for future purchases. The platform integrates several defensive design strategies to enhance security, usability, and reliability. Below are the key features:
+
+- **Django AllAuth**: Manages user registration, login, and logout functionalities seamlessly. This ensures secure authentication and smooth account handling, preventing unauthorized access.
+  
+- **Input Validation & Error Messages**: Comprehensive input validation across forms ensures users receive real-time feedback on their inputs. This guides users toward completing actions correctly, reducing errors and streamlining the purchasing process.
+
+- **Access Control**: Restricted pages, such as account details or order history, automatically redirect unregistered users to the Sign-Up page. This ensures that sensitive data is protected and only accessible to registered users.
+
+- **Admin-Only Controls**: Critical CRUD (Create, Read, Update, Delete) functionalities, such as editing or deleting products, are restricted to the Admin users. These controls are secured further within the Admin Dashboard, with authentication checks preventing unauthorized actions.
+
+- **Double-Confirmation for Deletions**: To prevent accidental data loss, deletion actions prompt users with a confirmation modal, requiring a second step to proceed. This reduces the risk of unintentional deletions, especially for important items like user data or products.
+
+- **Error Handling & User Recovery**: Custom error pages (e.g., 404 or 403 pages) have been designed with 'Home' buttons, enabling users to navigate back to the main site easily. This helps users recover from issues without feeling lost or frustrated.
+
+- **Thorough Testing & Validation**: Extensive testing, including unit and integration tests, was performed to identify and fix potential issues. Regular validation ensures that all features work as expected across various devices and browsers, providing a consistent user experience.
+
+**CSRF Tokens**
+
+Grizk employs CSRF (Cross-Site Request Forgery) tokens in all forms to safeguard against unauthorized actions. These tokens authenticate requests to ensure they originate from trusted users and not from malicious sources. Without CSRF protection, a site can be vulnerable to attacks where user data might be exploited. By implementing CSRF tokens, Grizk ensures that form submissions, account updates, and order processes remain secure and trustworthy.
 
 
+# Features
+
+## User View - Guests/Account Holders
+
+| Feature   | Guest | Account Holder |
+|-----------|-------------------|-----------------|
+| Home Page | Visible           | Visible         |
+| Account  | Not Visible - 'Account' option only appears for registered, logged-in users | Visible and full feature interaction available |
+| All Products  | Visible - items can be viewed and added to Cart, Wishlist function not available | Visible and full feature interaction available |
+| Categories   | Visible - items can be viewed and added to Cart, Wishlist function not available | Visible and full feature interaction available |
+| Blog | Visible | Visible |
+| Search  | Visible | Visible |
+| Contact Us/Newsletter | Visible | Visible |
+| Admin Dashboard | Not Visible | Only visible to Admin |
+
+## CRUD Functionality
+
+Customers have full CRUD functionality with their prospective purchases. They may edit their Cart, add more items or remove all items. They may also edit their delivery details if they are registered, logged-in users. Grizk Admins have access to the Admin Dashboard which allows them full CRUD over Product Management and Blog posting.
+
+| Feature | Create | Read | Update | Delete |
+|---------|--------|------|--------|--------|
+| Account | On registration | Yes, delivery details and order history | Yes, update address | No, users are unable to delete their accounts, this is restricted to Admin |
+| Cart | Yes, customers may add to their Cart | Yes | Yes, items can be added/removed | Yes |
+| Products | Yes, Admin only | Yes, all users | Yes, Admin only | Yes, Admin only |
+| Blog | Yes, Admin only | Yes, all users | Yes, Admin only | Yes, Admin only |
+
+## Features Showcase
+
+**Header & Navigation - All Users**
+
+*For features showcase, screenshots of the features in use were taken on Laptop/iPad Pro/iPhone 12 Pro*
+
+Grizk's navbar is kept clean, with a simple dropdown menu for the 'All Products' section. 
+- The search icon yields a search modal when clicked.
+- The heart icon is only visible to registered users and takes the user to the wishlist, if logged in.
+- The Cart displays the value of items within it if the customer adds an item to it.
+
+The navbar is displayed via a dropdown toggle in mobile view.
+
+<details open>
+    <summary>Header & Navigation - All Users</summary>  
+    <img src="docs/readme_images/header.png">  
+</details>
+
+<details open>
+    <summary>Header & Navigation Menu Demo</summary>  
+    <img src="docs/readme_images/header_demo.gif">  
+</details>
+
+<details open>
+    <summary>Header & Navigation Mobile View</summary>  
+    <img src="docs/readme_images/mobile_nav.gif">  
+</details>
+
+**Home Page - All Users**
+
+The Grizk Home Page draws the user in with a large hero graphic, designed in Figma using product images. An 'Explore Now' button brings the user straight to the 'All Products' page. On scrolling down, the bestsellers section is visible in a carousel format that displays four products at a time. Admins can mark products as 'Featured' to highlight them. Additional arrows allow users to navigate through items at their own pace. Clicking on any product image directs customers to its detailed view.
+
+The home page further includes a Mission section, describing Grizk's commitment to offering top-quality tech gadgets and accessories. Below, an FAQ accordion section provides answers to common customer questions.
+
+<details open>
+    <summary>Home Page - All Users</summary>  
+    <img src="docs/readme_images/dt_home.png">  
+</details>
+
+<details open>
+    <summary>Home Page: Bestsellers Carousel Demo</summary>  
+    <img src="docs/readme_images/bestsellers_demo.gif">  
+</details>
+
+<details>
+    <summary>Home Page: Mission Section - All Users</summary>  
+    <img src="docs/readme_images/our_mission.png">  
+</details>
+
+<details>
+    <summary>Home Page: FAQ Section - All Users</summary>  
+    <img src="docs/readme_images/accordian_faq.png">  
+</details>
+
+**Delivery Banner - All Users**
+
+Grizk's delivery banner mimics modern e-commerce styles, displaying additional delivery and contact information when clicked. The entire page blurs, and interaction is disabled outside the banner area, ensuring users focus on the banner details. The banner cycles through brand colors, creating a vibrant, dynamic look.
+
+<details open>
+    <summary>Delivery Banner - All Users</summary>  
+    <img src="docs/readme_images/dt_delivery.png">  
+</details>
+
+**Search - All Users**
+
+The search feature presents users with a modal to enter search queries, returning relevant products. If no matching product is found, a clear '0 results' message is displayed.
+
+<details open>
+    <summary>Search - All Users</summary>  
+    <img src="docs/readme_images/search.png">  
+</details>
+
+**Account Management - Registered Users**
+
+Grizk uses Django AllAuth to handle account management. Customers can register, log in, and access their account dashboard. Upon registration, users receive a verification email. The platform ensures robust authentication and account security.
+
+<details open>
+    <summary>Register - All Users</summary>  
+    <img src="docs/readme_images/register.png">  
+</details>
+
+<details open>
+    <summary>Confirm Email - All Users</summary>  
+    <img src="docs/readme_images/email_verify.png">  
+</details>
+
+<details>
+    <summary>Log In - All Users</summary>  
+    <img src="docs/readme_images/login.png">  
+</details>
+
+<details>
+    <summary>Log In Toast - Registered, Verified Users</summary>  
+    <img src="docs/readme_images/login_toast.png">  
+</details>
+
+**Blog - All Users/Admin CRUD**
+
+The blog section offers articles on the latest tech trends, reviews, and industry news. Admins have full control over the creation, editing, and deletion of blog posts. Posts can be saved as drafts or published immediately. Users can easily navigate to read the latest articles.
+
+<details open>
+    <summary>Blog List - All Users</summary>  
+    <img src="docs/readme_images/article_list.png">  
+</details>
+
+<details open>
+    <summary>Blog Admin CRUD - Admin Only</summary>  
+    <img src="docs/readme_images/art_edit_dt.png">  
+</details>
+
+**Future Features**
+
+- **Stock Management**: Real-time stock tracking for products.
+- **Article Engagement**: Enabling users to react to or comment on blog articles.
+- **Discount Codes**: Introduction of promo codes for purchases.
+- **Reviews & Ratings**: Adding reviews feature to allow customers to share feedback.
+- **Sale Section**: A dedicated section for discounted products.
+- **Enhanced Navigation**: Use of breadcrumbs and advanced filters to improve product discovery.
+
+Grizk combines modern design, smooth functionality, and secure operations to provide a reliable e-commerce experience. The site architecture reflects thoughtful design principles, ensuring that the features serve both customers and admins effectively.
