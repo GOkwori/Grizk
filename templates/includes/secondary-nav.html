@@ -112,7 +112,7 @@
                         </div>
                     </a>
                 </li>
-                
+
                 <!-- Account Dropdown -->
                 <li class="nav-item list-inline-item dropdown ms-2 me-2">
                     <a class="nav-link p-2" href="#" id="account-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -125,6 +125,7 @@
                         {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
                         <a href="{% url 'admin_dashboard' %}" class="dropdown-item"><i class="fa-solid fa-shield-halved  me-1 mt-1"></i> Product Dashboard</a>
+                        <a href="{% url 'blog_dashboard' %}" class="dropdown-item"><i class="fa-solid fa-blog me-1 mt-1"></i> Blog Dashboard</a>
                         {% endif %}
                         <a href="{% url 'profile' %}" class="dropdown-item"><i class="fa-solid fa-address-card me-2"></i> My Profile</a>
                         <a href="{% url 'account_logout' %}" class="dropdown-item"><i class="fa-solid fa-right-from-bracket me-1 mt-1"></i> Logout</a>
