@@ -256,7 +256,7 @@ Grizk utilizes `soft-gray` (#22223b) for secondary backgrounds, borders, and cer
 
 ### Accessibility and Contrast Testing
 
-Colour accessibility is a priority for Grizk. Using [Adobe colour](https://colour.adobe.com/create/colour-accessibility), we ensured that all primary text and essential visual elements meet or exceed WCAG 2.1 guidelines for contrast. This makes the site accessible to users with visual impairments. Below are examples of how these tests were conducted to guarantee clarity and usability:
+Colour accessibility is a priority for Grizk. Using [Adobe colour](https://colour.adobe.com/create/colour-accessibility), Iensured that all primary text and essential visual elements meet or exceed WCAG 2.1 guidelines for contrast. This makes the site accessible to users with visual impairments. Below are examples of how these tests were conducted to guarantee clarity and usability:
 
 ![Grizk colour Accessibility Check](./documentation/colour-palette/color-accessibility.PNG)  
 *Grizk colour Accessibility Check*
@@ -549,4 +549,35 @@ With Uizard's extensive plugin ecosystem, it was easy to incorporate icons and o
 | Profiles Page |![ Profiles Page ](./documentation/wireframe/profiles_wire.PNG) | ![ Profiles Page ](./documentation/wireframe/profile_mock.PNG) |
 
 
-These wireframes provided a blueprint for Grizk’s development, ensuring the design remained user-centric and intuitive. By visualizing the layout, interactions, and content early in the process, we could make necessary adjustments that contributed to a smooth and visually appealing final product.
+These wireframes provided a blueprint for Grizk’s development, ensuring the design remained user-centric and intuitive. By visualizing the layout, interactions, and content early in the process, Icould make necessary adjustments that contributed to a smooth and visually appealing final product.
+
+### Database Schema
+
+![Grizk Tech E-commerce ERD](./documentation/data_model/erd.PNG)  
+*Database Schema (ERD) for Grizk illustrating the relationships between key components stored in the database*
+
+The database schema for Grizk was designed using [DrawSQL](https://drawsql.app/), a versatile tool for creating ERDs (Entity Relationship Diagrams). The structure emphasizes a robust yet flexible framework to accommodate various features essential for a sophisticated e-commerce platform. The schema was inspired by Code Institute's Boutique Ado project but has been extensively customized to fit Grizk's unique features and requirements. Key models include:
+
+- **User**: This model handles all aspects of user authentication and management, enabling account creation, login, and profile management. The model incorporates secure password storage and fields for managing user roles, such as administrators or regular customers.
+
+- **UserProfile**: Extends user management by allowing users to store additional details such as default address, contact number, and country. This helps streamline the checkout process by autofilling user information.
+
+- **Products**: The **Product** model encompasses attributes like `name`, `description`, `price`, `category`, `rating`, and `image`. It ensures that each tech gadget can be listed with detailed information, offering users an in-depth view of each product. The schema also supports product categories, allowing customers to filter and sort products seamlessly.
+
+- **Category**: This model categorizes products, enabling users to browse items by tech segments like smartphones, laptops, accessories, etc. It simplifies navigation and allows admins to organize inventory effectively.
+
+- **Order**: Each **Order** is linked to a user and records essential purchase details such as `full_name`, `email`, `shipping_address`, and `grand_total`. This model captures the flow of purchasing, from selecting items in the cart to confirming the order and processing payments. Fields like `order_reference` and `delivery_cost` ensure clear order tracking and seamless management.
+
+- **OrderLineItem**: Connects specific products to an order, detailing the quantity, individual product attributes (like size or color), and line total. This model supports granular tracking of each product in an order, reflecting accurate quantities and subtotal calculations.
+
+- **Wishlist**: The **Wishlist** model helps users save and organize products they are interested in purchasing later. It efficiently links each product to the user's profile, providing a personalized experience.
+
+- **Blog**: The **Blog** model enables the creation and management of blog articles for the Grizk platform. Each blog can have an author, a published status, and content fields, allowing admins to share updates, tech tips, or promotional content.
+
+- **Future Features**:
+    - **Discount Codes**: Planned for future implementation, allowing customers to redeem promo codes for discounts during checkout.
+    - **Reactions**: A future enhancement for user engagement, where customers can react to blog articles, enhancing interactivity on the platform.
+    - **Notification System**: Designed for future versions, enabling automated notifications about sales, restocks, or personalized recommendations.
+
+
+
