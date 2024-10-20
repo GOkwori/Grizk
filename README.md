@@ -349,6 +349,10 @@ To effectively manage feature development and prioritize tasks, the MoSCoW Prior
 
 The development process was divided into well-defined **Sprints**, each focusing on specific areas of the Grizk platform. This helped maintain momentum and allowed for incremental progress with clear milestones. The flexibility of Agile allowed for adjustments in the scope and tasks as the project evolved, ensuring that key features were prioritized and integrated effectively.
 
+![Grizk Sprint Board](./documentation/agile/sprintboard.PNG)  
+*Grizk Sprint Board*
+
+
 | Sprint No. | Sprint Content                               | Start/Finish Dates      |
 |------------|---------------------------------------------|-------------------------|
 | #1         | **Project Setup**: Initial setup, repo configuration, base framework installations, and environment preparation. | 01/07/24 - 10/07/24     |
