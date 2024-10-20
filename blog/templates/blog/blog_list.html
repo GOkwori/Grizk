@@ -1,89 +1,94 @@
-{% extends "base.html" %} 
-{% load static %} 
-{% block title %} - Blogs {%endblock %} 
+{% extends "base.html" %}
+{% load static %}
+{% block title %} - Blogs {% endblock %}
 {% block page_header %}
 <div class="container layout">
   <div class="row">
     <div class="col"></div>
   </div>
 </div>
-{% endblock %} {% block content %}
+{% endblock %}
+
+{% block content %}
 <div class="container mb-2">
   <section>
     <div class="row">
       <div class="col">
         <hr />
         <h2 class="sub-heading">Blog Articles</h2>
-        <hr class="mb-1" />
+        <hr class="mb-3" />
       </div>
     </div>
     <div class="row px-0">
       <div class="row">
-        {% for blog in blogs %}
-        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4">
-          <div class="card h-100" id="blog-card">
-            {% if blog.image %}
-            <a href="{% url 'blog_detail' blog.id %}">
-              <img
-                class="card-img-top img-fluid h-100"
-                src="{{ blog.image.url }}"
-                alt="Image of {{ blog.title }}"
-              />
-            </a>
-            {% else %}
-            <a href="{% url 'blog_detail' blog.id %}">
-              <img
-                class="card-img-top img-fluid h-100"
-                src="{% static 'images/default_blog_image.jpg' %}"
-                alt="No image available for {{ blog.title }}"
-              />
-            </a>
-            {% endif %}
-
-            <div class="card-body pb-0">
-              <h5 class="mb-1">{{ blog.title }}</h5>
-              <p class="text-muted small">
-                By {{ blog.author }} on {{ blog.created_at|date:"F j, Y" }}
-              </p>
-              <p class="mb-0">{{ blog.content|truncatewords:20 }}</p>
-            </div>
-
-            <div
-              class="card-footer pt-0 border-0 d-flex justify-content-between align-items-center"
-            >
-              <a
-                href="{% url 'blog_detail' blog.id %}"
-                class="btn btn-sm btn-outline-dark"
-                >Read More</a
-              >
-              {% if request.user.is_superuser %}
-              <small>
-                <a
-                  href="{% url 'edit_blog' blog.id %}"
-                  class="btn-sm"
-                  role="button"
-                  id="blog-btn"
-                  title="Update Blog"
-                >
-                  <i class="fa-solid fa-pen-to-square ms-3"></i>
-                </a>
-                |
-                <a
-                  href="{% url 'delete_blog' blog.id %}"
-                  class="btn-sm"
-                  role="button"
-                  id="blog-btn"
-                  onclick="return confirm('Are you sure you want to delete this blog post?');"
-                  title="Delete Blog"
-                >
-                  <i class="fa-solid fa-trash"></i>
-                </a>
-              </small>
+        {% if blogs %}
+          {% for blog in blogs %}
+          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4">
+            <div class="card border-danger-subtle"   style="height: auto;" id="product-card">
+              {% if blog.image %}
+              <a href="{% url 'blog_detail' blog.id %}">
+                <img
+                  class="card-img-top img-fluid h-100"
+                  src="{{ blog.image.url }}"
+                  alt="Image of {{ blog.title }}"
+                />
+              </a>
+              {% else %}
+              <a href="{% url 'blog_detail' blog.id %}">
+                <img
+                  class="card-img-top img-fluid h-100"
+                  src="{% static 'images/default_blog_image.jpg' %}"
+                  alt="No image available for {{ blog.title }}"
+                />
+              </a>
               {% endif %}
+
+              <div class="card-body p-2">
+                <p class="mb-1 text-bold">{{ blog.title }}<p>
+                <p class="small text-info">
+                  By {{ blog.author }} on {{ blog.created_at|date:"F j, Y" }}
+                </p>
+              </div>
+
+              <div
+                class="card-footer pt-0 ms-2 mb-2 d-flex justify-content-between align-items-center"
+              >
+                <a
+                  href="{% url 'blog_detail' blog.id %}"
+                  class="btn btn-sm blog-btn"
+                  >Read More</a
+                >
+                {% if request.user.is_superuser %}
+                <small>
+                  <a
+                    href="{% url 'edit_blog' blog.id %}"
+                    class="btn-sm"
+                    role="button"
+                    id="blog-btn"
+                    title="Update Blog"
+                  >
+                    <i class="fa-solid fa-pen-to-square ms-3"></i>
+                  </a>
+                  |
+                  <a
+                    href="{% url 'delete_blog' blog.id %}"
+                    class="btn-sm"
+                    role="button"
+                    id="blog-btn"
+                    onclick="return confirm('Are you sure you want to delete this blog post?');"
+                    title="Delete Blog"
+                  >
+                    <i class="fa-solid fa-trash"></i>
+                  </a>
+                </small>
+                {% endif %}
+              </div>
             </div>
           </div>
-        </div>
-        {% endfor %}
+          {% endfor %}
+        {% else %}
+          <p>No blog posts available.</p>
+        {% endif %}
       </div>
     </div>
   </section>
@@ -94,18 +99,4 @@
     </a>
   </div>
 </div>
-{% endblock %} {% block postloadjs %} {{ block.super }}
-<script>
-  // JavaScript for the sort functionality
-  document
-    .getElementById("sort-selector")
-    .addEventListener("change", function () {
-      const selectedOption = this.value;
-      if (selectedOption !== "reset") {
-        window.location.href = `?sort=${selectedOption}`;
-      } else {
-        window.location.href = '{% url "blog_list" %}';
-      }
-    });
-</script>
 {% endblock %}

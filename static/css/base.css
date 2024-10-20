@@ -250,6 +250,17 @@ nav button {
     width: 25%;
 }
 
+.blog-btn {
+    background-color: #ff4500 !important;
+    color: #000;
+}
+
+.blog-btn:hover {
+    background-color: #000 !important;
+    color: #ff4500 !important;
+    border: 1px solid #ff4500 !important;
+}
+
 /* Off-Canvas Button Styles */
 #wishlistOffcanvas .offcanvas-btn,
 #cartOffcanvas .offcanvas-btn {
