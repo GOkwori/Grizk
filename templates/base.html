@@ -54,8 +54,8 @@
                 </a>
 
                 <!-- Navbar Toggler -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                    aria-controls="offcanvasNavbar">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -72,29 +72,28 @@
                 </div>
 
                 <!-- Navbar collapse -->
-                <div class="col-md-4 col-lg-4 justify-content-end container"
-                    id="navbarSupportedContent">
+                <div class="col-md-4 col-lg-4 justify-content-end container" id="navbarSupportedContent">
                     <ul class="navbar-nav mb-lg-0 ms-lg-4">
 
                         {% if user.is_authenticated %}
-                            <!-- Wishlist -->
-                            <li class="nav-item list-inline-item" id="wishlist">
-                                <button
-                                    class="{% if user_wishlist %} font-weight-bold{% else %}text{% endif %} nav-link btn btn-primary"
-                                    type="button" data-bs-toggle="offcanvas" data-bs-target="#wishlistOffcanvas"
-                                    aria-controls="wishlistOffcanvas">
-                                    <div class="text-center">
-                                        <i class="fa-solid fa-heart mt-1"></i>
-                                        <p class="my-0">
-                                            {% if wishlist_count %}
-                                                {{ wishlist_count }}
-                                            {% else %}
-                                                0
-                                            {% endif %}
-                                        </p>
-                                    </div>
-                                </button>
-                            </li>
+                        <!-- Wishlist -->
+                        <li class="nav-item list-inline-item" id="wishlist">
+                            <button
+                                class="{% if user_wishlist %} font-weight-bold{% else %}text{% endif %} nav-link btn btn-primary"
+                                type="button" data-bs-toggle="offcanvas" data-bs-target="#wishlistOffcanvas"
+                                aria-controls="wishlistOffcanvas">
+                                <div class="text-center">
+                                    <i class="fa-solid fa-heart mt-1"></i>
+                                    <p class="my-0">
+                                        {% if wishlist_count %}
+                                        {{ wishlist_count }}
+                                        {% else %}
+                                        0
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </button>
+                        </li>
                         {% endif %}
                         <!-- Cart -->
                         <li class="nav-item list-inline-item" id="cart">
@@ -136,51 +135,53 @@
         <div class="offcanvas-body">
             <div class="container">
                 {% if user_wishlist %}
-                    <div class="table-responsive">
-                        <table class="table table-sm table-borderless table-dark table-striped align-middle">
-                            <thead>
-                                <tr>
-                                    <th scope="col" class="p-3"></th>
-                                    <th scope="col" class="p-3"></th>
-                                    <th scope="col" class="p-1"></th>
-                                    <th scope="col" class="p-1 text-center"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for item in user_wishlist %}
-                                <tr id="wishlist_item_{{ item.product.id }}">
-                                    <!-- Product Image -->
-                                    <td class="p-1">
-                                        {% if item.product.image %}
-                                        <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                                        {% else %}
-                                        <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
-                                        {% endif %}
-                                    </td>
+                <div class="table-responsive">
+                    <table class="table table-sm table-borderless table-dark table-striped align-middle">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="p-3"></th>
+                                <th scope="col" class="p-3"></th>
+                                <th scope="col" class="p-1"></th>
+                                <th scope="col" class="p-1 text-center"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in user_wishlist %}
+                            <tr id="wishlist_item_{{ item.product.id }}">
+                                <!-- Product Image -->
+                                <td class="p-1">
+                                    {% if item.product.image %}
+                                    <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                    {% else %}
+                                    <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                    {% endif %}
+                                </td>
 
-                                    <!-- Product Info -->
-                                    <td class="p-3 w-100">
-                                        <p class="my-0">{{ item.product.name }}</p>
-                                    </td>
+                                <!-- Product Info -->
+                                <td class="p-3 w-100">
+                                    <p class="my-0">{{ item.product.name }}</p>
+                                </td>
 
-                                    <!-- View Button -->
-                                    <td class="p-3">
-                                        <a href="{% url 'product_detail' item.product.id %}" role='button' title='view item'>
-                                            <i class="fa-solid fa-eye"></i>
-                                        </a>
-                                    </td>
+                                <!-- View Button -->
+                                <td class="p-3">
+                                    <a href="{% url 'product_detail' item.product.id %}" role='button'
+                                        title='view item'>
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                </td>
 
-                                    <!-- Remove Button -->
-                                    <td class="p-3">
-                                        <a href="{% url 'remove_from_wishlist' item.product.id %}" role='button' title='remove item'>
-                                            <i class="fa-solid fa-trash"></i>
-                                        </a>
-                                    </td>
-                                </tr>                                      
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
+                                <!-- Remove Button -->
+                                <td class="p-3">
+                                    <a href="{% url 'remove_from_wishlist' item.product.id %}" role='button'
+                                        title='remove item'>
+                                        <i class="fa-solid fa-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
                 {% else %}
                 <p>Your wishlist is empty.</p>
                 <div class="shopping-link">
@@ -307,7 +308,7 @@
     {% include 'includes/base_script.html' %}
     {% endblock %}
 
-    
+
 </body>
 
 </html>
