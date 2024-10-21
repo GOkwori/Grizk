@@ -12,24 +12,23 @@
 {% endblock %}
 
 {% block content %}
-<div class="container mb-2">
+<div class="container mb-4">
     <section>
         <div class="row">
             <div class="col">
                 <hr>
                 <h2 class="sub-heading">Access Denied</h2>
-                <hr class="mb-1">
+                <hr class="mb-3">
             </div>
         </div>
-        <div class="row px-0">
-            <div class="row">
-                <p class="lead">You do not have the necessary permissions to view this page. Please check with the site administrator or go back to the homepage.</p>
-    
-    <a href="{% url 'home' %}" class="btn btn-primary">Back to Home</a>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 text-center">
+                <p class="lead mb-4">You do not have the necessary permissions to view this page. Please check with the site administrator or go back to the homepage.</p>
+                <a href="{% url 'home' %}" class="btn blog-btn me-4">
+                    <i class="fa-solid fa-house me-1"></i>Home
+                </a>
             </div>
         </div>
     </section>
-    
 </div>
 {% endblock %}
-
