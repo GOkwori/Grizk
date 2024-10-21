@@ -1,17 +1,24 @@
+<!-- Extends the base template, which provides common elements like header, footer, and styles -->
 {% extends "base.html" %}
 {% load static %}
+
+<!-- Sets the page title dynamically to 'Blogs' -->
 {% block title %} - Blogs {% endblock %}
+
+<!-- Defines a consistent page header layout for the page, though currently left mostly empty -->
 {% block page_header %}
 <div class="container layout">
   <div class="row">
-    <div class="col"></div>
+    <div class="col"></div> <!-- Empty column for potential layout adjustments or spacing -->
   </div>
 </div>
 {% endblock %}
 
+<!-- Main content area for the blog list page -->
 {% block content %}
 <div class="container mb-2">
   <section>
+    <!-- Blog Articles Section Title -->
     <div class="row">
       <div class="col">
         <hr />
@@ -19,81 +26,69 @@
         <hr class="mb-3" />
       </div>
     </div>
+
+    <!-- Blog posts area, iterates over all available blogs -->
     <div class="row px-0">
       <div class="row">
         {% if blogs %}
-          {% for blog in blogs %}
-          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4">
-            <div class="card border-danger-subtle"   style="height: auto;" id="product-card">
-              {% if blog.image %}
-              <a href="{% url 'blog_detail' blog.id %}">
-                <img
-                  class="card-img-top img-fluid h-100"
-                  src="{{ blog.image.url }}"
-                  alt="Image of {{ blog.title }}"
-                />
-              </a>
-              {% else %}
-              <a href="{% url 'blog_detail' blog.id %}">
-                <img
-                  class="card-img-top img-fluid h-100"
-                  src="{% static 'images/default_blog_image.jpg' %}"
-                  alt="No image available for {{ blog.title }}"
-                />
-              </a>
+        <!-- Loop through each blog post and display it as a card -->
+        {% for blog in blogs %}
+        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4">
+          <div class="card border-danger-subtle" style="height: auto;" id="product-card">
+            
+            <!-- Display blog image if it exists, otherwise use a default placeholder image -->
+            {% if blog.image %}
+            <a href="{% url 'blog_detail' blog.id %}">
+              <img class="card-img-top img-fluid h-100" src="{{ blog.image.url }}" alt="Image of {{ blog.title }}" />
+            </a>
+            {% else %}
+            <a href="{% url 'blog_detail' blog.id %}">
+              <img class="card-img-top img-fluid h-100" src="{% static 'images/default_blog_image.jpg' %}"
+                alt="No image available for {{ blog.title }}" />
+            </a>
+            {% endif %}
+
+            <!-- Blog card body, containing title and meta information -->
+            <div class="card-body p-2">
+              <p class="mb-1 text-bold">{{ blog.title }}</p>
+              <p class="small text-info">
+                By {{ blog.author }} on {{ blog.created_at|date:"F j, Y" }}
+              </p>
+            </div>
+
+            <!-- Footer section of the card, providing action buttons (Read More, Edit, Delete) -->
+            <div class="card-footer pt-0 ms-2 mb-2 d-flex justify-content-between align-items-center">
+              <!-- Link to view the full blog post -->
+              <a href="{% url 'blog_detail' blog.id %}" class="btn btn-sm blog-btn">Read More</a>
+
+              <!-- Display edit and delete options if the user is a superuser -->
+              {% if request.user.is_superuser %}
+              <small>
+                <!-- Edit blog button, takes the user to the edit blog page -->
+                <a href="{% url 'edit_blog' blog.id %}" class="btn-sm" role="button" id="blog-btn" title="Update Blog">
+                  <i class="fa-solid fa-pen-to-square ms-3"></i>
+                </a>
+                |
+                <!-- Delete blog button, triggers a modal for confirmation -->
+                <a href="#" class="btn-sm" role="button" id="blog-btn" title="Delete Blog" data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop" onclick="setDeleteUrl('{{ blog.id }}', '{{ blog.title }}', 'blog')">
+                  <i class="fa-solid fa-trash"></i>
+                </a>
+              </small>
               {% endif %}
-
-              <div class="card-body p-2">
-                <p class="mb-1 text-bold">{{ blog.title }}<p>
-                <p class="small text-info">
-                  By {{ blog.author }} on {{ blog.created_at|date:"F j, Y" }}
-                </p>
-              </div>
-
-              <div
-                class="card-footer pt-0 ms-2 mb-2 d-flex justify-content-between align-items-center"
-              >
-                <a
-                  href="{% url 'blog_detail' blog.id %}"
-                  class="btn btn-sm blog-btn"
-                  >Read More</a
-                >
-                {% if request.user.is_superuser %}
-                <small>
-                  <a
-                    href="{% url 'edit_blog' blog.id %}"
-                    class="btn-sm"
-                    role="button"
-                    id="blog-btn"
-                    title="Update Blog"
-                  >
-                    <i class="fa-solid fa-pen-to-square ms-3"></i>
-                  </a>
-                  |
-                  <a href="#"
-                    class="btn-sm"
-                    role="button"
-                    id="blog-btn"
-                    title="Delete Blog"
-                    data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop"
-                    onclick="setDeleteUrl('{{ blog.id }}', '{{ blog.title }}', 'blog')">
-                    <i class="fa-solid fa-trash"></i>
-                  </a>
-
-                </small>
-                {% endif %}
-              </div>
             </div>
           </div>
-          {% endfor %}
+        </div>
+        {% endfor %}
+        <!-- If there are no blogs, display a message indicating that -->
         {% else %}
-          <p>No blog posts available.</p>
+        <p>No blog posts available.</p>
         {% endif %}
       </div>
     </div>
   </section>
 
+  <!-- Button to scroll back to the top of the page -->
   <div class="btt-button shadow-sm" id="bttBtn">
     <a class="btt-link d-flex h-100" title="Back to Top">
       <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>

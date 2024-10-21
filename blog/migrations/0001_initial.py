@@ -34,7 +34,8 @@ class Migration(migrations.Migration):
                 ("published", models.BooleanField(default=False)),
                 (
                     "image",
-                    models.ImageField(blank=True, null=True, upload_to="blog_images/"),
+                    models.ImageField(blank=True, null=True,
+                                      upload_to="blog_images/"),
                 ),
                 (
                     "author",

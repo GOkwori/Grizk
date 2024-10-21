@@ -1,75 +1,77 @@
-{% extends "base.html" %} 
-{% load static %} 
-{% block title %} - {{ blog.title }}
-{% endblock %} 
+<!-- Extending the base template to inherit common elements like header, footer, etc. -->
+{% extends "base.html" %}
+
+<!-- Load static files like CSS, JavaScript, and images for this page -->
+{% load static %}
+
+<!-- Setting the title of the page using the blog's title dynamically -->
+{% block title %} - {{ blog.title }} {% endblock %}
+
+<!-- Page header section, used for consistent layout across the website -->
 {% block page_header %}
 <div class="container layout">
   <div class="row">
-    <div class="col"></div>
+    <div class="col"></div> <!-- Empty column, can be used for spacing or styling -->
   </div>
 </div>
-{% endblock %} {% block content %}
+{% endblock %}
+
+<!-- Main content block -->
+{% block content %}
 <div class="container">
   <section>
+    <!-- Blog title header -->
     <div class="row">
       <div class="col">
         <hr />
-        <h2 class="sub-heading">{{ blog.title }}</h2>
+        <h2 class="sub-heading">{{ blog.title }}</h2> <!-- Display the blog title -->
         <hr class="mb-3" />
       </div>
     </div>
 
+    <!-- Blog content area, centered horizontally -->
     <div class="row justify-content-center">
       <div class="col-12 col-md-10">
+        <!-- Blog post card, holds the content and image of the blog -->
         <div class="card mb-4 " id="product-card">
+          <!-- Display blog image if it exists, else show a default placeholder image -->
           {% if blog.image %}
-          <img
-            class="card-img-top img-fluid rounded"
-            src="{{ blog.image.url }}"
-            alt="{{ blog.title }}"
-          />
+          <img class="card-img-top img-fluid rounded" src="{{ blog.image.url }}" alt="{{ blog.title }}" />
           {% else %}
-          <img
-            class="card-img-top img-fluid rounded"
-            src="{% static 'images/noimage.png' %}"
-            alt="No image available for this blog post"
-          />
+          <img class="card-img-top img-fluid rounded" src="{% static 'images/noimage.png' %}"
+            alt="No image available for this blog post" />
           {% endif %}
 
+          <!-- Blog content and meta information -->
           <div class="card-body">
-            <h3 class="card-title">{{ blog.title }}</h3>
+            <h3 class="card-title">{{ blog.title }}</h3> <!-- Blog title -->
             <p class="card-text">
               <small class="text-info">
                 By {{ blog.author }} | Published on {{ blog.created_at|date:"F d, Y" }}
-              </small>
+              </small> <!-- Show author and publication date -->
             </p>
             <hr class="my-2" />
             <div class="card-text">
-              <p>{{ blog.content|linebreaks }}</p>
+              <p>{{ blog.content|linebreaks }}</p> <!-- Blog content with line breaks formatted properly -->
             </div>
 
+            <!-- Buttons section: Back to blog list, edit and delete actions -->
             <div class="d-flex justify-content-between align-items-center mt-4">
-              <a href="{% url 'blog_list' %}" class="btn blog-btn"
-                >Back to Blog</a
-              >
-              {% if user.is_authenticated and user == blog.author or request.user.is_superuser %}
-                <div>
-                  <a
-                    href="{% url 'edit_blog' blog.id %}"
-                    class="btn btn-sm blog-btn me-2"
-                    ><i class="fa-solid fa-pen-to-square"></i></a
-                  >
-                  <a href="#"
-                    class="btn-sm"
-                    role="button"
-                    id="blog-btn"
-                    title="Delete Blog"
-                    data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop"
-                    onclick="setDeleteUrl('{{ blog.id }}', '{{ blog.title }}', 'blog')">
-                    <i class="fa-solid fa-trash"></i>
-                  </a>
+              <a href="{% url 'blog_list' %}" class="btn blog-btn">Back to Blog</a> <!-- Back button to blog list -->
 
+              <!-- Show edit and delete buttons only to the author or superuser -->
+              {% if user.is_authenticated and user == blog.author or request.user.is_superuser %}
+              <div>
+                <!-- Edit button -->
+                <a href="{% url 'edit_blog' blog.id %}" class="btn btn-sm blog-btn me-2">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </a>
+                <!-- Delete button triggers a modal for confirmation -->
+                <a href="#" class="btn-sm" role="button" id="blog-btn" title="Delete Blog" data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop" onclick="setDeleteUrl('{{ blog.id }}', '{{ blog.title }}', 'blog')">
+                  <i class="fa-solid fa-trash"></i>
+                </a>
+              </div>
               {% endif %}
             </div>
           </div>

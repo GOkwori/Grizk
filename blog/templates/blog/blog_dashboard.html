@@ -1,50 +1,66 @@
+<!-- Extending the base template to inherit common elements like header, footer, etc. -->
 {% extends 'base.html' %}
 
+<!-- Load static files like CSS, JavaScript, and images for this page -->
 {% load static %}
 
-
+<!-- Setting the title of the page as "Dashboard" -->
 {% block title %} - Dashboard {% endblock %}
 
+<!-- Page header section, could be used for layout consistency -->
 {% block page_header %}
 <div class="container layout">
     <div class="row">
-        <div class="col"></div>
+        <div class="col"></div> <!-- Empty column for potential spacing or design -->
     </div>
 </div>
 {% endblock %}
 
+<!-- Main content section starts here -->
 {% block content %}
 <div class="container mb-4">
+    <!-- Dashboard title section -->
     <div class="row mb-2">
         <div class="col-12">
-            <hr>
-            <h2 class="logo-font mb-4">Dashboard</h2>
-            <hr>
+            <hr> <!-- Horizontal line for separation -->
+            <h2 class="logo-font mb-4">Dashboard</h2> <!-- Main heading for the dashboard -->
+            <hr> <!-- Another horizontal line for separation -->
         </div>
     </div>
+
+    <!-- Section with two cards for dashboard actions, centered horizontally -->
     <div class="row justify-content-center text-center mb-2" id='dashboard'>
+        <!-- First card: Create Blog -->
         <div class="col-4 mb-3">
             <div class="card border-danger-subtle" style="width: 18rem;" id="product-card">
+                <!-- Card image loaded from static files -->
                 <img src="{% static 'images/add_products.jpg' %}" class="card-img-top" alt="...">
                 <div class="card-body">
+                    <!-- Button that links to the 'add_blog' page -->
                     <a class="m-2 p-2 text-center btn" href="{% url 'add_blog' %}" role="button"
                         id="product-update-btn">
-                        <i class="fas fa-plus"></i>
-                        </span>Create Blog</a>
+                        <i class="fas fa-plus"></i> <!-- Font Awesome icon for "add" -->
+                        Create Blog <!-- Text for the button -->
+                    </a>
                 </div>
             </div>
-
         </div>
+
+        <!-- Second card: Manage Blog -->
         <div class="col-4 mb-3">
             <div class="card border-danger-subtle mb-2" style="width: 18rem;" id="product-card">
+                <!-- Card image loaded from static files -->
                 <img src="{% static 'images/manage_products.jpg' %}" class="card-img-top" alt="televisions">
                 <div class="card-body">
-                    <a class="btn m-2 p-2 text-center" href="{% url 'blog_list' %}" id="product-update-btn"><span
-                            class="icon mr-2">
-                            <i class="fas fa-pen-to-square"></i>
-                        </span>Manage Blog</a>
+                    <!-- Button that links to the 'blog_list' page to manage existing blogs -->
+                    <a class="btn m-2 p-2 text-center" href="{% url 'blog_list' %}" id="product-update-btn">
+                        <span class="icon mr-2">
+                            <i class="fas fa-pen-to-square"></i> <!-- Font Awesome icon for "edit" -->
+                        </span>
+                        Manage Blog <!-- Text for the button -->
+                    </a>
                 </div>
             </div>
+        </div>
     </div>
-</div>
-{% endblock %}
+    {% endblock %}
