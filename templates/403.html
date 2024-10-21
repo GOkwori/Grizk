@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} - Access Denied {% endblock %}
+
+{% block content %}
+<div class="container text-center my-5">
+    <h1 class="display-4 text-danger">403</h1>
+    <h2 class="sub-heading">Access Denied</h2>
+    <p class="lead">You do not have the necessary permissions to view this page. Please check with the site administrator or go back to the homepage.</p>
+    <hr class="mb-4" />
+    <a href="{% url 'home' %}" class="btn btn-primary">Back to Home</a>
+</div>
+
+<div class="container mt-5">
+    <img src="{% static 'images/403-error.svg' %}" class="img-fluid mx-auto d-block" alt="403 Error">
+</div>
+{% endblock %}

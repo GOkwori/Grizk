@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} - Internal Server Error {% endblock %}
+
+{% block content %}
+<div class="container text-center my-5">
+    <h1 class="display-4 text-warning">500</h1>
+    <h2 class="sub-heading">Internal Server Error</h2>
+    <p class="lead">Something went wrong on our end. Please try again later or contact support if the problem persists.</p>
+    <hr class="mb-4" />
+    <a href="{% url 'home' %}" class="btn btn-primary">Back to Home</a>
+</div>
+
+<div class="container mt-5">
+    <img src="{% static 'images/500-error.svg' %}" class="img-fluid mx-auto d-block" alt="500 Error">
+</div>
+{% endblock %}

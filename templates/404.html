@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} - Page Not Found {% endblock %}
+
+{% block content %}
+<div class="container text-center my-5">
+    <h1 class="display-4 text-danger">404</h1>
+    <h2 class="sub-heading">Oops! Page Not Found</h2>
+    <p class="lead">The page you're looking for doesn't exist. It might have been removed, had its name changed, or is temporarily unavailable.</p>
+    <hr class="mb-4" />
+    <a href="{% url 'home' %}" class="btn btn-primary">Back to Home</a>
+</div>
+
+<div class="container mt-5">
+    <img src="{% static 'images/404-error.svg' %}" class="img-fluid mx-auto d-block" alt="404 Error">
+</div>
+{% endblock %}
