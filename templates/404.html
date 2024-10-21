@@ -3,16 +3,37 @@
 
 {% block title %} - Page Not Found {% endblock %}
 
+{% block page_header %}
+<div class="container layout">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
 {% block content %}
-<div class="container text-center my-5">
-    <h1 class="display-4 text-danger">404</h1>
-    <h2 class="sub-heading">Oops! Page Not Found</h2>
-    <p class="lead">The page you're looking for doesn't exist. It might have been removed, had its name changed, or is temporarily unavailable.</p>
+<div class="container mb-2">
+    <section>
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="sub-heading">Oops! Page Not Found</h2>
+                <hr class="mb-1">
+            </div>
+        </div>
+        <div class="row px-0">
+            <div class="row">
+                <p class="lead">The page you're looking for doesn't exist. It might have been removed, had its name changed, or is temporarily unavailable.</p>
     <hr class="mb-4" />
-    <a href="{% url 'home' %}" class="btn btn-primary">Back to Home</a>
+    <a href="{% url 'home' %}" class="btn blog-btn">Back to Home</a>
+            </div>
+        </div>
+    </section>
+    <div class="btt-button shadow-sm" id="bttBtn">
+        <a class="btt-link d-flex h-100" title="Back to Top">
+            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+        </a>
+    </div>
 </div>
 
-<div class="container mt-5">
-    <img src="{% static 'images/404-error.svg' %}" class="img-fluid mx-auto d-block" alt="404 Error">
-</div>
 {% endblock %}
