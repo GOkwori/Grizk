@@ -1,0 +1,42 @@
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title fs-5" id="staticBackdropLabel">Confirmation</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modalBodyContent">
+        <!-- This will be dynamically updated with the item name or title -->
+        Proceeding with this action will permanently delete this item. Are you sure?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a href="#" role='button' class="btn" id="confirmDeleteButton">Proceed</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  /**
+   * Function to set the delete URL and display item name/title in the modal.
+   * @param {string} itemId - The ID of the item to be deleted.
+   * @param {string} itemName - The name or title of the item to display.
+   * @param {string} deleteType - The type of item ('blog' or 'product').
+   */
+  function setDeleteUrl(itemId, itemName, deleteType) {
+    const deleteButton = document.getElementById('confirmDeleteButton');
+    const modalBody = document.getElementById('modalBodyContent');
+    
+    // Update the modal content to include the item's name or title
+    modalBody.innerHTML = `Proceeding with this action will permanently delete <strong>${itemName}</strong>. Are you sure?`;
+    
+    // Set the correct delete URL
+    if (deleteType === 'blog') {
+      deleteButton.setAttribute('href', `/blog/${itemId}/delete/`);
+    } else if (deleteType === 'product') {
+      deleteButton.setAttribute('href', `/products/${itemId}/delete/`);
+    }
+  }
+</script>

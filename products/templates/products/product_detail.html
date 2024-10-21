@@ -61,10 +61,18 @@
                                 id="product-btn" title='update product'>
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </a> |
-                            <a href="{% url 'delete_product' product.id %}" class="btn-sm ms-2" role="button"
-                                id="product-btn" title='delete product'>
-                                <i class="fa-solid fa-trash"></i>
+                            <a href="#"
+                            class="btn-sm"
+                            role="button"
+                            id="product-btn"
+                            title="Delete Product"
+                            data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop"
+                            onclick="setDeleteUrl('{{ product.id }}', '{{ product.name }}', 'product')">
+                            <i class="fa-solid fa-trash"></i>
                             </a>
+
+
                             {% endif %}
                         </small>
                     </div>

@@ -52,11 +52,11 @@ a {
 /* Header container */
 .header-container {
     text-align: center;
-    background-color: #af0f0f25;
+    background: radial-gradient(circle, #220202, #000000);
 }
 
 footer {
-    background-color: #af0f0f25;
+    background: radial-gradient(circle, #220202, #000000);
     opacity: 0.9;
 }
 
@@ -163,6 +163,29 @@ nav button {
     color: #22223b;
 }
 
+/* Modal */
+
+.modal-header,
+.modal-footer {
+    background: radial-gradient(circle, #220202, #000000);
+}
+
+.modal-body {
+    background-color: #000;
+}
+
+.modal-footer button,
+.modal-footer a {
+    background-color: #000;
+    color: #ff4500;
+    border-color: #ff4500;
+}
+
+.modal-footer button:hover,
+.modal-footer a:hover {
+    background-color: #ff4500;
+    color: #000;
+}
 
 /* Toast */
 

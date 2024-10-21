@@ -9,7 +9,7 @@ class Blog(models.Model):
     image = models.ImageField(upload_to='blog_images/', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    published = models.BooleanField(default=False)  # Add this field
+    published = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
         if not self.slug:
