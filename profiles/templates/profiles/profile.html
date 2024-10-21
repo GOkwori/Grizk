@@ -1,6 +1,6 @@
-{% extends "base.html" %} 
-{% load static %} 
-{% block title %} - Profile {%endblock %} 
+{% extends "base.html" %}
+{% load static %}
+{% block title %} - Profile {%endblock %}
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}" />
 {% endblock %} {% block content %}
@@ -17,12 +17,7 @@
     <div class="row">
       <div class="col-12 col-lg-6 mb-2">
         <p>Default Delivery Information</p>
-        <form
-          class="mt-4"
-          action="{% url 'profile' %}"
-          method="POST"
-          id="profile-update-form"
-        >
+        <form class="mt-4" action="{% url 'profile' %}" method="POST" id="profile-update-form">
           {% csrf_token %} {{ form|crispy }}
           <button type="submit" class="btn btn-outline-primary">
             <i class="fa-solid fa-pen-to-square me-2"></i>Update Information
@@ -32,9 +27,7 @@
       <div class="col-12 col-lg-6">
         <p>Order History</p>
         <div class="order-history table-responsive mt-0">
-          <table
-            class="table table-sm table-borderless table-dark table-striped"
-          >
+          <table class="table table-sm table-borderless table-dark table-striped">
             <thead>
               <tr>
                 <th class="small">Reference</th>
@@ -48,11 +41,8 @@
               <!-- Looping through 'orders' as passed from the context -->
               <tr>
                 <td class="small">
-                  <a
-                    href="{% url 'order_history' order.order_reference %}"
-                    title="{{ order.order_reference }}"
-                    >{{ order.order_reference|truncatechars:6}}</a
-                  >
+                  <a href="{% url 'order_history' order.order_reference %}" title="{{ order.order_reference }}">{{
+                    order.order_reference|truncatechars:6}}</a>
                 </td>
                 <td class="small">{{ order.date }}</td>
                 <td class="small">
@@ -73,8 +63,5 @@
   </section>
 </div>
 {% endblock %} {% block postloadjs %} {{ block.super }}
-<script
-  type="text/javascript"
-  src="{% static 'profiles/js/countryfield.js' %}"
-></script>
+<script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
 {% endblock %}

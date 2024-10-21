@@ -1,5 +1,6 @@
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -28,10 +29,10 @@
   function setDeleteUrl(itemId, itemName, deleteType) {
     const deleteButton = document.getElementById('confirmDeleteButton');
     const modalBody = document.getElementById('modalBodyContent');
-    
+
     // Update the modal content to include the item's name or title
     modalBody.innerHTML = `Proceeding with this action will permanently delete <strong>${itemName}</strong>. Are you sure?`;
-    
+
     // Set the correct delete URL
     if (deleteType === 'blog') {
       deleteButton.setAttribute('href', `/blog/${itemId}/delete/`);

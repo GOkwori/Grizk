@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  
   // Initialize Bootstrap toasts
   var toastElList = [].slice.call(document.querySelectorAll(".toast"));
   var toastList = toastElList.map(function (toastEl) {
@@ -41,12 +40,25 @@ function updateProgressBar() {
 
   // Offcanvas cart progress
   var offcanvasTotalElement = document.getElementById("offcanvas-cart-totals");
-  var offcanvasProgressElement = document.getElementById("offcanvas-delivery-progress");
+  var offcanvasProgressElement = document.getElementById(
+    "offcanvas-delivery-progress"
+  );
   if (offcanvasTotalElement && offcanvasProgressElement) {
-    var offcanvasTotal = parseFloat(offcanvasTotalElement.getAttribute("data-total"));
-    var offcanvasThreshold = parseFloat(offcanvasTotalElement.getAttribute("data-threshold"));
-    if (!isNaN(offcanvasTotal) && !isNaN(offcanvasThreshold) && offcanvasThreshold > 0) {
-      var offcanvasProgress = Math.min((offcanvasTotal / offcanvasThreshold) * 100, 100);
+    var offcanvasTotal = parseFloat(
+      offcanvasTotalElement.getAttribute("data-total")
+    );
+    var offcanvasThreshold = parseFloat(
+      offcanvasTotalElement.getAttribute("data-threshold")
+    );
+    if (
+      !isNaN(offcanvasTotal) &&
+      !isNaN(offcanvasThreshold) &&
+      offcanvasThreshold > 0
+    ) {
+      var offcanvasProgress = Math.min(
+        (offcanvasTotal / offcanvasThreshold) * 100,
+        100
+      );
       offcanvasProgressElement.style.width = offcanvasProgress + "%";
       offcanvasProgressElement.setAttribute("aria-valuenow", offcanvasProgress);
     }
