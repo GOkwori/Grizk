@@ -613,13 +613,15 @@ Grizk employs CSRF (Cross-Site Request Forgery) tokens in all forms to safeguard
 | Feature   | Guest | Account Holder |
 |-----------|-------------------|-----------------|
 | Home Page | Visible           | Visible         |
-| Account  | Not Visible - 'Account' option only appears for registered, logged-in users | Visible and full feature interaction available |
+| Profile  | Not Visible - 'Account' option only appears for registered, logged-in users | Visible and full feature interaction available |
 | All Products  | Visible - items can be viewed and added to Cart, Wishlist function not available | Visible and full feature interaction available |
 | Categories   | Visible - items can be viewed and added to Cart, Wishlist function not available | Visible and full feature interaction available |
 | Blog | Visible | Visible |
 | Search  | Visible | Visible |
+| Wishlist  | Not Visible | Visible |
 | Contact Us/Newsletter | Visible | Visible |
-| Admin Dashboard | Not Visible | Only visible to Admin |
+| Product Dashboard | Not Visible | Only visible to Admin |
+| Blog Dashboard | Not Visible | Only visible to Admin |
 
 ## CRUD Functionality
 
@@ -636,119 +638,373 @@ Customers have full CRUD functionality with their prospective purchases. They ma
 
 **Header & Navigation - All Users**
 
+**Grizk** is a comprehensive web application designed to streamline digital content management, e-commerce, and user engagement. Each module within the platform is tailored to provide a seamless experience, ensuring ease of use across different devices and roles.
 *For features showcase, screenshots of the features in use were taken on Laptop/iPad Pro/iPhone 12 Pro*
 
-Grizk's navbar is kept clean, with a simple dropdown menu for the 'All Products' section. 
-- The search icon yields a search modal when clicked.
-- The heart icon is only visible to registered users and takes the user to the wishlist, if logged in.
-- The Cart displays the value of items within it if the customer adds an item to it.
+### `All Pages Feature`
+* `Responsive Navigation`: A consistent navigation system across all pages ensures that users can easily access different sections like blogs, products, profiles, and more. The navigation is intuitive and adjusts to different screen sizes for a seamless user experience.
 
-The navbar is displayed via a dropdown toggle in mobile view.
+  ![Responsive Navigation](./documentation/features/navigation.PNG)
 
-<details open>
-    <summary>Header & Navigation - All Users</summary>  
-    <img src="docs/readme_images/header.png">  
-</details>
+  ![Search Functionality](./documentation/features/mobile-nav.PNG)
 
-<details open>
-    <summary>Header & Navigation Menu Demo</summary>  
-    <img src="docs/readme_images/header_demo.gif">  
-</details>
+* `Search Functionality`: Each main section of the platform (Blog, Products, Profiles, etc.) includes a dedicated search bar that helps users quickly locate the information they need.
 
-<details open>
-    <summary>Header & Navigation Mobile View</summary>  
-    <img src="docs/readme_images/mobile_nav.gif">  
-</details>
+* `Mobile-Friendly Layout`: A fully responsive design ensures accessibility on desktops, tablets, and smartphones, providing consistent usability across devices.
 
-**Home Page - All Users**
+* `Cart Offcanvas`: Users can access their cart contents from any page via a dynamic offcanvas panel. This feature provides quick previews of the cart, allowing users to adjust quantities, view estimated totals, and proceed to checkout without disrupting their browsing. The offcanvas enhances the user experience by being non-intrusive yet easily accessible.
 
-The Grizk Home Page draws the user in with a large hero graphic, designed in Figma using product images. An 'Explore Now' button brings the user straight to the 'All Products' page. On scrolling down, the bestsellers section is visible in a carousel format that displays four products at a time. Admins can mark products as 'Featured' to highlight them. Additional arrows allow users to navigate through items at their own pace. Clicking on any product image directs customers to its detailed view.
+  ![Cart Offcanvas](./documentation/features/cartoffcanvas.PNG)
 
-The home page further includes a Mission section, describing Grizk's commitment to offering top-quality tech gadgets and accessories. Below, an FAQ accordion section provides answers to common customer questions.
+* `Wishlist Offcanvas`: Similar to the cart, the wishlist offcanvas enables users to quickly review and manage items they have saved. Users can view and remove items from the wishlist.
 
-<details open>
-    <summary>Home Page - All Users</summary>  
-    <img src="docs/readme_images/dt_home.png">  
-</details>
+  ![Wishlist Offcanvas](./documentation/features/wishlistoffcanvas.PNG)
 
-<details open>
-    <summary>Home Page: Bestsellers Carousel Demo</summary>  
-    <img src="docs/readme_images/bestsellers_demo.gif">  
-</details>
 
-<details>
-    <summary>Home Page: Mission Section - All Users</summary>  
-    <img src="docs/readme_images/our_mission.png">  
-</details>
+### `Toast Notifications`
 
-<details>
-    <summary>Home Page: FAQ Section - All Users</summary>  
-    <img src="docs/readme_images/accordian_faq.png">  
-</details>
+![Toast Notification](./documentation/features/toast.PNG)
 
-**Delivery Banner - All Users**
+**Toast Notifications** on Grizk provide real-time feedback to users by displaying small, non-intrusive messages that appear temporarily at the top-right corner of the screen. These notifications help improve the user experience by providing instant feedback about various actions taken on the platform.
 
-Grizk's delivery banner mimics modern e-commerce styles, displaying additional delivery and contact information when clicked. The entire page blurs, and interaction is disabled outside the banner area, ensuring users focus on the banner details. The banner cycles through brand colors, creating a vibrant, dynamic look.
+#### **Features of Toast Notifications:**
+* `Real-Time Feedback`: Whenever users perform an action (such as adding, editing, or deleting a product, blog, or item from the cart), a toast notification appears, confirming the success or failure of the action. This immediate feedback helps users understand the result of their actions without navigating to another page.
+  
+  - **Example**: When a user successfully adds a new blog, a toast notification will appear saying "Blog post created successfully!" 
 
-<details open>
-    <summary>Delivery Banner - All Users</summary>  
-    <img src="docs/readme_images/dt_delivery.png">  
-</details>
+* `Action-Specific Messages`: 
+  - **Success**: When an action is successful (e.g., updating a blog or adding a product to the cart), the toast message is styled with a green color and indicates the success.
+  - **Error**: If an action fails (e.g., missing fields in a form or unauthorized access), the toast message will be styled in red to draw attention and indicate the need for user intervention.
+  - **Warnings and Info**: Informational or warning messages (e.g., login required or low stock notifications) use appropriate colors to match the message type.
 
-**Search - All Users**
+* `Auto-Dismiss and Close Button`: Toasts automatically disappear after a few seconds, ensuring they do not block the screen for too long. However, users can manually close them by clicking the close button (`X`) if they wish to dismiss the notification earlier.
 
-The search feature presents users with a modal to enter search queries, returning relevant products. If no matching product is found, a clear '0 results' message is displayed.
+* `Accessibility and Non-Intrusiveness`: Toasts are designed to appear without disrupting the user's workflow. They are small, pop-up on one corner of the screen, and do not block the main content, ensuring a smooth user experience.
 
-<details open>
-    <summary>Search - All Users</summary>  
-    <img src="docs/readme_images/search.png">  
-</details>
 
-**Account Management - Registered Users**
+### `Blog Module`
 
-Grizk uses Django AllAuth to handle account management. Customers can register, log in, and access their account dashboard. Upon registration, users receive a verification email. The platform ensures robust authentication and account security.
+![Blog Module](.//documentation/responsiveness/blog_page.PNG)
 
-<details open>
-    <summary>Register - All Users</summary>  
-    <img src="docs/readme_images/register.png">  
-</details>
+The **Blog Module** provides a complete platform for content creators to publish and manage blog posts. It features a user-friendly interface for administrators and authors to create, edit, and delete blog entries, complete with images and formatted content.
 
-<details open>
-    <summary>Confirm Email - All Users</summary>  
-    <img src="docs/readme_images/email_verify.png">  
-</details>
+* `Content Editor`: With a rich text editor, authors can format text, embed images, and draft engaging articles. The editor supports adding titles, content, and images.
 
-<details>
-    <summary>Log In - All Users</summary>  
-    <img src="docs/readme_images/login.png">  
-</details>
+* `Image Upload and Management`: Blog posts can include images, which are managed through the `ImageField`. Authors can upload images directly while creating or editing a post, with support for displaying current images in the editing interface.
 
-<details>
-    <summary>Log In Toast - Registered, Verified Users</summary>  
-    <img src="docs/readme_images/login_toast.png">  
-</details>
+* `Category and Tagging`: The system is structured to allow categorization and tagging (using fields like `slug`), enabling better content organization and searchability. Each blog is associated with an author, providing context to the post.
 
-**Blog - All Users/Admin CRUD**
+* `Administrative Controls`: Admins can manage posts via the Dashboard, edit existing content, and delete posts. Deletion is handled securely with confirmation modals, ensuring posts are not removed accidentally.
 
-The blog section offers articles on the latest tech trends, reviews, and industry news. Admins have full control over the creation, editing, and deletion of blog posts. Posts can be saved as drafts or published immediately. Users can easily navigate to read the latest articles.
+* `Dynamic Display and Pagination`: The blog list view dynamically loads and paginates blog posts, providing an efficient way for users to browse through multiple entries. Each blog's details can be accessed via dedicated URLs.
 
-<details open>
-    <summary>Blog List - All Users</summary>  
-    <img src="docs/readme_images/article_list.png">  
-</details>
+### `Blog Dashboard`
 
-<details open>
-    <summary>Blog Admin CRUD - Admin Only</summary>  
-    <img src="docs/readme_images/art_edit_dt.png">  
-</details>
+![Blog Dashboard](./documentation/features/blog_dashboard.PNG)
 
-**Future Features**
+The **Blog Dashboard** on Grizk is designed to provide administrators and content creators with a centralized platform for managing all blog-related activities. It offers a comprehensive view of all blog posts, allowing for easy navigation, editing, and creation of new content.
 
-- **Stock Management**: Real-time stock tracking for products.
-- **Article Engagement**: Enabling users to react to or comment on blog articles.
-- **Discount Codes**: Introduction of promo codes for purchases.
-- **Reviews & Ratings**: Adding reviews feature to allow customers to share feedback.
-- **Sale Section**: A dedicated section for discounted products.
-- **Enhanced Navigation**: Use of breadcrumbs and advanced filters to improve product discovery.
+* `Overview of All Blog Posts`: The dashboard displays a list of all existing blog posts on the platform. Each entry shows essential information, such as the blog title, author, publication date, and status (published/unpublished). This helps users manage their content efficiently and stay organized.
 
-Grizk combines modern design, smooth functionality, and secure operations to provide a reliable e-commerce experience. The site architecture reflects thoughtful design principles, ensuring that the features serve both customers and admins effectively.
+* `Add New Blog Post Button`: The dashboard includes an **Add New Blog Post** button, which takes users directly to the **Create Blog Page**. Here, users can write new content, add images, and set the publication status of their posts. This feature simplifies the process of content creation and publishing.
+
+* `Edit Existing Blog Posts`: Each blog entry has an **Edit** button, allowing content creators and admins to update existing blog content. Whether changing the title, updating the content, or modifying images, this feature ensures that blog posts can be kept current and accurate.
+
+* `View Blog Post Details`: Clicking the **View** button next to each blog entry opens the **Blog Detail Page**, where users can see how the content appears to readers. This feature is useful for previewing posts before they go live.
+
+* `Delete Blog Posts`: Each blog entry on the dashboard includes a **Delete** button, enabling admins to remove outdated or irrelevant content. To prevent accidental deletions, this action is confirmed via a modal dialog box.
+
+
+### `Blog Detail Page`
+
+![Blog Detail](./documentation/features/blog_detail.PNG)
+
+The **Blog Detail Page** on Grizk is designed to present individual blog posts in a clean, readable format. It provides readers with a detailed view of the selected blog, including images, content, author information, and publication date.
+
+* `Full Blog Post Display`: The page displays the full content of a selected blog post. This includes the title, main image (if available), and the full text of the blog. The content is formatted for easy readability, with proper spacing and fonts to ensure a pleasant reading experience.
+
+* `Author and Publication Information`: At the top of the page, readers can see the name of the author and the publication date. This provides context for the content, helping readers understand who created the article and when it was published.
+
+* `Responsive Image Handling`: If the blog post has an associated image, it is displayed prominently at the top of the page. The image is responsive, ensuring that it scales correctly on different devices, from desktops to mobile phones. If no image is provided, a default placeholder image is displayed.
+
+* `Formatted Content`: The blog content is processed to retain formatting, such as paragraphs, lists, and headers. This ensures that the article is presented exactly as intended by the author, maintaining structure and readability.
+
+* `Interactive Elements for Authors and Admins`:
+  - **Edit Blog Post**: If the logged-in user is the author of the blog or an admin, they will see an **Edit** button on the page. This allows them to quickly navigate to the **Edit Blog Page** where they can make changes to the content.
+  - **Delete Blog Post**: Authors and admins can also see a **Delete** button, which triggers a modal confirmation dialog. This ensures that blog posts are not deleted accidentally. The deletion process is straightforward and secure.
+
+* `Navigation Back to Blog List`: At the bottom of the blog post, there is a **Back to Blog** button that takes users back to the list of all blogs. This makes it easy for readers to navigate through multiple posts without getting lost.
+
+* `Enhanced User Experience`: For authenticated users, the platform remembers their last-read position, enabling them to resume reading from where they left off. This feature enhances the reading experience, especially for longer articles.
+
+
+### `Add Blog Page`
+
+![Add Blog](./documentation/features/add_blog.PNG)
+
+The **Add Blog Page** on Grizk enables authenticated users, primarily authors and administrators, to create new blog posts easily. The page is designed with a user-friendly form that allows authors to input the necessary details and publish their content seamlessly.
+
+* `Clear and Intuitive Form Layout`: The form layout is straightforward, with clear labels and inputs for each section, ensuring that authors can quickly understand what information is required. This minimizes the chances of input errors and speeds up the blog creation process.
+
+* `Fields for Blog Creation`:
+  - **Title**: A mandatory field where the author can input the blog's title. It has a character limit to ensure the title remains concise and engaging.
+  - **Author (Auto-filled)**: This field is auto-populated with the logged-in user's name, ensuring that the author information is accurate and consistent.
+  - **Content**: A rich text area where authors can write the main content of their blog. It supports multiple paragraphs, lists, and other text formatting, allowing authors to create well-structured articles.
+  - **Blog Image**: An optional field where authors can upload an image that represents the blog post. If no image is provided, a default placeholder will be used. This feature ensures that blogs are visually appealing and can attract more readers.
+
+* `Image Upload and Preview`: The **Add Blog Page** allows users to upload images directly from their devices. Upon selecting an image, a preview is shown, enabling the author to see how the image will appear in the final blog post. This feature helps in ensuring that the right visuals are used before the post is published.
+
+* `Form Validation`: Real-time validation is provided for all fields. For instance, if the title is missing, the user will be prompted to fill it in. This ensures that all required information is completed before the blog can be saved or published.
+
+* `Submit and Cancel Buttons`:
+  - **Create Blog Post**: Once all fields are correctly filled, the user can click the **Create Blog Post** button to submit the form. Upon submission, the blog is saved to the database, and the user is redirected to the **Blog List Page** where they can view their newly created post.
+  - **Cancel**: If the user decides not to create the blog, they can click the **Cancel** button, which will redirect them to the **Blog Dashboard** without saving any of the entered information.
+
+* `Success and Error Messages`: After submitting the form, the user will receive immediate feedback:
+  - **Success Message**: If the blog is successfully created, a toast notification appears with a success message, confirming that the post has been added.
+  - **Error Message**: If there are any issues (e.g., missing required fields), the user will see an error message highlighting what needs to be corrected.
+
+### `Edit Blog Page`
+
+![Edit Blog](./documentation/features/edit_blog.PNG)
+
+The **Edit Blog Page** on Grizk allows authenticated users, primarily the blog authors and administrators, to modify existing blog posts. This feature ensures that content can be kept up-to-date and allows for easy corrections or updates to published articles.
+
+* `Pre-filled Form for Easy Editing`: When accessing the **Edit Blog Page**, all the existing information about the selected blog is pre-filled in the form. This enables users to quickly make adjustments without having to re-enter any information. Authors can focus on what needs to be changed, saving time and effort.
+
+
+* `Fields for Editing Blog`:
+  - **Title**: The blog title is displayed in an editable text box. Authors can change it if necessary while still keeping the character limit in place to ensure conciseness.
+  - **Author (Read-only)**: This field shows the name of the blog author and is read-only. This prevents unauthorized changes to the author information.
+  - **Content**: The main text area for the blog's content is pre-filled with the current content, allowing authors to add, modify, or remove sections. This flexibility ensures that any updates are straightforward and efficient.
+  - **Blog Image**: If a blog already has an image, it will be displayed as a preview. Authors can keep the existing image, replace it, or remove it entirely. If a new image is uploaded, it will replace the old one, giving control over the visual aspect of the blog.
+
+* `Image Preview and Update`: When editing a blog, users can see a preview of the existing image. They can upload a new one, and the system will show a real-time preview of the new image. This helps authors ensure they are using the right visuals before saving the changes.
+
+* `Form Validation`: The form includes validation to ensure that essential details (like the title and content) are present before any updates can be saved. This prevents incomplete blog posts from being saved accidentally.
+
+* `Buttons for Actions`:
+  - **Update Blog Post**: Once the necessary edits are made, clicking this button saves the changes and updates the existing blog entry in the database. The user is then redirected to the **Blog Detail Page** to view the updated blog post.
+  - **Cancel**: This button allows the user to discard the changes and return to the **Blog List Page**. No modifications are saved if this option is chosen, ensuring that users don't accidentally save unwanted changes.
+
+* `Success and Error Feedback`: 
+  - **Success Message**: After successfully updating the blog, a toast notification appears, confirming that the changes have been saved. This reassures users that their edits have been processed.
+  - **Error Handling**: If there are any issues (e.g., a required field is missing), an error message will inform the user, highlighting what needs to be corrected.
+
+
+
+
+### `Cart Module`
+
+![Cart Module](./documentation/responsiveness/cart_page.PNG)
+
+The **Cart Module** simplifies the shopping experience, allowing users to manage their selected products before proceeding to checkout. It ensures a smooth and efficient purchase process with detailed item displays and easy quantity adjustments.
+
+* `Add to Cart`: Users can add items to their cart from the product pages. Cart items can be managed using session data for easy retrieval and updating.
+
+* `Item Details`: The cart view displays essential details for each item, including images, quantity, and size options.
+
+* `Subtotal Calculation`: Cart totals are dynamically calculated, with updates reflecting real-time changes when users add or adjust items in their cart. Estimated totals and incentives for free delivery encourage larger purchases.
+
+* `Progress Bar for Free Delivery`: To encourage users to add more items to their cart, the platform features a dynamic progress bar indicating how much more they need to spend to qualify for free delivery. The bar updates in real-time as users add or remove items from their cart, providing a visual cue and enhancing the shopping experience.
+
+* `Toast Notifications`: To enhance the user experience, toast messages confirm successful actions (e.g., item added to cart), guiding users throughout the process.
+
+
+### `Checkout Module`
+
+![Checkout Module](./documentation/features/checkout.PNG)
+
+The **Checkout Module** guides users through the payment process, providing secure and clear navigation from cart to purchase confirmation.
+
+* `Payment Option`: The platform supports stripe payment method, providing users with Secure payment processing ensuring user data safety.
+
+* `Order Summary`: Users receive a clear breakdown of their order, including itemized lists, subtotals, and any applicable discounts or delivery charges. This helps users review their purchase before completing the transaction.
+
+* `Address and Delivery Information`: Users can add or select from saved addresses, ensuring a quick checkout experience. 
+
+
+### `Home Module`
+
+![Home Module](./documentation/responsiveness/home_page.PNG)
+
+The **Home Module** serves as the central hub of the platform, presenting users with quick access to various sections, promotional highlights, and the latest blog articles.
+
+* `Featured Content Carousel`: The homepage features a dynamic carousel that showcases featured products, blog posts, and current promotions. 
+
+* `Quick Navigation Links`: Users can navigate directly to essential features, such as product lists, cart views, or profile management, streamlining the user journey.
+
+* `Engaging Layout`: Designed to capture user interest, the homepage leverages well-structured sections to guide users to the most relevant parts of the platform, promoting a smooth user experience.
+
+
+### `Products Module`
+
+![Products Module](./documentation/responsiveness/product_page.PNG)
+
+The **Products Module** allows administrators to manage a catalog of products, and customers to browse through them with ease.
+
+* `Product Listings`: Users can view a comprehensive list of products with filtering options. The list can be sorted based on categories, price, or popularity.
+
+* `Product Detail Pages`: Each product has a dedicated detail page showing information such as descriptions, images, reviews, and additional product options (e.g., colors, sizes).
+
+* `Inventory Management`: Admins can easily add, edit, and delete products via the Dashboard. Features like product categorization and inventory tracking are built into the system for efficient stock management.
+
+
+### `Product Details Page`
+
+![Product Details Page](./documentation/responsiveness/product_detail_page.PNG)
+
+The **Product Details Page** on Grizk provides an in-depth view of each product, helping users make informed decisions by presenting comprehensive product information in a clean and user-friendly layout.
+
+* `Product Image Display`: High-quality product images are showcased prominently at the top of the page. Users can click on the images to view a larger version, providing a closer look at the product details. If multiple images are available, they can navigate through them, giving a comprehensive visual understanding of the product.
+
+* `Product Name and Description`: The page displays the product's name in bold, easy-to-read text, followed by a detailed description. This section highlights key features, benefits, and specifications, helping users understand what makes the product unique.
+
+* `Dynamic Price Display`: The product's price is shown clearly.
+
+* `Quantity Selector`: The page includes a convenient quantity selector, enabling users to choose how many units of the product they wish to purchase. Users can easily increase or decrease the quantity with a simple click, making bulk purchases straightforward.
+
+* `Add to Cart Button`: The "Add to Cart" button is prominently placed, encouraging users to proceed with their purchase. Once clicked, a confirmation is displayed, and the product is immediately added to the shopping cart. Users can continue browsing or go directly to the cart to complete their purchase.
+
+
+### `Product Dashboard`
+
+![Product Dashboard](./documentation/features/product_dashboard.PNG)
+
+The **Product Dashboard** on Grizk serves as the central hub for administrators to oversee, manage, and maintain all product-related operations. It provides a comprehensive overview of product inventory and management tools that help streamline the administration of the store's offerings.
+
+* `Overview of All Products`: The dashboard displays a list of all products available on the platform. Each product entry includes essential details such as the product name, category, stock levels, price, and status (active/inactive). This helps administrators quickly get a snapshot of the inventory.
+
+* `Add New Product Button`: Administrators can add new products directly from the dashboard. Clicking this button opens the **Add Product Page**, where users can enter all necessary details for a new product, including name, description, images, pricing, and variants. This feature ensures that new items can be listed quickly and efficiently.
+
+* `Edit Existing Products`: Each product entry has an **Edit** button, which allows administrators to modify existing product information. Whether updating prices, descriptions, or stock levels, this functionality makes it easy to keep product data up-to-date.
+
+
+### `Add Product Page`
+
+![Add Product Page](./documentation/features/add_product.PNG)
+
+The **Add Product Page** on Grizk is designed to streamline the process of adding new products to the platform. It ensures that administrators and store managers can easily input all necessary product details, manage stock, and make products available for customers seamlessly.
+
+* `Product Name Input`: A required field where users can enter the name of the new product. This input ensures that the product is easily identifiable across the platform, appearing in listings, search results, and detailed product views.
+
+* `Category Selection Dropdown`: Users can select the appropriate category for the product from a dropdown list. This feature helps organize products under specific categories, making it easier for customers to browse and find the items they need.
+
+* `Product Description Field`: A text area for entering a detailed description of the product. This section allows administrators to highlight key features, specifications, and benefits, providing customers with all the necessary information to make an informed purchase.
+
+* `Upload Product Images`: The page includes an image upload feature where users can add high-quality photos of the product. Multiple images can be uploaded, ensuring that customers get a clear visual representation of the product from different angles.
+
+* `Price Input`: A field where users can specify the price of the product. If there are discounts, they can set a sale price, and the system will automatically display both the original and sale prices on the product details page.
+
+* `Save Product Button`: Once all details are filled in, users can click the "Save Product" button to add the product to the inventory. The platform will verify the information for completeness before saving the product, ensuring that no critical fields are missing.
+
+### `Edit Product Page`
+
+![Edit Product Page](./documentation/features/edit_product.PNG)
+
+The **Edit Product Page** on Grizk provides a seamless interface for administrators and store managers to update existing product details. This page allows users to quickly make adjustments to product information, manage stock, and update availability to keep the inventory current.
+
+* `Pre-Filled Product Details`: The form displays all existing information about the product, such as the name, category, description, price, and stock levels. This ensures that users can easily identify and modify specific details without needing to re-enter all the information.
+
+* `Edit Product Name`: Users can modify the product name if needed. This is useful for correcting any errors or updating the name to reflect changes, such as a rebranding or addition of new features.
+
+* `Category Change Dropdown`: Users can update the product category by selecting a new one from the dropdown list. This helps in reorganizing products if they need to be moved to different sections on the platform.
+
+* `Modify Product Description`: The description field allows users to edit the text to include new details, correct errors, or highlight special features. An updated description ensures that customers have accurate and current information.
+
+* `Update or Remove Product Images`: Users can upload new images or remove existing ones. This feature is particularly useful when products get updated packaging or when new visuals are needed for promotional campaigns. The system supports multiple images, giving customers a complete view of the product.
+
+* `Adjust Product Pricing`: Administrators can change the price or set up special discounts by updating the sale price field. The platform will automatically reflect the new pricing details on the product details page.
+
+* `Edit Stock Levels`: Users can adjust the stock count directly from this page. Whether updating quantities after a new shipment or correcting stock discrepancies, this feature ensures the inventory is accurate.
+
+* `Color and Size Options Management`: For products with different variants (like color or size), users can add or remove these options. This is particularly useful when new variants are introduced or when certain options are no longer available.
+
+* `Toggle Product Availability`: Users can mark a product as "active" or "inactive" using a toggle switch. This feature helps manage seasonal items, temporary stockouts, or products undergoing updates. Customers will only see active products on the storefront.
+
+* `Save Changes Button`: After editing, users can click the "Save Changes" button to update the product. The platform verifies the input to ensure all critical fields are correctly filled out before saving.
+
+* `Cancel and Return to Product List`: There is a button to cancel edits and return to the product list without saving changes. This helps users avoid accidental modifications.
+
+
+### `Profiles Module`
+
+![Profiles Module](./documentation/features/profiles.PNG)
+
+The **Profiles Module** allows users to manage their accounts, providing settings for personal information, order tracking, and more.
+
+* `User Information Management`: Users can update their account details, such as email addresses and passwords, directly from their profile.
+
+* `Order History`: Displays a list of past orders with statuses, enabling users to review previous purchases or track ongoing orders.
+
+
+### `Wishlist Module`
+
+![Wishlist Module](./documentation/features/wishlist.PNG)
+
+The **Wishlist Module** lets users save products they plan to purchase in the future, providing a convenient way to organize desired items.
+
+* `Add to Wishlist`: Users can add products to their wishlist from the product detail pages. These items are saved for easy future reference.
+
+* `Quick Purchase`: Items in the wishlist can be directly viewed and added to the cart, ensuring a smooth transition to checkout.
+
+
+### `Login Page`
+
+![Login Page](./documentation/responsiveness/login_page.PNG)
+
+The **Login Page** of Grizk serves as a secure entry point for users, ensuring that each individual's access is properly authenticated. Designed with simplicity and security in mind, it provides a seamless user experience for logging into the platform.
+
+* `Simple and Intuitive Login Form`: The login page consists of straightforward input fields for entering a username and password, enabling users to log in quickly. The form is easy to navigate, with labels and placeholder texts guiding users through the process.
+
+* `Secure Authentication`: User credentials are securely managed, ensuring that sensitive information is protected during the login process. Passwords are securely hashed, and proper security protocols are implemented to prevent unauthorized access.
+
+* `Remember Me Option`: Users have the option to stay logged in by selecting a "Remember Me" checkbox. This feature simplifies the process for users who frequently return to the platform, without needing to re-enter their credentials each time.
+
+* `Sign-Up Link`: Directs new users to the registration page, making it easy for first-time visitors to create an account and start using the platform. This option ensures that newcomers can seamlessly onboard themselves onto Grizk.
+
+* `Password Reset`: A "Forgot Password?" link is available for users who need to reset their credentials. This feature guides users through a secure process to recover their account, ensuring no loss of access.
+
+* `Error Handling`: If users enter incorrect credentials, the login page will display clear and helpful error messages. This guidance enables users to correct their mistakes and attempt to log in again without confusion.
+
+* `Responsive Design`: The login page is fully responsive, ensuring that it adapts seamlessly to various screen sizes, including mobile devices, tablets, and desktops. Users can access their accounts from any device without compromising the user experience.
+
+
+### `Registration Page`
+
+![Registration Page](./documentation/responsiveness/registration_page.PNG)
+
+The **Registration Page** on Grizk provides a user-friendly and streamlined experience for new users to create their accounts. It is designed to be intuitive and secure, ensuring that new users can easily onboard and start using the platform without any hurdles.
+
+* `Intuitive Form Layout`: The registration form is straightforward, guiding users through the required steps to create an account. It includes input fields for essential information such as username, email, and password. The layout ensures clarity and ease of use, reducing errors during the registration process.
+
+* `Password Confirmation`: To enhance security, the registration form requires users to enter their password twice. This feature ensures that users correctly input their desired password, reducing the risk of incorrect login information.
+
+* `Error Handling`: If the user submits incorrect or incomplete information, the form provides clear and concise error messages. This feedback helps users correct their input without frustration, guiding them through any missing or incorrectly entered fields.
+
+* `Responsive Design`: The registration page adapts seamlessly across different devices, including desktops, tablets, and mobile phones. The responsive design ensures that all users can register from any device without compromising the form’s layout or functionality.
+
+* `Secure Data Handling`: Grizk implements secure data handling practices, ensuring that all user information, including passwords, is processed securely. Passwords are hashed and securely stored, protecting users' sensitive data.
+
+* `Sign-Up Confirmation`: After successful registration, users receive a confirmation message that informs them about the next steps, such as verifying their email or logging in directly.
+
+
+### `Reset Password Page`
+
+![Reset Password Page](./documentation/responsiveness/reset_password_page.PNG)
+
+The **Reset Password Page** on Grizk ensures that users can recover access to their accounts quickly and securely. It offers a simple yet effective way for users to reset their passwords, enhancing the overall user experience and ensuring account security.
+
+* `User-Friendly Layout`: The reset password form is designed to be clear and easy to navigate. Users are guided through a straightforward process to reset their passwords, minimizing any confusion or difficulty. 
+
+* `Email Input Field`: Users start the password reset process by entering their registered email address. The form then sends a password reset link to the provided email, ensuring that only account owners can request a password reset.
+
+* `Secure Reset Link`: Grizk sends a unique, time-sensitive link to the user's registered email address. This link directs them to a secure page where they can create a new password. The use of a secure link prevents unauthorized access and ensures that password resets are handled safely.
+
+* `Password Confirmation`: To ensure that the new password is entered correctly, the reset form requires users to confirm their new password by entering it twice. This step reduces the risk of mistakes and ensures that the password change is successful.
+
+* `Error Handling`: The form includes robust error handling, providing users with feedback if their email address is not registered or if the passwords entered do not match. Clear, user-friendly error messages help users correct their input without frustration.
+
+* `Responsive Design`: The reset password page is fully responsive, working seamlessly across all devices, including desktops, tablets, and smartphones. Users can reset their passwords on-the-go, ensuring they have continuous access to their accounts.
+
+* `Secure Password Storage`: After successfully resetting the password, the new password is securely hashed and stored. Grizk prioritizes user security by ensuring that no plain-text passwords are saved.
