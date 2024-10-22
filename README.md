@@ -36,8 +36,6 @@ AccountSphere empowers you to manage your financial workflows seamlessly in one 
 ![Contributors](https://img.shields.io/badge/Contributors%20-%201%20-%20navy)
 ![Testing](https://img.shields.io/badge/Testing%20-%20Passed%20-%20lime)
 
-- - -
-
 ## Table of Contents
 
 - [Grizk](#Grizk)
@@ -127,7 +125,7 @@ Grizk's goal is to establish a solid base of repeat customers who seek reliable,
 
 ## UX/UI - User Experience/User Interface
 
-### Design Inspiration
+### `Design Inspiration`
 
 Grizk’s design captures the essence of modern tech elegance, leveraging a sleek, dark-themed aesthetic that echoes sophistication and innovation. The primary colour scheme revolves around jet black (`#000`) as the background, paired with striking orange-red (`#ff4500`) accents, symbolizing energy and cutting-edge technology. This colour combination is not only visually appealing but also enhances the readability and focus of the content across all devices.
 
@@ -138,13 +136,13 @@ A minimalist logo, designed using [LogoAI](https://www.logoai.com), is prominent
 ![Grizk logo](documentation/features/logo.PNG)  
 *Grizk logo*
 
-### Dark Theme with Electric Accents
+### `Dark Theme with Electric Accents`
 
 The dark-themed design, with a solid black background, was chosen not only for its sleek, high-tech appearance but also to provide a comfortable, strain-free experience for users browsing for extended periods. Orange-red highlights are strategically used to emphasize calls to action, such as "Add to Cart" and "Checkout," ensuring these elements are easily noticeable.
 
 Buttons across the site feature a smooth hover effect where the colours invert — from black with red accents to a red background with black text. This visual feedback enhances user interactions and draws attention to clickable elements.
 
-### Header & Navigation
+### `Header & Navigation`
 
 The header employs a radial gradient (`#220202` to `#000000`), giving a subtle, polished look that matches the dark theme. Navigation elements are styled with bold, orange-red text that is easy to read and aligns with the overall visual consistency. 
 
@@ -153,20 +151,20 @@ The navigation bar remains sticky across all screens, ensuring users can access 
 ![Header Navigation](documentation/features/navigation.PNG)  
 *Intuitive header and navigation for streamlined browsing*
 
-### Footer Design
+### `Footer Design`
 
 The footer continues the radial gradient design, providing a cohesive finish to each page. It features social media icons that subtly increase in size when hovered over, inviting users to connect without overwhelming the screen. Subscription forms are embedded within bordered panels, elegantly styled with orange-red outlines that stand out against the dark background, encouraging users to engage with newsletters and updates.
 
 ![Footer Design](documentation/features/footer.PNG)  
 *Footer with gradient design and intuitive social icons*
 
-### Product Showcase & Visual Feedback
+### `Product Showcase & Visual Feedback`
 
 Product images are displayed in a clean, distraction-free layout to ensure the gadgets are the center of attention. Each product card is designed to hover slightly when interacted with, giving a sense of depth and enhancing the overall user experience. The site employs a flexbox grid system to arrange products dynamically, ensuring consistency across varying screen sizes.
 
 Visual feedback is implemented throughout the interface, including subtle animations and hover effects. For example, toasts pop up on the right side of the screen to confirm actions like adding items to the cart or removing products from the wishlist, ensuring users are always informed.
 
-### Dual Carousel Implementation
+### `Dual Carousel Implementation`
 
 #### Home Page Carousel (Landing)
 
@@ -186,7 +184,7 @@ Both carousels adapt seamlessly across devices, ensuring consistent viewing expe
 ![Top Deals Carousel](./documentation/features/carousel_deals.PNG)  
 *Visually engaging carousel showcasing top deals*
 
-### Cart & Wishlist Off-Canvas Design
+### `Cart & Wishlist Off-Canvas Design`
 
 #### Off-Canvas Cart
 
@@ -204,7 +202,7 @@ Both off-canvas panels are designed to be responsive, adjusting seamlessly to sm
 *Seamlessly integrated off-canvas panels for cart and wishlist*
 
 
-### Responsive Design & Media Queries
+### `Responsive Design & Media Queries`
 
 Grizk’s design is fully responsive, utilizing media queries to adapt layouts for different devices. For instance, elements adjust seamlessly between mobile views (`max-width: 320px`) and larger desktops (`min-width: 1801px`), ensuring a smooth and consistent experience. Features like dropdowns, carousels, and off-canvas components scale appropriately, providing intuitive navigation and user interaction across all platforms.
 
@@ -216,13 +214,13 @@ Grizk’s design is fully responsive, utilizing media queries to adapt layouts f
 
 *Consistent, responsive design for all screen sizes*
 
-### Animations & Transitions
+###  `Animations & Transitions`
 
 Animations are carefully integrated to enhance user interaction without detracting from the browsing experience. For instance, product images gently enlarge on hover (`scale(1.05)`) to draw focus, while buttons smoothly change colour on hover, indicating interactivity. This provides a polished, fluid user experience that aligns with Grizk’s futuristic aesthetic.
 
 Grizk is designed not just as an e-commerce platform but as a digital shopping experience that embodies the sophistication of the tech products it offers. Through thoughtful design, intuitive navigation, and responsive elements, Grizk ensures users are fully engaged from browsing to checkout, no matter their device.
 
-## Colour Scheme
+### `Colour Scheme`
 
 ![Grizk colour Scheme](./documentation/colour-palette/colour_palette.PNG)  
 *Grizk colour Scheme*
@@ -239,38 +237,34 @@ Grizk employs a bold, modern colour palette that emphasizes contrast and clarity
 
 These colours were chosen to provide a sleek, high-tech aesthetic that appeals to tech enthusiasts. The primary colour, `electric-orange` (#ff4500), serves as a bright accent used throughout the site, from call-to-action buttons to hyperlinks and notifications. It ensures that essential elements stand out against the dark, muted backgrounds, guiding users' attention seamlessly. 
 
-### Primary and Accent colours
+#### Primary and Accent colours
 
 The `deep-black` (#000) background delivers a sophisticated, minimalist canvas, allowing the `electric-orange` to shine as the main accent colour. This vibrant hue is featured prominently on buttons, interactive elements, and hover effects, ensuring that users can intuitively navigate the site. A touch of `midnight-maroon` (#220202) adds depth and warmth, subtly incorporated in background gradients and header elements to break up the dark theme without overwhelming the user.
 
-### Button and Interactive Elements
+#### Button and Interactive Elements
 
 Interactive elements on Grizk, such as buttons and clickable links, employ a striking colour contrast. The standard button style features a `black` background with `electric-orange` borders and text, creating a dynamic, eye-catching appearance. On hover, the colours invert—buttons light up in `electric-orange` while the text turns `black`. This creates a clear, responsive visual cue, enhancing the user’s experience and interaction with the site.
 
 ![Grizk Main Button](./documentation/features/button.PNG)  
 *Grizk Main Button Design*
 
-### Consistency and Feedback Mechanisms
+#### Consistency and Feedback Mechanisms
 
 Grizk utilizes `soft-gray` (#22223b) for secondary backgrounds, borders, and certain text elements to maintain visual balance. When users interact with fields or buttons, a `bright-yellow` (#ffc824) or `electric-orange` appears to provide immediate feedback, confirming the action is available or complete. This approach simplifies navigation, making it easy for users to understand where they are on the site and how they can interact with it.
 
-### Accessibility and Contrast Testing
+#### Accessibility and Contrast Testing
 
 Colour accessibility is a priority for Grizk. Using [Adobe colour](https://colour.adobe.com/create/colour-accessibility), Iensured that all primary text and essential visual elements meet or exceed WCAG 2.1 guidelines for contrast. This makes the site accessible to users with visual impairments. Below are examples of how these tests were conducted to guarantee clarity and usability:
 
 ![Grizk colour Accessibility Check](./documentation/colour-palette/color-accessibility.PNG)  
 *Grizk colour Accessibility Check*
 
-### Button Contrast
+#### Button Contrast
 
 Buttons were rigorously tested to ensure that they are easy to see and interact with on both desktop and mobile devices. colour contrasts between the `electric-orange` and background hues ensure that buttons remain legible under various lighting conditions. This helps prevent misclicks and guides users smoothly through their shopping experience.
 
 
-### Final Thoughts
-
-Grizk’s colour scheme contributes to a sleek, cohesive design that resonates with tech-savvy users. The high-contrast, minimalist aesthetic emphasizes usability, drawing attention to key actions and features. Consistency across the site ensures a seamless experience, whether users are browsing on desktop or mobile. The combination of `electric-orange` accents with deep, muted backgrounds fosters an inviting yet sophisticated feel, enhancing the overall brand identity of Grizk.
-
-## Typography & Iconography
+### `Typography & Iconography`
 
 ![Grizk Font Pairing](./documentation/typography/typo.PNG)  
 *Grizk Font Pairing*
@@ -279,14 +273,14 @@ For Grizk, typography was chosen to convey a sense of modernity, precision, and 
 
 **Roboto** serves as the main sans-serif font, providing a sleek, modern, and easily readable style that aligns with the brand's high-tech image. It is used extensively for titles, headings, and important labels across the platform, ensuring content is presented clearly and prominently. On the other hand, **Fira Code**, a monospaced font, was chosen for product details and specifications, emphasizing the technical aspects of the electronics listed on the site. This combination provides a robust contrast that enhances the readability and structure of the content, improving the overall user experience.
 
-### Iconography
+### `Iconography`
 
 Grizk's iconography complements its clean, modern aesthetic, using simple, clear icons from the **Font Awesome** library. Icons are employed strategically to guide users through their journey on the site—whether it’s adding products to the cart, favoriting items, or navigating different categories. For example, the shopping cart, wishlist heart, and user account icons are immediately recognizable and provide visual cues to users, enhancing their navigation experience.
 
 
-# Project Planning
+## Project Planning
 
-## Strategy Plane
+### `Strategy Plane`
 
 The primary objective for **Grizk** was to develop a sophisticated e-commerce platform specializing in cutting-edge tech gadgets. The goal was to ensure a seamless, intuitive, and enjoyable shopping experience, reflecting Grizk's identity as a modern, user-centric electronics store. The platform needed to be fully responsive, offering a consistent experience across all devices, while integrating advanced features such as secure payment systems, intuitive navigation, and personalization options.
 
