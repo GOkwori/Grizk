@@ -1008,3 +1008,482 @@ The **Reset Password Page** on Grizk ensures that users can recover access to th
 * `Responsive Design`: The reset password page is fully responsive, working seamlessly across all devices, including desktops, tablets, and smartphones. Users can reset their passwords on-the-go, ensuring they have continuous access to their accounts.
 
 * `Secure Password Storage`: After successfully resetting the password, the new password is securely hashed and stored. Grizk prioritizes user security by ensuring that no plain-text passwords are saved.
+
+### `Future Implementations`
+
+As Grizk continues to grow, several future enhancements are planned to enrich user experience, improve functionality, and ensure seamless integration across modules. These implementations are geared towards making Grizk an even more robust and user-friendly platform.
+
+#### 1. Advanced Search & Filtering Capabilities
+
+* **Enhanced Search Engine**: Introduce a more advanced search engine that can understand complex queries and return more accurate results. This will help users locate specific products, blog posts, or profiles with greater ease, even when using vague search terms.
+* **Filtering Options for Blogs**: Add more filtering options for blog posts, such as sorting by popularity, most commented, and most shared. Users can also search based on tags and categories, providing a more personalized reading experience.
+* **Advanced Product Filters**: Allow users to filter products by various attributes, including price range, brand, ratings, and availability. This will make it easier for users to find the products they need without manually scrolling through multiple pages.
+
+#### 2. Wishlist Sharing and Social Integration
+
+* **Share Wishlist**: Enable users to share their wishlists via social media platforms or email. This feature will allow users to showcase their favorite products to friends and family, potentially driving more traffic and sales.
+* **Social Media Login**: Integrate social media login options (e.g., Google, Facebook) to streamline the registration process, allowing users to sign up and log in using their existing accounts on other platforms.
+* **User Product Reviews and Ratings**: Implement a review and rating system for products. Users will be able to write reviews, share their experiences, and rate products, which will help other customers make informed decisions.
+
+#### 3. Enhanced Admin Dashboard Features
+
+* **Admin Analytics Dashboard**: Add an analytics dashboard to provide admins with insights into user activity, product performance, and sales trends. This feature will enable more data-driven decisions to optimize product listings, marketing strategies, and overall user engagement.
+* **Bulk Upload for Products**: Introduce a feature that allows administrators to upload products in bulk using CSV or Excel files. This will streamline the process of adding multiple products at once, saving time and effort for the admin team.
+* **Blog Post Scheduler**: Allow admins to schedule blog posts to be published at a future date and time. This feature will make it easier to plan and manage content, ensuring a consistent flow of new blog posts.
+
+#### 4. Enhanced Cart & Checkout Experience
+
+* **Progressive Web App (PWA) Integration**: Convert Grizk into a Progressive Web App to provide a faster, more engaging experience across devices. Users can install the platform on their devices, enabling offline browsing, faster loading times, and push notifications.
+* **Saved Cart for Registered Users**: Enable users to save their cart items even if they leave the website. Upon returning, registered users will find their previous cart contents intact, encouraging them to continue shopping.
+* **One-Click Checkout**: Introduce a one-click checkout process that simplifies the purchasing experience for returning users. This will allow customers to make purchases with a single click, using pre-saved payment information.
+* **Improved Progress Bar Feature for Cart**: Enhance the progress bar to show real-time updates, discounts unlocked, or achievements as users add more items to their cart. This will gamify the shopping experience, encouraging users to purchase more to unlock rewards.
+
+#### 5. Expanded Blog Module Features
+
+* **Guest Author Contributions**: Allow guest authors to submit blog posts for review. Admins can approve and publish high-quality content from guest authors, expanding the range of topics covered on the platform.
+* **Interactive Blog Widgets**: Integrate interactive widgets like polls, quizzes, and comment sections to engage readers more deeply. This feature will make the blog module more dynamic and encourage higher user participation.
+* **SEO Tools for Blog Posts**: Implement SEO tools to help admins and authors optimize blog posts for search engines. This feature will include meta tag customization, keyword analysis, and content optimization tips, helping Grizk improve its search engine rankings.
+
+#### 6. Improved User Account Management
+
+* **Two-Factor Authentication (2FA)**: Add an extra layer of security by implementing 2FA for user accounts. This will ensure that only authorized users can access their accounts, enhancing overall platform security.
+* **Enhanced User Profiles**: Enable users to customize their profiles by adding profile pictures, cover images, and bio descriptions. This will make profiles more personalized and user-centric.
+* **Order Tracking and Management**: Improve the order tracking system to allow users to get real-time updates on the status of their orders. This will include notifications for when an order is processed, shipped, and delivered, enhancing transparency and user experience.
+
+#### 7. Personalized User Experience
+
+* **Recommendations Engine**: Develop a personalized recommendation engine that suggests products, blogs, or features based on user behavior and interests. This feature will help users discover new products and content that align with their preferences.
+* **Dynamic Cart & Wishlist Offcanvas Enhancements**: Add new features to the cart and wishlist offcanvas panels, such as suggested items, complementary product bundles, and the ability to directly apply discounts or promo codes. These additions will streamline the purchasing process and encourage users to explore more products.
+
+#### 8. Enhanced Notifications & User Engagement
+
+* **Customizable Email Notifications**: Allow users to customize their email notification settings, choosing what types of updates they want to receive (e.g., sales, new blog posts, order confirmations). This will help users stay informed without overwhelming them with unnecessary emails.
+* **In-App Notifications & Alerts**: Implement a notification system that sends alerts for important events, such as new blog posts, discounts, or updates in wishlist availability. Users can customize their notification preferences to control what alerts they receive.
+
+#### 9. Expanded Payment Options
+
+* **Multiple Payment Gateways**: Integrate multiple payment gateways, such as PayPal, Apple Pay, and Google Pay, to provide users with more payment options. This feature will cater to a broader range of customers, making transactions easier and more secure.
+* **Installment Payment Plans**: Offer installment payment plans for specific products, allowing customers to spread out the cost over time. This will make higher-priced items more accessible to users with budget constraints.
+
+#### 10. Additional Security Enhancements
+
+* **Advanced Security Features for Admin Accounts**: Implement advanced security measures for admin accounts, including login attempt monitoring, account activity logs, and restricted access settings. These features will help secure the platform against unauthorized access and potential threats.
+* **GDPR & Data Privacy Compliance**: Ensure that Grizk complies with data privacy regulations, such as the General Data Protection Regulation (GDPR). This will include features that allow users to manage their data, request data deletion, and review the platform's privacy policies.
+
+
+# Technologies & Languages Used
+
+- HTML
+- CSS
+- JavaScript
+- Python
+- [Git](https://git-scm.com/) used for version control.
+- [Github](https://www.github.com) used for online storage of codebase and Projects tool.
+- [Gitpod](https://www.gitpod.io/) as an online, cloud-based IDE for development.
+- [Uizard](https://uizard.io/) for project design planning and wireframe creation.
+- [Django](https://www.djangoproject.com/) was used as the Python framework for the site.
+- [Heroku](https://www.heroku.com) was used to host the 'Grizk' application.
+- [WAVE](https://wave.webaim.org/) to evaluate the accessibility of the site.
+
+## Libraries & Frameworks
+
+Libraries and frameworks used were dictated by the 'Boutique Ado' walkthrough from our course material with the Code Institute. This project will be upgraded on completion of the course to more recent packages to meet current standards and security packages.
+
+- [Django v3.8](https://docs.djangoproject.com/en/4.2/releases/3.8/) 
+- [AllAuth v0.41](https://django-allauth.readthedocs.io/) for user authentication and account management.
+- [Bootstrap v5.3](https://getbootstrap.com/docs/5.3/getting-started/introduction/) for template rendering.
+- [Crispy Forms](https://pypi.org/project/crispy-bootstrap5/) for form rendering.
+- [boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) for AWS CRUD with Python scripts.
+- [dj-database-url](https://pypi.org/project/dj-database-url/) for DATABASE_URL.
+- [django-countries](https://pypi.org/project/django-countries/) for country field rendering in checkout form.
+- [django-storages](https://django-storages.readthedocs.io/en/latest/) for handling static and media files.
+- [gunicorn](https://docs.djangoproject.com/en/4.2/howto/deployment/wsgi/gunicorn/) apure-Python WSGI server for UNIX.
+- [oauthlib](https://pypi.org/project/oauthlib/) OAuth request-signing logic.
+- [psycopg2](https://pypi.org/project/psycopg2/) s PostgreSQL database adapter for Python.
+- [Stripe](https://stripe.com/en-ie) for processing Grizk's payment system.
+
+## Tools & Programs
+- [DrawSQL](https://drawsql.app/) for ERD (entity relationship diagram) creation.
+- [Favicon](https://favicon.io/) for converting an icon into a favicon.
+- [amiresponsive](https://ui.dev/amiresponsive) for screenshot of Grizk on different screen sizes.
+- [Mailchimp](https://mailchimp.com/) is used for marketing with their newsletter subscription service.
+
+# Testing
+
+For a comprehensive overview of all testing conducted during the development of Grizk, please refer to the [Testing.md](testing.md) file. This document includes detailed test cases, results, and methodologies used to ensure a smooth and reliable user experience across all modules.
+
+## Solved Bugs
+
+The development of Grizk involved identifying and resolving several bugs to enhance functionality, security, and user experience. Below is a table detailing some of the notable bugs encountered and the fixes applied:
+
+| No | Bug | Description | Fix Applied | 
+| --- | --- | --- | --- | 
+| 1 | `Stripe Integration Issue` | Difficulty in getting Stripe to work in the development environment due to problems with exporting the API keys securely. | Implemented secure environment variable management to correctly load Stripe API keys, ensuring proper payment processing during development. |
+| 2 | `Webhook Configuration Error` | Webhooks were not functioning correctly due to endpoint misconfiguration, leading to failed payment confirmations. | Corrected the endpoint configuration for Stripe webhooks and ensured secure and consistent handling of payment events. |
+| 3 | `500 Internal Server Error (Migration)` | Encountered a 500 Internal Server Error when migrating the database from development to production, causing disruption in deployment. | Resolved database schema conflicts and ensured that the migration scripts were correctly aligned for a seamless transition between development and production environments. |
+| 4 | `Responsive Layout Issues` | Certain elements, such as the navigation bar and product grids, were not displaying correctly on mobile devices. | Applied additional responsive CSS fixes and media queries to ensure a seamless experience across all devices. |
+| 5 | `Search Functionality Not Working` | The search feature for products and blogs was returning incorrect or incomplete results. | Refined the search algorithm and indexing methods to accurately filter and display results based on user queries. |
+| 6 | `Missing Toast Messages` | Users were not receiving feedback messages on failed login or checkout attempts, causing confusion. | Added comprehensive error handling to ensure that users receive clear and appropriate feedback when actions fail. |
+| 7 | `Product Deletion Error` | Administrators were unable to delete products due to foreign key constraint errors related to associated cart and order entries. | Adjusted the database schema to handle deletions properly with cascade rules, ensuring related entries are managed correctly. |
+| 8 | `Offcanvas Display Error` | The Cart and Wishlist offcanvas panels would occasionally fail to load or close properly, disrupting the user experience. | Fixed the offcanvas trigger scripts and ensured proper loading and closing animations for a smoother interaction. |
+| 9 | `Progress Bar Display Issue` | The dynamic progress bar in the cart was not updating correctly, leading to inaccurate representations of cart totals. | Improved the progress bar's real-time update mechanism, ensuring it accurately reflects changes in the cart. |
+| 10 | `Blog Image Upload Error` | Blog authors faced issues while uploading images, with some images failing to save properly. | Enhanced the image upload process, including better file validation and more robust error handling to ensure reliable image storage. |
+
+## Unsolved Bugs
+
+During the development of Grizk, some bugs and issues were identified that remain unresolved. Below is a summary of these issues:
+
+| No | Bug | Description | Current Status | 
+| --- | --- | --- | --- | 
+| 1 | `Image Upload Button Styling` | The image upload button on the **Add Product Page** does not conform to the desired custom styling. Despite multiple attempts to apply specific styles (e.g., color and hover effects), the button retains default browser styling. | Ongoing investigation; possible workaround may involve using a custom file input design with better compatibility across browsers. |
+| 2 | `Cart Update Button on Mobile` | The **Update** button in the cart does not function as expected on mobile devices. Users are unable to update adjusted quantities or refresh the cart items using this button on smaller screens, despite implementing various JavaScript fixes. | Pending resolution; further testing needed to identify and address compatibility issues on mobile devices. |
+
+# Deployment
+
+## Connecting to GitHub  
+
+To begin this project from scratch, you must first create a new GitHub repository using the [Code Institute's Template](https://github.com/Code-Institute-Org/ci-full-template). This template provides the relevant tools to get you started. To use this template:
+
+1. Log in to [GitHub](https://github.com/) or create a new account.
+2. Navigate to the above CI Full Template.
+3. Click '**Use this template**' -> '**Create a new repository**'.
+4. Choose a new repository name and click '**Create repository from template**'.
+5. In your new repository space, click the purple CodeAnywhere (if this is your IDE of choice) button to generate a new workspace.
+
+## Django Project SetUp
+
+1. Install Django and supporting libraries:
+
+- ```pip install 'django<4' gunicorn```
+- ```pip install dj_database_url psycopg2``` 
+  
+1. Once you have installed any relevant dependencies or libraries, such as the ones listed above, it is important to create a **requirements.txt** file and add all installed libraries to it with the ```pip freeze --local > requirements.txt``` command in the terminal.  
+2. Create a new Django project in the terminal ```django-admin startproject Grizk .```
+3. Create a new app eg. ```python mangage.py startapp home```
+5. Add this to list of **INSTALLED_APPS** in **settings.py** - 'home',
+6. Create a superuser for the project to allow Admin access and enter credentials: ```python manage.py createsuperuser```
+7. Migrate the changes with commands: ```python manage.py migrate```
+8. An **env.py** file must be created to store all protected data such as the **DATABASE_URL** and **SECRET_KEY**. These may be called upon in your project's **settings.py** file along with your Database configurations. The **env.py** file must be added to your **gitignore** file so that your important, protected information is not pushed to public viewing on GitHub. For adding to **env.py**:
+
+- ```import os```
+- ```os.environ["DATABASE_URL"]="<copiedURLfromElephantSQL>"```
+- ```os.environ["SECRET_KEY"]="my_super^secret@key"```
+  
+For adding to **settings.py**:
+
+- ```import os```
+- ```import dj_database_url```
+- ```if os.path.exists("env.py"):```
+- ```import env```
+- ```SECRET_KEY = os.environ.get('SECRET_KEY')``` (actual key hidden within env.py)  
+
+9. Replace **DATABASES** with:
+
+```
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+  }
+```
+
+10. Set up the templates directory in **settings.py**:
+
+- Under ``BASE_DIR`` enter ``TEMPLATES_DIR = os.path.join(BASE_DIR, ‘templates’)``
+- Update ``TEMPLATES = 'DIRS': [TEMPLATES_DIR]`` with:
+
+```
+os.path.join(BASE_DIR, 'templates'),
+os.path.join(BASE_DIR, 'templates', 'allauth')
+```
+
+- Create the media, static and templates directories in the top level of the project file in the IDE workspace.
+
+11. A **Procfile** must be created within the project repo for Heroku deployment with the following placed within it: ```web: gunicorn Grizk.wsgi```
+12. Make the necessary migrations again.
+
+### Elephant SQL
+
+A new database instance can be created on [Elephant SQL](https://www.elephantsql.com/) for your project. 
+
+- Choose a name and select the **Tiny Turtle** plan, which is free.
+- Select your Region and the nearest Data Center to you. 
+- From your user dashboard, retrieve the important 'postgres://....' value. Place the value within your **DATABASE_URL**  in your **env.py** file and follow the below instructions to place it in your Heroku Config Vars.
+
+## Heroku Deployment
+
+To start the deployment process , please follow the below steps:
+
+1. Log in to [Heroku](https://id.heroku.com/login) or create an account if you are a new user.
+2. Once logged in, in the Heroku Dashboard, navigate to the '**New**' button in the top, right corner, and select '**Create New App**'.
+3. Enter an app name and choose your region. Click '**Create App**'.
+4. In the Deploy tab, click on the '**Settings**', reach the '**Config Vars**' section and click on '**Reveal Config Vars**'. Here you will enter KEY:VALUE pairs for the app to run successfully. The KEY:VALUE pairs that you will need are your:
+
+   - **DATABASE_URL**:**postgres://...**
+   - **DISABLE_COLLECTSTATIC** of value '1' (N.B Remove this Config Var before deployment),
+   - **SECRET_KEY** and value  
+   - **AWS_ACCESS_KEY** and value
+   - **AWS_SECRET_ACCESS_KEY** and value
+   - **EMAIL_HOST_PASS** and value
+   - **EMAIL_HOST_USER** and value
+   - **STRIPE_PUBLIC_KEY** and value
+   - **STRIPE_SECRET_KEY** and value
+   - **STRIPE_WH_SECRET** and value
+   - **USE_AWS** and value
+
+5. Add the Heroku host name into **ALLOWED_HOSTS** in your projects **settings.py file** -> ```['herokuappname', ‘localhost’, ‘8000 port url’].```
+2. Once you are sure that you have set up the required files including your requirements.txt and Procfile, you have ensured that **DEBUG=False**, save your project, add the files, commit for initial deployment and push the data to GitHub.
+3. Go to the '**Deploy**' tab and choose GitHub as the Deployment method.
+4. Search for the repository name, select the branch that you would like to build from, and connect it via the '**Connect**' button.
+5. Choose from '**Automatic**' or '**Manual**' deployment options, I chose the 'Manual' deployment method. Click '**Deploy Branch**'.
+6.  Once the waiting period for the app to build has finished, click the '**View**' link to bring you to your newly deployed site. If you receive any errors, Heroku will display a reason in the app build log for you to investigate. **DISABLE_COLLECTSTATIC**  may be removed from the Config Vars once you have saved and pushed an image within your project.
+
+## Google Mail Setup
+
+1. Setup a Gmail Account that will be used to hold and store the emails for your project.
+2. Logged in, navigate to **Settings** -> **Other Google Account Settings** -> **Accounts** -> **Import** -> **Other Account Settings**
+3. Activate 2-Step Verification
+4. Once verified access **App Passwords** -> **Other** -> enter a name for the password, eg Grizk.
+5. Click **Create** -> copy the 16 digit password that is generated.
+6. In your `settings.py` add the following Email Settings:
+   ![django email settings](docs/readme_images/email_settings.png)  
+   *Django Email Settings for Grizk Email setup*  
+7. Add EMAIL_HOST_PASS, EMAIL_HOST_USER variable, password and email address to your Heroku Config Vars
+    
+## AWS Config
+
+[AWS](https://aws.amazon.com) is used to store the media and static files online for Grizk. Please follow the below steps to set it up for yourself:
+
+1. Setup AWS Account and Login
+2. Create a new S3 Bucket -> name it to match your Heroku App name -> Choose the region closest to you.
+3. Allow **Clock All Public Access**, tick 'Bucket will be public' in order for the bucket to connect to Heroku. 
+4. In **Object Ownership** -> **ACLS Enabled** -> **Bucket Owner Preferred**.
+5. **Properties** tab -> turn on static web hosting and add 'index.html' and 'error.html' into the correct fields -> click **Save**
+6. In the **Permissions** tab, paste in the following CORS config:
+
+   ```
+	[
+		{
+			"AllowedHeaders": [
+				"Authorization"
+			],
+			"AllowedMethods": [
+				"GET"
+			],
+			"AllowedOrigins": [
+				"*"
+			],
+			"ExposeHeaders": []
+		}
+	]
+	```
+7. Copy your **ARN** string.
+8. From the **Bucket Policy** tab, select the **Policy Generator** link, and use the following steps:
+	- Policy Type: **S3 Bucket Policy**
+	- Effect: **Allow**
+	- Principal: `*`
+	- Actions: **GetObject**
+	- Amazon Resource Name (ARN): **paste-your-ARN-here**
+	- Click **Add Statement**
+	- Click **Generate Policy**
+	- Copy the entire Policy, and paste it into the **Bucket Policy Editor**
+
+		```shell
+		{
+			"Id": "Policy1234567890",
+			"Version": "2012-10-17",
+			"Statement": [
+				{
+					"Sid": "Stmt1234567890",
+					"Action": [
+						"s3:GetObject"
+					],
+					"Effect": "Allow",
+					"Resource": "arn:aws:s3:::bucket-name/*"
+					"Principal": "*",
+				}
+			]
+		}
+		```
+    - Before you click "Save", add `/*` to the end of the Resource key in the Bucket Policy Editor (like above).
+	- Click **Save**.
+9. In the **ACL - Access Control List** -> **Edit** -> enable **List** for **Everyone(Public Access)** -> Accept the warning.
+
+### AWS - IAM setup
+
+1. AWS Services Menu -> **Create New Group** -> add name eg. 'group-project-name'.
+2. Navigate from there to **REview Policy** page -> **User Groups** -> Select newly named group.
+3. Navigate to **Permissions** tab -> **Add Permissions** -> Click **Attach Policies**
+4. Select policy -> **Add Permissions** at the bottom, click when finished.
+5. From **JSON** tab -> select **Import Managed Policy** link -> search for **S3** -> select **Amazon3FullAccess** policy -> **Import**.
+6. Copy **ARN** from S3 Bucket again ->
+
+   ```
+		{
+			"Version": "2012-10-17",
+			"Statement": [
+				{
+					"Effect": "Allow",
+					"Action": "s3:*",
+					"Resource": [
+						"arn:aws:s3:::bucket-name",
+						"arn:aws:s3:::bucket-name/*"
+					]
+				}
+			]
+		}
+	```
+7. Click **Review Policy** -> name eg. 'policy-Grizk' -> enter a description -> **Create Policy**
+8. Search for your new policy and click it to **Attach Policy**
+9. **User Groups** -> **Add User** -> name eg. 'user-Grizk'
+10. For **Select AWS Access Type** -> select **Programmatic Access** -> Add group to 'user-Grizk' -> **Review User** -> **Create User**.
+11. Find **Download.csv** button to download immediately and save a copy.
+    - This contains the user's **Access key ID** and **Secret access key**.
+	- `AWS_ACCESS_KEY_ID` = **Access key ID**
+	- `AWS_SECRET_ACCESS_KEY` = **Secret access key** 
+
+### Media Folder Setup
+1. In Heroku Config Vars, remove `DISABLE_COLLECTSTATIC`.
+2. In AWS S3 create a new folder -> **media** -> Add project images -> **Manage Public Permissions** -> **Grant public read access to the objects** -> **Upload**
+
+### Django AWS Connect
+
+1. Packages needed to use AWS S3 Buckets in Django:
+   - `pip install boto3`
+   - `pip install django-storages`
+2. In settings.py add:
+   ```
+   INSTALLED_APPS = [
+       'storages',
+   ]
+3. In env.py ensure AWS variables are present for `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and environment variable paths are in settings.py:
+   ```
+   import os
+   from pathlib import Path
+   import dj_database_url
+
+   if os.path.isfile('env.py'):
+   import env
+   ```
+4. Ensure DATABASES are set up to connect with Heroku Postgres server in production vs SQLite3 when in local development.
+   ```
+   if "DATABASE_URL" in os.environ:
+	DATABASES = {
+		"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+	}
+    else:
+	DATABASES = {
+		"default": {
+			"ENGINE": "django.db.backends.sqlite3",
+			"NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+		}
+	}
+    ```
+5. Setup media and static file storage in settings.py:
+   ```
+   STATIC_URL = "/static/"
+   STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+
+   MEDIA_URL = "/media/"
+   MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+   ```
+6. S3 Bucket config in settings.py is as follows:
+   ```
+   if 'USE_AWS' in os.environ:
+    # Cache control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
+
+    # Bucket Config
+    AWS_STORAGE_BUCKET_NAME = 'Grizk'
+    AWS_S3_REGION_NAME = 'eu-west-1'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+    # Static and media files
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+
+    # Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+    ```
+7. In the main project directory create a 'custom_storages.py' file and add the following:
+   ```
+     from django.conf import settings
+  from storages.backends.s3boto3 import S3Boto3Storage
+
+class StaticStorage(S3Boto3Storage):
+	location = settings.STATICFILES_LOCATION
+
+class MediaStorage(S3Boto3Storage):
+	location = settings.MEDIAFILES_LOCATION
+    ```
+8. AWS S3 Bucket is now connected through the above settings and Heroku's Config Vars.
+
+## Stripe Config
+
+Stripe's API is used to handle Grizk's payment system. To setup follow the below steps:
+
+1. Create and log in to a Stripe account.
+2. In the Stripe Dashboard -> **Get your test API keys.**
+3. Add your `STRIPE_PUBLIC_KEY` and `STRIPE_SECRET_KEY` to your env.py, connect to your settings.py using your environment variables and then enter them into your project's Heroku Config Vars.
+4. Including Stripe's Webhooks creates a failsafe if a customer exits the page during payment authorisation. In Stripe's Dashboard -> **Developers** -> **Webhooks** -> **Add Endpoint**: 'herokuapp url/checkout/wh'
+5.  Choose **Retrieve all events** -> **Add Endpoint**.
+6.  Add new key **STRIPE_WH_SECRET** to env.py, settings.py and Heroku Config Vars as before.
+
+## Clone Project
+
+A local clone of this repository can be made on GitHub. Please follow the below steps:
+
+1. Navigate to GitHub and log in.
+2. The [Grizk Repository](https://github.com/g.okwori/Grizk) can be found at this location.
+3. Above the repository file section, locate the '**Code**' button.
+4. Click on this button and choose your clone method from HTTPS, SSH or GitHub CLI, copy the URL to your clipboard by clicking the '**Copy**' button.
+5. Open your Git Bash Terminal.
+6. Change the current working directory to the location you want the cloned directory to be made.
+7. Type `git clone` and paste in the copied URL from step 4.
+8. Press '**Enter**' for the local clone to be created.
+9. Using the ``pip install -r requirements.txt`` command, the dependencies and libraries needed for FreeFido will be installed.
+10. Set up your **env.py** file and from the above steps for ElephantSQL, gather the Elephant SQL url for addition to your code and add your SECRET_KEY and STRIPE/AWS keys if using these services.
+11. Ensure that your **env.py** file is placed in your **.gitignore** file and follow the remaining steps in the above Django Project Setup section before pushing your code to GitHub.
+
+## Fork Project
+
+A copy of the original repository can be made through GitHub. Please follow the below steps to fork this repository:  
+
+1. Navigate to GitHub and log in.  
+2. Once logged in, navigate to this repository using this link [Grizk Repository](https://github.com/g.okwori/Grizk).
+3. Above the repository file section and to the top, right of the page is the '**Fork**' button, click on this to make a fork of this repository.
+4. You should now have access to a forked copy of this repository in your Github account.
+5. Follow the above Django Project Steps if you wish to work on the project.
+
+
+# Credits
+
+## Code
+
+The following blogs/tutorials complimented my learning for this project, alongside the [Code Institute's](https://codeinstitute.net/ie/) Learning Content. The Portfolio Project 5 - Boutique Ado provided a foundation which I took apart and altered to fit my project's design
+
+- [Django Docs](https://www.djangoproject.com/)
+- [Bootstrap Docs](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
+- [Code Institute's](https://github.com/Code-Institute-Org>) Boutique Ado walkthroughs
+- [Amy Richardson's Everneed](https://github.com/amylour/everneed/) adopted the newsletter feature design and mailchimp integration idea.
+
+
+## Media
+
+- [Currys](https://www.currys.co.uk/) for product images used within the site
+- [Wallpaper Access](https://wallpaperaccess.com/3d-4k) for blog images used within the site
+- [Chat GPT](https://www.chat.openai.com) was used to produce the content text for the blog section prompted by myself with several talk points about Artificial Intelligence and Tech trends.
+
+
+## Acknowledgements
+
+- A huge thanks to my family for their continued support during this project and Diploma and the many, many cups of coffee sent my way. 
+- Much gratitude is extended to my mentor Jubril Akolade for his expert guidance and advice during this Diploma, which gave me the confidence to make the most out of every project.
+- A very big thank you to my cohort facilitator, Amy Richardson for providing guidance and educational resources throughout the development process.
+
