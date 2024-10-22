@@ -41,7 +41,8 @@ def add_to_wishlist(request, product_id):
         messages.warning(
             request, f'{product.name} is already in your Wishlist.')
 
-    return redirect(reverse('products'))
+    return redirect(reverse('product_detail', args=[product.id]))
+    
 
 
 @login_required

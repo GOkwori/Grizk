@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseForbidden
@@ -37,7 +37,7 @@ def add_blog(request):
             blog.save()
             # Success message
             messages.success(request, "Blog post created successfully!")
-            return redirect('blog_list')  # Redirect to blog_list after saving
+            return redirect(reverse('blog_detail', args=[blog.id]))  # Redirect to blog_detail after saving
         else:
             messages.error(
                 request, "Error creating blog post. Please check the form.")
@@ -73,6 +73,7 @@ def edit_blog(request, blog_id):
                 request, "Error updating blog post. Please check the form.")
     else:
         form = BlogForm(instance=blog)
+        messages.info(request, f'You are editing {blog.title}')
 
     return render(request, 'blog/blog_form.html', {'form': form, 'blog': blog})
 

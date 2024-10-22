@@ -1,57 +1,84 @@
+<!-- Toast Container -->
 <div class="toast-container">
+    <!-- Toast Component -->
     <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="true">
-        <div class="toast-header">
+        <!-- Toast Header -->
+        <div class="toast-header text-bg-success">
             <strong class="me-auto">Success!</strong>
             <small>Just now</small>
             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
+        
+        <!-- Toast Body -->
         <div class="toast-body">
             <div class="row">
                 <div class="col">
+                    <!-- Display message dynamically -->
                     {{ message }}
                     <hr class="mt-1 mb-3">
                 </div>
             </div>
+            
+            <!-- Cart Details Section (conditional) -->
             {% if grand_total and not on_profile_page %}
-            <p class="py-1">Your Cart ({{ product_count }})</p>
-            <div class="cart-notification-wrapper">
-                {% for item in cart_items %}
+                <p class="py-1">Your Cart ({{ product_count }})</p>
+                
+                <!-- Cart Notification Wrapper -->
+                <div class="cart-notification-wrapper">
+                    <!-- Loop through cart items and display each one -->
+                    {% for item in cart_items %}
+                        <div class="row">
+                            <div class="col-3 my-1">
+                                <!-- Product Image: Show product image if available, otherwise show a default image -->
+                                {% if item.product.image %}
+                                    <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                {% else %}
+                                    <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                {% endif %}
+                            </div>
+                            <div class="col-9">
+                                <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                                <p class="my-0 small">Size: 
+                                    {% if item.product.has_sizes %}
+                                        {{ item.size|upper }}
+                                    {% else %}
+                                        N/A
+                                    {% endif %}
+                                </p>
+                                <p class="my-0 small">Qty: {{ item.quantity }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                
+                <!-- Estimated Total Section -->
                 <div class="row">
-                    <div class="col-3 my-1">
-                        {% if item.product.image %}
-                        <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                        {% else %}
-                        <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                    <div class="col">
+                        <strong>
+                            <p class="mt-3 mb-1">
+                                Estimated Total
+                                {% if free_delivery_delta > 0 %}
+                                    (Exc. delivery)
+                                {% endif %}:
+                                <span class="float-end">£{{ total|floatformat:2 }}</span>
+                            </p>
+                        </strong>
+                        
+                        <!-- Free Delivery Notification -->
+                        {% if free_delivery_delta > 0 %}
+                            <p class="mb-0 p-2 bg-white text-black shadow-sm text-center">
+                                Spend <strong>£{{ free_delivery_delta }}</strong> more to get free next day delivery!
+                            </p>
                         {% endif %}
-                    </div>
-                    <div class="col-9">
-                        <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                        <p class="my-0 small">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{%
-                            endif %}</p>
-                        <p class="my-0 small">Qty: {{ item.quantity }}</p>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-            <div class="row">
-                <div class="col">
-                    <strong>
-                        <p class="mt-3 mb-1">
-                            Estimated Total{% if free_delivery_delta > 0 %} (Exc. delivery){% endif %}:
-                            <span class="float-end">£{{ total|floatformat:2 }}</span>
-                        </p>
-                    </strong>
-                    {% if free_delivery_delta > 0 %}
-                    <p class="mb-0 p-2 bg-white text-black shadow-sm text-center">
-                        Spend <strong>£{{ free_delivery_delta }}</strong> more to get free next day delivery!
-                    </p>
-                    {% endif %}
-                    <div class="text-center mt-2">
-                        <a href="{% url 'view_cart' %}" class="btn" id="toast-btn" role="button"><i
-                                class="fa-solid fa-lock me-2"></i>Secure Checkout</a>
+                        
+                        <!-- Secure Checkout Button -->
+                        <div class="text-center mt-2">
+                            <a href="{% url 'view_cart' %}" class="btn" id="toast-btn" role="button">
+                                <i class="fa-solid fa-lock me-2"></i>Secure Checkout
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
             {% endif %}
         </div>
     </div>
