@@ -1,5 +1,8 @@
 # Testing
 
+![Profile Page](./documentation/responsiveness/intro_screen.PNG)
+
+
 This is the TESTING file for the [grizk](https://ecommerce-grizk-2f04b3042fc5.herokuapp.com/) website.
 
 Return back to the [README.md](README.md) file.
