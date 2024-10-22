@@ -36,32 +36,23 @@ AccountSphere empowers you to manage your financial workflows seamlessly in one 
 ![Contributors](https://img.shields.io/badge/Contributors%20-%201%20-%20navy)
 ![Testing](https://img.shields.io/badge/Testing%20-%20Passed%20-%20lime)
 
-## Table of Contents
+## Contents
 
 - [Grizk](#Grizk)
   - [Introduction](#introduction)
-  - [Table of Contents](#table-of-contents)
+  - [Table of Contents](#contents)
   - [Overview](#overview)
   - [Customer Goals](#customer-goals)
   - [Business Goals](#business-goals)
 - [UX/UI - User Experience/User Interface](#uxui---user-experienceuser-interface)
   - [Design Inspiration](#design-inspiration)
-    - [colour Scheme](#colour-scheme)
-    - [Typography \& Iconography](#typography--iconography)
+  - [colour Scheme](#colour-scheme)
+  - [Typography \& Iconography](#typography--iconography)
 - [Project Planning](#project-planning)
   - [Strategy Plane](#strategy-plane)
     - [Site Goals](#site-goals)
   - [Agile Methodologies](#agile-methodologies)
-    - [MoSCoW Prioritization](#moscow-prioritization)
-    - [Sprints](#sprints)
-  - [Marketing](#marketing)
   - [User Stories](#user-stories)
-    - [Visitor User Stories](#visitor-user-stories)
-    - [Epic - Home View \& User Account](#epic---home-view--user-account)
-    - [Epic - Products](#epic---products)
-    - [Epic - Basket Management \& Purchasing](#epic---basket-management--purchasing)
-    - [Epic - Wishlist](#epic---wishlist)
-    - [Epic - Newsletter](#epic---newsletter)
   - [Scope Plane](#scope-plane)
   - [Structural Plane](#structural-plane)
   - [Skeleton \& Surface Planes](#skeleton--surface-planes)
@@ -72,7 +63,7 @@ AccountSphere empowers you to manage your financial workflows seamlessly in one 
   - [User View - Guests/Account Holders](#user-view---guestsaccount-holders)
   - [CRUD Functionality](#crud-functionality)
   - [Features Showcase](#features-showcase)
-  - [Future Features](#future-features)
+  - [Future Implementations](#future-implementations)
 - [Technologies \& Languages Used](#technologies--languages-used)
   - [Libraries \& Frameworks](#libraries--frameworks)
   - [Tools \& Programs](#tools--programs)
@@ -92,7 +83,6 @@ AccountSphere empowers you to manage your financial workflows seamlessly in one 
 - [Credits](#credits)
   - [Code](#code)
   - [Media](#media)
-    - [Additional reading/tutorials/books/blogs](#additional-readingtutorialsbooksblogs)
   - [Acknowledgements](#acknowledgements)
 
 
@@ -136,13 +126,13 @@ A minimalist logo, designed using [LogoAI](https://www.logoai.com), is prominent
 ![Grizk logo](documentation/features/logo.PNG)  
 *Grizk logo*
 
-### `Dark Theme with Electric Accents`
+#### Dark Theme with Electric Accents
 
 The dark-themed design, with a solid black background, was chosen not only for its sleek, high-tech appearance but also to provide a comfortable, strain-free experience for users browsing for extended periods. Orange-red highlights are strategically used to emphasize calls to action, such as "Add to Cart" and "Checkout," ensuring these elements are easily noticeable.
 
 Buttons across the site feature a smooth hover effect where the colours invert — from black with red accents to a red background with black text. This visual feedback enhances user interactions and draws attention to clickable elements.
 
-### `Header & Navigation`
+#### Header & Navigation
 
 The header employs a radial gradient (`#220202` to `#000000`), giving a subtle, polished look that matches the dark theme. Navigation elements are styled with bold, orange-red text that is easy to read and aligns with the overall visual consistency. 
 
@@ -151,28 +141,28 @@ The navigation bar remains sticky across all screens, ensuring users can access 
 ![Header Navigation](documentation/features/navigation.PNG)  
 *Intuitive header and navigation for streamlined browsing*
 
-### `Footer Design`
+#### Footer Design
 
 The footer continues the radial gradient design, providing a cohesive finish to each page. It features social media icons that subtly increase in size when hovered over, inviting users to connect without overwhelming the screen. Subscription forms are embedded within bordered panels, elegantly styled with orange-red outlines that stand out against the dark background, encouraging users to engage with newsletters and updates.
 
 ![Footer Design](documentation/features/footer.PNG)  
 *Footer with gradient design and intuitive social icons*
 
-### `Product Showcase & Visual Feedback`
+#### Product Showcase & Visual Feedback
 
 Product images are displayed in a clean, distraction-free layout to ensure the gadgets are the center of attention. Each product card is designed to hover slightly when interacted with, giving a sense of depth and enhancing the overall user experience. The site employs a flexbox grid system to arrange products dynamically, ensuring consistency across varying screen sizes.
 
 Visual feedback is implemented throughout the interface, including subtle animations and hover effects. For example, toasts pop up on the right side of the screen to confirm actions like adding items to the cart or removing products from the wishlist, ensuring users are always informed.
 
-### `Dual Carousel Implementation`
+#### Dual Carousel Implementation
 
-#### Home Page Carousel (Landing)
+##### Home Page Carousel (Landing)
 
 Upon entering the Grizk site, users are greeted by a captivating carousel on the homepage. This landing carousel showcases the latest promotions, featured products, and exclusive offers. Each slide features high-resolution product images, a brief description, and a prominent call-to-action button ("Explore Now), styled with the site's signature colours. 
 
 The carousel uses smooth slide transitions (`transform 0.3s ease-in-out`) to create an engaging browsing experience. Users can navigate through slides using intuitive swipe gestures on mobile devices or click through arrows on desktops. The design ensures a seamless, immersive first impression, setting the tone for a sophisticated shopping journey.
 
-#### Top Deals Carousel
+##### Top Deals Carousel
 
 Further down on the homepage, a secondary carousel highlights top deals, seasonal promotions, and special offers. This section follows a similar design but emphasizes discounts and limited-time offers. Each product card within the carousel is designed to slightly enlarge on hover (`scale(1.05)`), giving a sense of interactivity and depth. The hover effect draws users' attention to these key deals, encouraging exploration.
 
@@ -184,15 +174,15 @@ Both carousels adapt seamlessly across devices, ensuring consistent viewing expe
 ![Top Deals Carousel](./documentation/features/carousel_deals.PNG)  
 *Visually engaging carousel showcasing top deals*
 
-### `Cart & Wishlist Off-Canvas Design`
+#### Cart & Wishlist Off-Canvas Design
 
-#### Off-Canvas Cart
+##### Off-Canvas Cart
 
 Grizk introduces an off-canvas cart feature that slides in from the side of the screen when activated. This allows users to quickly view and manage their cart items without leaving the current page. 
 
 The cart's design follows the dark theme, with the bright accent colours ensuring important details like item names, quantities, and prices stand out. Buttons to "Checkout" and "Continue Shopping" invert colours on hover, providing immediate feedback to user actions. Each product listed has quantity adjustment controls and a "Remove" button, giving users full control over their purchases.
 
-#### Off-Canvas Wishlist
+##### Off-Canvas Wishlist
 
 The off-canvas wishlist functions similarly to the cart, enabling users to save products for later. This panel slides in smoothly, showing all saved products with options to add them to the cart or remove them from the wishlist. The same dark colour scheme and accent colours maintain consistency, ensuring users know they are still within the Grizk environment.
 
@@ -202,7 +192,7 @@ Both off-canvas panels are designed to be responsive, adjusting seamlessly to sm
 *Seamlessly integrated off-canvas panels for cart and wishlist*
 
 
-### `Responsive Design & Media Queries`
+#### Responsive Design & Media Queries
 
 Grizk’s design is fully responsive, utilizing media queries to adapt layouts for different devices. For instance, elements adjust seamlessly between mobile views (`max-width: 320px`) and larger desktops (`min-width: 1801px`), ensuring a smooth and consistent experience. Features like dropdowns, carousels, and off-canvas components scale appropriately, providing intuitive navigation and user interaction across all platforms.
 
@@ -214,7 +204,7 @@ Grizk’s design is fully responsive, utilizing media queries to adapt layouts f
 
 *Consistent, responsive design for all screen sizes*
 
-###  `Animations & Transitions`
+####  Animations & Transitions
 
 Animations are carefully integrated to enhance user interaction without detracting from the browsing experience. For instance, product images gently enlarge on hover (`scale(1.05)`) to draw focus, while buttons smoothly change colour on hover, indicating interactivity. This provides a polished, fluid user experience that aligns with Grizk’s futuristic aesthetic.
 
