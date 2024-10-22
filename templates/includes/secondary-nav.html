@@ -86,7 +86,7 @@
 
                 <!-- Audio Dropdown -->
                 <li class="list-inline-item dropdown ms-2 me-2">
-                    <button class="nav-link p-2 d-flex align-items-center btn" id="tv-audio-dropdown" data-bs-toggle="dropdown"
+                    <button class="nav-link p-2 d-flex align-items-center btn" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         <i class="fa-solid fa-tv me-1"></i>
                         <span>Audio</span>
@@ -99,7 +99,7 @@
 
                 <!-- Blog -->
                 <li class="list-inline-item dropdown ms-2 me-2">
-                    <button class="nav-link p-2 d-flex align-items-center btn" id="tv-audio-dropdown" data-bs-toggle="dropdown"
+                    <button class="nav-link p-2 d-flex align-items-center btn" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         <i class="fa-solid fa-blog me-1"></i>
                         <span>Blog</span>
@@ -111,12 +111,12 @@
              
                 <!-- Account Dropdown -->
                 <li class="nav-item list-inline-item dropdown ms-2 me-2">
-                    <button class="nav-link p-2 d-flex align-items-center btn" id="tv-audio-dropdown" data-bs-toggle="dropdown"
+                    <button class="nav-link p-2 d-flex align-items-center btn" data-bs-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                         <i class="fa-solid fa-user me-1"></i>
                         <span>Account</span>
                     </button>
-                    <ul class="dropdown-menu border-0 custom-dropdown" aria-labelledby="account-dropdown">
+                    <ul class="dropdown-menu border-0 custom-dropdown" aria-labelledby="tv-audio-dropdown">
                         {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
                                 <li><a href="{% url 'admin_dashboard' %}" class="dropdown-item"><i class="fa-solid fa-shield-halved me-1 mt-1"></i> Product Dashboard</a></li>
