@@ -109,17 +109,20 @@ span.btn.btn-black.rounded-0.btn-file {
 }
 
 /* Navigation container */
-#nav-container {
+#nav-container,
+#nav-container-1 {
     backdrop-filter: blur(10px);
     margin: 0 0.5em 0 0.5em;
 }
 
 
-#nav-container a {
+#nav-container a,
+#nav-container-1 a {
     color: #ff4500;
 }
 
-#nav-container img {
+#nav-container img,
+#nav-container-1 img {
     height: 40px;
     width: 40px;
     border-radius: 10px;
@@ -134,14 +137,16 @@ nav button {
     color: #fff;
 }
 
-#nav-container button {
+#nav-container button,
+#nav-container-1 button {
     background-color: #000;
     border-color: #ff4500;
     color: #ff4500;
 
 }
 
-#nav-container button:hover {
+#nav-container button:hover,
+#nav-container-1 button:hover {
     background-color: #ff4500;
     border-color: #ff4500;
     color: #000;
@@ -258,8 +263,10 @@ nav button {
 }
 
 /* Button Styles for Wishlist and Cart */
+#wishlist-1 button,
 #wishlist button,
-#cart button {
+#cart button,
+#cart-1 button {
     border: #ff4500 solid 1px;
 }
 
@@ -1075,7 +1082,8 @@ input#new-image {
         font-size: 10px;
     }
 
-    #nav-container button {
+    #nav-container button,
+    #nav-container-1 button {
         margin-right: 6px;
     }
 
@@ -1158,7 +1166,8 @@ input#new-image {
         font-size: 10px;
     }
 
-    #nav-container button {
+    #nav-container button,
+    #nav-container-1 button {
         margin-right: 6px;
     }
 
@@ -1258,7 +1267,8 @@ input#new-image {
         border-color: #ff4500 !important;
     }
 
-    #nav-container button {
+    #nav-container button,
+    #nav-container-1 button {
         margin-right: 6px;
     }
 
@@ -1281,11 +1291,14 @@ input#new-image {
     }
 
     #wishlist button,
-    #cart button {
+    #wishlist-1 button,
+    #cart button,
+    #cart-1 button {
         width: 130%;
     }
 
-    li#wishlist {
+    li#wishlist,
+    li#wishlist-1 {
         margin-right: 20px;
     }
 
@@ -1367,11 +1380,14 @@ input#new-image {
     }
 
     #wishlist button,
-    #cart button {
+    #wishlist-1 button,
+    #cart button,
+    #cart-1 button {
         width: 130%;
     }
 
-    li#wishlist {
+    li#wishlist, 
+    li#wishlist-1 {
         margin-right: 20px;
     }
 

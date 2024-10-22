@@ -1,8 +1,7 @@
-<nav class="row p-0 pb-2 navbar d-none d-sm-block navbar-expand-lg navbar-light" id="nav-container">
+<nav class="row p-0 pb-2 navbar d-none d-sm-block navbar-expand-lg navbar-light" id="nav-container-1">
     <div class="col sec-nav-container p-0">
         <div class="sec-nav-inner d-inline">
             <ul class="list-inline m-0">
-
                 <!-- All Products Dropdown -->
                 <li class="list-inline-item dropdown ms-2 me-2">
                     <button class="btn btn-primary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -10,20 +9,16 @@
                     </button>
                     <ul class="dropdown-menu custom-dropdown">
                         {% if request.user.is_authenticated %}
-                        <h5 class="dropdown-title my-0 ms-2">
+                        <p class="dropdown-title my-0">
                             <strong>Hello, {{ request.user.username|title }}</strong>
-                        </h5>
+                        </p>
                         {% else %}
-                        <h5 class="dropdown-title my-0 ms-2"><strong>Hello, sign in</strong></h5>
+                        <p class="dropdown-title my-0"><strong>Hello, sign in</strong></p>
                         {% endif %}
-                        <hr class="my-1">
                         <li><a href="{% url 'products' %}" class="dropdown-item">All Products</a></li>
-                        <li><a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                        </li>
-                        <li><a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item">By
-                                Rating</a></li>
-                        <li><a href="{% url 'products' %}?sort=category&direction=desc" class="dropdown-item">By
-                                Category</a></li>
+                        <li><a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a></li>
+                        <li><a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item">By Rating</a></li>
+                        <li><a href="{% url 'products' %}?sort=category&direction=desc" class="dropdown-item">By Category</a></li>
                     </ul>
                 </li>
 
@@ -37,15 +32,11 @@
                         </div>
                     </a>
                     <ul class="dropdown-menu custom-dropdown" aria-labelledby="computing-dropdown">
-                        <li><a href="{% url 'products' %}?category=Laptops" class="dropdown-item p-2">Laptops &
-                                Tablets</a></li>
-                        <li><a href="{% url 'products' %}?category=Desktop Computers" class="dropdown-item p-2">Desktop
-                                Computers</a></li>
+                        <li><a href="{% url 'products' %}?category=Laptops" class="dropdown-item p-2">Laptops & Tablets</a></li>
+                        <li><a href="{% url 'products' %}?category=Desktop Computers" class="dropdown-item p-2">Desktop Computers</a></li>
                         <li><a href="{% url 'products' %}?category=Chargers" class="dropdown-item p-2">Chargers</a></li>
-                        <li><a href="{% url 'products' %}?category=Batteries" class="dropdown-item p-2">Batteries</a>
-                        </li>
-                        <li><a href="{% url 'products' %}?category=Laptops,Desktop Computers,Chargers,Batteries"
-                                class="dropdown-item p-2">All Computing</a></li>
+                        <li><a href="{% url 'products' %}?category=Batteries" class="dropdown-item p-2">Batteries</a></li>
+                        <li><a href="{% url 'products' %}?category=Laptops,Desktop Computers,Chargers,Batteries" class="dropdown-item p-2">All Computing</a></li>
                     </ul>
                 </li>
 

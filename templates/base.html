@@ -74,7 +74,6 @@
                 <!-- Navbar collapse -->
                 <div class="col-md-4 col-lg-4 justify-content-end container" id="navbarSupportedContent">
                     <ul class="navbar-nav mb-lg-0 ms-lg-4">
-
                         {% if user.is_authenticated %}
                         <!-- Wishlist -->
                         <li class="nav-item list-inline-item" id="wishlist">
@@ -82,7 +81,7 @@
                                 class="{% if user_wishlist %} font-weight-bold{% else %}text{% endif %} nav-link btn btn-primary"
                                 type="button" data-bs-toggle="offcanvas" data-bs-target="#wishlistOffcanvas"
                                 aria-controls="wishlistOffcanvas">
-                                <div class="text-center">
+                                <span class="text-center">
                                     <i class="fa-solid fa-heart mt-1"></i>
                                     <p class="my-0">
                                         {% if wishlist_count %}
@@ -91,7 +90,7 @@
                                         0
                                         {% endif %}
                                     </p>
-                                </div>
+                                </span>
                             </button>
                         </li>
                         {% endif %}
@@ -101,7 +100,7 @@
                                 class="{% if cart_items %} font-weight-bold{% else %}text{% endif %} nav-link btn btn-primary"
                                 type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas"
                                 aria-controls="cartOffcanvas">
-                                <div class="text-center">
+                                <span class="text-center">
                                     <i class="fa-solid fa-cart-shopping me-1 mt-1"></i>
                                     <p class="my-0">
                                         {% if total %}
@@ -110,7 +109,7 @@
                                         £0.00
                                         {% endif %}
                                     </p>
-                                </div>
+                                </span>
                             </button>
                         </li>
                     </ul>
@@ -307,8 +306,6 @@
     {{ block.super }}
     {% include 'includes/base_script.html' %}
     {% endblock %}
-
-
 </body>
 
 </html>

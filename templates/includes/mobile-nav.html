@@ -15,12 +15,12 @@
 
             {% if user.is_authenticated %}
             <!-- Wishlist -->
-            <li class="nav-item list-inline-item" id="wishlist">
+            <li class="nav-item list-inline-item" id="wishlist-1">
                 <button
                     class="{% if user_wishlist %} font-weight-bold{% else %}text{% endif %} nav-link btn btn-primary"
                     type="button" data-bs-toggle="offcanvas" data-bs-target="#wishlistOffcanvas"
                     aria-controls="wishlistOffcanvas">
-                    <div class="text-center">
+                    <span class="text-center">
                         <i class="fa-solid fa-heart mt-1"></i>
                         <p class="my-0">
                             {% if wishlist_count %}
@@ -29,16 +29,16 @@
                             0
                             {% endif %}
                         </p>
-                    </div>
+                    </span>
                 </button>
             </li>
             {% endif %}
             <!-- Cart -->
-            <li class="nav-item list-inline-item" id="cart">
+            <li class="nav-item list-inline-item" id="cart-1">
                 <button class="{% if cart_items %} font-weight-bold{% else %}text{% endif %} nav-link btn btn-primary"
                     type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas"
                     aria-controls="cartOffcanvas">
-                    <div class="text-center">
+                    <span class="text-center">
                         <i class="fa-solid fa-cart-shopping me-1 mt-1"></i>
                         <p class="my-0">
                             {% if total %}
@@ -47,7 +47,7 @@
                             £0.00
                             {% endif %}
                         </p>
-                    </div>
+                    </span>
                 </button>
             </li>
         </ul>
@@ -57,7 +57,7 @@
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
             {% if request.user.is_authenticated %}
-            <h5 class="dropdown-title my-0 ms-2" id="offcanvasNavbarLabel">
+            <h5 class="dropdown-title my-0" id="offcanvasNavbarLabel">
                 <strong>Hello, {{ request.user.username|title }}</strong>
             </h5>
             {% else %}
@@ -73,43 +73,40 @@
                     <a class="nav-link" href="{% url 'products' %}"><i class="fas fa-bars me-1"></i> All Products</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"
-                        href="{% url 'products' %}?category=Laptops,Desktop Computers,Chargers,Batteries"><i
-                            class="fa-solid fa-laptop me-1"></i> Computing</a>
+                    <a class="nav-link" href="{% url 'products' %}?category=Laptops,Desktop Computers,Chargers,Batteries">
+                        <iclass="fa-solid fa-laptop me-1"></i> Computing</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'products' %}?category=Gaming PC"><i
-                            class="fa-solid fa-gamepad me-1"></i> Gaming</a>
+                    <a class="nav-link" href="{% url 'products' %}?category=Gaming PC">
+                        <i class="fa-solid fa-gamepad me-1"></i> Gaming</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"
-                        href="{% url 'products' %}?category=Apple Iphone,Google Pixel,Android Smartphone,Apple Ipad,Android Tablets"><i
-                            class="fa-solid fa-mobile-alt me-1"></i> Smartphones</a>
+                    <a class="nav-link" href="{% url 'products' %}?category=Apple Iphone,Google Pixel,Android Smartphone,Apple Ipad,Android Tablets">
+                        <i class="fa-solid fa-mobile-alt me-1"></i> Smartphones</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'products' %}?category=Earbud Headphones,Bluetooth Headphones"><i
-                            class="fa-solid fa-headphones me-1"></i> Headphones</a>
+                    <a class="nav-link" href="{% url 'products' %}?category=Earbud Headphones,Bluetooth Headphones">
+                        <i class="fa-solid fa-headphones me-1"></i> Headphones</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item mb-3">
                     <a class="nav-link" href="{% url 'blog_list' %}"><i class="fa-solid fa-blog me-1"></i> Blog</a>
                 </li>
 
-                <br>
-                <h5 class="dropdown-title my-0 ms-2" id="offcanvasNavbarLabel">
+                <p class="dropdown-title mt-2">
                     <strong> <i class="fa-solid fa-user me-1"></i> Account</strong>
-                </h5>
+                </p>
                 <hr>
                 <div class="" aria-labelledby="">
                     {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
                     <li class="nav-item">
-                        <a href="{% url 'admin_dashboard' %}" class="nav-link"><i
-                                class="fa-solid fa-shield-halved  me-1 mt-1"></i> Dashboard</a>
+                        <a href="{% url 'admin_dashboard' %}" class="nav-link">
+                            <i class="fa-solid fa-shield-halved  me-1 mt-1"></i> Dashboard</a>
                     </li>
                     {% endif %}
                     <li class="nav-item">
-                        <a href="{% url 'profile' %}" class="nav-link"><i class="fa-solid fa-address-card me-1"></i> My
-                            Profile</a>
+                        <a href="{% url 'profile' %}" class="nav-link"><i class="fa-solid fa-address-card me-1"></i> 
+                            My Profile</a>
                     </li>
                     <li class="nav-item">
                         <a href="{% url 'account_logout' %}" class="nav-link"><i
@@ -129,3 +126,4 @@
             </ul>
         </div>
     </div>
+</div>
