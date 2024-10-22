@@ -14,10 +14,10 @@ With technology evolving rapidly, there is an increasing demand for reliable and
 
 For testing purchases, you can use the following [Stripe Dummy Card](https://stripe.com/docs/testing) details:
 
-- **Success Card Number:** 4242-4242-4242-4242
-- **Expiry Date:** Any future date in MM/YY format
-- **CVN:** Any 3-digit number
-- **Postcode:** Any 5 numerals  
+- **`Success Card Number:`** 4242-4242-4242-4242
+- **`Expiry Date:`** Any future date in MM/YY format
+- **`CVV:`** Any 3-digit number
+- **`Zip/Postcode:`** Any 5 numerals  
 
 **Note:** Any payments made using a valid debit/credit card will not be processed, and no charges will be applied. Orders placed for testing purposes will not be fulfilled.
 
