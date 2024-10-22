@@ -41,44 +41,44 @@ I have had to follow a different approach for validating my HTML for this projec
 - Paste the copied code into the [validate by input](https://validator.w3.org/#validate_by_input) option.
 - Check for errors and warnings, fix any issues, revalidate by following the above steps and record the results.
 
-![html validation](docs/testing_images/html_validation.png)  
+![html validation](./documentation/testing/validation/html/home.PNG) 
 
 All HTML pages were validated and received a 'No errors or warning to show' for code that I had written, result as shown above.
 
-| HTML Source Code/Page | Errors | Warnings | Screen Shot |
-| ---- | ------ | -------- | -------- |
-| Home | 0 | 0 | |
-| Log In | 0 | 0 |
-| Register | 0 | 0 |
-| Account | 0 | 0 |
-| Wishlist | 0 | 0 |
-| Admin Dashboard | 0 | 0 |
-| Admin Article List | 0 | 0 |
-| Admin Add Article | 0 | 0 |
-| Admin Edit Article | 0 | 0 |
-| Admin Delete Article | 0 | 0 |
-| Admin Product List | 0 | 0 |
-| Admin Product Detail | 0 | 0 |
+| HTML Source Code/Page | Errors | Warnings | Status |
+| ---- | ------ | -------- | -------- |-------- |
+| Home | None | None | Passed |
+| Log In | 0 | 0 | | 
+| Register | 0 | 0 | | 
+| Account | 0 | 0 | | 
+| Wishlist | 0 | 0 | | 
+| Admin Dashboard | 0 | 0 | | 
+| Admin Article List | 0 | 0 | | 
+| Admin Add Article | 0 | 0 | | 
+| Admin Edit Article | 0 | 0 | | 
+| Admin Delete Article | 0 | 0 | | 
+| Admin Product List | 0 | 0 | | 
+| Admin Product Detail | 0 | 0 | | 
 | Admin Add Product | ID error -> Errors/Warnings present as a result of Bootstraps form elements, not from the code that I have created. The name ID from the contact form html within the base.html is clashing with the name ID from the add product html. These ID elements are embedded within the Bootstrap forms and are inaccessible to me without breaking my code up and reconfiguring the code. This is the same for the `<p>` and `<strong>` error. This was double checked with the Assessment Team Oct'23 who confirmed that code not authored by myself, and is Bootstrap/CrispyForms rendering, would not be subject to assessment mark down as long as it is referenced in the README. I will reinvestigate and break into the code when my Diploma has been awarded to remove errors like these. ![html validation duplicate id bootstrap forms](docs/testing_images/add_prod_er.png) | As before |
-| Admin Edit Product | 0 | 0 |
-| Admin Delete Product | 0 | 0 |
-| All Products | 0 | 0 |
-| User Article List | 0 | 0 |
-| Bag - Empty | 0 | 0 |
-| Bag - Products | 0 | 0 |
+| Admin Edit Product | 0 | 0 | | 
+| Admin Delete Product | 0 | 0 | | 
+| All Products | 0 | 0 | | 
+| User Article List | 0 | 0 | | 
+| Bag - Empty | 0 | 0 | | 
+| Bag - Products | 0 | 0 | | 
 | Checkout | Errors/Warnings present as a result of Bootstraps form elements, not from the code that I have created. The name/email ID from the contact form html within the base.html is clashing with the name/email ID from the checkout html. These ID elements are embedded within the Bootstrap forms and are inaccessible to me without breaking my code up and reconfiguring the code. This was double checked with the Assessment Team Oct'23 who confirmed that code not authored by myself, and is Bootstrap/CrispyForms rendering, would not be subject to assessment mark down as long as it is referenced in the README. I will reinvestigate and break into the code when my Diploma has been awarded to remove errors like these. ![html validation duplicate id bootstrap forms](docs/testing_images/contactus_form_id.png) ![html validation duplicate id bootstrap forms](docs/testing_images/contact_html_issue.png) | As before |
-| Wear| 0 | 0 |
-| Care | 0 | 0 |
-| Eat | 0 | 0 |
-| Travel | 0 | 0 |
-| Read | 0 | 0 |
-| Profile/Account | 0 | 0 |
-| Order History | 0 | 0 |
-| Wishlist | 0 | 0 |
-| Forgot Password | 0 | 0 |
-| Error 403 | 0 | 0 |
-| Error 404 | 0 | 0 |
-| Error 500 | 0  | 0 |
-| Footer - Contact Us & Thank You page | 0 | 0 |
-| Footer    | Privacy Policy | External link - N/A | External link - N/A |
+| Wear| 0 | 0 | | 
+| Care | 0 | 0 | | 
+| Eat | 0 | 0 | | 
+| Travel | 0 | 0 | | 
+| Read | 0 | 0 | | 
+| Profile/Account | 0 | 0 | | 
+| Order History | 0 | 0 | | 
+| Wishlist | 0 | 0 | | 
+| Forgot Password | 0 | 0 | | 
+| Error 403 | 0 | 0 | | 
+| Error 404 | 0 | 0 | | 
+| Error 500 | 0  | 0 | | 
+| Footer - Contact Us & Thank You page | 0 | 0 | | 
+| Footer    | Privacy Policy | External link - N/A | External link - N/A | | 
 | Footer - Terms & Conditions   | Outside of my control there are multiple errors present as this page contains HTML Content from [Termly.com](https://termly.io/products/terms-and-conditions-generator/) to display the Terms & Conditions for Everneed. None of my templated code contains errors and I felt that attempting to correct all of the Termly errors would render the document incorrectly. I used Termly as they provided this content without personal cost to me. | As before. |
