@@ -78,39 +78,36 @@
                         <!-- Wishlist -->
                         <li class="nav-item list-inline-item" id="wishlist">
                             <button
-                                class="{% if user_wishlist %} font-weight-bold{% else %}text{% endif %} nav-link btn btn-primary"
+                                class="nav-link btn btn-primary {% if user_wishlist %} font-weight-bold{% else %} text{% endif %}"
                                 type="button" data-bs-toggle="offcanvas" data-bs-target="#wishlistOffcanvas"
                                 aria-controls="wishlistOffcanvas">
-                                <span class="text-center">
+                                <span class="d-flex flex-column align-items-center">
                                     <i class="fa-solid fa-heart mt-1"></i>
-                                    <p class="my-0">
-                                        {% if wishlist_count %}
-                                        {{ wishlist_count }}
-                                        {% else %}
-                                        0
-                                        {% endif %}
-                                    </p>
+                                    <span class="my-0">
+                                        {{ wishlist_count|default:0 }}
+                                    </span>
                                 </span>
                             </button>
                         </li>
                         {% endif %}
                         <!-- Cart -->
-                        <li class="nav-item list-inline-item" id="cart">
+                        <li class="nav-item list-inline-item d-block" id="cart">
                             <button
-                                class="{% if cart_items %} font-weight-bold{% else %}text{% endif %} nav-link btn btn-primary"
+                                class="nav-link btn btn-primary {% if cart_items %} font-weight-bold{% else %} text{% endif %}"
                                 type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas"
                                 aria-controls="cartOffcanvas">
-                                <span class="text-center">
+                                <span class="d-flex flex-column align-items-center">
                                     <i class="fa-solid fa-cart-shopping me-1 mt-1"></i>
-                                    <p class="my-0">
+                                    <span class="my-0">
                                         {% if total %}
                                         £{{ total|floatformat:2 }}
                                         {% else %}
                                         £0.00
                                         {% endif %}
-                                    </p>
+                                    </span>
                                 </span>
                             </button>
+
                         </li>
                     </ul>
                 </div>

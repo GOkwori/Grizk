@@ -9,11 +9,11 @@
                     </button>
                     <ul class="dropdown-menu custom-dropdown">
                         {% if request.user.is_authenticated %}
-                        <p class="dropdown-title my-0">
+                        <span class="dropdown-title mb-3">
                             <strong>Hello, {{ request.user.username|title }}</strong>
-                        </p>
+                        </span>
                         {% else %}
-                        <p class="dropdown-title my-0"><strong>Hello, sign in</strong></p>
+                        <span class="dropdown-title mb-3"><strong>Hello, sign in</strong></span>
                         {% endif %}
                         <li><a href="{% url 'products' %}" class="dropdown-item">All Products</a></li>
                         <li><a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a></li>
@@ -50,9 +50,11 @@
                         </div>
                     </a>
                     <ul class="dropdown-menu custom-dropdown" aria-labelledby="gaming-dropdown">
-                        <li><a href="{% url 'products' %}?category=Gaming PC" class="dropdown-item p-2">Gaming PC</a>
+                        <li>
+                            <a href="{% url 'products' %}?category=Gaming PC" class="dropdown-item p-2">Gaming PC</a>
                         </li>
-                        <li><a href="{% url 'products' %}?category=Gaming PC" class="dropdown-item p-2">All Gaming</a>
+                        <li>
+                            <a href="{% url 'products' %}?category=Gaming PC" class="dropdown-item p-2">All Gaming</a>
                         </li>
                     </ul>
                 </li>

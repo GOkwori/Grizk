@@ -12,41 +12,37 @@
     </div>
     <div class="col-4 justify-content-end">
         <ul class="navbar-nav mb-lg-0 ms-lg-4">
-
             {% if user.is_authenticated %}
             <!-- Wishlist -->
             <li class="nav-item list-inline-item" id="wishlist-1">
                 <button
-                    class="{% if user_wishlist %} font-weight-bold{% else %}text{% endif %} nav-link btn btn-primary"
+                    class="nav-link btn btn-primary {% if user_wishlist %} font-weight-bold{% else %} text{% endif %}"
                     type="button" data-bs-toggle="offcanvas" data-bs-target="#wishlistOffcanvas"
                     aria-controls="wishlistOffcanvas">
-                    <span class="text-center">
+                    <span class="d-flex flex-column align-items-center">
                         <i class="fa-solid fa-heart mt-1"></i>
-                        <p class="my-0">
-                            {% if wishlist_count %}
-                            {{ wishlist_count }}
-                            {% else %}
-                            0
-                            {% endif %}
-                        </p>
+                        <span class="my-0">
+                            {{ wishlist_count|default:0 }}
+                        </span>
                     </span>
                 </button>
             </li>
             {% endif %}
             <!-- Cart -->
             <li class="nav-item list-inline-item" id="cart-1">
-                <button class="{% if cart_items %} font-weight-bold{% else %}text{% endif %} nav-link btn btn-primary"
+                <button
+                    class="nav-link btn btn-primary {% if cart_items %} font-weight-bold{% else %} text{% endif %}"
                     type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas"
                     aria-controls="cartOffcanvas">
-                    <span class="text-center">
+                    <span class="d-flex flex-column align-items-center">
                         <i class="fa-solid fa-cart-shopping me-1 mt-1"></i>
-                        <p class="my-0">
+                        <span class="my-0">
                             {% if total %}
                             £{{ total|floatformat:2 }}
                             {% else %}
                             £0.00
                             {% endif %}
-                        </p>
+                        </span>
                     </span>
                 </button>
             </li>
@@ -74,29 +70,29 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'products' %}?category=Laptops,Desktop Computers,Chargers,Batteries">
-                        <iclass="fa-solid fa-laptop me-1"></i> Computing</a>
+                        <i class="fa-solid fa-laptop me-1"></i> Computing
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'products' %}?category=Gaming PC">
-                        <i class="fa-solid fa-gamepad me-1"></i> Gaming</a>
+                        <i class="fa-solid fa-gamepad me-1"></i> Gaming
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'products' %}?category=Apple Iphone,Google Pixel,Android Smartphone,Apple Ipad,Android Tablets">
-                        <i class="fa-solid fa-mobile-alt me-1"></i> Smartphones</a>
+                        <i class="fa-solid fa-mobile-alt me-1"></i> Smartphones
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'products' %}?category=Earbud Headphones,Bluetooth Headphones">
-                        <i class="fa-solid fa-headphones me-1"></i> Headphones</a>
+                        <i class="fa-solid fa-headphones me-1"></i> Headphones
+                    </a>
                 </li>
                 <li class="nav-item mb-3">
                     <a class="nav-link" href="{% url 'blog_list' %}"><i class="fa-solid fa-blog me-1"></i> Blog</a>
                 </li>
 
-                <p class="dropdown-title mt-2">
-                    <strong> <i class="fa-solid fa-user me-1"></i> Account</strong>
-                </p>
-                <hr>
-                <div class="" aria-labelledby="">
+                <p class="" aria-labelledby="">
                     {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
                     <li class="nav-item">
@@ -122,7 +118,7 @@
                                 class="fa-solid fa-right-to-bracket me-1 mt-1"></i> Login</a>
                     </li>
                     {% endif %}
-                </div>
+                </p>
             </ul>
         </div>
     </div>
