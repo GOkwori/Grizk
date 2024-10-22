@@ -15,8 +15,7 @@
             {% if user.is_authenticated %}
             <!-- Wishlist -->
             <li class="nav-item list-inline-item" id="wishlist-1">
-                <button
-                    class="nav-link btn btn-primary {% if user_wishlist %} font-weight-bold{% else %} text{% endif %}"
+                <button class="nav-link btn btn-primary {% if user_wishlist %} font-weight-bold{% else %} text{% endif %}"
                     type="button" data-bs-toggle="offcanvas" data-bs-target="#wishlistOffcanvas"
                     aria-controls="wishlistOffcanvas">
                     <span class="d-flex flex-column align-items-center">
@@ -92,33 +91,31 @@
                     <a class="nav-link" href="{% url 'blog_list' %}"><i class="fa-solid fa-blog me-1"></i> Blog</a>
                 </li>
 
-                <p class="" aria-labelledby="">
-                    {% if request.user.is_authenticated %}
-                    {% if request.user.is_superuser %}
-                    <li class="nav-item">
-                        <a href="{% url 'admin_dashboard' %}" class="nav-link">
-                            <i class="fa-solid fa-shield-halved  me-1 mt-1"></i> Dashboard</a>
-                    </li>
-                    {% endif %}
-                    <li class="nav-item">
-                        <a href="{% url 'profile' %}" class="nav-link"><i class="fa-solid fa-address-card me-1"></i> 
-                            My Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{% url 'account_logout' %}" class="nav-link"><i
-                                class="fa-solid fa-right-from-bracket me-1 mt-1"></i> Logout</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a href="{% url 'account_signup' %}" class="nav-link"><i
-                                class="fa-solid fa-address-card me-1 mt-1"></i> Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{% url 'account_login' %}" class="nav-link"><i
-                                class="fa-solid fa-right-to-bracket me-1 mt-1"></i> Login</a>
-                    </li>
-                    {% endif %}
-                </p>
+                {% if request.user.is_authenticated %}
+                {% if request.user.is_superuser %}
+                <li class="nav-item">
+                    <a href="{% url 'admin_dashboard' %}" class="nav-link">
+                        <i class="fa-solid fa-shield-halved  me-1 mt-1"></i> Dashboard</a>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a href="{% url 'profile' %}" class="nav-link"><i class="fa-solid fa-address-card me-1"></i> 
+                        My Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'account_logout' %}" class="nav-link"><i
+                            class="fa-solid fa-right-from-bracket me-1 mt-1"></i> Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a href="{% url 'account_signup' %}" class="nav-link"><i
+                            class="fa-solid fa-address-card me-1 mt-1"></i> Register</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'account_login' %}" class="nav-link"><i
+                            class="fa-solid fa-right-to-bracket me-1 mt-1"></i> Login</a>
+                </li>
+                {% endif %}
             </ul>
         </div>
     </div>

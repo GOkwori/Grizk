@@ -25,7 +25,7 @@
             <!-- Input field showing the current quantity, readonly to prevent manual input -->
             <input class="form-control qty_input text-center small" type="number" name="quantity"
               value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}"
-              id="id_qty_{{ item.item_id }}" readonly />
+              id="id_qty_{{ item.item_id }}" readonly>
 
             <!-- Increment button, increases the quantity by 1 -->
             <div class="input-group-append">
@@ -40,7 +40,7 @@
 
             <!-- Hidden input for products with multiple colors, retains color information when updating -->
             {% if item.product.has_colours %}
-            <input type="hidden" name="product_colour" value="{{ item.colour }}" />
+            <input type="hidden" name="product_colour" value="{{ item.colour }}">
             {% endif %}
           </div>
         </div>

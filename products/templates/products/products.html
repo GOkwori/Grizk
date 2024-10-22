@@ -97,17 +97,15 @@
             
                                 {% if request.user.is_superuser %}
                                 <small>
-                                    <a href="{% url 'edit_product' product.id %}" class="btn-sm" role="button" id="product-btn"
+                                    <a href="{% url 'edit_product' product.id %}" class="btn-sm product-btn" role="button"
                                         title='update product'>
                                         <i class="fa-solid fa-pen-to-square ms-3"></i>
                                     </a> |
-                                    <a href="#" class="btn-sm" role="button" id="product-btn" title="Delete Product"
+                                    <a href="#" class="btn-sm product-btn" role="button" title="Delete Product"
                                         data-bs-toggle="modal" data-bs-target="#staticBackdrop"
                                         onclick="setDeleteUrl('{{ product.id }}', '{{ product.name }}', 'product')">
                                         <i class="fa-solid fa-trash"></i>
-                                    </a>
-            
-            
+                                    </a>            
                                 </small>
                                 {% endif %}
                             </div>

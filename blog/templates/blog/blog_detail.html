@@ -23,9 +23,9 @@
     <!-- Blog title header -->
     <div class="row">
       <div class="col">
-        <hr />
+        <hr>
         <h2 class="sub-heading">{{ blog.title }}</h2> <!-- Display the blog title -->
-        <hr class="mb-3" />
+        <hr class="mb-3">
       </div>
     </div>
 
@@ -36,10 +36,10 @@
         <div class="card mb-4 " id="product-card">
           <!-- Display blog image if it exists, else show a default placeholder image -->
           {% if blog.image %}
-          <img class="card-img-top img-fluid rounded" src="{{ blog.image.url }}" alt="{{ blog.title }}" />
+          <img class="card-img-top img-fluid rounded" src="{{ blog.image.url }}" alt="{{ blog.title }}">
           {% else %}
           <img class="card-img-top img-fluid rounded" src="{% static 'images/noimage.png' %}"
-            alt="No image available for this blog post" />
+            alt="No image available for this blog post">
           {% endif %}
 
           <!-- Blog content and meta information -->
@@ -50,7 +50,7 @@
                 By {{ blog.author }} | Published on {{ blog.created_at|date:"F d, Y" }}
               </small> <!-- Show author and publication date -->
             </p>
-            <hr class="my-2" />
+            <hr class="my-2">
             <div class="card-text">
               <p>{{ blog.content|linebreaks }}</p> <!-- Blog content with line breaks formatted properly -->
             </div>

@@ -21,9 +21,9 @@
     <!-- Blog Articles Section Title -->
     <div class="row">
       <div class="col">
-        <hr />
+        <hr>
         <h2 class="sub-heading">Blog Articles</h2>
-        <hr class="mb-3" />
+        <hr class="mb-3">
       </div>
     </div>
 
@@ -39,12 +39,12 @@
             <!-- Display blog image if it exists, otherwise use a default placeholder image -->
             {% if blog.image %}
             <a href="{% url 'blog_detail' blog.id %}">
-              <img class="card-img-top img-fluid h-100" src="{{ blog.image.url }}" alt="Image of {{ blog.title }}" />
+              <img class="card-img-top img-fluid h-100" src="{{ blog.image.url }}" alt="Image of {{ blog.title }}">
             </a>
             {% else %}
             <a href="{% url 'blog_detail' blog.id %}">
               <img class="card-img-top img-fluid h-100" src="{% static 'images/default_blog_image.jpg' %}"
-                alt="No image available for {{ blog.title }}" />
+                alt="No image available for {{ blog.title }}">
             </a>
             {% endif %}
 
@@ -65,12 +65,12 @@
               {% if request.user.is_superuser %}
               <small>
                 <!-- Edit blog button, takes the user to the edit blog page -->
-                <a href="{% url 'edit_blog' blog.id %}" class="btn-sm" role="button" id="blog-btn" title="Update Blog">
+                <a href="{% url 'edit_blog' blog.id %}" class="btn-sm blog-btn" role="button" title="Update Blog">
                   <i class="fa-solid fa-pen-to-square ms-3"></i>
                 </a>
                 |
                 <!-- Delete blog button, triggers a modal for confirmation -->
-                <a href="#" class="btn-sm" role="button" id="blog-btn" title="Delete Blog" data-bs-toggle="modal"
+                <a href="#" class="btn-sm blog-btn" role="button" title="Delete Blog" data-bs-toggle="modal"
                   data-bs-target="#staticBackdrop" onclick="setDeleteUrl('{{ blog.id }}', '{{ blog.title }}', 'blog')">
                   <i class="fa-solid fa-trash"></i>
                 </a>

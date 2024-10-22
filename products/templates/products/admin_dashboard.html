@@ -27,19 +27,18 @@
             <div class="card border-danger-subtle" style="width: 18rem;" id="product-card">
                 <img src="{% static 'images/add_products.jpg' %}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <a class="m-2 p-2 text-center btn" href="{% url 'add_product' %}" role="button"
-                        id="product-update-btn">
+                    <a class="m-2 p-2 text-center btn product-update-btn" href="{% url 'add_product' %}" role="button">
                         <i class="fas fa-plus"></i>
-                        </span>Add Product</a>
+                        Add Product</a>
                 </div>
             </div>
 
         </div>
         <div class="col-4 mb-3">
-            <div class="card border-danger-subtle" style="width: 18rem;" id="product-card">
+            <div class="card border-danger-subtle" style="width: 18rem;" id="product-card-1">
                 <img src="{% static 'images/manage_products.jpg' %}" class="card-img-top" alt="televisions">
                 <div class="card-body">
-                    <a class="btn m-2 p-2 text-center" href="{% url 'products' %}" id="product-update-btn"><span
+                    <a class="btn m-2 p-2 text-center product-update-btn" href="{% url 'products' %}"><span
                             class="icon mr-2">
                             <i class="fas fa-pen-to-square"></i>
                         </span>Manage Product</a>
@@ -48,10 +47,10 @@
         </div>
 
         <div class="col-4 mb-3">
-            <div class="card border-danger-subtle" style="width: 18rem;" id="product-card">
+            <div class="card border-danger-subtle" style="width: 18rem;" id="product-card-2">
                 <img src="{% static 'images/admin_panel.jpg' %}" class="card-img-top" alt="keyboard">
                 <div class="card-body">
-                    <a class="m-2 p-2 text-center btn" href="/admin/" id="product-update-btn"> <span class="icon mr-2">
+                    <a class="m-2 p-2 text-center btn product-update-btn" href="/admin/"> <span class="icon mr-2">
                             <i class="fas fa-gear"></i>
                         </span>Admin Panel</a>
                 </div>

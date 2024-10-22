@@ -1,8 +1,8 @@
 <!-- Check if the product has an image available -->
 {% if item.product.image %}
 <!-- If an image is available, display it using the product's image URL -->
-<img class="img-fluid w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}" />
+<img class="img-fluid w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
 {% else %}
 <!-- If no image is available, display a placeholder image from the media directory -->
-<img class="img-fluid w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}" />
+<img class="img-fluid w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
 {% endif %}

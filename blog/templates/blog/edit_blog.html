@@ -21,9 +21,9 @@
     <!-- Section title for visual clarity -->
     <div class="row">
       <div class="col">
-        <hr />
+        <hr>
         <h2 class="sub-heading">Edit Blog Post</h2> <!-- Displays a clear heading for the page -->
-        <hr class="mb-3" />
+        <hr class="mb-3">
       </div>
     </div>
 
@@ -38,14 +38,14 @@
           <div class="form-group mb-3">
             <label for="id_title" class="form-label">Title</label>
             <input type="text" name="title" id="id_title" value="{{ form.title.value }}"
-              class="form-control border-black" required />
+              class="form-control border-black" required>
           </div>
 
           <!-- Read-only field for Author's name, as it should not be editable -->
           <div class="form-group mb-3">
             <label for="id_author" class="form-label">Author</label>
             <input type="text" name="author" id="id_author" value="{{ form.author.value }}"
-              class="form-control border-black" readonly />
+              class="form-control border-black" readonly>
           </div>
 
           <!-- Textarea for the main content of the blog post -->
@@ -58,13 +58,13 @@
           <!-- File input for uploading a blog image -->
           <div class="form-group mb-3">
             <label for="id_image" class="form-label">Blog Image</label>
-            <input type="file" name="image" id="id_image" class="form-control-file border-black" />
+            <input type="file" name="image" id="id_image" class="form-control-file border-black">
 
             <!-- Show the current image if one exists, with a preview and description -->
             {% if form.image.value %}
             <div class="mt-3">
               <img src="{{ form.image.value.url }}" alt="Current Blog Image" class="img-fluid rounded"
-                style="max-width: 200px" />
+                style="max-width: 200px">
               <p class="small text-muted">Current Image</p>
             </div>
             {% endif %}

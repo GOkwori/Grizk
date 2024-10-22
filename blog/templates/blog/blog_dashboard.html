@@ -37,8 +37,7 @@
                 <img src="{% static 'images/add_products.jpg' %}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <!-- Button that links to the 'add_blog' page -->
-                    <a class="m-2 p-2 text-center btn" href="{% url 'add_blog' %}" role="button"
-                        id="product-update-btn">
+                    <a class="m-2 p-2 text-center btn product-update-btn" href="{% url 'add_blog' %}" role="button">
                         <i class="fas fa-plus"></i> <!-- Font Awesome icon for "add" -->
                         Create Blog <!-- Text for the button -->
                     </a>
@@ -48,12 +47,12 @@
 
         <!-- Second card: Manage Blog -->
         <div class="col-4 mb-3">
-            <div class="card border-danger-subtle mb-2" style="width: 18rem;" id="product-card">
+            <div class="card border-danger-subtle mb-2" style="width: 18rem;" id="product-card-1">
                 <!-- Card image loaded from static files -->
                 <img src="{% static 'images/manage_products.jpg' %}" class="card-img-top" alt="televisions">
                 <div class="card-body">
                     <!-- Button that links to the 'blog_list' page to manage existing blogs -->
-                    <a class="btn m-2 p-2 text-center" href="{% url 'blog_list' %}" id="product-update-btn">
+                    <a class="btn m-2 p-2 text-center product-update-btn" href="{% url 'blog_list' %}">
                         <span class="icon mr-2">
                             <i class="fas fa-pen-to-square"></i> <!-- Font Awesome icon for "edit" -->
                         </span>
@@ -63,4 +62,5 @@
             </div>
         </div>
     </div>
-    {% endblock %}
+</div>
+{% endblock %}
