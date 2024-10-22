@@ -98,21 +98,24 @@
                 </li>
 
                 <!-- Blog -->
-                <li class="list-inline-item ms-2 me-2">
-                    <a class="nav-link p-2 d-flex align-items-center" href="{% url 'blog_list' %}" id="blog">
+                <li class="list-inline-item dropdown ms-2 me-2">
+                    <button class="nav-link p-2 d-flex align-items-center btn" id="tv-audio-dropdown" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         <i class="fa-solid fa-blog me-1"></i>
                         <span>Blog</span>
-                    </a>
+                    </button>
+                    <ul class="dropdown-menu custom-dropdown" aria-labelledby="tv-audio-dropdown">
+                        <li><a href="{% url 'blog_list' %}" class="dropdown-item p-2">See Articles</a></li>
+                    </ul>
                 </li>
-
-
+             
                 <!-- Account Dropdown -->
                 <li class="nav-item list-inline-item dropdown ms-2 me-2">
-                    <a class="nav-link p-2 d-flex align-items-center" href="#" id="account-dropdown" data-bs-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
+                    <button class="nav-link p-2 d-flex align-items-center btn" id="tv-audio-dropdown" data-bs-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
                         <i class="fa-solid fa-user me-1"></i>
                         <span>Account</span>
-                    </a>
+                    </button>
                     <ul class="dropdown-menu border-0 custom-dropdown" aria-labelledby="account-dropdown">
                         {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
