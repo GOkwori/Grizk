@@ -286,7 +286,7 @@ The primary objective for **Grizk** was to develop a sophisticated e-commerce pl
 
 Grizk was built to meet the following core goals:
 
-### Site Goals
+#### Site Goals
 - **Responsive Design:** Ensure the platform is accessible across all devices, including desktops, tablets, and mobile phones. Users should have a fluid and consistent shopping experience, no matter where they access the site from.
 - **User Authentication:** Provide secure and reliable login and registration options for customers, with the ability to save items to a wishlist, view past orders, and receive personalized recommendations.
 - **Guest Access:** Allow guests to browse, explore products, and add items to the cart without requiring them to register, simplifying the user journey for first-time visitors.
@@ -297,13 +297,13 @@ Grizk was built to meet the following core goals:
 - **Engaging UI/UX Design:** Design a visually appealing and easy-to-navigate site, with consistent branding elements, to build trust and make the shopping experience enjoyable.
 - **Enhanced Security & User Privacy:** Secure user data through encryption and adhere to the best practices in cybersecurity, ensuring that customers can shop with confidence.
 
-## Development Approach
+#### Development Approach
 
 The design and visual assets of the website were curated and created to convey a sleek, modern feel, emphasizing Grizk's commitment to delivering high-quality tech gadgets. **Figma** was utilized to design the initial wireframes and prototypes, ensuring a cohesive design language across all pages and features. The hero images, promotional banners, and product showcases were designed to be visually striking, grabbing the user's attention while maintaining brand consistency.
 
 During the development phase, **Bootstrap** was employed to streamline the responsive design process, while custom **CSS** was used to enhance the visual appeal and interactivity of elements such as buttons, modals, and toast notifications. To maintain uniformity, CSS variables were defined for colors, fonts, and component properties, enabling rapid updates and scaling.
 
-## Key Features Implemented
+#### Key Features Implemented
 
 1. **User-Centric Feedback & Toast Notifications**
    - Users receive immediate feedback during interactions, such as adding items to the cart, completing a purchase, or updating account information. This was achieved using visually distinct toast notifications that match Grizk's color scheme, ensuring clarity and consistency across the site.
@@ -317,7 +317,7 @@ During the development phase, **Bootstrap** was employed to streamline the respo
 4. **Dynamic Off-Canvas Panels for Cart & Wishlist**
    - The off-canvas panels allow users to easily manage their cart and wishlist items without disrupting their browsing experience. These panels slide in smoothly, offering quick access to item details, quantity controls, and direct links to proceed to checkout.
 
-## Future Development & Expansion
+#### Future Development & Expansion
 - **AI-Powered Product Recommendations:** Plans to integrate machine learning algorithms to provide tailored product suggestions based on user behavior and preferences.
 - **Interactive 3D Product Views:** Enable customers to view products in a more engaging, interactive format, offering 360-degree visualizations.
 - **Enhanced Marketing Integration:** Further development of marketing tools, including dynamic newsletters, limited-time offers, and seasonal promotions, to drive engagement and sales.
@@ -326,11 +326,11 @@ During the development phase, **Bootstrap** was employed to streamline the respo
 Grizk was developed with scalability and flexibility in mind, ensuring that future enhancements and features can be seamlessly integrated. With a solid foundation in place, Grizk aims to set the standard for tech e-commerce, providing an unmatched user experience that caters to both tech enthusiasts and casual shoppers alike.
 
 
-## Agile Methodologies
+### `Agile Methodologies`
 
 Grizk was developed using Agile planning methodologies, ensuring a structured, iterative approach to building the platform. Leveraging tools like **[GitHub Projects](https://github.com/)**, the development process was organized around Epics, Milestones, and Sprints, allowing for efficient tracking of tasks and priorities. Using GitHub’s issue boards, each task was clearly defined, labeled, and assigned to specific sprints. This setup streamlined the workflow, enabling focused development phases and reducing potential errors.
 
-### MoSCoW Prioritization
+#### MoSCoW Prioritization
 
 To effectively manage feature development and prioritize tasks, the MoSCoW Prioritization method was adopted for Grizk, which helped categorize the project components as follows:
 
@@ -339,7 +339,7 @@ To effectively manage feature development and prioritize tasks, the MoSCoW Prior
 - **Could Haves**: Desirable enhancements that would improve the user experience or functionality but were not essential. These were considered bonuses and were planned only if time permitted after core features were completed. Examples included custom animations, advanced filters, and social sharing options.
 - **Won't Haves**: Features that were deemed unnecessary for the current project scope or release. These were either postponed for future iterations or discarded entirely to maintain focus on core functionalities.
 
-### Sprints
+#### Sprints
 
 The development process was divided into well-defined **Sprints**, each focusing on specific areas of the Grizk platform. This helped maintain momentum and allowed for incremental progress with clear milestones. The flexibility of Agile allowed for adjustments in the scope and tasks as the project evolved, ensuring that key features were prioritized and integrated effectively.
 
@@ -359,7 +359,7 @@ The development process was divided into well-defined **Sprints**, each focusing
 | #8         | **User Notifications & Correspondence**: Integrated email notifications, toasts, and order confirmations for enhanced user engagement. | 26/08/24 - 05/09/24     |
 | #9         | **Documentation, Testing & Final Touches**: Comprehensive testing, bug fixing, and documentation preparation for final delivery. | 06/09/24 - 23/10/24     |
 
-### Agile Advantages
+#### Agile Advantages
 
 Using Agile methodology ensured that development was **iterative** and **adaptive**, allowing for frequent feedback loops and early problem detection. Each sprint concluded with a review phase, where the functionalities were tested, refined, and polished. This approach ensured a robust, user-focused platform at the end of the development cycle, meeting the high standards set for Grizk.
 
@@ -369,11 +369,11 @@ Using Agile methodology ensured that development was **iterative** and **adaptiv
 
 
 
-## User Stories
+### `User Stories`
 
 User stories and features were documented and managed on [GitHub Projects](https://github.com).
 
-### Visitor User Stories
+#### Visitor User Stories
 
 | User Story | Priority |
 |------------|----------|
@@ -381,7 +381,7 @@ User stories and features were documented and managed on [GitHub Projects](https
 | As a **customer**, I can **see and use the navigation bar** so that I can **easily navigate through different categories and features of the site.** | **MUST HAVE** |
 | As a **customer**, I can **enter keywords into the search bar** so that I can **quickly find a specific gadget or product.** | **MUST HAVE** |
 
-### Epic - Home View & User Account
+#### Epic - Home View & User Account
 
 | User Story | Priority |
 |------------|----------|
@@ -392,7 +392,7 @@ User stories and features were documented and managed on [GitHub Projects](https
 | As a **user**, I can **register my email and receive a verification link** so that I can **create a secure account on Grizk.** | **SHOULD HAVE** |
 | As a **customer**, I can **use the Contact Us form** so that I can **get in touch with Grizk's support for inquiries or assistance.** | **SHOULD HAVE** |
 
-### Epic - Products
+#### Epic - Products
 
 | User Story | Priority |
 |------------|----------|
@@ -403,7 +403,7 @@ User stories and features were documented and managed on [GitHub Projects](https
 | As a **site admin**, I can **edit existing product information** so that I can **keep product details current and accurate.** | **MUST HAVE** |
 | As a **site admin**, I can **delete products from the inventory** so that I can **remove discontinued or outdated products from the store.** | **MUST HAVE** |
 
-### Epic - Cart Management & Checkout
+#### Epic - Cart Management & Checkout
 
 | User Story | Priority |
 |------------|----------|
@@ -414,21 +414,21 @@ User stories and features were documented and managed on [GitHub Projects](https
 | As a **customer**, I can **receive a confirmation email with my order details** so that I can **keep a record of my purchase.** | **MUST HAVE** |
 | As a **site user**, I can **view customized error pages with 'Home' links** so that I can **easily navigate back if a page is not available or requires login.** | **MUST HAVE** |
 
-### Epic - Wishlist
+#### Epic - Wishlist
 
 | User Story | Priority |
 |------------|----------|
 | As a **logged-in user**, I can **add products to a wishlist** so that I can **save items I'm interested in for future purchase.** | **COULD HAVE** |
 | As a **logged-in user**, I can **remove items from my wishlist** so that I can **keep my list relevant and organized.** | **COULD HAVE** |
 
-### Epic - Promotions & Deals
+#### Epic - Promotions & Deals
 
 | User Story | Priority |
 |------------|----------|
 | As a **customer**, I can **see promotional banners and deals on the homepage carousel** so that I can **take advantage of special offers and discounts.** | **MUST HAVE** |
 | As a **site admin**, I can **update deals and promotional content** so that I can **manage campaigns and highlight specific products.** | **SHOULD HAVE** |
 
-### Epic - Newsletter & Community
+#### Epic - Newsletter
 
 | User Story | Priority |
 |------------|----------|
@@ -436,24 +436,40 @@ User stories and features were documented and managed on [GitHub Projects](https
 | As a **customer**, I can **enter my email into the newsletter form** so I can **stay informed on the latest tech trends and innovations.** | **SHOULD HAVE** |
 | As a **site admin**, I can **manage newsletter subscriptions** so that I can **engage with users and promote Grizk's community.** | **SHOULD HAVE** |
 
+#### Epic - Blog Management & Engagement
 
-## Scope Plane
+| User Story | Priority |
+|------------|----------|
+| As a **site visitor**, I can **browse through the blog section** so that I can **read articles and stay informed on various topics.** | **MUST HAVE** |
+| As a **customer**, I can **read blog posts on different tech topics** so that I can **gain insights, learn about new products, and engage with the content.** | **MUST HAVE** |
+| As a **site visitor**, I can **search for specific blog posts** so that I can **easily find articles related to my interests.** | **SHOULD HAVE** |
+| As a **customer**, I can **share blog posts on social media** so that I can **promote interesting content and engage with my social circle.** | **COULD HAVE** |
+| As a **site admin**, I can **create, edit, and publish blog posts** so that I can **share updates, insights, and promotional content with readers.** | **MUST HAVE** |
+| As a **site admin**, I can **upload images to blog posts** so that I can **enhance articles visually and make them more engaging.** | **SHOULD HAVE** |
+| As a **site admin**, I can **categorize blog posts** so that I can **organize content and improve user navigation.** | **SHOULD HAVE** |
+| As a **site admin**, I can **manage comments on blog posts** so that I can **moderate discussions and ensure a positive community experience.** | **COULD HAVE** |
+| As a **site admin**, I can **view metrics and analytics for blog posts** so that I can **understand which content is performing well and adjust strategies accordingly.** | **COULD HAVE** |
+| As a **customer**, I can **leave comments on blog posts** so that I can **engage in discussions and share my thoughts on the topics.** | **SHOULD HAVE** |
+| As a **customer**, I can **subscribe to receive updates for new blog posts** so that I can **stay informed about the latest content published on the site.** | **COULD HAVE** |
+
+
+### `Scope Plane`
 
 The development of **Grizk** was centered around creating a smooth and engaging shopping experience for tech enthusiasts, while also building on advanced e-commerce functionalities, such as integrating with payment systems and providing enhanced user management features. The scope was carefully defined to focus on essential elements of a functional online electronics store, while also allowing room for innovative features that set Grizk apart.
 
 The primary goal was to deliver a fully operational e-commerce platform that could handle user accounts, secure payments, product management, and smooth checkout processes. Through the strategic planning process, the project scope expanded to include additional features aimed at enhancing user engagement and supporting the overall shopping experience.
 
-### Core Focus: Streamlined User Experience & Stripe Integration
+#### Core Focus: Streamlined User Experience & Stripe Integration
 
 While maintaining the core functionality of a working e-commerce platform, the Grizk project was also an opportunity to learn and master the **Stripe API** and **webhook handlers** to manage payments seamlessly. The integration of Stripe was a focal point, ensuring that transactions were smooth, secure, and reliable. The project’s scope was managed to prioritize essential functionality, guaranteeing the successful delivery of the MVP (Minimum Viable Product).
 
-### Feature Expansion: Pushing Boundaries Beyond the Basics
+#### Feature Expansion: Pushing Boundaries Beyond the Basics
 
 While planning, it became clear that Grizk could further innovate by adopting themes and features not typically seen in standard e-commerce projects. For instance, introducing a **Wishlist** feature allowed customers to save higher-priced items and come back to them later, understanding that premium tech gadgets often have a higher price point.
 
 With a clean and efficient **Django MVT (Model-View-Template)** architecture, it was possible to develop these features quickly. The addition of an **Admin frontend panel** ensured that product and article management could be done efficiently, enabling the business to start accepting orders immediately.
 
-### Essential Features Implemented
+#### Essential Features Implemented
 
 - **User Account Management:** 
   - Seamless account creation and management using **Django AllAuth** to simplify authentication, secure login, and user profile management.
@@ -477,11 +493,11 @@ With a clean and efficient **Django MVT (Model-View-Template)** architecture, it
   - Inclusion of comprehensive **business details and policies**, helping customers make informed purchases and understand terms and conditions.
 
 
-## Structural Plane
+### `Structural Plane`
 
 Grizk's development was rooted in a solid structural framework, utilizing **custom CSS** combined with **Bootstrap 5** for a seamless and responsive user experience. The project started with the foundational structure provided by **Code Institute's Boutique Ado e-commerce project**, which served as a base. However, significant customization and enhancements were made to align with Grizk's vision of a modern and streamlined tech gadget marketplace. This approach allowed Grizk to retain reliable, core e-commerce functionalities while delivering a unique and engaging user interface.
 
-### Core Framework & Customization
+#### Core Framework & Customization
 
 Built upon **Bootstrap 5**, Grizk leverages the powerful grid system and pre-built components to deliver a responsive, mobile-first design. Given that many users shop on their mobile devices, Grizk prioritizes smooth transitions across screen sizes, ensuring a consistent and fluid experience whether users are on desktops, tablets, or smartphones.
 
@@ -489,43 +505,43 @@ Grizk's structure benefited greatly from adopting **Code Institute’s Boutique 
 - **Simplified Navbar:** Inspired by the modern e-commerce experience, the default Bootstrap navbar was reworked to provide a cleaner, more intuitive navigation. 
 - **Responsive Icons & Graphics:** Icons were carefully selected from **Fontawesome** during the wireframing process in **Uizard**, enhancing the overall visual experience. Grizk's branding, including the logo, is consistent across the site, used as a favicon and integrated into marketing materials such as newsletters.
 
-### Form Styling & UX Enhancements
+#### Form Styling & UX Enhancements
 
 Form elements throughout Grizk were customized to enhance user experience:
 - **Custom Input Borders:** Instead of the default blue highlight seen in many browsers, form fields now feature a **2px solid red-orange border**, consistent with Grizk's primary color scheme. This change ensures that every element remains on-brand, even during user interactions.
 - **Form Validation:** Validation styles were adapted to ensure clarity and simplicity, making error messages easily noticeable without overwhelming the design. Input fields provide immediate visual feedback, ensuring users know exactly where corrections are needed.
 
-### Advanced Layout Components
+#### Advanced Layout Components
 
 Grizk integrates advanced components to elevate the shopping experience:
 - **Integrated Carousels:** The home page landing features a dynamic **auto-rotating carousel** that showcases new arrivals, top-rated gadgets, and promotions. Additionally, a dedicated **carousel for Top Deals** offers quick browsing of discounted products, helping users discover great deals. These carousels, built using Bootstrap components, were enhanced with smoother animations for a sleek visual effect.
 - **Offcanvas Cart & Wishlist:** Grizk includes **offcanvas panels** for the cart and wishlist, enabling users to manage their items without leaving the current page. Users can easily add, edit, or remove items, providing a streamlined, uninterrupted shopping journey.
 
-### Typography & Readability
+#### Typography & Readability
 
 Typography choices were carefully selected to ensure readability across all devices:
 - Grizk uses a blend of **Roboto** fonts for clean, modern text presentation. Typography plays a vital role in maintaining the professional and polished look of Grizk, enhancing user experience by clearly displaying product descriptions, features, and essential information.
 - Text hierarchies guide users naturally through headlines, product details, and calls to action, helping to ensure a seamless browsing and purchasing experience.
 
-### Grid Layouts & Flexibility
+#### Grid Layouts & Flexibility
 
 The **Bootstrap grid system** enabled effortless layout adjustments, ensuring the design remains responsive and adaptable to different screen sizes and resolutions. Specific features include:
 - **Product Grid Layouts:** Products are displayed in a **dynamic grid view** that adjusts according to screen size. On larger screens, more items are displayed per row, while smaller devices show a condensed view, ensuring that product details remain prominent.
 - **Footer Accordion Sections:** To maintain a clean design, the footer uses accordion panels to organize FAQs, support links, and quick navigation. This keeps content accessible without overwhelming the visual flow.
 
-### Enhancing User Interactions with Bootstrap Components
+#### Enhancing User Interactions with Bootstrap Components
 
 Grizk's user interface benefits from Bootstrap's array of interactive elements:
 - **Accordion Panels:** These are used for FAQs, support information, and other expandable content, keeping the interface clean while ensuring users can quickly access additional details.
 - **Toasts & Modals:** **Toast notifications** provide users with real-time feedback on their actions, such as adding items to the cart or completing a purchase. **Modals** simplify user interactions for tasks like login, registration, and quick product views, ensuring smooth and efficient navigation.
 
-### Adopting Code Institute's Boutique Ado Project
+#### Adopting Code Institute's Boutique Ado Project
 
 Leveraging **Code Institute’s Boutique Ado project** as a starting point provided a reliable structure for Grizk. This walkthrough project ensured that essential e-commerce functionalities were implemented effectively, including payment processing, user authentication, and product management. From this solid base, Grizk expanded with extensive customizations, ensuring that the final product not only met but exceeded modern e-commerce standards.
 
-## Skeleton & Surface Planes
+### `Skeleton & Surface Planes`
 
-### Wireframes
+#### Wireframes
 
 [Uizard](https://app.uizard.io) was instrumental in the design planning phase for Grizk, providing a seamless and intuitive way to create and adjust wireframes for different devices. From the outset, Grizk was envisioned as a sophisticated e-commerce platform for tech enthusiasts, and Uizard helped bring this vision to life. The ability to design across **desktop, tablet, and mobile** layouts ensured that Grizk offers a consistent and responsive experience across all devices. 
 
@@ -549,7 +565,7 @@ With Uizard's extensive plugin ecosystem, it was easy to incorporate icons and o
 
 These wireframes provided a blueprint for Grizk’s development, ensuring the design remained user-centric and intuitive. By visualizing the layout, interactions, and content early in the process, Icould make necessary adjustments that contributed to a smooth and visually appealing final product.
 
-### Database Schema
+#### Database Schema
 
 ![Grizk Tech E-commerce ERD](./documentation/data_model/erd.PNG)  
 *Database Schema (ERD) for Grizk illustrating the relationships between key components stored in the database*
@@ -577,7 +593,7 @@ The database schema for Grizk was designed using [DrawSQL](https://drawsql.app/)
     - **Reactions**: A future enhancement for user engagement, where customers can react to blog articles, enhancing interactivity on the platform.
     - **Notification System**: Designed for future versions, enabling automated notifications about sales, restocks, or personalized recommendations.
 
-### Defensive Design
+#### Defensive Design
 
 Grizk has been carefully crafted to ensure a smooth and secure user experience, minimizing frustration and encouraging users to return for future purchases. The platform integrates several defensive design strategies to enhance security, usability, and reliability. Below are the key features:
 
@@ -600,9 +616,9 @@ Grizk has been carefully crafted to ensure a smooth and secure user experience, 
 Grizk employs CSRF (Cross-Site Request Forgery) tokens in all forms to safeguard against unauthorized actions. These tokens authenticate requests to ensure they originate from trusted users and not from malicious sources. Without CSRF protection, a site can be vulnerable to attacks where user data might be exploited. By implementing CSRF tokens, Grizk ensures that form submissions, account updates, and order processes remain secure and trustworthy.
 
 
-# Features
+## Features
 
-## User View - Guests/Account Holders
+### `User View - Guests/Account Holders`
 
 | Feature   | Guest | Account Holder |
 |-----------|-------------------|-----------------|
@@ -617,7 +633,7 @@ Grizk employs CSRF (Cross-Site Request Forgery) tokens in all forms to safeguard
 | Product Dashboard | Not Visible | Only visible to Admin |
 | Blog Dashboard | Not Visible | Only visible to Admin |
 
-## CRUD Functionality
+### `CRUD Functionality`
 
 Customers have full CRUD functionality with their prospective purchases. They may edit their Cart, add more items or remove all items. They may also edit their delivery details if they are registered, logged-in users. Grizk Admins have access to the Admin Dashboard which allows them full CRUD over Product Management and Blog posting.
 
@@ -628,14 +644,14 @@ Customers have full CRUD functionality with their prospective purchases. They ma
 | Products | Yes, Admin only | Yes, all users | Yes, Admin only | Yes, Admin only |
 | Blog | Yes, Admin only | Yes, all users | Yes, Admin only | Yes, Admin only |
 
-## Features Showcase
+### `Features Showcase`
 
 **Header & Navigation - All Users**
 
 **Grizk** is a comprehensive web application designed to streamline digital content management, e-commerce, and user engagement. Each module within the platform is tailored to provide a seamless experience, ensuring ease of use across different devices and roles.
 *For features showcase, screenshots of the features in use were taken on Laptop/iPad Pro/iPhone 12 Pro*
 
-### `All Pages Feature`
+#### All Pages Feature
 * `Responsive Navigation`: A consistent navigation system across all pages ensures that users can easily access different sections like blogs, products, profiles, and more. The navigation is intuitive and adjusts to different screen sizes for a seamless user experience.
 
   ![Responsive Navigation](./documentation/features/navigation.PNG)
@@ -655,13 +671,13 @@ Customers have full CRUD functionality with their prospective purchases. They ma
   ![Wishlist Offcanvas](./documentation/features/wishlistoffcanvas.PNG)
 
 
-### `Toast Notifications`
+#### Toast Notifications
 
 ![Toast Notification](./documentation/features/toast.PNG)
 
 **Toast Notifications** on Grizk provide real-time feedback to users by displaying small, non-intrusive messages that appear temporarily at the top-right corner of the screen. These notifications help improve the user experience by providing instant feedback about various actions taken on the platform.
 
-#### **Features of Toast Notifications:**
+##### **Features of Toast Notifications:**
 * `Real-Time Feedback`: Whenever users perform an action (such as adding, editing, or deleting a product, blog, or item from the cart), a toast notification appears, confirming the success or failure of the action. This immediate feedback helps users understand the result of their actions without navigating to another page.
   
   - **Example**: When a user successfully adds a new blog, a toast notification will appear saying "Blog post created successfully!" 
@@ -676,7 +692,7 @@ Customers have full CRUD functionality with their prospective purchases. They ma
 * `Accessibility and Non-Intrusiveness`: Toasts are designed to appear without disrupting the user's workflow. They are small, pop-up on one corner of the screen, and do not block the main content, ensuring a smooth user experience.
 
 
-### `Blog Module`
+#### Blog Module
 
 ![Blog Module](.//documentation/responsiveness/blog_page.PNG)
 
@@ -692,7 +708,7 @@ The **Blog Module** provides a complete platform for content creators to publish
 
 * `Dynamic Display and Pagination`: The blog list view dynamically loads and paginates blog posts, providing an efficient way for users to browse through multiple entries. Each blog's details can be accessed via dedicated URLs.
 
-### `Blog Dashboard`
+#### Blog Dashboard
 
 ![Blog Dashboard](./documentation/features/blog_dashboard.PNG)
 
@@ -709,7 +725,7 @@ The **Blog Dashboard** on Grizk is designed to provide administrators and conten
 * `Delete Blog Posts`: Each blog entry on the dashboard includes a **Delete** button, enabling admins to remove outdated or irrelevant content. To prevent accidental deletions, this action is confirmed via a modal dialog box.
 
 
-### `Blog Detail Page`
+#### Blog Detail Page
 
 ![Blog Detail](./documentation/features/blog_detail.PNG)
 
@@ -732,7 +748,7 @@ The **Blog Detail Page** on Grizk is designed to present individual blog posts i
 * `Enhanced User Experience`: For authenticated users, the platform remembers their last-read position, enabling them to resume reading from where they left off. This feature enhances the reading experience, especially for longer articles.
 
 
-### `Add Blog Page`
+#### Add Blog Page
 
 ![Add Blog](./documentation/features/add_blog.PNG)
 
@@ -758,7 +774,7 @@ The **Add Blog Page** on Grizk enables authenticated users, primarily authors an
   - **Success Message**: If the blog is successfully created, a toast notification appears with a success message, confirming that the post has been added.
   - **Error Message**: If there are any issues (e.g., missing required fields), the user will see an error message highlighting what needs to be corrected.
 
-### `Edit Blog Page`
+#### Edit Blog Page
 
 ![Edit Blog](./documentation/features/edit_blog.PNG)
 
@@ -786,9 +802,7 @@ The **Edit Blog Page** on Grizk allows authenticated users, primarily the blog a
   - **Error Handling**: If there are any issues (e.g., a required field is missing), an error message will inform the user, highlighting what needs to be corrected.
 
 
-
-
-### `Cart Module`
+#### Cart Module
 
 ![Cart Module](./documentation/responsiveness/cart_page.PNG)
 
@@ -805,7 +819,7 @@ The **Cart Module** simplifies the shopping experience, allowing users to manage
 * `Toast Notifications`: To enhance the user experience, toast messages confirm successful actions (e.g., item added to cart), guiding users throughout the process.
 
 
-### `Checkout Module`
+#### Checkout Module
 
 ![Checkout Module](./documentation/features/checkout.PNG)
 
@@ -818,7 +832,7 @@ The **Checkout Module** guides users through the payment process, providing secu
 * `Address and Delivery Information`: Users can add or select from saved addresses, ensuring a quick checkout experience. 
 
 
-### `Home Module`
+#### Home Module
 
 ![Home Module](./documentation/responsiveness/home_page.PNG)
 
@@ -831,7 +845,7 @@ The **Home Module** serves as the central hub of the platform, presenting users 
 * `Engaging Layout`: Designed to capture user interest, the homepage leverages well-structured sections to guide users to the most relevant parts of the platform, promoting a smooth user experience.
 
 
-### `Products Module`
+#### Products Module
 
 ![Products Module](./documentation/responsiveness/product_page.PNG)
 
@@ -844,7 +858,7 @@ The **Products Module** allows administrators to manage a catalog of products, a
 * `Inventory Management`: Admins can easily add, edit, and delete products via the Dashboard. Features like product categorization and inventory tracking are built into the system for efficient stock management.
 
 
-### `Product Details Page`
+#### Product Details Page
 
 ![Product Details Page](./documentation/responsiveness/product_detail_page.PNG)
 
@@ -861,7 +875,7 @@ The **Product Details Page** on Grizk provides an in-depth view of each product,
 * `Add to Cart Button`: The "Add to Cart" button is prominently placed, encouraging users to proceed with their purchase. Once clicked, a confirmation is displayed, and the product is immediately added to the shopping cart. Users can continue browsing or go directly to the cart to complete their purchase.
 
 
-### `Product Dashboard`
+#### Product Dashboard
 
 ![Product Dashboard](./documentation/features/product_dashboard.PNG)
 
@@ -874,7 +888,7 @@ The **Product Dashboard** on Grizk serves as the central hub for administrators 
 * `Edit Existing Products`: Each product entry has an **Edit** button, which allows administrators to modify existing product information. Whether updating prices, descriptions, or stock levels, this functionality makes it easy to keep product data up-to-date.
 
 
-### `Add Product Page`
+#### Add Product Page
 
 ![Add Product Page](./documentation/features/add_product.PNG)
 
@@ -892,7 +906,7 @@ The **Add Product Page** on Grizk is designed to streamline the process of addin
 
 * `Save Product Button`: Once all details are filled in, users can click the "Save Product" button to add the product to the inventory. The platform will verify the information for completeness before saving the product, ensuring that no critical fields are missing.
 
-### `Edit Product Page`
+#### Edit Product Page
 
 ![Edit Product Page](./documentation/features/edit_product.PNG)
 
@@ -921,7 +935,7 @@ The **Edit Product Page** on Grizk provides a seamless interface for administrat
 * `Cancel and Return to Product List`: There is a button to cancel edits and return to the product list without saving changes. This helps users avoid accidental modifications.
 
 
-### `Profiles Module`
+#### Profiles Module
 
 ![Profiles Module](./documentation/features/profiles.PNG)
 
@@ -932,7 +946,7 @@ The **Profiles Module** allows users to manage their accounts, providing setting
 * `Order History`: Displays a list of past orders with statuses, enabling users to review previous purchases or track ongoing orders.
 
 
-### `Wishlist Module`
+#### Wishlist Module
 
 ![Wishlist Module](./documentation/features/wishlist.PNG)
 
@@ -943,7 +957,7 @@ The **Wishlist Module** lets users save products they plan to purchase in the fu
 * `Quick Purchase`: Items in the wishlist can be directly viewed and added to the cart, ensuring a smooth transition to checkout.
 
 
-### `Login Page`
+#### Login Page
 
 ![Login Page](./documentation/responsiveness/login_page.PNG)
 
@@ -964,7 +978,7 @@ The **Login Page** of Grizk serves as a secure entry point for users, ensuring t
 * `Responsive Design`: The login page is fully responsive, ensuring that it adapts seamlessly to various screen sizes, including mobile devices, tablets, and desktops. Users can access their accounts from any device without compromising the user experience.
 
 
-### `Registration Page`
+#### Registration Page
 
 ![Registration Page](./documentation/responsiveness/registration_page.PNG)
 
@@ -983,7 +997,7 @@ The **Registration Page** on Grizk provides a user-friendly and streamlined expe
 * `Sign-Up Confirmation`: After successful registration, users receive a confirmation message that informs them about the next steps, such as verifying their email or logging in directly.
 
 
-### `Reset Password Page`
+#### Reset Password Page
 
 ![Reset Password Page](./documentation/responsiveness/reset_password_page.PNG)
 
@@ -1065,7 +1079,7 @@ As Grizk continues to grow, several future enhancements are planned to enrich us
 * **GDPR & Data Privacy Compliance**: Ensure that Grizk complies with data privacy regulations, such as the General Data Protection Regulation (GDPR). This will include features that allow users to manage their data, request data deletion, and review the platform's privacy policies.
 
 
-# Technologies & Languages Used
+## Technologies & Languages Used
 
 - HTML
 - CSS
@@ -1079,7 +1093,7 @@ As Grizk continues to grow, several future enhancements are planned to enrich us
 - [Heroku](https://www.heroku.com) was used to host the 'Grizk' application.
 - [WAVE](https://wave.webaim.org/) to evaluate the accessibility of the site.
 
-## Libraries & Frameworks
+### `Libraries & Frameworks`
 
 Libraries and frameworks used were dictated by the 'Boutique Ado' walkthrough from our course material with the Code Institute. This project will be upgraded on completion of the course to more recent packages to meet current standards and security packages.
 
@@ -1096,17 +1110,17 @@ Libraries and frameworks used were dictated by the 'Boutique Ado' walkthrough fr
 - [psycopg2](https://pypi.org/project/psycopg2/) s PostgreSQL database adapter for Python.
 - [Stripe](https://stripe.com/en-ie) for processing Grizk's payment system.
 
-## Tools & Programs
+### `Tools & Programs`
 - [DrawSQL](https://drawsql.app/) for ERD (entity relationship diagram) creation.
 - [Favicon](https://favicon.io/) for converting an icon into a favicon.
 - [amiresponsive](https://ui.dev/amiresponsive) for screenshot of Grizk on different screen sizes.
 - [Mailchimp](https://mailchimp.com/) is used for marketing with their newsletter subscription service.
 
-# Testing
+## Testing
 
 For a comprehensive overview of all testing conducted during the development of Grizk, please refer to the [Testing.md](testing.md) file. This document includes detailed test cases, results, and methodologies used to ensure a smooth and reliable user experience across all modules.
 
-## Solved Bugs
+### `Solved Bugs`
 
 The development of Grizk involved identifying and resolving several bugs to enhance functionality, security, and user experience. Below is a table detailing some of the notable bugs encountered and the fixes applied:
 
@@ -1123,7 +1137,7 @@ The development of Grizk involved identifying and resolving several bugs to enha
 | 9 | `Progress Bar Display Issue` | The dynamic progress bar in the cart was not updating correctly, leading to inaccurate representations of cart totals. | Improved the progress bar's real-time update mechanism, ensuring it accurately reflects changes in the cart. |
 | 10 | `Blog Image Upload Error` | Blog authors faced issues while uploading images, with some images failing to save properly. | Enhanced the image upload process, including better file validation and more robust error handling to ensure reliable image storage. |
 
-## Unsolved Bugs
+### `Unsolved Bugs`
 
 During the development of Grizk, some bugs and issues were identified that remain unresolved. Below is a summary of these issues:
 
@@ -1132,9 +1146,9 @@ During the development of Grizk, some bugs and issues were identified that remai
 | 1 | `Image Upload Button Styling` | The image upload button on the **Add Product Page** does not conform to the desired custom styling. Despite multiple attempts to apply specific styles (e.g., color and hover effects), the button retains default browser styling. | Ongoing investigation; possible workaround may involve using a custom file input design with better compatibility across browsers. |
 | 2 | `Cart Update Button on Mobile` | The **Update** button in the cart does not function as expected on mobile devices. Users are unable to update adjusted quantities or refresh the cart items using this button on smaller screens, despite implementing various JavaScript fixes. | Pending resolution; further testing needed to identify and address compatibility issues on mobile devices. |
 
-# Deployment
+## Deployment
 
-## Connecting to GitHub  
+### `Connecting to GitHub`  
 
 To begin this project from scratch, you must first create a new GitHub repository using the [Code Institute's Template](https://github.com/Code-Institute-Org/ci-full-template). This template provides the relevant tools to get you started. To use this template:
 
@@ -1144,7 +1158,7 @@ To begin this project from scratch, you must first create a new GitHub repositor
 4. Choose a new repository name and click '**Create repository from template**'.
 5. In your new repository space, click the purple CodeAnywhere (if this is your IDE of choice) button to generate a new workspace.
 
-## Django Project SetUp
+### `Django Project SetUp`
 
 1. Install Django and supporting libraries:
 
@@ -1194,7 +1208,7 @@ os.path.join(BASE_DIR, 'templates', 'allauth')
 11. A **Procfile** must be created within the project repo for Heroku deployment with the following placed within it: ```web: gunicorn Grizk.wsgi```
 12. Make the necessary migrations again.
 
-### Elephant SQL
+### `Elephant SQL`
 
 A new database instance can be created on [Elephant SQL](https://www.elephantsql.com/) for your project. 
 
@@ -1202,7 +1216,7 @@ A new database instance can be created on [Elephant SQL](https://www.elephantsql
 - Select your Region and the nearest Data Center to you. 
 - From your user dashboard, retrieve the important 'postgres://....' value. Place the value within your **DATABASE_URL**  in your **env.py** file and follow the below instructions to place it in your Heroku Config Vars.
 
-## Heroku Deployment
+### `Heroku Deployment`
 
 To start the deployment process , please follow the below steps:
 
@@ -1224,13 +1238,13 @@ To start the deployment process , please follow the below steps:
    - **USE_AWS** and value
 
 5. Add the Heroku host name into **ALLOWED_HOSTS** in your projects **settings.py file** -> ```['herokuappname', ‘localhost’, ‘8000 port url’].```
-2. Once you are sure that you have set up the required files including your requirements.txt and Procfile, you have ensured that **DEBUG=False**, save your project, add the files, commit for initial deployment and push the data to GitHub.
-3. Go to the '**Deploy**' tab and choose GitHub as the Deployment method.
-4. Search for the repository name, select the branch that you would like to build from, and connect it via the '**Connect**' button.
-5. Choose from '**Automatic**' or '**Manual**' deployment options, I chose the 'Manual' deployment method. Click '**Deploy Branch**'.
-6.  Once the waiting period for the app to build has finished, click the '**View**' link to bring you to your newly deployed site. If you receive any errors, Heroku will display a reason in the app build log for you to investigate. **DISABLE_COLLECTSTATIC**  may be removed from the Config Vars once you have saved and pushed an image within your project.
+6. Once you are sure that you have set up the required files including your requirements.txt and Procfile, you have ensured that **DEBUG=False**, save your project, add the files, commit for initial deployment and push the data to GitHub.
+7. Go to the '**Deploy**' tab and choose GitHub as the Deployment method.
+8. Search for the repository name, select the branch that you would like to build from, and connect it via the '**Connect**' button.
+9. Choose from '**Automatic**' or '**Manual**' deployment options, I chose the 'Manual' deployment method. Click '**Deploy Branch**'.
+10.  Once the waiting period for the app to build has finished, click the '**View**' link to bring you to your newly deployed site. If you receive any errors, Heroku will display a reason in the app build log for you to investigate. **DISABLE_COLLECTSTATIC**  may be removed from the Config Vars once you have saved and pushed an image within your project.
 
-## Google Mail Setup
+### `Google Mail Setup`
 
 1. Setup a Gmail Account that will be used to hold and store the emails for your project.
 2. Logged in, navigate to **Settings** -> **Other Google Account Settings** -> **Accounts** -> **Import** -> **Other Account Settings**
@@ -1242,7 +1256,7 @@ To start the deployment process , please follow the below steps:
    *Django Email Settings for Grizk Email setup*  
 7. Add EMAIL_HOST_PASS, EMAIL_HOST_USER variable, password and email address to your Heroku Config Vars
     
-## AWS Config
+### `AWS Configuration`
 
 [AWS](https://aws.amazon.com) is used to store the media and static files online for Grizk. Please follow the below steps to set it up for yourself:
 
@@ -1301,7 +1315,7 @@ To start the deployment process , please follow the below steps:
 	- Click **Save**.
 9. In the **ACL - Access Control List** -> **Edit** -> enable **List** for **Everyone(Public Access)** -> Accept the warning.
 
-### AWS - IAM setup
+#### AWS - IAM setup
 
 1. AWS Services Menu -> **Create New Group** -> add name eg. 'group-project-name'.
 2. Navigate from there to **REview Policy** page -> **User Groups** -> Select newly named group.
@@ -1334,11 +1348,11 @@ To start the deployment process , please follow the below steps:
 	- `AWS_ACCESS_KEY_ID` = **Access key ID**
 	- `AWS_SECRET_ACCESS_KEY` = **Secret access key** 
 
-### Media Folder Setup
+#### Media Folder Setup
 1. In Heroku Config Vars, remove `DISABLE_COLLECTSTATIC`.
 2. In AWS S3 create a new folder -> **media** -> Add project images -> **Manage Public Permissions** -> **Grant public read access to the objects** -> **Upload**
 
-### Django AWS Connect
+#### Django AWS Connect
 
 1. Packages needed to use AWS S3 Buckets in Django:
    - `pip install boto3`
@@ -1418,7 +1432,7 @@ class MediaStorage(S3Boto3Storage):
     ```
 8. AWS S3 Bucket is now connected through the above settings and Heroku's Config Vars.
 
-## Stripe Config
+### `Stripe Configuration`
 
 Stripe's API is used to handle Grizk's payment system. To setup follow the below steps:
 
@@ -1429,7 +1443,7 @@ Stripe's API is used to handle Grizk's payment system. To setup follow the below
 5.  Choose **Retrieve all events** -> **Add Endpoint**.
 6.  Add new key **STRIPE_WH_SECRET** to env.py, settings.py and Heroku Config Vars as before.
 
-## Clone Project
+### `Clone Project`
 
 A local clone of this repository can be made on GitHub. Please follow the below steps:
 
@@ -1445,7 +1459,7 @@ A local clone of this repository can be made on GitHub. Please follow the below 
 10. Set up your **env.py** file and from the above steps for ElephantSQL, gather the Elephant SQL url for addition to your code and add your SECRET_KEY and STRIPE/AWS keys if using these services.
 11. Ensure that your **env.py** file is placed in your **.gitignore** file and follow the remaining steps in the above Django Project Setup section before pushing your code to GitHub.
 
-## Fork Project
+### `Fork Project`
 
 A copy of the original repository can be made through GitHub. Please follow the below steps to fork this repository:  
 
@@ -1456,9 +1470,9 @@ A copy of the original repository can be made through GitHub. Please follow the 
 5. Follow the above Django Project Steps if you wish to work on the project.
 
 
-# Credits
+## Credits
 
-## Code
+### `Code`
 
 The following blogs/tutorials complimented my learning for this project, alongside the [Code Institute's](https://codeinstitute.net/ie/) Learning Content. The Portfolio Project 5 - Boutique Ado provided a foundation which I took apart and altered to fit my project's design
 
@@ -1468,14 +1482,14 @@ The following blogs/tutorials complimented my learning for this project, alongsi
 - [Amy Richardson's Everneed](https://github.com/amylour/everneed/) adopted the newsletter feature design and mailchimp integration idea.
 
 
-## Media
+### `Media`
 
 - [Currys](https://www.currys.co.uk/) for product images used within the site
 - [Wallpaper Access](https://wallpaperaccess.com/3d-4k) for blog images used within the site
 - [Chat GPT](https://www.chat.openai.com) was used to produce the content text for the blog section prompted by myself with several talk points about Artificial Intelligence and Tech trends.
 
 
-## Acknowledgements
+### `Acknowledgements`
 
 - A huge thanks to my family for their continued support during this project and Diploma and the many, many cups of coffee sent my way. 
 - Much gratitude is extended to my mentor Jubril Akolade for his expert guidance and advice during this Diploma, which gave me the confidence to make the most out of every project.
