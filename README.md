@@ -1126,14 +1126,11 @@ The development of Grizk involved identifying and resolving several bugs to enha
 | 8 | `Offcanvas Display Error` | The Cart and Wishlist offcanvas panels would occasionally fail to load or close properly, disrupting the user experience. | Fixed the offcanvas trigger scripts and ensured proper loading and closing animations for a smoother interaction. |
 | 9 | `Progress Bar Display Issue` | The dynamic progress bar in the cart was not updating correctly, leading to inaccurate representations of cart totals. | Improved the progress bar's real-time update mechanism, ensuring it accurately reflects changes in the cart. |
 | 10 | `Blog Image Upload Error` | Blog authors faced issues while uploading images, with some images failing to save properly. | Enhanced the image upload process, including better file validation and more robust error handling to ensure reliable image storage. |
+| 11 | `Cart Update Button on Mobile` | The **Update** button in the cart does not function as expected on mobile devices. Users are unable to update adjusted quantities or refresh the cart items using this button on smaller screens, despite implementing various JavaScript fixes. | Pending resolution; further testing needed to identify and address compatibility issues on mobile devices. | Enhanced the CSS styling to correct this error. |
 
 ### `Unsolved Bugs`
 
-During the development of Grizk, some bugs and issues were identified that remain unresolved. Below is a summary of these issues:
-
-| No | Bug | Description | Current Status | 
-| --- | --- | --- | --- | 
-| 1 | `Cart Update Button on Mobile` | The **Update** button in the cart does not function as expected on mobile devices. Users are unable to update adjusted quantities or refresh the cart items using this button on smaller screens, despite implementing various JavaScript fixes. | Pending resolution; further testing needed to identify and address compatibility issues on mobile devices. |
+There are currently no known bugs on Grizk.
 
 ## Deployment
 
