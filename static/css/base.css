@@ -1114,6 +1114,14 @@ footer {
         border-color: #ff4500 !important;
     }
 
+    .mobile-none {
+        display:none;
+    }
+
+    .qty-table {
+        width: 45% !important;
+        padding-right: 30px !important;
+    }
 }
 
 /*---------- Styling for screens with (max-width: 375px) ----------*/
@@ -1198,6 +1206,15 @@ footer {
         border-color: #ff4500 !important;
     }
 
+    .mobile-none {
+        display:none;
+    }
+
+    .qty-table {
+        width: 45% !important;
+        padding-right: 30px !important;
+    }
+
 }
 
 /*---------- Styling for screens with (max-width: 576px)----------*/
@@ -1212,7 +1229,9 @@ footer {
         height: 40vh;
     }
 
-
+    .shopping-link a {
+        padding-left:10px !important;
+    }
 
     #wishlistOffcanvas,
     #cartOffcanvas {
@@ -1309,6 +1328,14 @@ footer {
 
     .row.cart-summary {
         display: block;
+    }
+
+    .mobile-none {
+        display:none;
+    }
+
+    .qty-table {
+        width:45% !important;
     }
 
 }

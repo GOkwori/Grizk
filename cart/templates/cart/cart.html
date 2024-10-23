@@ -46,24 +46,24 @@
                 <!-- Include a mobile-friendly version of the cart -->
                 {% include "cart/mobile-cart.html" %}
                 <!-- Desktop version of the cart -->
-                <div class=" rounded d-none d-md-block">
+                <div class=" rounded">
                     <table class="table table-borderless table-dark table-striped align-middle">
                         <thead class="text-black">
                             <tr>
                                 <th scope="col" class="p-3">Product</th>
-                                <th scope="col" class="p-3"></th>
+                                <th scope="col" class="p-3 mobile-none"></th>
                                 <th scope="col" class="p-3 text-center">Price</th>
                                 <th scope="col" class="p-3 text-center">Quantity</th>
-                                <th scope="col" class="p-3 text-center">Sub-total</th>
-                                <th scope="col" class="p-3 cart-update">Update</th>
-                                <th scope="col" class="p-3 cart-delete">Remove</th>
+                                <th scope="col" class="p-3 text-center mobile-none">Sub-total</th>
+                                <th scope="col" class="p-3 cart-update mobile-none">Update</th>
+                                <th scope="col" class="p-3 cart-delete mobile-none">Remove</th>
                             </tr>
                         </thead>
                         <!-- Loop through each item in the cart and display it in the table -->
                         {% for item in cart_items %}
                         <tr>
                             <!-- Display product image -->
-                            <td class="p-1">
+                            <td class="p-1 mobile-none">
                                 {% include "cart/product-image.html" %}
                             </td>
                             <!-- Display product information (name, description, etc.) -->
@@ -83,15 +83,15 @@
                                 </div>
                             </td>
                             <!-- Calculate and display the subtotal for each item -->
-                            <td class="p-3 w-25">
+                            <td class="p-3 w-25 mobile-none">
                                 <p class="my-0 text-center">£{{ item.product.price|calc_subtotal:item.quantity }}</p>
                             </td>
                             <!-- Include update button for cart item -->
-                            <td class="p-3 cart-update">
+                            <td class="p-3 cart-update mobile-none">
                                 {% include "cart/update-button.html" %}
                             </td>
                             <!-- Include remove button for cart item -->
-                            <td class="p-3 cart-delete">
+                            <td class="p-3 cart-delete mobile-none">
                                 {% include "cart/remove-button.html" %}
                             </td>
                         </tr>
