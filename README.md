@@ -1108,7 +1108,7 @@ Libraries and frameworks used were dictated by the 'Boutique Ado' walkthrough fr
 
 ## Testing
 
-For a comprehensive overview of all testing conducted during the development of Grizk, please refer to the [Testing.md](testing.md) file. This document includes detailed test cases, results, and methodologies used to ensure a smooth and reliable user experience across all modules.
+For a comprehensive overview of all testing conducted during the development of Grizk, please refer to the [Testing.md](TESTING.md) file. This document includes detailed test cases, results, and methodologies used to ensure a smooth and reliable user experience across all modules.
 
 ### `Solved Bugs`
 
