@@ -54,4 +54,25 @@
             window.location.replace(currentUrl);
         }
     });
+
+    // Ensure jQuery is loaded on the page.
+    $(document).ready(function () {
+        // Ensure that the input with ID 'new-image' exists before attaching the event listener
+        const imageInput = $('#new-image');
+        if (imageInput.length) {
+            imageInput.change(function () {
+                var file = imageInput[0].files[0];
+                if (file) {
+                    $('#filename').text(`Image will be set to: ${file.name}`);
+                }
+            });
+        }
+    });
+
+
+    $('#new-image').change(function () {
+        var file = $('#new-image')[0].files[0];
+        $('#filename').text(`Image will be set to: ${file.name}`);
+    });
+
 </script>

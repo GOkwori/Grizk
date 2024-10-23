@@ -34,7 +34,7 @@
         <!-- Loop through each blog post and display it as a card -->
         {% for blog in blogs %}
         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4">
-          <div class="card border-danger-subtle" style="height: auto;" id="product-card">
+          <div class="card border-danger-subtle product-card" style="height: auto;">
             
             <!-- Display blog image if it exists, otherwise use a default placeholder image -->
             {% if blog.image %}
@@ -65,12 +65,12 @@
               {% if request.user.is_superuser %}
               <small>
                 <!-- Edit blog button, takes the user to the edit blog page -->
-                <a href="{% url 'edit_blog' blog.id %}" class="btn-sm blog-btn" role="button" title="Update Blog">
+                <a href="{% url 'edit_blog' blog.id %}" class="btn-sm" role="button" title="Update Blog">
                   <i class="fa-solid fa-pen-to-square ms-3"></i>
                 </a>
                 |
                 <!-- Delete blog button, triggers a modal for confirmation -->
-                <a href="#" class="btn-sm blog-btn" role="button" title="Delete Blog" data-bs-toggle="modal"
+                <a href="#" class="btn-sm" role="button" title="Delete Blog" data-bs-toggle="modal"
                   data-bs-target="#staticBackdrop" onclick="setDeleteUrl('{{ blog.id }}', '{{ blog.title }}', 'blog')">
                   <i class="fa-solid fa-trash"></i>
                 </a>
