@@ -14,14 +14,12 @@ def cart_contents(request):
     # Retrieve cart data from the session
     cart = request.session.get('cart', {})
 
-    # Extract product IDs from the cart and fetch related Product objects from
-    # the database
+    # Extract product IDs from the cart and fetch related Product objects from the database
     product_ids = [item_id for item_id in cart.keys()]
     products = Product.objects.filter(pk__in=product_ids)
     product_map = {product.pk: product for product in products}
 
-    # Iterate through items in the cart to calculate totals and prepare cart
-    # item details
+    # Iterate through items in the cart to calculate totals and prepare cart item details
     for item_id, item_data in cart.items():
         # Get the product object using its ID
         product = product_map.get(int(item_id))
@@ -42,8 +40,7 @@ def cart_contents(request):
         else:
             # If there are color options, handle each color separately
             for colour, quantity in item_data['items_by_colour'].items():
-                # Calculate total price and update product count for each
-                # color variant
+                # Calculate total price and update product count for each color variant
                 total += quantity * product.price
                 product_count += quantity
                 # Add item details including color to cart_items list
@@ -56,11 +53,9 @@ def cart_contents(request):
 
     # Determine if the order qualifies for free delivery
     if total < settings.FREE_DELIVERY_THRESHOLD:
-        # Calculate delivery cost based on a standard percentage if below the
-        # threshold
+        # Calculate delivery cost based on a standard percentage if below the threshold
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
-        # Calculate how much more the user needs to spend to qualify for free
-        # delivery
+        # Calculate how much more the user needs to spend to qualify for free delivery
         free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
     else:
         # Free delivery if the total exceeds the threshold

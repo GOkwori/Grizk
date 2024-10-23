@@ -60,7 +60,7 @@ def edit_blog(request, blog_id):
     if request.user != blog.author and not request.user.is_superuser:
         messages.warning(
             request, "You are not allowed to edit this blog post.")
-        return HttpResponseForbidden("You are not allowed to edit this blog.")
+        return HttpResponseForbidden("You are not allowed to edit this blog post.")
 
     if request.method == 'POST':
         form = BlogForm(request.POST, request.FILES, instance=blog)
@@ -94,8 +94,8 @@ def delete_blog(request, blog_id):
         messages.success(request, "Blog post deleted successfully!")
         return redirect('blog_list')
 
-    messages.warning(request, "You are not allowed to delete this blog.")
-    return HttpResponseForbidden("You aren't allowed to delete this blog.")
+    messages.warning(request, "You are not allowed to delete this blog post.")
+    return HttpResponseForbidden("You are not allowed to delete this blog post.")
 
 
 @login_required
@@ -105,6 +105,6 @@ def blog_dashboard(request):
     if not request.user.is_superuser:
         messages.warning(
             request, "You do not have permission to access this page.")
-        return HttpResponseForbidden("You do not have access to this page.")
+        return HttpResponseForbidden("You do not have permission to access this page.")
 
     return render(request, 'blog/blog_dashboard.html')
