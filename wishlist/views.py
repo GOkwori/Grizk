@@ -36,13 +36,12 @@ def add_to_wishlist(request, product_id):
 
     if created:
         messages.success(
-            request, f'{wishlist_item.product.name} added to Wishlist successfully!')
+            request, f'{wishlist_item.product.name} added successfully!')
     else:
         messages.warning(
             request, f'{product.name} is already in your Wishlist.')
 
     return redirect(reverse('product_detail', args=[product.id]))
-    
 
 
 @login_required

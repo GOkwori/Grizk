@@ -4,8 +4,7 @@ from django.apps import AppConfig
 
 
 class CartConfig(AppConfig):
-    # Specify the default field type for automatically created primary keys in models
+    # Specify the default field type for automatically created primary keys
     default_auto_field = "django.db.models.BigAutoField"
 
-    # Set the name of the application; this should match the directory name of the app
     name = "cart"

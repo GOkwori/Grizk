@@ -14,7 +14,7 @@ class Blog(models.Model):
     # Main content of the blog post
     content = models.TextField()
 
-    # Reference to the user who authored the blog post (foreign key to the User model)
+    # Reference to the user who authored the blog post
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
 
     # Optional image associated with the blog post
@@ -44,7 +44,6 @@ class Blog(models.Model):
         unique_slug = slug
         num = 1
 
-        # Check if the slug already exists, and if so, append a number to make it unique
         while Blog.objects.filter(slug=unique_slug).exists():
             unique_slug = f'{slug}-{num}'
             num += 1

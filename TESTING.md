@@ -29,7 +29,7 @@ Return back to the [README.md](README.md) file.
 
 ## Validation
 
-### HTML Validation
+### `HTML Validation`
 
 For my HTML files I have used [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
 
@@ -46,39 +46,63 @@ I have had to follow a different approach for validating my HTML for this projec
 All HTML pages were validated and received a 'No errors or warning to show' for code that I had written, result as shown above.
 
 | HTML Source Code/Page | Errors | Warnings | Status |
-| ---- | ------ | -------- | -------- |-------- |
-| Home | None | None | Passed |
-| Log In | 0 | 0 | | 
-| Register | 0 | 0 | | 
-| Account | 0 | 0 | | 
-| Wishlist | 0 | 0 | | 
-| Admin Dashboard | 0 | 0 | | 
-| Admin Article List | 0 | 0 | | 
-| Admin Add Article | 0 | 0 | | 
-| Admin Edit Article | 0 | 0 | | 
-| Admin Delete Article | 0 | 0 | | 
-| Admin Product List | 0 | 0 | | 
-| Admin Product Detail | 0 | 0 | | 
-| Admin Add Product | ID error -> Errors/Warnings present as a result of Bootstraps form elements, not from the code that I have created. The name ID from the contact form html within the base.html is clashing with the name ID from the add product html. These ID elements are embedded within the Bootstrap forms and are inaccessible to me without breaking my code up and reconfiguring the code. This is the same for the `<p>` and `<strong>` error. This was double checked with the Assessment Team Oct'23 who confirmed that code not authored by myself, and is Bootstrap/CrispyForms rendering, would not be subject to assessment mark down as long as it is referenced in the README. I will reinvestigate and break into the code when my Diploma has been awarded to remove errors like these. ![html validation duplicate id bootstrap forms](docs/testing_images/add_prod_er.png) | As before |
-| Admin Edit Product | 0 | 0 | | 
-| Admin Delete Product | 0 | 0 | | 
-| All Products | 0 | 0 | | 
-| User Article List | 0 | 0 | | 
-| Bag - Empty | 0 | 0 | | 
-| Bag - Products | 0 | 0 | | 
-| Checkout | Errors/Warnings present as a result of Bootstraps form elements, not from the code that I have created. The name/email ID from the contact form html within the base.html is clashing with the name/email ID from the checkout html. These ID elements are embedded within the Bootstrap forms and are inaccessible to me without breaking my code up and reconfiguring the code. This was double checked with the Assessment Team Oct'23 who confirmed that code not authored by myself, and is Bootstrap/CrispyForms rendering, would not be subject to assessment mark down as long as it is referenced in the README. I will reinvestigate and break into the code when my Diploma has been awarded to remove errors like these. ![html validation duplicate id bootstrap forms](docs/testing_images/contactus_form_id.png) ![html validation duplicate id bootstrap forms](docs/testing_images/contact_html_issue.png) | As before |
-| Wear| 0 | 0 | | 
-| Care | 0 | 0 | | 
-| Eat | 0 | 0 | | 
-| Travel | 0 | 0 | | 
-| Read | 0 | 0 | | 
-| Profile/Account | 0 | 0 | | 
-| Order History | 0 | 0 | | 
-| Wishlist | 0 | 0 | | 
-| Forgot Password | 0 | 0 | | 
-| Error 403 | 0 | 0 | | 
-| Error 404 | 0 | 0 | | 
-| Error 500 | 0  | 0 | | 
-| Footer - Contact Us & Thank You page | 0 | 0 | | 
-| Footer    | Privacy Policy | External link - N/A | External link - N/A | | 
-| Footer - Terms & Conditions   | Outside of my control there are multiple errors present as this page contains HTML Content from [Termly.com](https://termly.io/products/terms-and-conditions-generator/) to display the Terms & Conditions for Everneed. None of my templated code contains errors and I felt that attempting to correct all of the Termly errors would render the document incorrectly. I used Termly as they provided this content without personal cost to me. | As before. |
+| ---- | ------ | -------- | -------- |
+| `Home` | None | None | Passed |
+|`Log In` | None | None | Passed |
+| `Log Out` | None | None | Passed |
+| `Register` | 4 | 0 | During the development of Grizk, several template rendering issues were encountered, particularly involving the integration with Django Allauth. Errors such as unclosed <span> elements, stray tags, and incorrectly structured help text were identified. These issues primarily resulted from how form fields and help texts were being rendered in custom templates. ![html validation](./documentation/testing/validation/html/register_error.PNG)  | 
+| `Account` | None | None | Passed | 
+| `Wishlist` | None | None | Passed |
+| `Admin Dashboard` | None | None | Passed | 
+| `Admin Blog List` | None | None | Passed |
+| `Admin Add Blog` | None | None | Passed | 
+| `Admin Edit Blog` | None | None | Passed |
+| `Admin Product List` | None | None | Passed |
+| `Admin Product Detail` | None | None | Passed |
+| `Admin Add Product` | None | None | Passed |
+| `Admin Edit Product` | None | None | Passed |
+| `Admin Delete Product` | None | None | Passed |
+| `All Products` | None | None | Passed |
+| `User Blog List` |None | None | Passed |
+| `Cart - Empty` | None | None | Passed | 
+| `Checkout` | None | None | Passed |
+| `Checkout-success` | None | None | Passed |
+| `Blog` | None | None | Passed |
+| `Profile/Account` | None | None | Passed |
+| `Order History` | None | None | Passed |
+| `Wishlist` | None | None | Passed |
+| `Forgot Password` | None | None | Passed |
+| `Error 403` | None | None | Passed |
+| `Error 404` | None | None | Passed |
+| `Error 500` | None | None | Passed |
+
+
+### `JavaScript Validation`
+
+[JSHint](https://jshint.com/) was used to validate the JavaScript code implemented in the Grizk platform. External JS files utilized for Bootstrap, jQuery, and FontAwesome were excluded from this validation process to focus on custom scripts developed for the project.
+
+| Page | Screenshot | Errors | 
+| ---- | ---------- | ------ | 
+|` Home`  | ![JS from Static folder](./documentation/testing/validation/js/base_js.PNG) | none | 
+| `Base Script` | ![JS from Template section](./documentation/testing/validation/js/base_script.PNG) | none | 
+| `Cart - Quantity Script` | ![JS from Cart page](./documentation/testing/validation/js/cart_script.PNG) | none | 
+| `Stripe Payment Integration` | ![JS from Stripe elements](./documentation/testing/validation/js/checkout_js.PNG) | none | 
+| `Products Filtering Script` | ![JS from product filtering script](./documentation/testing/validation/js/product_script.PNG) | none | 
+| `CountryField JS` | ![JS from profile script](./documentation/testing/validation/js/profile_js.PNG) | none | 
+
+
+### Python Validation
+
+The [CI Python Linter](https://pep8ci.herokuapp.com/#) was used to validate all Python files created and edited within the project. No issues were detected, and all line lengths were verified to conform to PEP8 standards. Below is a table summarizing the validation results, accompanied by screenshots showing the successful validation of each component. Entries marked as "Not applicable" indicate that no Python files were relevant or created for that feature.
+
+| Feature   | admin  | forms  | models  | urls  | views  | App  |
+|-----------|--------|--------|---------|-------|--------|---------|
+| **Blog**      | Not applicable | ![Python Validation](./documentation/testing/validation/python/blog_form.PNG) | ![Python Validation](./documentation/testing/validation/python/blog_model.PNG) | ![Python Validation](./documentation/testing/validation/python/blog_url.PNG) | ![Python Validation](./documentation/testing/validation/python/blog_views.PNG) | ![Python Validation](./documentation/testing/validation/python/blog_app.PNG) |
+| **Cart**      | Not applicable | Not applicable | Not applicable | ![Python Validation](./documentation/testing/validation/python/cart_url.PNG) | ![Python Validation](./documentation/testing/validation/python/cart_views.PNG) | Context ![Python Validation](./documentation/testing/validation/python/cart_contexts.PNG) |
+| **Checkout**  | ![Python Validation](./documentation/testing/validation/python/checkout_admin.PNG) | ![Python Validation](./documentation/testing/validation/python/checkout_forms.PNG) | ![Python Validation](./documentation/testing/validation/python/checkout_model.PNG) | ![Python Validation](./documentation/testing/validation/python/checkout_url.PNG) | ![Python Validation](./documentation/testing/validation/python/checkout_views.PNG) | ![Python Validation](./documentation/testing/validation/python/checkout_app.PNG) |
+| **Home**      | Not applicable | Not applicable | Not applicable | ![Python Validation](./documentation/testing/validation/python/home_url.PNG) | ![Python Validation](./documentation/testing/validation/python/home_view.PNG) | ![Python Validation](./documentation/testing/validation/python/home_app.PNG) |
+| **Products**  | ![Python Validation](./documentation/testing/validation/python/product_admin.PNG) | ![Python Validation](./documentation/testing/validation/python/product_form.PNG) | ![Python Validation](./documentation/testing/validation/python/profile_model.PNG) | ![Python Validation](./documentation/testing/validation/python/blog_url.PNG) | ![Python Validation](./documentation/testing/validation/python/product_view.PNG) | ![Python Validation](./documentation/testing/validation/python/profile_app.PNG) |
+| **Profiles**  | Not applicable | ![Python Validation](./documentation/testing/validation/python/profile_form.PNG) | ![Python Validation](./documentation/testing/validation/python/profile_model.PNG) | ![Python Validation](./documentation/testing/validation/python/profile_url.PNG) | ![Python Validation](./documentation/testing/validation/python/profile_view.PNG) | App ![Python Validation](./documentation/testing/validation/python/profile_app.PNG) |
+| **Wishlist**  | ![Python Validation](./documentation/testing/validation/python/wishlist_admin.PNG) | Not applicable | Not applicable | ![Python Validation](./documentation/testing/validation/python/wishlist_url.PNG) | ![Python Validation](./documentation/testing/validation/python/wishlist_views.PNG) | ![Python Validation](./documentation/testing/validation/python/wishlist_app.PNG) |
+
+
