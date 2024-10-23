@@ -4,6 +4,8 @@ from django import forms
 from .models import Blog  # Adjust this line based on your actual model path if needed
 
 # Define a form class for the Blog model
+
+
 class BlogForm(forms.ModelForm):
     # Meta class to specify model-related options
     class Meta:

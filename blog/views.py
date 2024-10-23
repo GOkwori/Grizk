@@ -37,7 +37,8 @@ def add_blog(request):
             blog.save()
             # Success message
             messages.success(request, "Blog post created successfully!")
-            return redirect(reverse('blog_detail', args=[blog.id]))  # Redirect to blog_detail after saving
+            # Redirect to blog_detail after saving
+            return redirect(reverse('blog_detail', args=[blog.id]))
         else:
             messages.error(
                 request, "Error creating blog post. Please check the form.")
