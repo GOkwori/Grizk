@@ -1133,8 +1133,7 @@ During the development of Grizk, some bugs and issues were identified that remai
 
 | No | Bug | Description | Current Status | 
 | --- | --- | --- | --- | 
-| 1 | `Image Upload Button Styling` | The image upload button on the **Add Product Page** does not conform to the desired custom styling. Despite multiple attempts to apply specific styles (e.g., color and hover effects), the button retains default browser styling. | Ongoing investigation; possible workaround may involve using a custom file input design with better compatibility across browsers. |
-| 2 | `Cart Update Button on Mobile` | The **Update** button in the cart does not function as expected on mobile devices. Users are unable to update adjusted quantities or refresh the cart items using this button on smaller screens, despite implementing various JavaScript fixes. | Pending resolution; further testing needed to identify and address compatibility issues on mobile devices. |
+| 1 | `Cart Update Button on Mobile` | The **Update** button in the cart does not function as expected on mobile devices. Users are unable to update adjusted quantities or refresh the cart items using this button on smaller screens, despite implementing various JavaScript fixes. | Pending resolution; further testing needed to identify and address compatibility issues on mobile devices. |
 
 ## Deployment
 
