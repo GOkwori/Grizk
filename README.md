@@ -25,8 +25,6 @@ For full Admin access to the Django Admin panel, you can use the following link:
 
 To access the Admin Dashboard frontend view with relevant credentials, visit: [Grizk Admin Dashboard](https://ecommerce-grizk-2f04b3042fc5.herokuapp.com/products/admin_dashboard/)
 
-AccountSphere empowers you to manage your financial workflows seamlessly in one integrated platform. Embrace smarter financial management today!
-
 ![GitHub Last Commit](https://img.shields.io/badge/Last%20Commit%20-%20October%202024%20-%20blue)
 ![GitHub Languages](https://img.shields.io/badge/Languages%20-%204%20-%20teal)
 ![HTML](https://img.shields.io/badge/1%20-%20HTML%20-%20orange)
